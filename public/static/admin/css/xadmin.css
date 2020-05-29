@@ -20,6 +20,9 @@ body{
     background: #f1f1f1;
     /*background: #fff;*/
 }
+.text-center{
+    text-align: center !important;
+}
 .x-red{
     color: red;
 }
@@ -354,7 +357,7 @@ body{
 }
 
 .layui-table td, .layui-table th{
-    min-width: 80px;
+    min-width: 15px;
 }
 
 table th, table td {
