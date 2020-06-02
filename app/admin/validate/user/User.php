@@ -21,7 +21,7 @@ class User extends Validate
         'id' => 'require|number',
         'username' => 'require|max:25',
         'rnd' => 'require|max:8',
-        'email' => 'require|email'
+        'email' => 'require|email',
     ];
     protected $message = [
         'id.require' => 'ID不能为空',

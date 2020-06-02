@@ -1,0 +1,85 @@
+{extend name="common:base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-row">
+        <form class="layui-form">
+            <input type="hidden" name="id" value="{$result.id}">
+            <div class="layui-form-item">
+                <label for="name" class="layui-form-label">
+                    <span class="x-red">*</span>语言
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="name" name="name" required="" lay-verify="required"
+                           autocomplete="off" class="layui-input" value="{$result.name}">
+                </div>
+                <div class="layui-form-mid layui-word-aux">
+
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="code" class="layui-form-label">
+                    <span class="x-red">*</span>标识
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="code" name="code" required="" lay-verify="required"
+                           autocomplete="off" class="layui-input" value="{$result.code}">
+                </div>
+                <div class="layui-form-mid layui-word-aux">
+
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="remark" class="layui-form-label">
+                    <span class="x-red">*</span>描述
+                </label>
+                <div class="layui-input-block">
+                    <textarea name="remark" id="remark" placeholder="请输入内容"
+                              class="layui-textarea">{$result.remark}</textarea>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">
+                </label>
+                <button class="layui-btn" lay-filter="edit" lay-submit="">
+                    保存
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{/block}
+{block name="copyright"}
+{/block}
+{block name="javascript"}
+<script>
+    layui.use(['form', 'layer'],
+        function () {
+            $ = layui.jquery;
+            var form = layui.form,
+                layer = layui.layer;
+
+            //监听提交
+            form.on('submit(edit)',
+                function (data) {
+                    $.ajax({
+                        url: "{:url('system/edit_language')}",
+                        type: 'POST',
+                        data: data.field,
+                        'success': function (result) {
+                            if (result.status === 1) {
+                                layer.msg(result.message, {'icon': 1, 'time': 1000}, function () {
+                                    xadmin.close();
+                                    xadmin.father_reload();
+                                });
+                            } else {
+                                layer.msg(result.message, {'icon': 5, 'time': 8000});
+                            }
+                        }
+                    }, 'JSON');
+                    return false;
+                });
+
+        });
+</script>
+{/block}

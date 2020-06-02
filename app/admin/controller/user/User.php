@@ -15,18 +15,17 @@ namespace app\admin\controller\user;
 use app\admin\controller\BaseAdmin;
 use app\admin\validate\user\User as userValidate;
 use app\admin\service\user\User as service;
+use app\BaseController;
 use think\App;
-use think\facade\Request;
+use think\facade\Env;
 use think\facade\View;
 
 /**
  * Class User
  * @package app\admin\controller\user
  */
-class User extends BaseAdmin
+class User extends BaseController
 {
-    protected $service;
-    protected $validate;
 
     /**
      * User constructor.
@@ -60,6 +59,10 @@ class User extends BaseAdmin
         }
         if ($this->request->isPost()) {
             $data = input('post.', [], 'htmlspecialchars');
+            if (!Env::get('APP_DEBUG', false)) {
+                if (!captcha_check($data['captcha'])) return show(0, '验证码不正确');
+            }
+            if ($data['language'] == 0) return show(0, '请选择语言');
             if (!$this->validate->scene('login')->check($data)) {
                 return show(0, $this->validate->getError());
             }

@@ -14,7 +14,6 @@ namespace app\common\model\mysql\user;
 
 
 use app\common\model\mysql\BaseModel;
-use think\facade\Env;
 
 /**
  * Class User

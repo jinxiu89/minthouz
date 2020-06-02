@@ -13,4 +13,5 @@ use think\facade\Route;
 Route::group('user',function (){
     Route::rule('/login','user.User/login','GET|POST');
     Route::rule('/register','user.User/register','GET|POST');
+    Route::rule('/language/adsd$', 'system.Language/addLanguage');
 });

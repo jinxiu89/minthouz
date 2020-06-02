@@ -51,6 +51,7 @@ class User extends BaseService
             $updateData = ['login_num' => $user->login_num + 1, 'last_login_time' => time(), 'ip' => get_client_ip()];
             $this->model::updateDataById($user->id, $updateData);
             Session::set('adminUser', ['id' => $user->id, 'username' => $user->username, 'title' => $user->title]);
+            Session::set('current_language',$data['language']);
             return true;
         } catch (\Exception $exception) {
             if (true == Env::get('APP_DEBUG')) {

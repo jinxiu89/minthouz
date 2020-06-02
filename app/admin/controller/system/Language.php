@@ -14,15 +14,16 @@ namespace app\admin\controller\system;
 
 
 use app\admin\controller\BaseAdmin;
+use Exception;
 use think\App;
+use think\facade\Session;
 use think\facade\View;
+use app\admin\service\system\Language as service;
+use app\admin\validate\system\Language as validate;
+use think\response\Json;
 
 class Language extends BaseAdmin
 {
-    public function __construct(App $app)
-    {
-        parent::__construct($app);
-    }
 
     public function initialize()
     {
@@ -30,13 +31,70 @@ class Language extends BaseAdmin
     }
 
     /**
+     * Language constructor.
+     * @param App $app
+     */
+    public function __construct(App $app)
+    {
+        parent::__construct($app);
+        $this->service = new service();
+        $this->validate = new validate();
+    }
+
+    /**
      * @return string
-     * @throws \Exception
+     * @throws Exception
      */
     public function index()
     {
         if ($this->request->isGet()) {
+            $data = $this->service->getDataByStatus((int)1);
+            View::assign('data', $data);
             return View::fetch();
+        }
+    }
+
+    /**
+     *
+     */
+    public function addLanguage()
+    {
+        if ($this->request->isGet()) {
+            return View::fetch();
+        }
+        if ($this->request->isPost()) {
+            $data = input('post.', [], 'htmlspecialchars');
+            if (!$this->validate->scene('add')->check($data)) {
+                return show(0, $this->validate->getError());
+            }
+            if ($this->service->create((array)$data)) {
+                return show(1, '新增成功');
+            }
+            return show(0, '新增失败，未知原因');
+        }
+    }
+
+    /**
+     * @return string|Json
+     * @throws Exception
+     */
+    public function editLanguage()
+    {
+        if ($this->request->isGet()) {
+            $id = $this->request->param('id', '', ['int', 'trim', 'htmlspecialchars']);
+            $result = $this->service->getDataById((int)$id);
+            View::assign('result', $result);
+            return View::fetch();
+        }
+        if ($this->request->isPost()) {
+            $data = input('post.', [], 'htmlspecialchars');
+            if (!$this->validate->scene('edit')->check($data)) {
+                return show(0, $this->validate->getError());
+            }
+            if ($this->service->update((array)$data)) {
+                return show(1, '保存成功');
+            }
+            return show(0, '新增失败，未知原因');
         }
     }
 }

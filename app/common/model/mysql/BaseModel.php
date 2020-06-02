@@ -12,7 +12,10 @@
 namespace app\common\model\mysql;
 
 
+use think\db\exception\DbException;
+use think\facade\Env;
 use think\Model;
+use think\Paginator;
 
 class BaseModel extends Model
 {
@@ -28,5 +31,27 @@ class BaseModel extends Model
     public static function updateDataById(int $id, array $data)
     {
         return self::update($data, ['id' => $id]);
+    }
+
+    /**
+     * @param int $status
+     * @return Paginator
+     */
+    public static function getDataByStatus(int $status)
+    {
+        try {
+            return self::where(['status' => $status])->order('id', 'desc')->paginate();
+        } catch (DbException $exception) {
+            if (true == Env::get('APP_DEBUG')) abort(500, $exception->getMessage());
+            abort(500, '服务器内部错误');
+        }
+    }
+
+    /**
+     * @param int $id
+     * @return mixed
+     */
+    public static function getDataById(int $id){
+        return self::findOrEmpty($id);
     }
 }
