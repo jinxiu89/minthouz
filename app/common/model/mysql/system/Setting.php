@@ -14,9 +14,19 @@ namespace app\common\model\mysql\system;
 
 use app\common\model\mysql\BaseModel;
 
+/**
+ * Class Setting
+ * @package app\common\model\mysql\system
+ */
 class Setting extends BaseModel
 {
     protected $table='tb_setting';
-    protected $prefix;
 
+    /**
+     * @param int $language
+     * @return array|\think\Model
+     */
+    public static function getDtaByLanguage(int $language){
+        return self::where(['language_id'=>$language])->findOrEmpty();
+    }
 }

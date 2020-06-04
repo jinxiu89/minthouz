@@ -1,0 +1,97 @@
+{extend name="common:base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-row">
+        <form class="layui-form">
+            <div class="layui-form-item">
+                <label for="title" class="layui-form-label">
+                    <span class="x-red">*</span>网站标题
+                </label>
+                <div class="layui-input-block" style="width: 50%">
+                    <input type="text" id="title" name="title" required="" lay-verify="required"
+                           autocomplete="off" class="layui-input" value="{$data.title}">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="keywords" class="layui-form-label">
+                    <span class="x-red">*</span>关键词
+                </label>
+                <div class="layui-input-block" style="width: 50%">
+                    <input type="text" id="keywords" name="keywords" required="" lay-verify="required"
+                           autocomplete="off" class="layui-input" value="{$data.keywords}">
+                </div>
+                <div class="layui-form-mid layui-word-aux">
+
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="description" class="layui-form-label">
+                    <span class="x-red">*</span>描述
+                </label>
+                <div class="layui-input-block">
+                    <textarea name="description" id="description" placeholder="请输入内容" class="layui-textarea">{$data.description}</textarea>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="information" class="layui-form-label">
+                    <span class="x-red">*</span>版权信息
+                </label>
+                <div class="layui-input-block">
+                    <textarea name="information" id="information" placeholder="请输入内容" class="layui-textarea">{$data.information|raw}</textarea>
+                </div>
+            </div>
+            <input type="hidden" name="id" value="{$data.id}">
+<!--            <input type="hidden" name="language_id" value="{$data.language_id}">-->
+            <div class="layui-form-item">
+                <label for="analysis_code" class="layui-form-label">
+                    <span class="x-red">*</span>统计代码
+                </label>
+                <div class="layui-input-block">
+                    <textarea rows="30" style="height: 485px" name="analysis_code" id="analysis_code" placeholder="请输入内容" class="layui-textarea">{$data.analysis_code|raw}</textarea>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">
+                </label>
+                <button class="layui-btn" lay-filter="add" lay-submit="">
+                    保存
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{/block}
+{block name="copyright"}
+{/block}
+{block name="javascript"}
+<script>
+    layui.use(['form', 'layer'],
+        function () {
+            $ = layui.jquery;
+            var form = layui.form,
+                layer = layui.layer;
+
+            //监听提交
+            form.on('submit(add)',
+                function (data) {
+                    $.ajax({
+                        url: "{:url('system/setting')}",
+                        type: 'POST',
+                        data: data.field,
+                        'success': function (result) {
+                            if (result.status === 1) {
+                                layer.msg(result.message, {'icon': 1, 'time': 500}, function () {
+                                    xadmin.close();
+                                    xadmin.father_reload();
+                                });
+                            }else{
+                                layer.msg(result.message,{'icon':5,'time':1000});
+                            }
+                        }
+                    }, 'JSON');
+                    return false;
+                });
+
+        });
+</script>
+{/block}

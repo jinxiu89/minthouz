@@ -36,6 +36,10 @@ class BaseService
         }
     }
 
+    /**
+     * @param array $data
+     * @return mixed
+     */
     public function update(array $data)
     {
         try {
