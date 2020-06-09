@@ -63,12 +63,12 @@
                                     <cite>基本设置</cite>
                                 </a>
                             </li>
-                            <li>
+                            <!--<li>
                                 <a onclick="xadmin.add_tab('角色管理','{:url(\'role_list\')}')">
                                     <i class="iconfont">&#xe6a7;</i>
                                     <cite>安全设置</cite>
                                 </a>
-                            </li>
+                            </li>-->
                         </ul>
                     </li>
                 </ul>
@@ -87,7 +87,20 @@
                     </li>
                 </ul>
             </li>
-
+            <li>
+                <a href="javascript:;">
+                    <i class="iconfont left-nav-li" lay-tips="内容管理">&#xe83c;</i>
+                    <cite>内容管理</cite>
+                    <i class="iconfont nav_right">&#xe697;</i>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a onclick="xadmin.add_tab('产品管理','{:url(\'content/product_index\')}')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>产品管理</cite></a>
+                    </li>
+                </ul>
+            </li>
             <!--<li>
                 <a href="javascript:;">
                     <i class="iconfont left-nav-li" lay-tips="其它页面">&#xe6b4;</i>

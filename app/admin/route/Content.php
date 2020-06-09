@@ -12,4 +12,6 @@ use think\facade\Route;
 
 Route::group('content',function (){
     Route::rule('/index','content.Index/index');
+    Route::rule('/product_index','content.Product/index');
+    Route::rule('/add_product','content.Product/add','GET|POST');
 });
