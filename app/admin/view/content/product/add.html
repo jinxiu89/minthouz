@@ -182,7 +182,7 @@
             let form = layui.form, upload = layui.upload, tinymce = layui.tinymce, layer = layui.layer;
             upload.render({
                 elem: '#upload',
-                url: '',//上传接口
+                url: '{:url(\'media/image_upload\')}',//上传接口
                 done: function (result) {
                     //上传完毕后再显示出来
                 },
@@ -202,7 +202,8 @@
                 height: $(window).height()-80,
                 plugins: 'code autosave quickbars print preview searchreplace autolink fullscreen image link media codesample table charmap hr advlist lists wordcount imagetools indent2em',
                 toolbar: 'code undo redo | forecolor backcolor bold italic underline strikethrough | indent2em alignleft aligncenter alignright alignjustify outdent indent | link bullist numlist image table codesample | formatselect fontselect fontsizeselect',
-                menubar:false
+                menubar:false,
+                images_upload_url:''
             })
             tinymce.render({
                 elem: "#mobile",

@@ -98,9 +98,9 @@
             title: title,
             content: url
         });
-        if (full === true) {
+        /*if (full === true) {
             layer.full(index);
-        }
+        }*/
     }
     /**
      *

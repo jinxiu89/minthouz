@@ -30,7 +30,6 @@
         <hr class="hr15">
         <div class="">
             <select name="language" lay-verify="">
-                <option value="0">选择语言</option>
                 <option value="1">简体中文</option>
                 <option value="2">美国英文</option>
             </select>
@@ -64,7 +63,7 @@
                     data: data.field,
                     'success': function (result) {
                         if (result.status === 1) {
-                            layer.msg(result.message, {'icon': 1, 'time': 1000}, function () {
+                            layer.msg(result.message, {'icon': 1, 'time': 600}, function () {
                                 window.parent.location.href = result.result['next']
                             });
                         }else{
