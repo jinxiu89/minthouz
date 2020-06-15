@@ -101,16 +101,10 @@
                                 缩略图
                             </label>
                             <div class="layui-input-inline">
-                                <button type="button" class="layui-btn" id="upload">
-                                    <i class="layui-icon">&#xe67c;</i>上传图片
-                                </button>
-                                <blockquote class="layui-elem-quote layui-quote-nm"
-                                            style="margin-top: 10px;min-height: 100px">
-                                    <img src="" alt="">
-                                </blockquote>
-                                <input type="hidden" name="thumbnail" value="thumbnail" id="thumbnail">
-                                <!--<input type="text" id="thumbnail" name="ean" required="" lay-verify="required"
-                                       autocomplete="off" class="layui-input">-->
+                                <button class="layui-btn" onclick="xadmin.open('添加产品','{:url(\'media/image_list\',[\'path\'=>\'images\/\'])}')"><i class="layui-icon"></i>选择</button>
+                                <div class="layui-upload-list" style="height: 92px">
+                                    <input type="hidden" name="thumbnail" value="thumbnail" id="thumbnail">
+                                </div>
                             </div>
                         </div>
                         <div class="layui-form-item">
@@ -118,12 +112,12 @@
                                 相册
                             </label>
                             <div class="layui-input-block">
-                                <button type="button" class="layui-btn" id="test2">多图片上传</button>
-                                <blockquote class="layui-elem-quote layui-quote-nm"
-                                            style="margin-top: 10px;min-height: 100px">
-                                    <div class="layui-upload-list" id="demo2"></div>
+                                <button class="layui-btn" onclick="xadmin.open('选择图片','{:url(\'media/image_list\',[\'path\'=>\'images\/\'])}')"><i class="layui-icon"></i>选择</button>
+                                <blockquote class="layui-elem-quote layui-quote-nm" style="margin-top: 10px;min-height: 100px">
+                                    <div class="layui-upload-list" id="demo2">
+                                        <input type="hidden" name="album" id="album">
+                                    </div>
                                 </blockquote>
-                                <input type="hidden" name="album" id="album">
                             </div>
                         </div>
                         <div class="layui-form-item">
@@ -180,16 +174,6 @@
         function () {
             let $ = layui.jquery;
             let form = layui.form, upload = layui.upload, tinymce = layui.tinymce, layer = layui.layer;
-            upload.render({
-                elem: '#upload',
-                url: '{:url(\'media/image_upload\')}',//上传接口
-                done: function (result) {
-                    //上传完毕后再显示出来
-                },
-                error: function () {
-                    //错误毁掉
-                }
-            });
             tinymce.render({
                 elem:"#features",
                 height:300,

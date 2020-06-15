@@ -72,6 +72,8 @@
                                     <input class="ByCopy" type="text" value="{$baseUrl}/{$item.key}" style="position: absolute;top: 0;left: 0;z-index: -99;width: 1px;height: 1px;border: none;background: transparent">
                                     <li class="btnCopy"><a href="#" title="复制url链接"><span class="iconfont" style="font-size: 16px">&#xe744;</span>复制</a></li>
                                     <li><a href="javascript:;" onclick="del('{:url(\'media/del_image\',[\'key\'=>$item.key])}')" title="删除" style="font-size: 16px"><span class="iconfont">&#xe69d;</span>删除</a></li>
+                                    <li><a href="javascript:;" onclick="insert('img','{$baseUrl}/{$item.key}')" title="选择并插入" style="font-size: 16px"><span class="iconfont">&#xe69d;</span>插入</a></li>
+                                    <li><a href="javascript:;" onclick="insert('img','{$baseUrl}/{$item.key}')" title="插入到列表" style="font-size: 16px"><span class="iconfont">&#xe69d;</span>插到列表</a></li>
                                 </ul>
                             </span>
                         </div>
@@ -85,7 +87,8 @@
     </div>
 </div>
 {/block}
-
+{block name="copyright"}
+{/block}
 {block name="javascript"}
 <script src="{{admin}}/js/common.js"></script>
 <script>
@@ -96,8 +99,8 @@ $(document).ready(function () {
             $(this).siblings('.ByCopy').select()
             document.execCommand("Copy"); //执行浏览器复制命令
             layer.msg('复制成功',{icon: 1, time: 1000});
-        })
-    })
+        });
+    });
 });
 </script>
 {/block}
