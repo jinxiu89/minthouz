@@ -21,9 +21,30 @@ function del(url) {
     })
 }
 
+/**
+ * 缩略图插入
+ * 注意：缩略图和相册列表的字段注意统一
+ * @param id
+ * @param key
+ */
 function insert(id, key) {
     let index = parent.layer.getFrameIndex(window.name);
-    parent.$('#' + id + '').attr('src', key);
-    parent.$('#' +id+'').siblings('#thumbnail').val(key);
+    parent.$('.' + id + ' img').attr('src', key);
+    parent.$('.' + id + ' input').val(key);
     parent.layer.close(index);
+}
+
+/**
+ * 相册插入列表
+ * 注意：缩略图和相册列表的字段注意统一
+ * @param id
+ * @param key
+ */
+function in_list(id, key) {
+    let index = parent.layer.getFrameIndex(window.name);
+    let img = '<img src="' + key + '" alt="" style="height: 92px;padding-right: 5px;">'
+    let input = '<input type="hidden" name="album[]" value="' + key + '">'
+    let into = parent.$('.' + id + '');
+    into.append(img);
+    into.append(input);
 }
