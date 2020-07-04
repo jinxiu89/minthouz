@@ -32,6 +32,7 @@ class Auth
     {
         $jump= Request::instance()->url(true) ?? (string)url('dashboard/index');
         if (!Session::get('adminUser', '')) {
+            Session::set('adminLogin',false);
             return redirect((string)url('user/login',['next'=>$jump]));
         }
         return $next($request);

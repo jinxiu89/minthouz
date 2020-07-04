@@ -47,37 +47,6 @@ class ProductCategory extends BaseService
         }
     }
 
-    /**
-     * @param array $product
-     * @param array $album
-     * @param array $content
-     * save 关联新增还是修改 产品数据
-     */
-    public function save(array $product, array $album, array $content)
-    {
-        try {
-            Db::transaction(function () use ($product, $album, $content) {
-                $id = Db::table('tb_product')->strict(false)->insertGetId($product);//主表添加
-                /*if (!empty($album) || isset($album)) {
-
-                }*/
-                $albums = [];
-                foreach ($album as $item) {
-                    $arr['type'] = 3;//事先规定好的 3 是相册 2是内容 1 是缩略图
-                    $arr['path'] = $item;
-                    $arr['product_id'] = intval($id);
-                    $albums[]=$arr;
-                }
-                Db::table('tb_product_image')->replace()->insertAll($albums);
-                $content['product_id'] = intval($id);
-                Db::table('tb_product_content')->strict(false)->insert($content);
-            });
-            return true;
-        } catch (\Exception $exception) {
-            if (!Env::get('app_debug')) abort(500, $exception->getMessage());
-            abort(500, $exception->getMessage());
-        }
-    }
 
     /**
      * @param int $parent_id

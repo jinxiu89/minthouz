@@ -122,7 +122,7 @@
                                 <button class="layui-btn" type="button" onclick="xadmin.open('选择图片','{:url(\'media/image_list\',[\'path\'=>\'images\/\'])}')"><i class="layui-icon"></i>选择</button>
                                 <blockquote class="layui-elem-quote layui-quote-nm" style="margin-top: 10px;min-height: 100px">
                                     <div class="img-list" id="img-list">
-                                        <input type="hidden" name="album" id="album">
+
                                     </div>
                                 </blockquote>
                             </div>
@@ -181,18 +181,20 @@
         function () {
             let $ = layui.jquery;
             let form = layui.form, upload = layui.upload, tinymce = layui.tinymce, layer = layui.layer;
-            tinymce.render({elem:"#features", height:300, plugins:'code', toolbar:'code', menubar:false,});
-            tinymce.render({elem:"#specifications", height:300, plugins:'code', toolbar:'code', menubar:false,});
+            tinymce.render({elem:"#features", height:300, plugins:'code', toolbar:'code', menubar:false,forced_root_block:false,});
+            tinymce.render({elem:"#specifications", height:300, plugins:'code', toolbar:'code', menubar:false,forced_root_block:false,});
             tinymce.render({elem: "#desktop", height: $(window).height()-80,
                 plugins: 'code autosave quickbars print preview searchreplace autolink fullscreen image link media codesample table charmap hr advlist lists wordcount imagetools indent2em',
                 toolbar: 'code undo redo | forecolor backcolor bold italic underline strikethrough | indent2em alignleft aligncenter alignright alignjustify outdent indent | link bullist numlist image table codesample | formatselect fontselect fontsizeselect',
                 menubar:false,
+                forced_root_block:false,
                 images_upload_url:''
             });
             tinymce.render({elem: "#mobile", height: $(window).height()-80,
                 plugins: 'code autosave quickbars print preview searchreplace autolink fullscreen image link media codesample table charmap hr advlist lists wordcount imagetools indent2em',
                 toolbar: 'code undo redo | forecolor backcolor bold italic underline strikethrough | indent2em alignleft aligncenter alignright alignjustify outdent indent | link bullist numlist image table codesample | formatselect fontselect fontsizeselect',
-                menubar:false
+                menubar:false,
+                forced_root_block:false,
             });
             form.verify({
                 features:function(){
