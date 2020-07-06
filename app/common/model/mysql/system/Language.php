@@ -13,6 +13,10 @@ namespace app\common\model\mysql\system;
 
 
 use app\common\model\mysql\BaseModel;
+use think\db\exception\DataNotFoundException;
+use think\db\exception\DbException;
+use think\db\exception\ModelNotFoundException;
+use think\Model;
 
 /**
  * Class Language
@@ -21,5 +25,16 @@ use app\common\model\mysql\BaseModel;
 class Language extends BaseModel
 {
     protected $table = 'tb_language';
+
+    /**
+     * @param string $code
+     * @return array|Model|null
+     * @throws DataNotFoundException
+     * @throws DbException
+     * @throws ModelNotFoundException
+     */
+    public static function getDataByCode(string $code){
+        return self::where(['code'=>$code,'status'=>1])->field('id,name,code,status')->find()->toArray();
+    }
 
 }

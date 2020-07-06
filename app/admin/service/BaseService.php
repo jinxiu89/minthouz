@@ -21,7 +21,6 @@ use think\facade\Env;
 class BaseService
 {
     protected $model;
-
     /**
      * @param array $data
      */

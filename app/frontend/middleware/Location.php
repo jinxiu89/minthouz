@@ -27,9 +27,8 @@ class Location
     public function handle($request, \Closure $next)
     {
         $code = explode('/', $request->url())[1];
-        $language_id=
         $request->code=$code;
-        /*if (!empty($path)) Cookie::set('lang_var', $code);*/
+        print_r("中间件：hello <br />");
         //就在这里加载语言呢？
         return $next($request);
     }

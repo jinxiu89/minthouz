@@ -10,8 +10,9 @@
  **/
 use think\facade\Route;
 
+Route::get('/$','home.index/index');
+Route::get('/index$','home.index/index');
 
-Route::get('/$', function (){
-    print_r("hello world!");
+Route::group('',function (){
+
 });
-Route::get('/hello','home.index/index');
