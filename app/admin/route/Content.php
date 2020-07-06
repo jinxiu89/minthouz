@@ -12,7 +12,11 @@ use think\facade\Route;
 
 Route::group('content',function (){
     Route::rule('/index','content.Index/index');
+//    产品
     Route::rule('/product_index','content.Product/index');
     Route::rule('/add_product','content.Product/add','GET|POST');
     Route::rule('/edit_product','content.Product/edit','GET|POST');
+    //幻灯片
+    Route::rule('/banner_index','content.Banner/index','GET');
+    Route::rule('/add_banner','content.Banner/add','GET|POST');
 });
