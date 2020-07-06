@@ -1,0 +1,87 @@
+/**
+* @name: product-list.less
+* @description: 公共模块css
+* @author: Alan(alan_webdeveloper@163.com)
+* @update: 2020-06-01 17:19
+*/
+.product-container {
+  padding: 0 0 100px;
+  background: #fff;
+}
+.product-list .title {
+  padding: 20px 10px 0;
+}
+.product-list .title h3 {
+  margin: 15px 0;
+  color: #00A82D;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.product-list .title .iconfont {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+  width: 20px;
+  height: 20px;
+  margin-right: 18px;
+  border: 1px solid #b0b0b0;
+  border-radius: 15px;
+  color: #b0b0b0;
+  line-height: 20px;
+  text-align: center;
+}
+.product-list .title .iconarrow-up {
+  color: #00A82D;
+  border-color: #00A82D;
+}
+.product-list .list-box {
+  margin: 0 10px;
+  border-top: 1px solid #eaeaea;
+  border-left: 1px solid #eaeaea;
+}
+.product-list .list-boxbefore,
+.product-list .list-box:after {
+  content: " ";
+  display: table;
+  zoom: 1;
+}
+.product-list .list-box:after {
+  clear: both;
+}
+.product-list .list-box .list-item {
+  float: left;
+  width: 50%;
+  text-align: center;
+  border-bottom: 1px solid #eaeaea;
+  border-right: 1px solid #eaeaea;
+}
+.product-list .list-box .list-item a {
+  display: block;
+  padding: 30px 15px 0;
+}
+.product-list .list-box .list-item a:hover p {
+  color: #00A82D;
+}
+.product-list .list-box .list-item a img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.product-list .list-box .list-item a p {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 30px 0;
+  color: #333;
+  line-height: 20px;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transform: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+/*# sourceMappingURL=Product-list.css.map */
