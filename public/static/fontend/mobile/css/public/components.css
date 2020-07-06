@@ -1,0 +1,416 @@
+/**
+* @name: components.less
+* @description: 公共模块css
+* @author: Alan(alan_webdeveloper@163.com)
+* @update: 2020-05-28 10:23
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body,
+ul,
+ol,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+form,
+fieldset,
+legend,
+input,
+textarea,
+button,
+p,
+blockquote,
+th,
+td,
+pre,
+xmp {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+strong {
+  font-weight: normal;
+}
+address,
+cite,
+dfn,
+em,
+i,
+optgroup,
+var {
+  font-style: normal;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-align: left;
+}
+caption,
+th {
+  text-align: inherit;
+}
+ul,
+ol,
+menu {
+  list-style: none;
+}
+fieldset,
+img {
+  border: 0;
+}
+input,
+button {
+  -webkit-appearance: none;
+  outline: none;
+  border: none;
+  background: none;
+}
+img,
+object,
+input,
+textarea,
+button,
+select {
+  vertical-align: middle;
+}
+article,
+aside,
+footer,
+header,
+section,
+nav,
+figure,
+figcaption,
+hgroup,
+details,
+menu {
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "\0020";
+}
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+input,
+textarea,
+button,
+select,
+a {
+  outline: 0 none;
+  border: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+mark {
+  background-color: transparent;
+}
+a,
+ins,
+s,
+u,
+del {
+  text-decoration: none;
+}
+sup,
+sub {
+  vertical-align: baseline;
+}
+html {
+  overflow-x: hidden;
+  height: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+a {
+  color: #25a4bb;
+}
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  -webkit-appearance: none;
+}
+@font-face {
+  font-family: Neo_Sans;
+  src: url("../../../lib/font/maax/Maax Rounded.otf");
+}
+body {
+  font-family: Neo_Sans, "Microsoft YaHei", Helvetica, "Meiryo UI", "Malgun Gothic", "Segoe UI", "Trebuchet MS", "Monaco", monospace, Tahoma, STXihei, "华文细黑", STHeiti, "Helvetica Neue", "Droid Sans", "wenquanyi micro hei", FreeSans, Arimo, Arial, SimSun, "宋体", Heiti, "黑体", sans-serif;
+  background: #f5f5f5;
+  transition: all 0.3S;
+  font-size: 14px;
+}
+.g-hd {
+  width: 100%;
+  background: #00A82D;
+}
+.g-hd .nav {
+  width: 100%;
+  height: 60px;
+}
+.g-hd .navbefore,
+.g-hd .nav:after {
+  content: " ";
+  display: table;
+  zoom: 1;
+}
+.g-hd .nav:after {
+  clear: both;
+}
+.g-hd .nav .logo {
+  float: left;
+  margin-left: 10px;
+}
+.g-hd .nav .logo img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50px;
+  margin: 5px 0;
+}
+.g-hd .nav .menu-bar {
+  float: right;
+  position: relative;
+  width: 24px;
+  height: 60px;
+  margin-right: 10px;
+}
+.g-hd .nav .menu-bar span,
+.g-hd .nav .menu-bar span:before,
+.g-hd .nav .menu-bar span:after {
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+}
+.g-hd .nav .menu-bar span {
+  top: 50%;
+  margin-top: -1px;
+}
+.g-hd .nav .menu-bar span::before {
+  content: '';
+  top: 8px;
+}
+.g-hd .nav .menu-bar span::after {
+  content: '';
+  top: -8px;
+}
+.g-hd .menu-box {
+  display: none;
+  background: #fff;
+}
+.g-hd .menu-box .menu-item .item-link {
+  display: block;
+  padding: 0 10px;
+  border-bottom: 1px solid #eaeaea;
+  line-height: 50px;
+  color: #333;
+}
+.g-hd .menu-box .menu-item .item-link .iconfont {
+  float: right;
+  font-size: 24px;
+}
+.g-hd .menu-box .child-menu .item-link {
+  padding: 0 20px;
+}
+.g-hd .menu-box .child-menu {
+  display: none;
+}
+.g-foot {
+  margin-top: 100px;
+}
+.g-foot .foot {
+  padding: 50px 10px;
+  background: #333;
+}
+.g-foot .footbefore,
+.g-foot .foot:after {
+  content: " ";
+  display: table;
+  zoom: 1;
+}
+.g-foot .foot:after {
+  clear: both;
+}
+.g-foot .foot .foot-itembefore,
+.g-foot .foot .foot-item:after {
+  content: " ";
+  display: table;
+  zoom: 1;
+}
+.g-foot .foot .foot-item:after {
+  clear: both;
+}
+.g-foot .foot .foot-item dl {
+  /*.fl();
+        width: 50%;*/
+  line-height: 30px;
+  margin-bottom: 20px;
+}
+.g-foot .foot .foot-item dl dt {
+  color: #fff;
+  font-weight: 600;
+}
+.g-foot .foot .foot-item dl dd .iconfont {
+  color: #888;
+  font-size: 16px;
+}
+.g-foot .foot .foot-item dl dd a {
+  color: #888;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transform: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.g-foot .foot .foot-item dl dd a:hover {
+  color: #00A82D;
+}
+.g-foot .foot .foot-contact {
+  margin-bottom: 20px;
+}
+.g-foot .foot .foot-contact h3 {
+  font-size: 14px;
+  color: #fff;
+  line-height: 30px;
+  font-weight: 600;
+}
+.g-foot .foot .foot-contact p {
+  color: #888;
+  font-size: 14px;
+  line-height: 30px;
+}
+.g-foot .foot .contact .des h3 {
+  font-size: 14px;
+  color: #fff;
+  line-height: 30px;
+  font-weight: 600;
+}
+.g-foot .foot .contact .des p {
+  font-size: 14px;
+  color: #888;
+  line-height: 30px;
+}
+.g-foot .foot .contact form {
+  margin: 10px 0;
+}
+.g-foot .foot .contact formbefore,
+.g-foot .foot .contact form:after {
+  content: " ";
+  display: table;
+  zoom: 1;
+}
+.g-foot .foot .contact form:after {
+  clear: both;
+}
+.g-foot .foot .contact form .iconfont {
+  color: #333;
+  font-size: 28px;
+}
+.g-foot .foot .contact form input {
+  float: left;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 0;
+}
+.g-foot .foot .contact form input[type="email"] {
+  width: 238px;
+  padding: 0 5px 0 15px;
+  background: #fff;
+  color: #333;
+  border: 1px solid #eaeaea;
+}
+.g-foot .foot .contact form input[type="submit"] {
+  width: 30px;
+  text-align: center;
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+  border: 1px solid #eaeaea;
+  border-left: none;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transform: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.g-foot .foot .contact form input[type="submit"]:hover {
+  background: #009419;
+  color: #fff;
+}
+.g-path {
+  margin: 10px 0;
+  padding: 0 10px;
+  background: #fff;
+}
+.g-path li {
+  display: inline-block;
+  line-height: 50px;
+}
+.g-path li a {
+  color: #333;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transform: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.g-path li a:hover {
+  color: #00A82D;
+}
+.g-top {
+  display: none;
+  position: fixed;
+  bottom: 10%;
+  right: 10px;
+  z-index: 9999;
+}
+.g-top .box {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background: rgba(0, 168, 45, 0.8);
+  border-radius: 50%;
+}
+.g-top .box .iconfont {
+  color: #fff;
+  font-size: 24px;
+}
+/*# sourceMappingURL=components.css.map */

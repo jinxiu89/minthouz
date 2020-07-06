@@ -1,0 +1,197 @@
+/**
+* @name: home.less
+* @description: 公共模块css
+* @author: Alan(alan_webdeveloper@163.com)
+* @update: 2020-05-28 10:23
+*/
+.banner .swiper-wrapper .swiper-slide {
+  position: relative;
+}
+.banner .swiper-wrapper .swiper-slide .img-box img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.banner .swiper-pagination-bullet-active {
+  background: #00A82D;
+}
+.min {
+  margin: 10px;
+}
+.min .min-list .min-item {
+  margin-bottom: 10px;
+}
+.min .min-list .min-item:nth-last-of-type(1) {
+  margin-bottom: 0;
+}
+.min .min-list .min-item img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.star {
+  text-align: center;
+}
+.star h3 {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin: 68px auto 40px;
+  font-weight: 600;
+}
+.star h3 span {
+  padding: 0 30px;
+  background: #f5f5f5;
+}
+.star h3:before,
+.star h3:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  z-index: -1;
+  width: 40%;
+  height: 2px;
+  background: #00A82D;
+}
+.star h3:before {
+  left: 10%;
+}
+.star h3:after {
+  right: 10%;
+}
+.star .star-listbefore,
+.star .star-list:after {
+  content: " ";
+  display: table;
+  zoom: 1;
+}
+.star .star-list:after {
+  clear: both;
+}
+.star .star-list .left,
+.star .star-list .right {
+  float: left;
+  width: 50%;
+}
+.star .star-list .star-item {
+  float: left;
+  box-sizing: border-box;
+}
+.star .star-list .star-item img {
+  -webkit-transition: box-shadow 0.2s linear;
+  -moz-transition: box-shadow 0.2s linear;
+  -ms-transform: box-shadow 0.2s linear;
+  -o-transition: box-shadow 0.2s linear;
+  transition: box-shadow 0.2s linear;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.star .star-list .star-item:hover img {
+  box-shadow: 0 8px 16px rgba(0, 168, 45, 0.18);
+}
+.star .star-list .left .star-item {
+  padding-right: 1px;
+}
+.star .star-list .right .star-item:nth-of-type(1) {
+  width: 50%;
+  padding-right: 0.5px;
+}
+.star .star-list .right .star-item:nth-of-type(2) {
+  width: 50%;
+  padding-left: 0.5px;
+}
+.star .star-list .right .star-item:nth-of-type(3) {
+  margin-top: 1px;
+}
+.videobefore,
+.video:after {
+  content: " ";
+  display: table;
+  zoom: 1;
+}
+.video:after {
+  clear: both;
+}
+.video h3 {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin: 68px auto 40px;
+  font-weight: 600;
+}
+.video h3 span {
+  padding: 0 30px;
+  background: #f5f5f5;
+}
+.video h3:before,
+.video h3:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  z-index: -1;
+  width: 40%;
+  height: 2px;
+  background: #00A82D;
+}
+.video h3:before {
+  left: 10%;
+}
+.video h3:after {
+  right: 10%;
+}
+.video .swiper-wrapper .swiper-slide {
+  position: relative;
+}
+.video .swiper-wrapper .swiper-slide .img-box img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.video .swiper-pagination-bullet-active {
+  background: #00A82D;
+}
+.video .img-box {
+  position: relative;
+}
+.video .img-box img {
+  transition: box-shadow 0.2s linear;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.video .img-box .icon-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  margin-left: -30px;
+  margin-top: -30px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-transition: background 0.2s linear;
+  -moz-transition: background 0.2s linear;
+  -ms-transform: background 0.2s linear;
+  -o-transition: background 0.2s linear;
+  transition: background 0.2s linear;
+}
+.video .img-box .icon-box .iconfont {
+  display: block;
+  font-size: 30px;
+  color: #00A82D;
+}
+/*# sourceMappingURL=Home.css.map */

@@ -1,0 +1,85 @@
+/**
+* @name: product-list.less
+* @description: 公共模块css
+* @author: Alan(alan_webdeveloper@163.com)
+* @update: 2020-06-01 17:19
+*/
+@import "../public/mixins";
+@import "../public/variables";
+
+.g-hd .nav {
+    background: @whiteColor;
+}
+
+section {
+    padding-top: 100px;
+}
+
+.product-container {
+    padding: 0 0 100px;
+    background: @whiteColor;
+}
+.product-list {
+    .title {
+        padding-top: 20px;
+        h3 {
+            margin: 15px 0;
+            color: @activeColor;
+            font-size: 18px;
+            line-height: 30px;
+            font-weight: 400;
+            cursor: pointer;
+        }
+        .iconfont {
+            display: inline-block;
+            *zoom: 1;
+            *display: inline;
+            width: 20px;
+            height: 20px;
+            margin-right: 18px;
+            border: 1px solid #b0b0b0;
+            border-radius: 15px;
+            color: #b0b0b0;
+            line-height: 20px;
+            text-align: center
+        }
+        .iconarrow-up {
+            color: @activeColor;
+            border-color: @activeColor;
+        }
+    }
+
+    .list-box {
+        .clearFix();
+        border-top: 1px solid @borderColor;
+        border-left: 1px solid @borderColor;
+        .list-item {
+            float: left;
+            width: 20%;
+            text-align: center;
+            border: 1px solid @borderColor;
+            border-left: none;
+            border-top: none;
+        }
+        .list-item a {
+            display: block;
+            padding: 30px 15px 0;
+            &:hover p {
+                color: @activeColor;
+            }
+        }
+        .list-item a img {
+            .img-responsive();
+            .center-block();
+        }
+        .list-item a p {
+            .text-overflow();
+            padding: 30px 0;
+            color: @baseColor;
+            line-height: 20px;
+            #transition(all .2s linear);
+        }
+    }
+}
+
+

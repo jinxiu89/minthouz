@@ -1,0 +1,129 @@
+/**
+* @name: product-detail.less
+* @description: 公共模块css
+* @author: Alan(alan_webdeveloper@163.com)
+* @update: 2020-06-03 11:40
+*/
+@import "../public/mixins";
+@import "../public/variables";
+
+.g-hd .nav {
+    background: @whiteColor;
+}
+
+.product-container {
+    padding-top: 100px;
+    .nav-active {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        background: @whiteColor;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, .1);
+    }
+}
+
+/* 產品導航 */
+.product-nav {
+    width: 100%;
+    height: 60px;
+    .clearFix();
+    background: transparent;
+    #transition(all .2s linear);
+    h3 {
+        .fl();
+        margin: 0;
+        line-height: 60px;
+        color: #333;
+        font-size: 24px;
+    }
+    .sub_nav {
+        .fr();
+        height: 100%;
+        overflow: hidden;
+        span {
+            .fl();
+            display: block;
+            height: 100%;
+            line-height: 60px;
+            margin: 0 16px;
+            color: #434a54;
+            font-size: 14px;
+            cursor: pointer;
+            &:nth-of-type(1) {
+                margin-left: 0;
+            }
+            &:nth-last-of-type(1) {
+                margin-right: 0;
+            }
+        }
+        .active {
+            color: #888;
+            cursor: default;
+        }
+        a {
+            display: block;
+            height: 24px;
+            line-height: 24px;
+            width: auto;
+            margin: 18px 0;
+            padding: 0 12px;
+            background: @activeColor;
+            color: @whiteColor;
+            &:hover {
+                background: @activeColor - 20;
+            }
+        }
+    }
+}
+
+/*  */
+.product-Overview {
+    margin-bottom: 50px;
+}
+
+/* 參數 */
+.product-Specifications {
+    display: none;
+    #specification {
+        padding: 4% 0;
+        background: #fff;
+
+        ul {
+            width: 65%;
+            margin: auto;
+        }
+        ul > li {
+            .clearFix();
+            min-height: 50px;
+            line-height: 50px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        ul > li.li_title > strong {
+            color: #333;
+            line-height: 20px;
+            vertical-align: middle;
+        }
+        ul > li:first-child > strong {
+            font-size: 15px;
+        }
+        ul > li > strong {
+            float: left;
+            width: 30%;
+            padding: 0 15px;
+            color: #666;
+        }
+        ul > li > div {
+            float: left;
+        }
+        ul > li > div > p {
+            line-height: 24px;
+            color: #666;
+            font-size: 12px;
+        }
+        ul > li > div {
+            padding: 15px !important;
+            border-left: 1px solid #eaeaea;
+        }
+    }
+}
