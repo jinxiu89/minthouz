@@ -1,8 +1,10 @@
 <?php
+
 namespace app\frontend\controller\home;
 
 use app\frontend\controller\Base;
 use think\App;
+use think\facade\Env;
 use think\facade\Session;
 use think\facade\View;
 
@@ -25,13 +27,13 @@ class Index extends Base
     public function __construct(App $app)
     {
         parent::__construct($app);
-        View::assign('language',Session::get('language'));
+        View::assign('language', Session::get('language'));
     }
 
     public function index()
     {
-        if($this->request->isGet()){
-            return View::fetch();
+        if ($this->request->isGet()) {
+            return View::fetch($this->template.'/home/index.html');
         }
     }
 }

@@ -30,4 +30,11 @@ class BaseService
         $this->debug = Env::get('APP_DEBUG', false);
     }
 
+    /**
+     * @param $code
+     */
+    public function init($code){
+
+    }
+
 }
