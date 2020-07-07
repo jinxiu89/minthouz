@@ -109,9 +109,32 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a onclick="xadmin.add_tab('幻灯片管理','{:url(\'content/banner_index\')}')">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>幻灯片</cite></a>
+                        <a href="javascript:;">
+                            <i class="iconfont left-nav-li" lay-tips="推荐管理">&#xe699;</i>
+                            <cite>推荐管理</cite>
+                            <i class="iconfont nav_right">&#xe697;</i></a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a onclick="xadmin.add_tab('幻灯片(活动/新品)','{:url(\'content/prettiest_index\',[\'type\'=>1])}')">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    <cite>幻灯片(活动/新品)</cite></a>
+                            </li>
+                            <li>
+                                <a onclick="xadmin.add_tab('热门(实力担当)','{:url(\'content/prettiest_index\',[\'type\'=>2])}')">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    <cite>热门(实力担当)</cite></a>
+                            </li>
+                            <li>
+                                <a onclick="xadmin.add_tab('重金打造(镇馆之宝)','{:url(\'content/prettiest_index\',[\'type\'=>3])}')">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    <cite>重金(镇馆之宝)</cite></a>
+                            </li>
+                            <li>
+                                <a onclick="xadmin.add_tab('霸屏横幅(实力推荐)','{:url(\'content/prettiest_index\',[\'type\'=>4])}')">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    <cite>霸屏横幅(实力推荐)</cite></a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <a onclick="xadmin.add_tab('产品管理','{:url(\'content/product_index\')}')">

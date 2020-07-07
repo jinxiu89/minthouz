@@ -16,7 +16,8 @@ Route::group('content',function (){
     Route::rule('/product_index','content.Product/index');
     Route::rule('/add_product','content.Product/add','GET|POST');
     Route::rule('/edit_product','content.Product/edit','GET|POST');
-    //幻灯片
-    Route::rule('/banner_index','content.Banner/index','GET');
-    Route::rule('/add_banner','content.Banner/add','GET|POST');
+    //Prettiest 优质产品 首页霸屏，栏目推介位
+    Route::rule('/prettiest_index','content.Prettiest/index','GET');
+    Route::rule('/add_prettiest','content.Prettiest/add','GET|POST');
+    Route::rule('/edit_prettiest','content.Prettiest/edit','GET|POST');
 });

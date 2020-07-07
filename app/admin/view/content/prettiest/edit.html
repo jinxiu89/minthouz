@@ -3,19 +3,36 @@
 <div class="layui-fluid">
     <div class="layui-row">
         <form class="layui-form">
+            <input type="hidden" id="id" name="id" value="{$data.id}">
             <div class="layui-form-item">
-                <label for="parent_id" class="layui-form-label">
+                <label for="type" class="layui-form-label">
                     <span class="x-red">*</span>类型
                 </label>
                 <div class="layui-input-inline">
-                    <select name="parent_id" lay-verify="required" id="parent_id">
-                        <option value="0">顶级</option>
-                        {notempty name='category'}
-                        {volist name="category" id="vo"}
-                        <option value="{$vo.id}" {if($parent_id== $vo.id)}selected{/if}>{$vo.delimiter|raw}{$vo.name}</option>
-                        {/volist}
-                        {/notempty}
+                    <select name="type" lay-verify="required" id="type">
+                        <option value="{$data.type}">{$data.value}</option>
                     </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="listorder" class="layui-form-label">
+                    <span class="x-red">*</span>排序
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="listorder" name="listorder" required="" lay-verify="required"
+                           autocomplete="off" class="layui-input" value="{$data.listorder}">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="image" class="layui-form-label">
+                    <span class="x-red">*</span>图片
+                </label>
+                <div class="layui-input-inline">
+                    <button class="layui-btn" type="button" onclick="xadmin.open('选择图片','{:url(\'media/image_list\',[\'path\'=>\'images\/\'])}')"><i class="layui-icon"></i>选择</button>
+                    <div class="image" style="height: 92px;padding-top: 5px">
+                        <img src="{$data.image}" alt="" style="height: 92px">
+                        <input type="hidden" name="image" value="{$data.image}" id="image">
+                    </div>
                 </div>
             </div>
             <div class="layui-form-item">
@@ -23,16 +40,15 @@
                     标题
                 </label>
                 <div class="layui-input-block" style="width: 50%">
-                    <input type="text" id="title" name="title" required="" lay-verify="required"
-                           autocomplete="off" class="layui-input">
+                    <input type="text" id="title" name="title" required="" autocomplete="off" class="layui-input" value="{$data.title}">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label for="description" class="layui-form-label">
-                    <span class="x-red">*</span>描述
+                    描述
                 </label>
                 <div class="layui-input-block" style="width: 50%">
-                    <textarea name="description" id="description" placeholder="请输入内容" class="layui-textarea"></textarea>
+                    <textarea name="description" id="description" placeholder="请输入内容" class="layui-textarea">{$data.description}</textarea>
                 </div>
             </div>
             <div class="layui-form-item">
@@ -40,8 +56,7 @@
                     按钮文案
                 </label>
                 <div class="layui-input-inline">
-                    <input type="text" id="button" name="button" required="" lay-verify="required"
-                           autocomplete="off" class="layui-input">
+                    <input type="text" id="button" name="button" required="" autocomplete="off" class="layui-input" value="{$data.button}">
                 </div>
             </div>
             <div class="layui-form-item">
@@ -49,15 +64,14 @@
                     指向链接
                 </label>
                 <div class="layui-input-block" style="width: 50%" >
-                    <input type="text" id="path" name="path" required="" lay-verify="required"
-                           autocomplete="off" class="layui-input">
+                    <input type="text" id="path" name="path" required="" autocomplete="off" class="layui-input" value="{$data.path}">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">
                 </label>
                 <button class="layui-btn" lay-filter="add" lay-submit="">
-                    增加
+                    保存
                 </button>
             </div>
         </form>
@@ -78,7 +92,7 @@
             form.on('submit(add)',
                 function (data) {
                     $.ajax({
-                        url: "{:url('category/add_product')}",
+                        url: "{:url('content/edit_prettiest')}",
                         type: 'POST',
                         data: data.field,
                         'success': function (result) {
