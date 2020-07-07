@@ -101,7 +101,7 @@ body {
     .clearFix();
     width: 1200px;
     margin: 0 auto;
-    @media screen and (max-width: 1120px) {
+    @media screen and (max-width: 1199px) {
         width: 100%;
     }
 }
@@ -116,7 +116,6 @@ body {
         background: @baseColor;
         .about {
             .fl();
-            margin-left: -5px;
         }
         .about span {
             padding: 0 5px;
@@ -124,14 +123,17 @@ body {
                 border-left: 1px solid @borderColor;
                 border-right: 1px solid @borderColor;
             }
+            &:nth-of-type(1) {
+                padding-left: 0;
+            }
         }
         .store {
             .fr();
-            margin-right: -5px;
         }
         .store span {
             padding: 0 5px;
             &:nth-last-of-type(1) {
+                padding-right: 0;
                 border-left: 1px solid @borderColor;
             }
         }
@@ -173,7 +175,6 @@ body {
         }
         .menu-box {
             .fr();
-            margin-right: -15px;
         }
         .menu-box .menu-list .menu-item {
             display: inline-block;
@@ -183,6 +184,9 @@ body {
                 &:before {
                     #transform(scaleX(1));
                 }
+            }
+            &:nth-last-of-type(1) {
+                padding-right: 0;
             }
         }
         .menu-box .menu-list .menu-item .item-link {
@@ -207,7 +211,6 @@ body {
                 #transform(scaleX(0));
             }
         }
-
         //item-children
         .item-children {
             display: none;
@@ -263,6 +266,28 @@ body {
             line-height: 50px;
         }
         //item-children End
+    }
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+        .hd {
+            padding: 0 10px;
+        }
+        .nav {
+            padding: 0 10px;
+        }
+        .nav .menu-box .menu-list .menu-item {
+            padding: 20px 5px;
+        }
+    }
+    @media screen and (min-width: 992px) and (max-width: 1199px) {
+        .hd {
+            padding: 0 15px;
+        }
+        .nav {
+            padding: 0 15px;
+        }
+        .nav .menu-box .menu-list .menu-item {
+            padding: 20px 10px;
+        }
     }
 }
 //g-hd End
@@ -366,7 +391,6 @@ body {
             line-height: 26px;
         }
     }
-
     .foot {
         background: @baseColor;
         .clearFix();
@@ -396,7 +420,6 @@ body {
             }
         }
     }
-
     .foot .foot-contact {
         .fl();
         width: 30%;
@@ -408,6 +431,64 @@ body {
             color: @whiteSmoke;
             font-size: 14px;
             line-height: 30px;
+        }
+    }
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+        .about {
+            .clearFix();
+            padding: 40px 10px;
+            background: @bodyBgColor;
+        }
+        .about .contact {
+            width: 50%;
+            .des {
+                float: none;
+            }
+            form {
+                .clearFix();
+                display: block;
+                margin: 10px 0 10px 0;
+            }
+        }
+        .about .community {
+            width: 50%;
+            .ico-box {
+                .fl();
+                margin-left: 20px;
+                margin-top: 26px;
+            }
+        }
+        .foot {
+            padding: 100px 10px;
+        }
+    }
+    @media screen and (min-width: 992px) and (max-width: 1199px) {
+        .about {
+            .clearFix();
+            padding: 40px 15px;
+            background: @bodyBgColor;
+        }
+        .about .contact {
+            width: 50%;
+            .des {
+                float: none;
+            }
+            form {
+                .clearFix();
+                display: block;
+                margin: 10px 0 10px 0;
+            }
+        }
+        .about .community {
+            width: 50%;
+            .ico-box {
+                .fl();
+                margin-left: 20px;
+                margin-top: 26px;
+            }
+        }
+        .foot {
+            padding: 100px 15px;
         }
     }
 }
