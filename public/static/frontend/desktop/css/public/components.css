@@ -181,6 +181,23 @@ body {
     width: 100%;
   }
 }
+.g-notice {
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  color: #888;
+}
+.g-notice .des {
+  color: #888;
+}
+.g-notice .des:hover {
+  color: #00A82D;
+  text-decoration: underline;
+}
+.g-notice .close {
+  margin-left: 20px;
+  cursor: pointer;
+}
 .g-hd {
   position: relative;
 }
