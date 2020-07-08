@@ -1,3 +1,10 @@
+function gNotice () {
+    var close = $('#g-notice .close');
+    close.click(function () {
+        $(this).parents('#g-notice').slideUp()
+    })
+}
+
 function menuHover () {
     var nav = $('#nav'),
         navItem = $('#menu-list .menu-item');
@@ -8,6 +15,8 @@ function menuHover () {
 }
 
 $(function () {
+
+    gNotice();
 
     menuHover();
 
