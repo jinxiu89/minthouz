@@ -463,6 +463,7 @@ body {
     .foot .foot-contact {
         .fl();
         width: 30%;
+        line-height: 30px;
         h3 {
             color: @whiteColor;
             font-weight: 600;
@@ -471,6 +472,13 @@ body {
             color: @whiteSmoke;
             font-size: 14px;
             line-height: 30px;
+        }
+        p a {
+            color: @activeColor;
+            #transition(all .2s linear);
+            &:hover {
+                color: @activeColor + 20;
+            }
         }
     }
     @media screen and (min-width: 768px) and (max-width: 991px) {
