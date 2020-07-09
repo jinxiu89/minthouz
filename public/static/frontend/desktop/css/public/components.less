@@ -298,6 +298,19 @@ body {
         .nav .menu-box .menu-list .menu-item {
             padding: 20px 5px;
         }
+        .nav .item-children {
+            padding: 0 10px;
+        }
+        .nav .item-children .children-list {
+            width: 33.333%;
+            padding: 50px 10px;
+            &:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(3) {
+                padding-bottom: 0;
+            }
+        }
+        .nav .item-children .children-list a {
+            font-size: 12px;
+        }
     }
     @media screen and (min-width: 992px) and (max-width: 1199px) {
         .hd {
@@ -308,6 +321,12 @@ body {
         }
         .nav .menu-box .menu-list .menu-item {
             padding: 20px 10px;
+        }
+        .nav .item-children {
+            padding: 0 15px;
+        }
+        .nav .item-children .children-list a {
+            font-size: 12px;
         }
     }
 }
@@ -444,6 +463,7 @@ body {
     .foot .foot-contact {
         .fl();
         width: 30%;
+        line-height: 30px;
         h3 {
             color: @whiteColor;
             font-weight: 600;
@@ -452,6 +472,13 @@ body {
             color: @whiteSmoke;
             font-size: 14px;
             line-height: 30px;
+        }
+        p a {
+            color: @activeColor;
+            #transition(all .2s linear);
+            &:hover {
+                color: @activeColor + 20;
+            }
         }
     }
     @media screen and (min-width: 768px) and (max-width: 991px) {
