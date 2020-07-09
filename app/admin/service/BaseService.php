@@ -21,6 +21,7 @@ use think\facade\Env;
 class BaseService
 {
     protected $model;
+
     /**
      * @param array $data
      */
@@ -44,6 +45,20 @@ class BaseService
         try {
             $result = $this->model::update($data);
             return $result->id;
+        } catch (\Exception $exception) {
+            if (true == Env::get('APP_DEBUG')) abort(500, $exception->getMessage());
+            abort(500, '服务器内部错误');
+        }
+    }
+
+    /**
+     * @param int $id
+     * @param int $status
+     */
+    public function changeStatus(int $id, int $status)
+    {
+        try {
+            return $this->model::update((array)['id' => $id, 'status' => $status]);
         } catch (\Exception $exception) {
             if (true == Env::get('APP_DEBUG')) abort(500, $exception->getMessage());
             abort(500, '服务器内部错误');

@@ -51,6 +51,11 @@ class BaseAdmin extends BaseController
         }*/
     }
 
+    public function changeStatus()
+    {
+
+    }
+
     public function index()
     {
         try {

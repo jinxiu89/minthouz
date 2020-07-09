@@ -16,3 +16,4 @@ Route::group('media',function (){
     Route::rule('/create_image_folder','media.Image/createFolder','GET|POST');
     Route::rule('/del_image','media.Image/delImage','GET|POST');
 });
+Route::get('changeStatus','BaseAdmin/changeStatus');

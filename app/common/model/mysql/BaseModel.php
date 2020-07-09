@@ -17,6 +17,10 @@ use think\facade\Env;
 use think\Model;
 use think\Paginator;
 
+/**
+ * Class BaseModel
+ * @package app\common\model\mysql
+ */
 class BaseModel extends Model
 {
     protected $autoWriteTimestamp = true;

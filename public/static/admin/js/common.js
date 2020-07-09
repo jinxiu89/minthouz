@@ -48,3 +48,20 @@ function in_list(id, key) {
     into.append(img);
     into.append(input);
 }
+
+function changeStatus(url) {
+    $.ajax({
+        url:url,
+        type:'get',
+        dataType:'json',
+        success:function (result) {
+            if (result.status === 1) {
+                layer.msg(result.message, {'icon': 1, 'time': 600}, function () {
+                    window.location.replace(location.href);
+                });
+            } else {
+                layer.msg(result.message, {'icon': 5, 'time': 8000});
+            }
+        }
+    })
+}

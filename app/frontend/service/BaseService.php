@@ -13,6 +13,7 @@ declare(strict_types=1);
 namespace app\frontend\service;
 
 use think\facade\Env;
+use think\facade\View;
 
 /**
  * Class BaseService

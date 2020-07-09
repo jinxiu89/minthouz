@@ -20,6 +20,7 @@ use think\facade\Env;
 use think\facade\Request;
 use think\facade\Session;
 use app\frontend\service\BaseService;
+use think\response\Redirect;
 
 /**
  * Class Base
@@ -28,7 +29,7 @@ use app\frontend\service\BaseService;
 class Base extends BaseController
 {
     protected $service;
-    protected $language_id;
+    protected $language;
     protected $template;
 
     /**
@@ -37,19 +38,20 @@ class Base extends BaseController
     public function initialize()
     {
         $code = explode('/', request()->url())[1];
-        $language = (new Language())->getDataByCode((string)$code);
-        if (!empty($language)) { //todo:关于语言状态还没处理
-            Session::set('language', $language);
+        $this->language = (new Language())->getDataByCode((string)$code);
+        if (!empty($this->language) || $this->language['status'] != 1) { //todo:关于语言状态还没处理
+            Session::set('language', $this->language);
+            Session::set('lang_var', $this->language['code']);
         } else {
             abort(403, '不合法的语言选项');
         }
         parent::initialize();
-        if ($this->request->isMobile()) {
-            $this->template = app()->getRootPath().'app/'.app('http')->getName() . '/view/mobile';
+        if (is_mobile()) {
+            $this->template = app()->getRootPath() . 'app/' . app('http')->getName() . '/view/mobile';
         } else {
-            $this->template = app()->getRootPath().'app/'.app('http')->getName() . '/view/desktop';
+            $this->template = app()->getRootPath() . 'app/' . app('http')->getName() . '/view/desktop';
         }
-//        (new BaseService())->init((int)$language['id']);
+        (new BaseService())->init((int)$this->language['id']);
 
     }
 
@@ -65,4 +67,12 @@ class Base extends BaseController
 
     }
 
+    /**
+     * @return Redirect
+     */
+    public function autoload()
+    {
+        $code = (Session::get('lang_var')) ? (Session::get('lang_var')) : 'en_us';
+        return redirect('/' . $code, 200);
+    }
 }

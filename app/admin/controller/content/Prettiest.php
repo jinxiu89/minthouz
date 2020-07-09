@@ -18,6 +18,7 @@ use think\App;
 use think\facade\View;
 use app\admin\validate\content\Prettiest as validate;
 use app\admin\service\content\Prettiest as service;
+use think\response\Json;
 
 /**
  * Class Prettiest 优质的 最棒的 重金推荐的
@@ -103,4 +104,21 @@ class Prettiest extends BaseAdmin
         }
     }
 
+    /**
+     * @return Json|void
+     * 修改状态
+     *
+     */
+    public function changeStatus()
+    {
+        parent::changeStatus();
+        $id = input('get.id');
+        $status = input('get.status');
+
+        $result = $this->service->changeStatus((int)$id, (int)$status);
+        if ($result->id) {
+            return show(1, '保存成功');
+        }
+        return show(0, '保存失败，未知原因');
+    }
 }

@@ -7,6 +7,7 @@ use think\App;
 use think\facade\Env;
 use think\facade\Session;
 use think\facade\View;
+use app\frontend\service\Prettiest;
 
 /**
  * Class Index
@@ -30,10 +31,24 @@ class Index extends Base
         View::assign('language', Session::get('language'));
     }
 
+    /**
+     * @return string protected $type = [
+     * '1' => '幻灯片(活动/新品)',
+     * '2' => '热门(实力担当)',
+     * '3' => '重金打造(镇馆之宝)',
+     * '4' => '霸屏横幅(实力推荐)'];
+     */
     public function index()
     {
         if ($this->request->isGet()) {
-            return View::fetch($this->template.'/home/index.html');
+            $Prettiest = new Prettiest();
+            $banner = $Prettiest->getPrettiest((int)1, (int)$this->language['id']);//type 见函数注释
+            $hot = array_slice($Prettiest->getPrettiest((int)2, (int)$this->language['id']), 0, 2); //第二个三个图的数据
+            $starProduct = array_slice($Prettiest->getPrettiest((int)3, (int)$this->language['id']), 0, 3);
+            View::assign('banner', $banner);
+            View::assign('hot', $hot);
+            View::assign('starProduct', $starProduct);
+            return View::fetch($this->template . '/home/index.html');
         }
     }
 }

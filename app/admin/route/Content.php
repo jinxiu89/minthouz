@@ -20,4 +20,5 @@ Route::group('content',function (){
     Route::rule('/prettiest_index','content.Prettiest/index','GET');
     Route::rule('/add_prettiest','content.Prettiest/add','GET|POST');
     Route::rule('/edit_prettiest','content.Prettiest/edit','GET|POST');
+    Route::rule('/status_prettiest','content.Prettiest/changeStatus','GET');
 });

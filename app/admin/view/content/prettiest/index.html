@@ -40,12 +40,12 @@
                         <thead>
                         <tr>
                             <th width="40">ID</th>
-                            <th width="70">排序</th>
                             <th width="120">图片</th>
                             <th width="200">标题</th>
                             <th width="200">描述</th>
                             <th>路径</th>
                             <th width="70">创建时间</th>
+                            <th width="70">排序</th>
                             <th width="40">状态</th>
                             <th width="120">操作</th>
                         </thead>
@@ -54,29 +54,35 @@
                         {volist name="data.data" id="vo"}
                         <tr>
                             <td>{$vo.id}</td>
-                            <td><input type="text" name="listorder" value="{$vo.listorder}" class="layui-input">  </td>
                             <td>
                                 <span style="width: 100px;height: 100px;display: inline-block" >
                                     <img src="{$vo.image}" alt=""  style="width: 100%;height: 100%">
                                 </span>
-
                             </td>
                             <td>{$vo.title}</td>
                             <td>{$vo.description}</td>
                             <td>{$vo.path}</td>
                             <td>{notempty name="vo.create_time"}{$vo.create_time|date="Y-m-d"}{/notempty}</td>
-                            <td class="td-status"><span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td>
+                            <td><input type="text" name="listorder" value="{$vo.listorder}" class="layui-input">  </td>
+                            <td class="td-status">
+                                {if($vo.status == 1)}
+                                <button class="layui-btn layui-btn-normal layui-btn-mini">启用</button>
+                                {else /}
+                                <button class="layui-btn layui-btn-normal layui-btn-mini">禁用</button>
+                                {/if}
+                            </td>
                             <td class="td-manage">
-                                <!--<a onclick="member_stop(this,'10001')" href="javascript:;"  title="启用">
-                                    <i class="layui-icon">&#xe601;</i>
-                                </a>-->
                                 <button class="layui-btn layui-btn layui-btn-xs"
                                         onclick="xadmin.full('编辑','{:url(\'content/edit_prettiest\',[\'id\'=>$vo.id])}')">
                                     <i class="layui-icon">&#xe642;</i>编辑
                                 </button>
-                                <a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;">
-                                    <i class="layui-icon">&#xe640;</i>
-                                </a>
+                                {if($vo.status == 2)}
+                                <button class="layui-btn layui-btn-normal layui-btn-mini"
+                                        onclick="changeStatus('{:url(\'content/status_prettiest\',[\'id\'=>$vo.id,\'status\'=>1])}')">启用</button>
+                                {else /}
+                                <button class="layui-btn layui-btn-danger layui-btn-mini"
+                                        onclick="changeStatus('{:url(\'content/status_prettiest\',[\'id\'=>$vo.id,\'status\'=>2])}')">禁用</button>
+                                {/if}
                             </td>
                         </tr>
                         {/volist}
@@ -93,7 +99,5 @@
 </div>
 {/block}
 {block name="javascript"}
-<script>
-
-</script>
+<script src="{{admin}}/js/common.js"></script>
 {/block}

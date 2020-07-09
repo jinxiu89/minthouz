@@ -9,7 +9,10 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 use think\facade\Route;
+use think\facade\Session;
+use think\facade\Request;
 
-Route::get('/',function (){
-    print_r("hello  world");
+Route::get('/', function () {
+    $code = (Session::get('lang_var')) ? (Session::get('lang_var')) : get_lang(Request::instance()->header());
+    return redirect('/' . $code, 200);
 });

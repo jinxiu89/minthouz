@@ -13,6 +13,3 @@ use think\facade\Route;
 Route::get('/$','home.index/index');
 Route::get('/index$','home.index/index');
 
-Route::group('',function (){
-
-});
