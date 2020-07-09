@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>product-list - minthouz</title>
+    <link rel="stylesheet" href="{{frontend}}/lib/iconfont/iconfont.css">
+    <link rel="stylesheet" href="{{frontend}}/desktop/css/public/components.css">
+    <!--私有页面样式文件-->
+    <link rel="stylesheet" href="{{frontend}}/desktop/css/page/Product-list.css">
+    <!--私有页面样式结束-->
+</head>
+<body>
+<!-- 重大通知栏 -->
+<div class="g-notice" id="g-notice">
+    <a class="des" href="#">minthouz、物流及客服公告>></a>
+    <span class="close">X</span>
+</div>
+<!-- 重大通知栏 -->
+<!--header-->
+<header class="g-hd">
+
+    <div class="hd">
+        <div class="common-width">
+            <div class="about">
+                <span><a href="./Home.html">MINTHOUZ</a></span>
+                <span><a href="#">ABOUT US</a></span>
+                <span><a href="#" target="_blank">FIND US ON FACEBOOK</a></span>
+            </div>
+
+            <div class="store">
+                <span><a href="#" target="_blank">Amazon</a></span>
+                <span><a href="#" target="_blank">Newegg</a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav" id="nav">
+        <div class="common-width">
+            <div class="logo">
+                <h1>
+                    <a href="./Home.html">
+                        <img src="{{frontend}}/desktop/img/minthouz-slogan.png" alt="">
+                    </a>
+                </h1>
+            </div>
+
+            <div class="menu-box">
+                <ul class="menu-list" id="menu-list">
+                    <li class="menu-item">
+                        <a class="item-link" href="./product-list.html">All Products</a>
+
+                        <!--<div class="all-category">
+                            <ul class="category-list">
+                                <li class="category-item">
+                                    <a href="#">USB Fan</a> <span class="iconfont iconnext"></span>
+                                    <div class="box">
+                                    </div>
+                                </li>
+                                <li class="category-item"><a href="#">Table Lamp</a> <span class="iconfont iconnext"></span></li>
+                                <li class="category-item"><a href="#">Holder</a> <span class="iconfont iconnext"></span></li>
+                                <li class="category-item"><a href="#">Humidifier</a> <span class="iconfont iconnext"></span></li>
+                                <li class="category-item"><a href="#">Aromatherapy Diffuse</a> <span class="iconfont iconnext"></span></li>
+                                <li class="category-item"><a href="#">Others</a> <span class="iconfont iconnext"></span></li>
+                            </ul>
+                        </div>-->
+
+                    </li>
+                    <li class="menu-item">
+                        <a class="item-link" href="#">USB Fan</a>
+                        <div class="item-children">
+                            <ul class="common-width">
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/miBoxS.jpg?width=140&height=140" alt="">
+                                        <p>Mi Box S</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/Projector.jpg?width=140&height=140" alt="">
+                                        <p>Mi Laser Projector 150''</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/Product/smartcompactprojector/compactprojector140.jpg?width=140&height=140" alt="">
+                                        <p>Mi Smart Compact Projector</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/secutrity-camera-140140.jpg?width=140&height=140" alt="">
+                                        <p>Mi Home Security Camera</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/Product/360camera/140pic.jpg?width=140&height=140" alt="">
+                                        <p>Mi Home Security Camera 360° 1080P</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/DeskLamp.png?width=140&height=140" alt="">
+                                        <p>Mi LED Desk Lamp</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="menu-item">
+                        <a class="item-link" href="#">Table Lamp</a>
+                        <div class="item-children">
+                            <ul class="common-width">
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/miBoxS.jpg?width=140&height=140" alt="">
+                                        <p>Mi Box S</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/Projector.jpg?width=140&height=140" alt="">
+                                        <p>Mi Laser Projector 150''</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/Product/smartcompactprojector/compactprojector140.jpg?width=140&height=140" alt="">
+                                        <p>Mi Smart Compact Projector</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/secutrity-camera-140140.jpg?width=140&height=140" alt="">
+                                        <p>Mi Home Security Camera</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/Product/360camera/140pic.jpg?width=140&height=140" alt="">
+                                        <p>Mi Home Security Camera 360° 1080P</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/DeskLamp.png?width=140&height=140" alt="">
+                                        <p>Mi LED Desk Lamp</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="menu-item">
+                        <a class="item-link" href="#">Holder</a>
+                        <div class="item-children">
+                            <ul class="common-width">
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/miBoxS.jpg?width=140&height=140" alt="">
+                                        <p>Mi Box S</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/Projector.jpg?width=140&height=140" alt="">
+                                        <p>Mi Laser Projector 150''</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/Product/smartcompactprojector/compactprojector140.jpg?width=140&height=140" alt="">
+                                        <p>Mi Smart Compact Projector</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/secutrity-camera-140140.jpg?width=140&height=140" alt="">
+                                        <p>Mi Home Security Camera</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/Product/360camera/140pic.jpg?width=140&height=140" alt="">
+                                        <p>Mi Home Security Camera 360° 1080P</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/DeskLamp.png?width=140&height=140" alt="">
+                                        <p>Mi LED Desk Lamp</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="menu-item">
+                        <a class="item-link" href="#">Humidifier</a>
+                        <div class="item-children">
+                            <ul class="common-width">
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/miBoxS.jpg?width=140&height=140" alt="">
+                                        <p>Mi Box S</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/Projector.jpg?width=140&height=140" alt="">
+                                        <p>Mi Laser Projector 150''</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/Product/smartcompactprojector/compactprojector140.jpg?width=140&height=140" alt="">
+                                        <p>Mi Smart Compact Projector</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/secutrity-camera-140140.jpg?width=140&height=140" alt="">
+                                        <p>Mi Home Security Camera</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/Product/360camera/140pic.jpg?width=140&height=140" alt="">
+                                        <p>Mi Home Security Camera 360° 1080P</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/DeskLamp.png?width=140&height=140" alt="">
+                                        <p>Mi LED Desk Lamp</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="menu-item">
+                        <a class="item-link" href="#">Aromatherapy Diffuse</a>
+                        <div class="item-children">
+                            <ul class="common-width">
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/miBoxS.jpg?width=140&height=140" alt="">
+                                        <p>Mi Box S</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/Projector.jpg?width=140&height=140" alt="">
+                                        <p>Mi Laser Projector 150''</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/Product/smartcompactprojector/compactprojector140.jpg?width=140&height=140" alt="">
+                                        <p>Mi Smart Compact Projector</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/secutrity-camera-140140.jpg?width=140&height=140" alt="">
+                                        <p>Mi Home Security Camera</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/Product/360camera/140pic.jpg?width=140&height=140" alt="">
+                                        <p>Mi Home Security Camera 360° 1080P</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/DeskLamp.png?width=140&height=140" alt="">
+                                        <p>Mi LED Desk Lamp</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</header>
+<!--header /-->
+<!--main-->
+<section>
+
+    <div class="g-path">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li> > </li>
+            <li><a href="#">Product</a></li>
+        </ul>
+    </div>
+
+    <div class="product-container">
+        <div class="product-list">
+            <div class="title">
+                <h3><span class="iconfont iconarrow-down"></span> USB Fan</h3>
+            </div>
+            <div class="list-box">
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/afa28e7477639537f556eb46e3ca5f43.jpeg" alt="">
+                        <p>Redmi 10X 4G</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d12361002299529816e7e0a6b74e0a25.jpg" alt="">
+                        <p>Redmi 10X 5G 系列</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/cc563c76a7383d8030d1c23f31c60cb9.png" alt="">
+                        <p>小米10 青春版</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/92b463f8e502e5d26ac488a252a05b58.jpg" alt="">
+                        <p>Redmi K30 Pro</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/461bf013d08a7a91423cafcbc5ff9339.jpg" alt="">
+                        <p>Redmi K30 Pro 变焦版</p>
+                    </a>
+                </div>
+
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/3a3e4238b70ef8db89ae77f8a3762fc8.png" alt="">
+                        <p>落地风扇</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/0bf0ba35dc3ad57115c59f0ebde0fd1d.jpg" alt="">
+                        <p>料理机</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/4e9da27ebbeeb38078910c97173c4671.jpg" alt="">
+                        <p>滑板车</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/50180b158690a40f9cbc684c7646d297.jpg" alt="">
+                        <p>平衡车</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/2cb10391d6527bf64126a63446a38e2e.jpg" alt="">
+                        <p>早教启智</p>
+                    </a>
+                </div>
+
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/59d3a701ac0bbb78f1b1d0ea7ebc7505.jpg" alt="">
+                        <p>驱蚊器</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/bba7ce79f4d61939c69b7a26bf507bae.jpg" alt="">
+                        <p>吹风机</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/813d173eff50a83abb8abd5abde5f5a6.jpg" alt="">
+                        <p>保温杯</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/374ce749560e0e74a792b6222048a472.png" alt="">
+                        <p>小爱音箱</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/27074367aa02371a3c3c417c41195346.png" alt="">
+                        <p>无线充电器</p>
+                    </a>
+                </div>
+
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/374ce749560e0e74a792b6222048a472.png" alt="">
+                        <p>小爱音箱</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/27074367aa02371a3c3c417c41195346.png" alt="">
+                        <p>无线充电器</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="product-list">
+            <div class="title">
+                <h3><span class="iconfont iconarrow-down"></span> USB Fan</h3>
+            </div>
+            <div class="list-box">
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/afa28e7477639537f556eb46e3ca5f43.jpeg" alt="">
+                        <p>Redmi 10X 4G</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d12361002299529816e7e0a6b74e0a25.jpg" alt="">
+                        <p>Redmi 10X 5G 系列</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/cc563c76a7383d8030d1c23f31c60cb9.png" alt="">
+                        <p>小米10 青春版</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/92b463f8e502e5d26ac488a252a05b58.jpg" alt="">
+                        <p>Redmi K30 Pro</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/461bf013d08a7a91423cafcbc5ff9339.jpg" alt="">
+                        <p>Redmi K30 Pro 变焦版</p>
+                    </a>
+                </div>
+
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/3a3e4238b70ef8db89ae77f8a3762fc8.png" alt="">
+                        <p>落地风扇</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/0bf0ba35dc3ad57115c59f0ebde0fd1d.jpg" alt="">
+                        <p>料理机</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/4e9da27ebbeeb38078910c97173c4671.jpg" alt="">
+                        <p>滑板车</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/50180b158690a40f9cbc684c7646d297.jpg" alt="">
+                        <p>平衡车</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/2cb10391d6527bf64126a63446a38e2e.jpg" alt="">
+                        <p>早教启智</p>
+                    </a>
+                </div>
+
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/59d3a701ac0bbb78f1b1d0ea7ebc7505.jpg" alt="">
+                        <p>驱蚊器</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/bba7ce79f4d61939c69b7a26bf507bae.jpg" alt="">
+                        <p>吹风机</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/813d173eff50a83abb8abd5abde5f5a6.jpg" alt="">
+                        <p>保温杯</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/374ce749560e0e74a792b6222048a472.png" alt="">
+                        <p>小爱音箱</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/27074367aa02371a3c3c417c41195346.png" alt="">
+                        <p>无线充电器</p>
+                    </a>
+                </div>
+
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/374ce749560e0e74a792b6222048a472.png" alt="">
+                        <p>小爱音箱</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/27074367aa02371a3c3c417c41195346.png" alt="">
+                        <p>无线充电器</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/374ce749560e0e74a792b6222048a472.png" alt="">
+                        <p>小爱音箱</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/27074367aa02371a3c3c417c41195346.png" alt="">
+                        <p>无线充电器</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="product-list">
+            <div class="title">
+                <h3><span class="iconfont iconarrow-down"></span> USB Fan</h3>
+            </div>
+            <div class="list-box">
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/afa28e7477639537f556eb46e3ca5f43.jpeg" alt="">
+                        <p>Redmi 10X 4G</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d12361002299529816e7e0a6b74e0a25.jpg" alt="">
+                        <p>Redmi 10X 5G 系列</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/cc563c76a7383d8030d1c23f31c60cb9.png" alt="">
+                        <p>小米10 青春版</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/92b463f8e502e5d26ac488a252a05b58.jpg" alt="">
+                        <p>Redmi K30 Pro</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/461bf013d08a7a91423cafcbc5ff9339.jpg" alt="">
+                        <p>Redmi K30 Pro 变焦版</p>
+                    </a>
+                </div>
+
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/3a3e4238b70ef8db89ae77f8a3762fc8.png" alt="">
+                        <p>落地风扇</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/0bf0ba35dc3ad57115c59f0ebde0fd1d.jpg" alt="">
+                        <p>料理机</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/4e9da27ebbeeb38078910c97173c4671.jpg" alt="">
+                        <p>滑板车</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/50180b158690a40f9cbc684c7646d297.jpg" alt="">
+                        <p>平衡车</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/2cb10391d6527bf64126a63446a38e2e.jpg" alt="">
+                        <p>早教启智</p>
+                    </a>
+                </div>
+
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/59d3a701ac0bbb78f1b1d0ea7ebc7505.jpg" alt="">
+                        <p>驱蚊器</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/bba7ce79f4d61939c69b7a26bf507bae.jpg" alt="">
+                        <p>吹风机</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/813d173eff50a83abb8abd5abde5f5a6.jpg" alt="">
+                        <p>保温杯</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/374ce749560e0e74a792b6222048a472.png" alt="">
+                        <p>小爱音箱</p>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/27074367aa02371a3c3c417c41195346.png" alt="">
+                        <p>无线充电器</p>
+                    </a>
+                </div>
+
+                <div class="list-item">
+                    <a href="./product-detail.html">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/374ce749560e0e74a792b6222048a472.png" alt="">
+                        <p>小爱音箱</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!--main /-->
+<!--footer-->
+<footer class="g-foot">
+    <div class="about">
+        <div class="common-width">
+            <div class="contact">
+                <div class="des">
+                    <h3>LET'S STAY IN TOUCH</h3>
+                    <p>Get updates on sales specials and more</p>
+                </div>
+                <form action="">
+                    <input type="email" id="email" placeholder="Enter Email Address">
+                    <input type="submit" value=">">
+                </form>
+            </div>
+
+            <div class="community">
+                <div class="des">
+                    <h3>FOLLOW MI</h3>
+                    <p>We want to hear from you!</p>
+                </div>
+                <div class="ico-box">
+                    <a href="#"><span class="iconfont iconicon-test1"></span></a>
+                    <a href="#"><span class="iconfont iconyoutube"></span></a>
+                    <a href="#"><span class="iconfont iconinstagram"></span></a>
+                    <a href="#"><span class="iconfont iconicon-test2"></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="foot">
+        <div class="common-width">
+            <div class="foot-item">
+                <dl>
+                    <dt>STORE</dt>
+                    <dd><a href="#">Amazon</a></dd>
+                    <dd><a href="#">Newegg</a></dd>
+                    <dd><a href="#">eBay</a></dd>
+                </dl>
+                <dl>
+                    <dt>FIND US</dt>
+                    <dd><i class="iconfont iconicon-test1"></i> <a href="#"><span>Facebook</span></a></dd>
+                    <dd><i class="iconfont iconyoutube"></i> <a href="#"><span>Youtube</span></a></dd>
+                    <dd><i class="iconfont iconinstagram"></i> <a href="#"><span>Instagram</span></a></dd>
+                    <dd><i class="iconfont iconicon-test2"></i> <a href="#"><span>Twitter</span></a></dd>
+                </dl>
+                <dl>
+                    <dt>About</dt>
+                    <dd><a href="#">minthouz</a></dd>
+                    <dd><a href="#">User Agreement</a></dd>
+                    <dd><a href="#">Privacy Policy</a></dd>
+                </dl>
+            </div>
+
+            <div class="foot-contact">
+                <h3>Contact Us</h3>
+                <p><span>before sales: </span> <a href="mailto:postsales@wavlink.com">postsales@wavlink.com</a></p>
+                <p><span>after sales: </span> <a href="mailto:contact@wavlink.com">contact@wavlink.com</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--footer /-->
+<div class="g-top" id="g-top">
+    <div class="box">
+        <span class="iconfont iconyooxi"></span>
+    </div>
+</div>
+
+<script src="{{frontend}}/lib/JQuery/JQuery-3.4.0.js"></script>
+<script src="{{frontend}}/desktop/js/public.js"></script>
+<!--私有业务开始-->
+<script src="{{frontend}}/lib/layer/2.4/layer.js"></script>
+<script src="{{frontend}}/lib/Swiper/swiper.min.js"></script>
+<script>
+    $(function () {
+        $('.product-container .product-list .title h3').click(function () {
+            $(this).parent('.title').siblings('.list-box').stop(true, false).slideToggle();
+            $(this).find('.iconfont').toggleClass("iconarrow-down").toggleClass("iconarrow-up");
+        })
+    })
+</script>
+<!--私有业务结束-->
+</body>
+</html>
