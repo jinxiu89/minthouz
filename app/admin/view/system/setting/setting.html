@@ -4,6 +4,18 @@
     <div class="layui-row">
         <form class="layui-form">
             <div class="layui-form-item">
+                <label for="logo" class="layui-form-label">
+                    <span class="x-red">*</span>LOGO
+                </label>
+                <div class="layui-input-inline">
+                    <button class="layui-btn" type="button" onclick="xadmin.open('选择图片','{:url(\'media/image_list\',[\'path\'=>\'images\/\'])}')"><i class="layui-icon"></i>选择</button>
+                    <div class="image" style="height: 92px;padding-top: 5px">
+                        <img src="" alt="" style="height: 92px">
+                        <input type="hidden" name="logo" value="{$data.logo}" id="logo">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
                 <label for="title" class="layui-form-label">
                     <span class="x-red">*</span>网站标题
                 </label>
@@ -21,7 +33,6 @@
                            autocomplete="off" class="layui-input" value="{$data.keywords}">
                 </div>
                 <div class="layui-form-mid layui-word-aux">
-
                 </div>
             </div>
             <div class="layui-form-item">

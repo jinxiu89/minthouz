@@ -30,12 +30,4 @@ class BaseService
         //共用的 变量赋值在这里处理
         $this->debug = Env::get('APP_DEBUG', false);
     }
-
-    /**
-     * @param $code
-     */
-    public function init($code){
-
-    }
-
 }

@@ -4,6 +4,7 @@ declare(strict_types=1);
 // 应用公共文件
 use think\response\Json;
 use think\facade\Config;
+use think\facade\Session;
 
 /**
  * @param int $status
@@ -149,4 +150,20 @@ function is_mobile()
         }
     }
     return false;
+}
+
+/**
+ * @param string $message
+ */
+function flash(string $message)
+{
+    Session::set('_flashes', $message);
+}
+
+/**
+ *
+ */
+function flashed_messages()
+{
+    return Session::get('_flashes', '');
 }

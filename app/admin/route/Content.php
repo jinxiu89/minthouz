@@ -21,4 +21,5 @@ Route::group('content',function (){
     Route::rule('/add_prettiest','content.Prettiest/add','GET|POST');
     Route::rule('/edit_prettiest','content.Prettiest/edit','GET|POST');
     Route::rule('/status_prettiest','content.Prettiest/changeStatus','GET');
+    Route::rule('/notice','content.Notice/notice','GET|POST');
 });
