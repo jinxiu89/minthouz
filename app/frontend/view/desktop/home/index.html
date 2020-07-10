@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home - mintHouz</title>
+    <title>{$BaseSetting.title} - mintHouz</title>
+    <meta name="keywords" content="{$BaseSetting.keywords}">
+    <meta name="description" content="{$BaseSetting.description}">
     <link rel="stylesheet" href="{{frontend}}/lib/iconfont/iconfont.css">
     <link rel="stylesheet" href="{{frontend}}/desktop/css/public/components.css">
     <!--私有页面样式文件-->
@@ -13,7 +15,7 @@
 <body>
 <!-- 重大通知栏 -->
 <div class="g-notice" id="g-notice">
-    <a class="des" href="#">minthouz、物流及客服公告>></a>
+    <a class="des" href="#">minthouz、物流及客服公告>> {:lang('Home')}</a>
     <span class="close">X</span>
 </div>
 <!-- 重大通知栏 -->
@@ -41,7 +43,7 @@
             <div class="logo">
                 <h1>
                     <a href="./Home.html">
-                        <img src="{{frontend}}/desktop/img/minthouz-slogan.png" alt="">
+                        <img src="{$BaseSetting.logo}" alt="">
                     </a>
                 </h1>
             </div>
@@ -479,10 +481,15 @@
             </div>
         </div>
     </div>
+
+    <div class="copyright">
+        <p>{$BaseSetting.information|raw}</p>
+    </div>
 </footer>
 <!--footer /-->
 <script src="{{frontend}}/lib/JQuery/JQuery-3.4.0.js"></script>
 <script src="{{frontend}}/desktop/js/public.js"></script>
+{$BaseSetting.analysis_code|raw}
 <!--私有业务开始-->
 <script src="{{frontend}}/lib/layer/2.4/layer.js"></script>
 <script src="{{frontend}}/lib/Swiper/swiper.min.js"></script>
