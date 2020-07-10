@@ -13,6 +13,10 @@ namespace app\common\model\mysql\category;
 
 
 use app\common\model\mysql\BaseModel;
+use think\Collection;
+use think\db\exception\DataNotFoundException;
+use think\db\exception\DbException;
+use think\db\exception\ModelNotFoundException;
 
 /**
  * Class ProductCategory
@@ -25,12 +29,12 @@ class ProductCategory extends BaseModel
     /**
      * @param int $status
      * @param int $language
-     * @return \think\Collection
-     * @throws \think\db\exception\DataNotFoundException
-     * @throws \think\db\exception\DbException
-     * @throws \think\db\exception\ModelNotFoundException
+     * @return Collection
+     * @throws DataNotFoundException
+     * @throws DbException
+     * @throws ModelNotFoundException
      */
     public static function getDataByLanguage(int $status, int $language){
-        return self::where(['status' => $status, 'language_id' => $language])->select();
+        return self::where(['status' => $status, 'language_id' => $language])->field('*')->select();
     }
 }

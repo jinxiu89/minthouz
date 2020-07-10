@@ -15,12 +15,13 @@ namespace app\frontend\controller;
 
 use app\BaseController;
 use app\frontend\service\Language;
+use app\frontend\service\Setting;
+use app\frontend\service\Category;
 use think\App;
-use think\facade\Env;
-use think\facade\Request;
+use think\facade\Lang;
 use think\facade\Session;
-use app\frontend\service\BaseService;
 use think\response\Redirect;
+use think\facade\View;
 
 /**
  * Class Base
@@ -42,6 +43,7 @@ class Base extends BaseController
         if (!empty($this->language) || $this->language['status'] != 1) { //todo:关于语言状态还没处理
             Session::set('language', $this->language);
             Session::set('lang_var', $this->language['code']);
+            Lang::load(app()->getAppPath().'lang/'.$this->language['code'].'.php');
         } else {
             abort(403, '不合法的语言选项');
         }
@@ -51,8 +53,7 @@ class Base extends BaseController
         } else {
             $this->template = app()->getRootPath() . 'app/' . app('http')->getName() . '/view/desktop';
         }
-        (new BaseService())->init((int)$this->language['id']);
-
+       $this->init((int)$this->language['id']);
     }
 
     /**
@@ -74,5 +75,20 @@ class Base extends BaseController
     {
         $code = (Session::get('lang_var')) ? (Session::get('lang_var')) : 'en_us';
         return redirect('/' . $code, 200);
+    }
+
+    /**
+     * @param int $language
+     */
+    public function init(int $language){
+        //主页SEO、统计、版权声明
+        $BaseSetting=(new Setting())->getDataByLanguage((int) $language);
+        //通知
+
+        //导航
+        $treeCategory=(new Category())->getDataByLanguage((int) $language);
+//        print_r($treeCategory);
+        //页脚
+        View::assign('BaseSetting',$BaseSetting);
     }
 }

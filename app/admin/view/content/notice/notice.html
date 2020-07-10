@@ -1,0 +1,70 @@
+{extend name="common:base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-row">
+        <form class="layui-form">
+            <div class="layui-form-item">
+                <label for="image" class="layui-form-label">图片
+                </label>
+                <div class="layui-input-inline">
+                    <button class="layui-btn" type="button" onclick="xadmin.open('选择图片','{:url(\'media/image_list\',[\'path\'=>\'images\/\'])}')"><i class="layui-icon"></i>选择</button>
+                    <div class="image" style="height: 92px;padding-top: 5px">
+                        <img src="" alt="" style="height: 92px">
+                        <input type="hidden" name="image" value="{$data.image}" id="image">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="notice" class="layui-form-label">
+                   通知描述
+                </label>
+                <div class="layui-input-block">
+                    <textarea name="notice" id="notice" placeholder="请输入内容" class="layui-textarea">{$data.notice}</textarea>
+                </div>
+            </div>
+            <input type="hidden" name="id" value="{$data.id}">
+            <div class="layui-form-item">
+                <label class="layui-form-label">
+                </label>
+                <button class="layui-btn" lay-filter="add" lay-submit="">
+                    保存
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{/block}
+{block name="copyright"}
+{/block}
+{block name="javascript"}
+<script>
+    layui.use(['form', 'layer'],
+        function () {
+            $ = layui.jquery;
+            var form = layui.form,
+                layer = layui.layer;
+
+            //监听提交
+            form.on('submit(add)',
+                function (data) {
+                    $.ajax({
+                        url: "{:url('system/setting')}",
+                        type: 'POST',
+                        data: data.field,
+                        'success': function (result) {
+                            if (result.status === 1) {
+                                layer.msg(result.message, {'icon': 1, 'time': 500}, function () {
+                                    xadmin.close();
+                                    xadmin.father_reload();
+                                });
+                            }else{
+                                layer.msg(result.message,{'icon':5,'time':1000});
+                            }
+                        }
+                    }, 'JSON');
+                    return false;
+                });
+
+        });
+</script>
+{/block}

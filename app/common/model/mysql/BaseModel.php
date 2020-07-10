@@ -36,6 +36,13 @@ class BaseModel extends Model
     {
         return self::update($data, ['id' => $id]);
     }
+    /**
+     * @param int $language
+     * @return array|Model
+     */
+    public static function getDtaByLanguage(int $language){
+        return self::where(['language_id'=>$language])->findOrEmpty();
+    }
 
     /**
      * @param int $status
