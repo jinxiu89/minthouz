@@ -2,9 +2,832 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>product-detail - minthouz</title>
+    <meta name="keywords" content="{$BaseSetting.keywords}">
+    <meta name="description" content="{$BaseSetting.description}">
+    <link rel="stylesheet" href="{{frontend}}/lib/iconfont/iconfont.css">
+    <link rel="stylesheet" href="{{frontend}}/desktop/css/public/components.css">
+    <!--私有页面样式文件-->
+    <link rel="stylesheet" href="{{frontend}}/lib/Swiper/swiper.min.css">
+    <link rel="stylesheet" href="{{frontend}}/desktop/css/page/product-detail.css">
+    <!--私有页面样式结束-->
+    <style>
+        *{
+            margin: 0;
+            padding: 0
+        }
+        div#detail_page_box > section > div > div.detail_box_text > strong {
+            display:inline-block
+        }
+        .relative {
+            position:relative
+        }
+        .absolute {
+            position:absolute
+        }
+        .text_center {
+            text-align:center
+        }
+        div#detail_page_box > section > div > div.detail_box_img > img {
+            width:100%
+        }
+        div#detail_page_box > section > div > div.detail_box_text > strong { margin-bottom:2% }
+        @media screen and (max-width:767px){
+            .img_pc { display:none }
+            div#detail_page_box > section > div > div.detail_box_text > strong { font-size:16px }
+            div#detail_page_box > section > div > div.detail_box_text > p { font-size:14px }
+            div#detail_page_box > section > div > div.detail_box_text {
+                position:inherit;
+                text-align:left;
+                padding:56px 15px 28px
+            }
+        }
+        @media screen and (min-width:768px){
+            .img_mobile { display:none }
+            div#detail_page_box > section > div > div.detail_box_img { line-height:0 }
+            div#detail_page_box > section > div > div.detail_box_text > strong { font-size:18px }
+            div#detail_page_box > section > div > div.detail_box_text > p { font-size:13px }
+            div#detail_page_box > section > div.detail_box_two > div.detail_box_text > strong,
+            div#detail_page_box > section > div.detail_box_two > div.detail_box_text > p,
+            div#detail_page_box > section > div.detail_box_three > div.detail_box_text > strong,
+            div#detail_page_box > section > div.detail_box_three > div.detail_box_text > p,
+            div#detail_page_box > section > div.detail_box_four > div.detail_box_text > strong,
+            div#detail_page_box > section > div.detail_box_four > div.detail_box_text > p,
+            div#detail_page_box > section > div.detail_box_five > div.detail_box_text > strong,
+            div#detail_page_box > section > div.detail_box_five > div.detail_box_text > p,
+            div#detail_page_box > section > div.detail_box_six > div.detail_box_text > strong,
+            div#detail_page_box > section > div.detail_box_six > div.detail_box_text > p,
+            div#detail_page_box > section > div.detail_box_seven > div.detail_box_text > strong,
+            div#detail_page_box > section > div.detail_box_seven > div.detail_box_text > p,
+            div#detail_page_box > section > div.detail_box_eight > div.detail_box_text > strong,
+            div#detail_page_box > section > div.detail_box_eight > div.detail_box_text > p,
+            div#detail_page_box > section > div.detail_box_nine > div.detail_box_text > strong,
+            div#detail_page_box > section > div.detail_box_nine > div.detail_box_text > p {
+                color:#fff
+            }
+            div#detail_page_box > section > div.detail_box_one > div.detail_box_text {
+                width:46%;
+                margin-left:27%;
+                top:16%
+            }
+            div#detail_page_box > section > div.detail_box_two > div.detail_box_text {
+                width:64%;
+                margin-left:18%;
+                top:7%
+            }
+            div#detail_page_box > section > div.detail_box_three > div.detail_box_text {
+                width:60%;
+                margin-left:20%;
+                top:7%
+            }
+            div#detail_page_box > section > div.detail_box_four > div.detail_box_text {
+                width:50%;
+                margin-left:25%;
+                top:8%
+            }
+            div#detail_page_box > section > div.detail_box_five > div.detail_box_text {
+                width:60%;
+                margin-left:20%;
+                top:10%
+            }
+            div#detail_page_box > section > div.detail_box_six > div.detail_box_text {
+                width:60%;
+                margin-left:20%;
+                top:10%
+            }
+            div#detail_page_box > section > div.detail_box_seven > div.detail_box_text {
+                width:64%;
+                margin-left:18%;
+                top:8%
+            }
+            div#detail_page_box > section > div.detail_box_eight > div.detail_box_text {
+                width:26%;
+                margin-left:55%;
+                top:36%
+            }
+            div#detail_page_box > section > div.detail_box_nine > div.detail_box_text {
+                width:30%;
+                margin-left:13.5%;
+                top:18%
+            }
+        }
+        @media screen and (min-width:992px){
+            div#detail_page_box > section > div > div.detail_box_text > strong { font-size:22px }
+            div#detail_page_box > section > div > div.detail_box_text > p { font-size:14px }
+        }
+        @media screen and (min-width:1100px){
+            div#detail_page_box > section > div.detail_box_one > div.detail_box_text { width:40%; margin-left:30% }
+            div#detail_page_box > section > div.detail_box_seven > div.detail_box_text { width:56%; margin-left:22% }
+        }
+        @media screen and (min-width:1300px){
+            div#detail_page_box > section > div > div.detail_box_text > strong { font-size:26px }
+            div#detail_page_box > section > div > div.detail_box_text > p { font-size:16px }
+        }
+        @media screen and (min-width:1400px){
+            div#detail_page_box > section > div.detail_box_one > div.detail_box_text {
+                width:40%;
+                margin-left:30%
+            }
+            div#detail_page_box > section > div.detail_box_two > div.detail_box_text {
+                top:7%
+            }
+            div#detail_page_box > section > div.detail_box_seven > div.detail_box_text { width:48%; margin-left:26% }
+        }
+        @media screen and (min-width:1600px){
+            div#detail_page_box > section > div > div.detail_box_text > strong { font-size:30px }
+            div#detail_page_box > section > div > div.detail_box_text > p { font-size:18px }
+        }
+        @media screen and (min-width:1700px){
+            div#detail_page_box > section > div > div.detail_box_text > strong { font-size:35px }
+            div#detail_page_box > section > div > div.detail_box_text > p { font-size:21px }
+        }
+        @media screen and (min-width: 1366px){
+            div#detail_page_box > section > div > div.detail_box_text > strong,div#detail_page_box > section > div > div.detail_box_text > p {
+                opacity: 0;
+                margin-top: 5%
+            }
+        }
+    </style>
 </head>
 <body>
+<!-- 重大通知栏 -->
+<div class="g-notice" id="g-notice">
+    <a class="des" href="#">minthouz、物流及客服公告>> {:lang('navbar.Home')}</a>
+    <span class="close">X</span>
+</div>
+<!-- 重大通知栏 -->
+<!--header-->
+<header class="g-hd">
 
+    <div class="hd">
+        <div class="common-width">
+            <div class="about">
+                <span><a href="./Home.html">MINTHOUZ</a></span>
+                <span><a href="#">ABOUT US</a></span>
+                <span><a href="#" target="_blank">FIND US ON FACEBOOK</a></span>
+            </div>
+
+            <div class="store">
+                <span><a href="#" target="_blank">Amazon</a></span>
+                <span><a href="#" target="_blank">Newegg</a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav" id="nav">
+        <div class="common-width">
+            <div class="logo">
+                <h1>
+                    <a href="./Home.html">
+                        <img src="{$BaseSetting.logo}" alt="">
+                    </a>
+                </h1>
+            </div>
+
+            <div class="menu-box">
+                <ul class="menu-list" id="menu-list">
+                    <li class="menu-item">
+                        <a class="item-link" href="./product-list.html">All Products</a>
+
+                        <!--<div class="all-category">
+                            <ul class="category-list">
+                                <li class="category-item">
+                                    <a href="#">USB Fan</a> <span class="iconfont iconnext"></span>
+                                    <div class="box">
+                                    </div>
+                                </li>
+                                <li class="category-item"><a href="#">Table Lamp</a> <span class="iconfont iconnext"></span></li>
+                                <li class="category-item"><a href="#">Holder</a> <span class="iconfont iconnext"></span></li>
+                                <li class="category-item"><a href="#">Humidifier</a> <span class="iconfont iconnext"></span></li>
+                                <li class="category-item"><a href="#">Aromatherapy Diffuse</a> <span class="iconfont iconnext"></span></li>
+                                <li class="category-item"><a href="#">Others</a> <span class="iconfont iconnext"></span></li>
+                            </ul>
+                        </div>-->
+
+                    </li>
+                    <li class="menu-item">
+                        <a class="item-link" href="#">USB Fan</a>
+                        <div class="item-children">
+                            <ul class="common-width">
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/miBoxS.jpg?width=140&height=140" alt="">
+                                        <p>Mi Box S</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/Projector.jpg?width=140&height=140" alt="">
+                                        <p>Mi Laser Projector 150''</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/Product/smartcompactprojector/compactprojector140.jpg?width=140&height=140" alt="">
+                                        <p>Mi Smart Compact Projector</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/secutrity-camera-140140.jpg?width=140&height=140" alt="">
+                                        <p>Mi Home Security Camera</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/Product/360camera/140pic.jpg?width=140&height=140" alt="">
+                                        <p>Mi Home Security Camera 360° 1080P</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/DeskLamp.png?width=140&height=140" alt="">
+                                        <p>Mi LED Desk Lamp</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="menu-item">
+                        <a class="item-link" href="#">Table Lamp</a>
+                        <div class="item-children">
+                            <ul class="common-width">
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/miBoxS.jpg?width=140&height=140" alt="">
+                                        <p>Mi Box S</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/Projector.jpg?width=140&height=140" alt="">
+                                        <p>Mi Laser Projector 150''</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/Product/smartcompactprojector/compactprojector140.jpg?width=140&height=140" alt="">
+                                        <p>Mi Smart Compact Projector</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/secutrity-camera-140140.jpg?width=140&height=140" alt="">
+                                        <p>Mi Home Security Camera</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/Product/360camera/140pic.jpg?width=140&height=140" alt="">
+                                        <p>Mi Home Security Camera 360° 1080P</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/DeskLamp.png?width=140&height=140" alt="">
+                                        <p>Mi LED Desk Lamp</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="menu-item">
+                        <a class="item-link" href="#">Holder</a>
+                        <div class="item-children">
+                            <ul class="common-width">
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/miBoxS.jpg?width=140&height=140" alt="">
+                                        <p>Mi Box S</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/Projector.jpg?width=140&height=140" alt="">
+                                        <p>Mi Laser Projector 150''</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/Product/smartcompactprojector/compactprojector140.jpg?width=140&height=140" alt="">
+                                        <p>Mi Smart Compact Projector</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/secutrity-camera-140140.jpg?width=140&height=140" alt="">
+                                        <p>Mi Home Security Camera</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/Product/360camera/140pic.jpg?width=140&height=140" alt="">
+                                        <p>Mi Home Security Camera 360° 1080P</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/DeskLamp.png?width=140&height=140" alt="">
+                                        <p>Mi LED Desk Lamp</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="menu-item">
+                        <a class="item-link" href="#">Humidifier</a>
+                        <div class="item-children">
+                            <ul class="common-width">
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/miBoxS.jpg?width=140&height=140" alt="">
+                                        <p>Mi Box S</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/Projector.jpg?width=140&height=140" alt="">
+                                        <p>Mi Laser Projector 150''</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/Product/smartcompactprojector/compactprojector140.jpg?width=140&height=140" alt="">
+                                        <p>Mi Smart Compact Projector</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/secutrity-camera-140140.jpg?width=140&height=140" alt="">
+                                        <p>Mi Home Security Camera</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/Product/360camera/140pic.jpg?width=140&height=140" alt="">
+                                        <p>Mi Home Security Camera 360° 1080P</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/DeskLamp.png?width=140&height=140" alt="">
+                                        <p>Mi LED Desk Lamp</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="menu-item">
+                        <a class="item-link" href="#">Aromatherapy Diffuse</a>
+                        <div class="item-children">
+                            <ul class="common-width">
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/miBoxS.jpg?width=140&height=140" alt="">
+                                        <p>Mi Box S</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/Projector.jpg?width=140&height=140" alt="">
+                                        <p>Mi Laser Projector 150''</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/Product/smartcompactprojector/compactprojector140.jpg?width=140&height=140" alt="">
+                                        <p>Mi Smart Compact Projector</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/secutrity-camera-140140.jpg?width=140&height=140" alt="">
+                                        <p>Mi Home Security Camera</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/Product/360camera/140pic.jpg?width=140&height=140" alt="">
+                                        <p>Mi Home Security Camera 360° 1080P</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="./product-detail.html">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/DeskLamp.png?width=140&height=140" alt="">
+                                        <p>Mi LED Desk Lamp</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</header>
+<!--header /-->
+<!--main-->
+<section>
+
+    <div class="product-container">
+        <div class="product-nav">
+            <div class="common-width">
+                <h3>Mi Sphere Camera Kit</h3>
+                <div class="sub_nav">
+                    <span class="active">Overview</span>
+                    <span>Specs</span>
+                    <span><a href="#">Shop at Amazon</a></span>
+                    <span><a href="#">Shop at Newegg</a></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-Overview">
+            <div id="detail_page_box">
+                <!-- one -->
+                <section>
+                    <div class="detail_box_one relative">
+                        <div class="detail_box_text text_center absolute">
+                            <strong style="opacity: 1; margin-top: 0px;">AC2100  MU-MIMO Dual-band Smart Wi-Fi Router with Touchlink</strong>
+                            <p style="opacity: 1; margin-top: 0px;">
+                                Superfast AC Speeds for your Life Without Interruptions
+                            </p>
+                        </div>
+                        <div class="detail_box_img">
+                            <img class="" src="https://cloud.wavlink.com/index.php?user/publicLink&amp;fid=1dcatoocVeytoV_Kcm208V1W_TByAhY7cn8wkj04y11hdOeDcHBu3b8BfXlwChE2n_HBsBobnobvwwexroIfE4XJnbOsZ4dk70xAfQe5At0WCahZ7a-7QW_QKeSolQhQ93vqx4B-8LFirLiR35nInXzd8tlemdyZxhE&amp;file_name=/1.jpg" alt="">
+                        </div>
+                    </div>
+                </section>
+                <!-- two -->
+                <section>
+                    <div class="detail_box_two relative">
+                        <div class="detail_box_text text_center absolute">
+                            <strong style="opacity: 1; margin-top: 0px;">Experience Incredible Wireless Speeds</strong>
+                            <p style="opacity: 1; margin-top: 0px;">
+                                WN531A6 gives you dominating AC Wi-Fi speeds up to
+                                2100Mbps that keeps a strong, steady signal flowing throughout your
+                                home so that you can enjoy exceptionally smooth,
+                                responsive gameplay and uninterrupted streaming.
+                            </p>
+                        </div>
+                        <div class="detail_box_img">
+                            <img class="" src="https://cloud.wavlink.com/index.php?user/publicLink&amp;fid=6580l0Z00iBhPlB-1jcizB9la1znq4ehzLqYc2oqpNFpTWUy6-quQy6A3UgD8d8sV7sEGSwD4Dv5lSdTyvlLBa8xu__DY18kchX0sj0RruKtJ2ZQ1pz7JW7z8VFm-4UCA9YxcvrKp-sw6JU98EXXoIn01ddDX7uDkjY&amp;file_name=/2.jpg" alt="">
+                        </div>
+                    </div>
+                </section>
+                <!-- three -->
+                <section>
+                    <div class="detail_box_three relative">
+                        <div class="detail_box_text text_center absolute">
+                            <strong style="opacity: 1; margin-top: 0px;">Stronger Signal Everywhere</strong>
+                            <p style="opacity: 1; margin-top: 0px;">
+                                Unlike single-band router, it is composed of two radio frequencies – 2.4GHz and 5GHZ, dual-band technology avoids signal congestion in traffic and provides the ability to switch between two bands so that you can experience good signal anywhere at home.
+                            </p>
+                        </div>
+                        <div class="detail_box_img">
+                            <img class="" src="https://cloud.wavlink.com/index.php?user/publicLink&amp;fid=635crG_WS7q2pEBmqP1eEJs61yR7WUhEfx1TOOowxerz449iH3c3niNaiV_nCHquYRTvDKU7qIdACMqr6AEyyLtMqzYEc8q09Y9chIpCvei9UrCQNLuu1KBuuJLcewcL3oWRsoAsesdPB9LDu93NJ0qc00QlfDKRZb4&amp;file_name=/3.jpg" alt="">
+                        </div>
+                    </div>
+                </section>
+                <!-- four -->
+                <section>
+                    <div class="detail_box_four relative">
+                        <div class="detail_box_text text_center absolute">
+                            <strong style="opacity: 1; margin-top: 0px;">High-Gain Omni-directional Patent Antennas for Maximized Range</strong>
+                            <p style="opacity: 1; margin-top: 0px;">
+                                Equipped with six omnidirectional smart antennas,
+                                this router can expand Wi-Fi signal to everywhere in your home,
+                                which optimizes the wireless network coverage to its best ability.
+                            </p>
+                        </div>
+                        <div class="detail_box_img">
+                            <img class="" src="https://cloud.wavlink.com/index.php?user/publicLink&amp;fid=6aee7gi6TPft6dt05CGTp9-NN_f8wNUnLHmeqCqCv6zPB0RQ26sr5r6BPCcigdYhlDCvaHwPQAgx8tVeAUmgobSGiJqnJfm4b1992uTekf4H2KqW6KYFQmFC1ylq9piEkEQYQHAjG2xEJyxKkPgkWCYJVrI-m2yR1yU&amp;file_name=/4.jpg" alt="">
+                        </div>
+                    </div>
+                </section>
+                <!-- five -->
+                <section>
+                    <div class="detail_box_five relative">
+                        <div class="detail_box_text text_center absolute">
+                            <strong style="opacity: 1; margin-top: 0px;">MU-MIMO – more client devices, no more worries!</strong>
+                            <p style="opacity: 1; margin-top: 0px;">
+                                Complying with 802.11ac Wave 2 standard, one noticeable feature of MU-MIMO is it allows an access point to transmit data to multiple client devices simultaneously. Simply put, even many people connect to the same router,  it is still probable that they enjoy the same speed of Internet.
+                            </p>
+                        </div>
+                        <div class="detail_box_img">
+                            <img class="" src="https://cloud.wavlink.com/index.php?user/publicLink&amp;fid=573cifasLs52wwPo8z6Jo-T8UGQozYQMTmAMJWt_H5LK1c8eEsKFDB0vdUqdh124j90UooMj6vWKABr3XjncykIh161tgbbYM1eZIpxdnswArAxnRIQDIC8lOQvmtzx_yauu118vOVOkL_5tFjkU8cm2Z3-KkVIZbos&amp;file_name=/5.jpg" alt="">
+                        </div>
+                    </div>
+                </section>
+                <!-- six -->
+                <section>
+                    <div class="detail_box_six relative">
+                        <div class="detail_box_text text_center absolute">
+                            <strong style="opacity: 1; margin-top: 0px;">Full Gigabit Ports Ultra-Fast Wired Connection</strong>
+                            <p style="opacity: 1; margin-top: 0px;">
+                                Five Gigabit Ethernet ports, 10X faster than conventional Fast Ethernet, can be aggregated to double the connection speed to wired computers, wired printers and other network devices at ultra-fast wired speeds.
+                            </p>
+                        </div>
+                        <div class="detail_box_img">
+                            <img class="" src="https://cloud.wavlink.com/index.php?user/publicLink&amp;fid=9cf8w5Xtj3rKoLZwpu3Hwab_4hcPsIM-OxWRDz1xPI9Q4LvMXWkdRAxEO3mGfhVGqRFLSJuLiqo_er1Z27UQ4eNG_8Kjysbd0xfC86Z7qcDJPX6QJlLKMq7qDQvO-lx_ZuAjNYaoQa_8rafrEcyS7Lq8-xCStbvBs9Y&amp;file_name=/6.jpg" alt="">
+                        </div>
+                    </div>
+                </section>
+                <!-- seven -->
+                <section>
+                    <div class="detail_box_seven relative">
+                        <div class="detail_box_text text_center absolute">
+                            <strong style="opacity: 1; margin-top: 0px;">USB 3.0 Port</strong>
+                            <p style="opacity: 1; margin-top: 0px;">
+                                On this router there is a USB3.0 port, approximately 10 times faster than USB2.0, for faster data transmission, media storage and media sharing across your network.
+                            </p>
+                        </div>
+                        <div class="detail_box_img">
+                            <img class="" src="https://cloud.wavlink.com/index.php?user/publicLink&amp;fid=c495eudwi9LkI0_yXQAP_ndSs1ROM9AVjBg8PZBdFexFHfGwiIafiTJ0x5b0c0V0oA38uHGq5JY_Umo0Jdmc7-izmrZ8VDCQSI0KNHUbPlbl2V16kG5VaKzc-5JVQ5H4yivvVJoXXrUDlhoaOx_bnQIztSONyDQkHeg&amp;file_name=/7.jpg" alt="">
+                        </div>
+                    </div>
+                </section>
+                <!-- eight -->
+                <section>
+                    <div class="detail_box_eight relative">
+                        <div class="detail_box_text absolute">
+                            <strong style="opacity: 1; margin-top: 0px;">Friendly User Interface</strong>
+                            <p style="opacity: 1; margin-top: 0px;">
+                                To control your network by enabling parental control, blocking unwanted devices, monitoring Internet activity and creating Wi-Fi guest networks is easier than ever on our user interface.
+                            </p>
+                        </div>
+                        <div class="detail_box_img">
+                            <img class="" src="https://cloud.wavlink.com/index.php?user/publicLink&amp;fid=9bd8OM1G7Bc-6gd6278G7MHtBG4ijgLAbByKpkT0iFgL2THalUZtiwCijzZmLqMXGhfSf_RVMphObI8wM6Vx8wim0mUruSKIHBMPq3Y5orp2W5YXhFiHzxVOYHGbfcHya-0wkOZd0pn4EnNd9c2nE3sGqPga9J5MEvY&amp;file_name=/8.jpg" alt="">
+                        </div>
+                    </div>
+                </section>
+                <!-- nine -->
+                <section>
+                    <div class="detail_box_nine relative">
+                        <div class="detail_box_text absolute">
+                            <strong style="opacity: 1; margin-top: 0px;">TURBO technology</strong>
+                            <p style="opacity: 1; margin-top: 0px;">
+                                Push TURBO button, your network will be optimized immediately. Accordingly, endless buffering and reboots are not supposed to bother you again.
+                            </p>
+                        </div>
+                        <div class="detail_box_img">
+                            <img class="" src="https://cloud.wavlink.com/index.php?user/publicLink&amp;fid=e0b0CxfE4qGRc1artrIBcltprMJnxBu9NtbuvbX7Qe3XNooHYy6UxHQlVt4ud4k27WjiTYPpZO8_3Kaohv9n-BWod14rigHTbhDyRaofZh44uFkMZpRWF5L-NV3LWRw27KcpwtJc2a4kOW8qFemfBHKsu8JtUdtVjV8&amp;file_name=/9.jpg" alt="">
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="product-Specifications">
+            <div class="offset-box" id="specification">
+                <ul>
+                    <li class="li_title">
+                        <strong>TECHNICAL SPECIFICATIONS</strong>
+                    </li>
+                    <li>
+                        <strong>Model</strong>
+                        <div>
+                            <p>WN531A6</p>
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Ports</strong>
+                        <div>
+                            <p>1 x 10/100/1000Mbps WAN</p>
+                            <p>4 x 10/100/1000Mbps LAN</p>
+                            <p>1 x USB 3.0</p>
+                            <p>1 x DC Power Jack Port</p>
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Buttons</strong>
+                        <div>
+                            <p>1 x Power On/Off button</p>
+                            <p>1 x Reset button</p>
+                            <p>1 x WPS button</p>
+                            <p>1 x TURBO button</p>
+                            <p>1 x Touch cover button</p>
+                        </div>
+                    </li>
+                    <li>
+                        <strong>LED</strong>
+                        <div>
+                            <p>1 x WiFi</p>
+                            <p>1 x WAN</p>
+                            <p>4 x LAN</p>
+                            <p>1 x Power</p>
+                            <p>1 x Logo</p>
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Power Supply</strong>
+                        <div>
+                            <p>DC5V / 3A</p>
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Rated Voltage / Frequency</strong>
+                        <div>
+                            <p>input:100-240 Va.c. 50/60Hz</p>
+                        </div>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="li_title">
+                        <strong>DIMENSIONS</strong>
+                    </li>
+                    <li>
+                        <strong>Unit Dimensions</strong>
+                        <div>
+                            <p>200mm x 200mm x 30mm ( L x W x H )</p>
+                        </div>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="li_title">
+                        <strong>WIRELESS</strong>
+                    </li>
+                    <li>
+                        <strong>Standard</strong>
+                        <div>
+                            <p>IEEE 802.11a/b/g/n/ac</p>
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Speed</strong>
+                        <div>
+                            <p>IEEE 802.11ac: up to 1733Mbps</p>
+                            <p>IEEE 802.11n: up to 300Mbps</p>
+                            <p>IEEE 802.11g: 54Mbps</p>
+                            <p>IEEE 802.11b: 11Mbps</p>
+                            <p>IEEE 802.11a: up to 54Mbps</p>
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Frequency Band</strong>
+                        <div>
+                            <p>2.4GHz, 5GHz</p>
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Wireless Security</strong>
+                        <div>
+                            <p>WPA-PSK/ WPA2-PSK encryption</p>
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Antennas</strong>
+                        <div>
+                            <p>6 x 5dBi Omni Directional Antennas</p>
+                        </div>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="li_title">
+                        <strong>PACKAGE</strong>
+                    </li>
+                    <li>
+                        <strong>In The Box</strong>
+                        <div>
+                            <p>1 x Wireless Router</p>
+                            <p>1 x RJ45 Networking Cable</p>
+                            <p>1 x Power Adapter</p>
+                            <p>1 x Quick Guide</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!--main /-->
+<!--footer-->
+<footer class="g-foot">
+    <div class="about">
+        <div class="common-width">
+            <div class="contact">
+                <div class="des">
+                    <h3>LET'S STAY IN TOUCH</h3>
+                    <p>Get updates on sales specials and more</p>
+                </div>
+                <form action="">
+                    <input type="email" id="email" placeholder="Enter Email Address">
+                    <input type="submit" value=">">
+                </form>
+            </div>
+
+            <div class="community">
+                <div class="des">
+                    <h3>FOLLOW MI</h3>
+                    <p>We want to hear from you!</p>
+                </div>
+                <div class="ico-box">
+                    <a href="#"><span class="iconfont iconicon-test1"></span></a>
+                    <a href="#"><span class="iconfont iconyoutube"></span></a>
+                    <a href="#"><span class="iconfont iconinstagram"></span></a>
+                    <a href="#"><span class="iconfont iconicon-test2"></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="foot">
+        <div class="common-width">
+            <div class="foot-item">
+                <dl>
+                    <dt>STORE</dt>
+                    <dd><a href="#">Amazon</a></dd>
+                    <dd><a href="#">Newegg</a></dd>
+                    <dd><a href="#">eBay</a></dd>
+                </dl>
+                <dl>
+                    <dt>FIND US</dt>
+                    <dd><i class="iconfont iconicon-test1"></i> <a href="#"><span>Facebook</span></a></dd>
+                    <dd><i class="iconfont iconyoutube"></i> <a href="#"><span>Youtube</span></a></dd>
+                    <dd><i class="iconfont iconinstagram"></i> <a href="#"><span>Instagram</span></a></dd>
+                    <dd><i class="iconfont iconicon-test2"></i> <a href="#"><span>Twitter</span></a></dd>
+                </dl>
+                <dl>
+                    <dt>About</dt>
+                    <dd><a href="#">minthouz</a></dd>
+                    <dd><a href="#">User Agreement</a></dd>
+                    <dd><a href="#">Privacy Policy</a></dd>
+                </dl>
+            </div>
+
+            <div class="foot-contact">
+                <h3>Contact Us</h3>
+                <p><span>before sales: </span> <a href="mailto:postsales@wavlink.com">postsales@wavlink.com</a></p>
+                <p><span>after sales: </span> <a href="mailto:contact@wavlink.com">contact@wavlink.com</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>{$BaseSetting.information|raw}</p>
+    </div>
+</footer>
+<!--footer /-->
+<div class="g-top" id="g-top">
+    <div class="box">
+        <span class="iconfont iconyooxi"></span>
+    </div>
+</div>
+
+<script src="{{frontend}}/lib/JQuery/JQuery-3.4.0.js"></script>
+<script src="{{frontend}}/desktop/js/public.js"></script>
+<!--私有业务开始-->
+<script src="{{frontend}}/lib/layer/2.4/layer.js"></script>
+<script src="{{frontend}}/lib/Swiper/swiper.min.js"></script>
+<script>
+    function productNav() {
+        var document_sT = $(document).scrollTop(),
+            hd = $('.g-hd .hd').height(),
+            nav = $('.g-hd .nav').height();
+        var gHd = hd + nav;
+        if (document_sT > gHd) {
+            $('.product-nav').addClass('nav-active');
+            $('.product-Overview').css('paddingTop', '60px')
+        }
+        $(window).bind("scroll", function () {
+            var document_sT = $(document).scrollTop();
+            if (document_sT > gHd) {
+                $('.product-nav').addClass('nav-active');
+                $('.product-Overview').css('paddingTop', '60px')
+            } else {
+                $('.product-nav').removeClass('nav-active');
+                $('.product-Overview').css('paddingTop', '0')
+            }
+        });
+    }
+
+    function navTableChange () {
+        var subNav = $('.sub_nav span'),
+            overviewDom = $('.product-Overview'),
+            SpecificationsDom = $('.product-Specifications');
+        subNav.click(function () {
+            var a = $(this).index();
+            if (a === 0) {
+                overviewDom.css('display', 'block');
+                $(this).addClass('active');
+                SpecificationsDom.css('display', 'none');
+                $(this).siblings('span').removeClass('active');
+            } else if (a === 1) {
+                overviewDom.css('display', 'none');
+                $(this).addClass('active');
+                SpecificationsDom.css('display', 'block');
+                $(this).siblings('span').removeClass('active');
+            }
+        });
+    }
+
+    $(function () {
+        productNav();
+        navTableChange()
+    });
+</script>
+<!--私有业务结束-->
 </body>
 </html>
