@@ -14,6 +14,7 @@
   position: absolute;
   top: 30%;
   left: 15%;
+  width: 45%;
   cursor: auto;
 }
 .banner .swiper-wrapper .swiper-slide .des h3 {
@@ -62,27 +63,27 @@
 .banner .swiper-pagination-bullet-active {
   background: #00A82D;
 }
-.min {
+.hot {
   margin-top: 20px;
   text-align: center;
 }
-.min .min-list {
+.hot .min-list {
   display: inline-block;
 }
-.min .min-listbefore,
-.min .min-list:after {
+.hot .min-listbefore,
+.hot .min-list:after {
   content: " ";
   display: table;
   zoom: 1;
 }
-.min .min-list:after {
+.hot .min-list:after {
   clear: both;
 }
-.min .min-list .min-item {
+.hot .min-list .min-item {
   float: left;
   width: 33.33%;
 }
-.min .min-list .min-item img {
+.hot .min-list .min-item img {
   -webkit-transition: box-shadow 0.2s linear;
   -moz-transition: box-shadow 0.2s linear;
   -ms-transform: box-shadow 0.2s linear;
@@ -94,19 +95,19 @@
   margin-left: auto;
   margin-right: auto;
 }
-.min .min-list .min-item:hover img {
+.hot .min-list .min-item:hover img {
   box-shadow: 0 8px 16px rgba(0, 168, 45, 0.18);
 }
-.min .min-list .min-item a {
+.hot .min-list .min-item a {
   display: block;
 }
-.min .min-list .min-item:nth-of-type(1) a {
+.hot .min-list .min-item:nth-of-type(1) a {
   padding: 0 13.33333333px 0 0;
 }
-.min .min-list .min-item:nth-of-type(2) a {
+.hot .min-list .min-item:nth-of-type(2) a {
   padding: 0 6.66666667px;
 }
-.min .min-list .min-item:nth-last-of-type(1) a {
+.hot .min-list .min-item:nth-last-of-type(1) a {
   padding: 0 0 0 13.33333333px;
 }
 .star {

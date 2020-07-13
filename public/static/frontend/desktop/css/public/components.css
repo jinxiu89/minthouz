@@ -188,6 +188,7 @@ body {
   color: #888;
 }
 .g-notice .des {
+  display: inline;
   color: #888;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
