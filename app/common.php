@@ -153,9 +153,9 @@ function is_mobile()
 }
 
 /**
- * @param string $message
+ * @param array $message
  */
-function flash(string $message)
+function flash(array $message)
 {
     Session::set('_flashes', $message);
 }

@@ -23,4 +23,16 @@ use app\common\model\mysql\BaseModel;
 class Notice extends BaseModel
 {
     protected $table = 'tb_notice';
+
+    /**
+     * @param int $language
+     * @param int $status
+     * @return array|\think\Model|null
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\DbException
+     * @throws \think\db\exception\ModelNotFoundException
+     */
+    public static function getNoticeByLanguage(int $language, int $status=1){
+        return self::where(['language_id'=>$language,'status'=>$status])->find();
+    }
 }

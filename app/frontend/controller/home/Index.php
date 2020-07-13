@@ -43,8 +43,8 @@ class Index extends Base
         if ($this->request->isGet()) {
             $Prettiest = new Prettiest();
             $banner = $Prettiest->getPrettiest((int)1, (int)$this->language['id']);//type 见函数注释
-            $hot = array_slice($Prettiest->getPrettiest((int)2, (int)$this->language['id']), 0, 2); //第二个三个图的数据
-            $starProduct = array_slice($Prettiest->getPrettiest((int)3, (int)$this->language['id']), 0, 3);
+            $hot = array_slice($Prettiest->getPrettiest((int)2, (int)$this->language['id']), 0, 3); //第二个三个图的数据
+            $starProduct = array_slice($Prettiest->getPrettiest((int)3, (int)$this->language['id']), 0, 4);
             View::assign('banner', $banner);
             View::assign('hot', $hot);
             View::assign('starProduct', $starProduct);

@@ -37,7 +37,7 @@ class Prettiest extends BaseModel
      */
     public static function getDataByType(int $type, int $language)
     {
-        return self::where(['type' => $type, 'language_id' => $language])->order(['id' => 'desc', 'listorder' => 'desc'])->paginate(5);
+        return self::where(['type' => $type, 'language_id' => $language, 'status' => 1])->order(['listorder' => 'desc','id' => 'desc'])->paginate(5);
 
     }
 
@@ -45,7 +45,8 @@ class Prettiest extends BaseModel
      * @param int $language
      * @param int $type
      */
-    public static function getPretties(int $language,int $type){
+    public static function getPretties(int $language, int $type)
+    {
         return self::where(['type']);
     }
 }

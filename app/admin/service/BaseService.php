@@ -52,6 +52,20 @@ class BaseService
     }
 
     /**
+     * @param array $data
+     * @return mixed
+     */
+    public function saveData(array $data)
+    {
+        try {
+            return $this->model->save($data);
+        } catch (\Exception $exception) {
+            if (true == Env::get('APP_DEBUG')) abort(500, $exception->getMessage());
+            abort(500, '服务器内部错误');
+        }
+    }
+
+    /**
      * @param int $id
      * @param int $status
      */

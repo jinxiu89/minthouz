@@ -17,6 +17,7 @@ use app\BaseController;
 use app\frontend\service\Language;
 use app\frontend\service\Setting;
 use app\frontend\service\Category;
+use app\frontend\service\Notice;
 use think\App;
 use think\facade\Lang;
 use think\facade\Session;
@@ -43,7 +44,7 @@ class Base extends BaseController
         if (!empty($this->language) || $this->language['status'] != 1) { //todo:关于语言状态还没处理
             Session::set('language', $this->language);
             Session::set('lang_var', $this->language['code']);
-            Lang::load(app()->getAppPath().'lang/'.$this->language['code'].'.php');
+            Lang::load(app()->getAppPath() . 'lang/' . $this->language['code'] . '.php');
         } else {
             abort(403, '不合法的语言选项');
         }
@@ -53,7 +54,7 @@ class Base extends BaseController
         } else {
             $this->template = app()->getRootPath() . 'app/' . app('http')->getName() . '/view/desktop';
         }
-       $this->init((int)$this->language['id']);
+        $this->init((int)$this->language['id']);
     }
 
     /**
@@ -80,15 +81,17 @@ class Base extends BaseController
     /**
      * @param int $language
      */
-    public function init(int $language){
+    public function init(int $language)
+    {
         //主页SEO、统计、版权声明
-        $BaseSetting=(new Setting())->getDataByLanguage((int) $language);
-        //通知
-
+        $BaseSetting = (new Setting())->getDataByLanguage((int)$language);
+        //通知 不用走缓存
+        $notice = (new Notice())->getNoticeByLanguage((int)$language, (int)$status = 1);
+        View::assign('notice',$notice);
         //导航
-        $treeCategory=(new Category())->getDataByLanguage((int) $language);
-//        print_r($treeCategory);
+        $treeCategory = (new Category())->getDataByLanguage((int)$language);
+        View::assign('treeCategory',$treeCategory);
         //页脚
-        View::assign('BaseSetting',$BaseSetting);
+        View::assign('BaseSetting', $BaseSetting);
     }
 }

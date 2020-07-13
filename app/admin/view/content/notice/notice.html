@@ -7,22 +7,46 @@
                 <label for="image" class="layui-form-label">图片
                 </label>
                 <div class="layui-input-inline">
-                    <button class="layui-btn" type="button" onclick="xadmin.open('选择图片','{:url(\'media/image_list\',[\'path\'=>\'images\/\'])}')"><i class="layui-icon"></i>选择</button>
+                    <button class="layui-btn" type="button"
+                            onclick="xadmin.open('选择图片','{:url(\'media/image_list\',[\'path\'=>\'images\/\'])}')"><i
+                            class="layui-icon"></i>选择
+                    </button>
                     <div class="image" style="height: 92px;padding-top: 5px">
-                        <img src="" alt="" style="height: 92px">
+                        {notempty name="data.image"}
+                        <img src="{$data.image}" alt="" style="height: 92px">
                         <input type="hidden" name="image" value="{$data.image}" id="image">
+                        {else /}
+                        <img src="" alt="" style="height: 92px">
+                        <input type="hidden" name="image"value="" id="image">
+                        {/notempty}
                     </div>
                 </div>
             </div>
             <div class="layui-form-item">
                 <label for="notice" class="layui-form-label">
-                   通知描述
+                    通知描述
                 </label>
-                <div class="layui-input-block">
-                    <textarea name="notice" id="notice" placeholder="请输入内容" class="layui-textarea">{$data.notice}</textarea>
+                <div class="layui-input-block" style="width: 50%">
+                    <textarea name="notice" id="notice" placeholder="请输入内容" class="layui-textarea">{notempty name="data.notice"}{$data.notice}{/notempty}</textarea>
                 </div>
             </div>
+            <div class="layui-form-item">
+                <label for="path" class="layui-form-label">
+                    指向链接
+                </label>
+                <div class="layui-input-block" style="width: 50%" >
+                    {notempty name="data.path"}
+                    <input type="text" id="path" name="path" required="" autocomplete="off" class="layui-input" value="{$data.path}">
+                    {else /}
+                    <input type="text" id="path" name="path" required="" autocomplete="off" class="layui-input">
+                    {/notempty}
+                </div>
+            </div>
+            {notempty name="data.id"}
             <input type="hidden" name="id" value="{$data.id}">
+            {else /}
+            <input type="hidden" name="id" value="">
+            {/notempty}
             <div class="layui-form-item">
                 <label class="layui-form-label">
                 </label>
@@ -48,7 +72,7 @@
             form.on('submit(add)',
                 function (data) {
                     $.ajax({
-                        url: "{:url('system/setting')}",
+                        url: "{:url('content/notice')}",
                         type: 'POST',
                         data: data.field,
                         'success': function (result) {
@@ -57,8 +81,8 @@
                                     xadmin.close();
                                     xadmin.father_reload();
                                 });
-                            }else{
-                                layer.msg(result.message,{'icon':5,'time':1000});
+                            } else {
+                                layer.msg(result.message, {'icon': 5, 'time': 1000});
                             }
                         }
                     }, 'JSON');

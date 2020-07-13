@@ -25,6 +25,10 @@ use think\facade\View;
  */
 class Notice extends BaseAdmin
 {
+    /**
+     * Notice constructor.
+     * @param App $app
+     */
     public function __construct(App $app)
     {
         parent::__construct($app);
@@ -33,14 +37,25 @@ class Notice extends BaseAdmin
 
     public function notice()
     {
-        if($this->request->isGet()){
-            $language=Session::get('current_language',1);
-            $data=$this->service->getDataByLanguage((int) $language);
-            View::assign('data',$data);
+        if ($this->request->isGet()) {
+            $language = Session::get('current_language', 1);
+            $data = $this->service->getDataByLanguage((int)$language);
+            View::assign('data', $data);
             return View::fetch();
         }
-        if($this->request->isPost()){
-            //保存
+        if ($this->request->isPost()) {
+            $data = input('post.', [], 'htmlspecialchars');
+            $data['language_id'] = $this->language;
+            //后面有时间做一个验证进来，现在可以这样用
+            if (intval($data['id'])) {
+                $result = $this->service->update((array)$data);
+            } else {
+                $result = $this->service->saveData((array)$data);
+            }
+            if ($result) {
+                return show(1, '保存成功');
+            }
+            return show(0, '新增失败，未知原因');
         }
     }
 
