@@ -1,4 +1,19 @@
 {extend name="common:base" /}
+{block name="style"}
+<link rel="stylesheet" href="{{admin}}/lib/codemirror/lib/codemirror.css">
+<link rel="stylesheet" href="{{admin}}/lib/codemirror/addon/fold/foldgutter.css">
+<link rel="stylesheet" href="{{admin}}/lib/codemirror/theme/monokai.css">
+<style>
+    .CodeMirror div.CodeMirror-cursor {
+        border-left: 1px solid #ffffff;
+    }
+    .CodeMirror {
+        border: 1px solid #eee;
+        font-size: 16px !important;
+        line-height: 22px !important;
+    }
+</style>
+{/block}
 {block name="body"}
 <div class="layui-fluid">
     <div class="layui-row">
@@ -181,27 +196,65 @@
 {block name="copyright"}
 {/block}
 {block name="javascript"}
-
+<script src="{{admin}}/lib/codemirror/lib/codemirror.js"></script>
+<script src="{{admin}}/lib/codemirror/addon/edit/closetag.js"></script>
+<script src="{{admin}}/lib/codemirror/addon/fold/foldcode.js"></script>
+<script src="{{admin}}/lib/codemirror/addon/fold/foldgutter.js"></script>
+<script src="{{admin}}/lib/codemirror/addon/fold/brace-fold.js"></script>
+<script src="{{admin}}/lib/codemirror/addon/fold/xml-fold.js"></script>
+<script src="{{admin}}/lib/codemirror/addon/fold/comment-fold.js"></script>
+<script src="{{admin}}/lib/codemirror/mode/xml/xml.js"></script>
+<script src="{{admin}}/lib/codemirror/mode/javascript/javascript.js"></script>
+<script src="{{admin}}/lib/codemirror/mode/css/css.js"></script>
+<script src="{{admin}}/lib/codemirror/mode/htmlmixed/htmlmixed.js"></script>
 <script>
+    window.onload = function(){
+        window.desktop=CodeMirror.fromTextArea(document.getElementById("desktop"),{
+            mode:"text/html",
+            lineNumbers:true,
+            lineWrapping:true,
+            extraKeys:{"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }},
+            foldGutter: true,
+            gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+            theme: "monokai",
+        });
+        desktop.setSize('','950px');
+        desktop.foldCode(CodeMirror.Pos(13, 0));
+        desktop.foldCode(CodeMirror.Pos(1, 0));
+        window.mobile=CodeMirror.fromTextArea(document.getElementById("mobile"),{
+            mode:"text/html",
+            lineNumbers:true,
+            lineWrapping:true,
+            extraKeys:{"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }},
+            foldGutter: true,
+            gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+            theme: "monokai",
+        })
+        mobile.setSize('','950px');
+        mobile.foldCode(CodeMirror.Pos(13, 0));
+        mobile.foldCode(CodeMirror.Pos(1, 0));
+    }
     layui.extend({tinymce: '{{admin}}/lib/extend/tinymce/tinymce'}).use(['form', 'layer', 'upload', 'tinymce', 'jquery'],
         function () {
             let $ = layui.jquery;
             let form = layui.form, upload = layui.upload, tinymce = layui.tinymce, layer = layui.layer;
             tinymce.render({elem:"#features", height:300, plugins:'code', toolbar:'code', menubar:false,forced_root_block:false,});
             tinymce.render({elem:"#specifications", height:300, plugins:'code', toolbar:'code', menubar:false,forced_root_block:false,});
-            tinymce.render({elem: "#desktop", height: $(window).height()-80,
+            /*tinymce.render({elem: "#desktop", height: $(window).height()-80,
                 plugins: 'code autosave quickbars print preview searchreplace autolink fullscreen image link media codesample table charmap hr advlist lists wordcount imagetools indent2em',
                 toolbar: 'code undo redo | forecolor backcolor bold italic underline strikethrough | indent2em alignleft aligncenter alignright alignjustify outdent indent | link bullist numlist image table codesample | formatselect fontselect fontsizeselect',
                 menubar:false,
                 forced_root_block:false,
+                paste_webkit_styles: true,
                 images_upload_url:''
-            });
-            tinymce.render({elem: "#mobile", height: $(window).height()-80,
+            });*/
+            /*tinymce.render({elem: "#mobile", height: $(window).height()-80,
                 plugins: 'code autosave quickbars print preview searchreplace autolink fullscreen image link media codesample table charmap hr advlist lists wordcount imagetools indent2em',
                 toolbar: 'code undo redo | forecolor backcolor bold italic underline strikethrough | indent2em alignleft aligncenter alignright alignjustify outdent indent | link bullist numlist image table codesample | formatselect fontselect fontsizeselect',
                 menubar:false,
+                paste_webkit_styles: true,
                 forced_root_block:false,
-            });
+            });*/
             form.verify({
                 features:function(){
                     tinyMCE.get("features").save()
@@ -210,10 +263,12 @@
                     tinyMCE.get("specifications").save()
                 },
                 desktop: function () {
-                    tinyMCE.get("desktop").save() //好苦啊，tinyMCE需要这样保存到input框
+                    window.desktop.save();
+                    // tinyMCE.get("desktop").save() //好苦啊，tinyMCE需要这样保存到input框
                 },
                 mobile:function () {
-                    tinyMCE.get("mobile").save()
+                    window.mobile.save();
+                    // tinyMCE.get("mobile").save()
                 }
             });
             //监听提交
