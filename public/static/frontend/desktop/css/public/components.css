@@ -186,6 +186,7 @@ body {
   line-height: 60px;
   text-align: center;
   color: #888;
+  font-size: 14px;
 }
 .g-notice .des {
   display: inline;
@@ -203,6 +204,13 @@ body {
 .g-notice .close {
   margin-left: 20px;
   cursor: pointer;
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .g-notice {
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+  }
 }
 .g-hd {
   position: relative;
@@ -423,17 +431,32 @@ body {
     padding: 0 10px;
   }
   .g-hd .nav {
+    position: static;
     padding: 0 10px;
+    background: #fff;
+  }
+  .g-hd .nav .logo a {
+    padding: 5px;
+  }
+  .g-hd .nav .logo abefore,
+  .g-hd .nav .logo a:after {
+    content: " ";
+    display: table;
+    zoom: 1;
+  }
+  .g-hd .nav .logo a:after {
+    clear: both;
   }
   .g-hd .nav .menu-box .menu-list .menu-item {
-    padding: 20px 5px;
+    padding: 15px 5px;
   }
   .g-hd .nav .item-children {
     padding: 0 10px;
+    top: 120px;
   }
   .g-hd .nav .item-children .children-list {
     width: 33.333%;
-    padding: 50px 10px;
+    padding: 20px 10px;
   }
   .g-hd .nav .item-children .children-list:nth-of-type(1),
   .g-hd .nav .item-children .children-list:nth-of-type(2),

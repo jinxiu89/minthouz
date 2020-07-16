@@ -60,6 +60,42 @@
     .swiper-pagination-bullet-active {
         background: @activeColor;
     }
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+        .swiper-wrapper .swiper-slide .des h3 {
+            font-size: 14px;
+        }
+        .swiper-wrapper .swiper-slide .des p {
+            font-size: 12px;
+        }
+        .swiper-wrapper .swiper-slide .des span {
+            padding: 5px 15px;
+            font-size: 12px;
+        }
+        .swiper-button-prev {
+            left: 10px;
+        }
+        .swiper-button-next {
+            right: 10px;
+        }
+    }
+    @media screen and (min-width: 992px) and (max-width: 1199px) {
+        .swiper-wrapper .swiper-slide .des h3 {
+            font-size: 16px;
+        }
+        .swiper-wrapper .swiper-slide .des p {
+            font-size: 14px;
+        }
+        .swiper-wrapper .swiper-slide .des span {
+            padding: 5px 15px;
+            font-size: 14px;
+        }
+        .swiper-button-prev {
+            left: 15px;
+        }
+        .swiper-button-next {
+            right: 15px;
+        }
+    }
 }
 
 .hot {
@@ -103,6 +139,7 @@
         text-align: center;
         margin: 68px auto 40px;
         font-weight: 600;
+        font-size: 16px;
         span {
             padding: 0 100px;
             background: @bodyBgColor;
@@ -156,6 +193,14 @@
     .star-list .right .star-item:nth-of-type(3) {
         margin-top: 1px;
     }
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+        h3 {
+            font-size: 14px;
+        }
+    }
+    @media screen and (min-width: 992px) and (max-width: 1199px) {
+
+    }
 }
 
 .video {
@@ -167,6 +212,7 @@
         text-align: center;
         margin: 68px auto 40px;
         font-weight: 600;
+        font-size: 16px;
         span {
             padding: 0 100px;
             background: @bodyBgColor;
@@ -231,6 +277,11 @@
         }
         &:nth-last-of-type(1) a {
             padding: 0 0 0 40/3px;
+        }
+    }
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+        h3 {
+            font-size: 14px;
         }
     }
 }
