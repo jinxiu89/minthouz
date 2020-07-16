@@ -63,6 +63,42 @@
 .banner .swiper-pagination-bullet-active {
   background: #00A82D;
 }
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .banner .swiper-wrapper .swiper-slide .des h3 {
+    font-size: 14px;
+  }
+  .banner .swiper-wrapper .swiper-slide .des p {
+    font-size: 12px;
+  }
+  .banner .swiper-wrapper .swiper-slide .des span {
+    padding: 5px 15px;
+    font-size: 12px;
+  }
+  .banner .swiper-button-prev {
+    left: 10px;
+  }
+  .banner .swiper-button-next {
+    right: 10px;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .banner .swiper-wrapper .swiper-slide .des h3 {
+    font-size: 16px;
+  }
+  .banner .swiper-wrapper .swiper-slide .des p {
+    font-size: 14px;
+  }
+  .banner .swiper-wrapper .swiper-slide .des span {
+    padding: 5px 15px;
+    font-size: 14px;
+  }
+  .banner .swiper-button-prev {
+    left: 15px;
+  }
+  .banner .swiper-button-next {
+    right: 15px;
+  }
+}
 .hot {
   margin-top: 20px;
   text-align: center;
@@ -119,6 +155,7 @@
   text-align: center;
   margin: 68px auto 40px;
   font-weight: 600;
+  font-size: 16px;
 }
 .star h3 span {
   padding: 0 100px;
@@ -187,6 +224,11 @@
 .star .star-list .right .star-item:nth-of-type(3) {
   margin-top: 1px;
 }
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .star h3 {
+    font-size: 14px;
+  }
+}
 .video {
   margin-bottom: 100px;
   text-align: center;
@@ -197,6 +239,7 @@
   text-align: center;
   margin: 68px auto 40px;
   font-weight: 600;
+  font-size: 16px;
 }
 .video h3 span {
   padding: 0 100px;
@@ -270,5 +313,10 @@
 }
 .video .video-list:nth-last-of-type(1) a {
   padding: 0 0 0 13.33333333px;
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .video h3 {
+    font-size: 14px;
+  }
 }
 /*# sourceMappingURL=Home.css.map */
