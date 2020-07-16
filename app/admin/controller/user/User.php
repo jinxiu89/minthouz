@@ -12,13 +12,15 @@
 namespace app\admin\controller\user;
 
 
-use app\admin\controller\BaseAdmin;
-use app\admin\validate\user\User as userValidate;
 use app\admin\service\user\User as service;
+use app\admin\validate\user\User as userValidate;
 use app\BaseController;
 use think\App;
 use think\facade\Env;
+use think\facade\Session;
 use think\facade\View;
+use think\facade\Request;
+use think\response\Redirect;
 
 /**
  * Class User
@@ -49,6 +51,7 @@ class User extends BaseController
      */
     public function login()
     {
+        if ($this->isLogin()) return redirect(url('dashboard/index'), 200);
         $next = input('get.next') ?? (string)url('dashboard/index');//todo::这个问题 回头再来好好研究
         if ($this->request->isGet()) {
             try {
@@ -71,5 +74,15 @@ class User extends BaseController
             }
             return show(0, '登录失败，未知原因');
         }
+    }
+
+    /**
+     * @return Redirect
+     */
+    public function logout()
+    {
+        Session::delete('adminUser');
+        Session::delete('current_language');
+        return redirect(url('user/login'));
     }
 }

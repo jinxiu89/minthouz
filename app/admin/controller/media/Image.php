@@ -46,12 +46,20 @@ class Image extends BaseAdmin
     {
         if ($this->request->isGet()) {
             $path = input('get.path', 'images/', 'htmlspecialchars,trim');
-            Session::set('path', $path);
+            Session::set('path', $path); //上传行为需要用到这个path
+            $nav = array_filter(explode('/', $path));
+            $navbar = [];
+            foreach ($nav as $item) {
+                $temp['name'] = $item;
+                $temp['path'] = substr($path, 0, strpos($path, '/' . $item)) . '/' . $item;
+                $navbar[] = $temp;
+            }
             $items = AliOss::listObj((string)$this->bucket, (string)$path);
             $baseUrl = Env::get('oss.baseUrl'); //传递到前端 防止换来换去，全部都要手撸
             View::assign('baseUrl', $baseUrl);
             View::assign('items', $items);
             View::assign('path', $path);
+            View::assign('nav', $navbar);
             return View::fetch();
         }
     }

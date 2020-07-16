@@ -27,10 +27,12 @@
 {block name="body"}
 <div class="x-nav">
           <span class="layui-breadcrumb">
-            <a href="">首页</a>
-            <a href="">图片管理</a>
-            <a>
-              <cite>图片列表</cite></a>
+              <a href="">首页</a>
+              <a href="{:url('media/image_list',['path'=>'images/'])}">图片管理</a>
+              {volist name="nav" id="vo" offset="1"}
+              <a href="{:url('media/image_list',['path'=>$vo.path])}">{$vo.name}</a>
+              {/volist}
+<!--            <a><cite>图片列表</cite></a>-->
           </span>
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
        onclick="location.reload()" title="刷新">

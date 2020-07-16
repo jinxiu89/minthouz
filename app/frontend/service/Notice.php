@@ -35,7 +35,7 @@ class Notice extends BaseService
     public function getNoticeByLanguage(int $language, int $status)
     {
         try {
-            return $this->model::getNoticeByLanguage((int)$language, (int)$status)->toArray();
+            return $this->model::getNoticeByLanguage((int)$language, (int)$status);
         } catch (Exception $exception) {
 
         }

@@ -34,7 +34,7 @@ class Language extends BaseModel
      * @throws ModelNotFoundException
      */
     public static function getDataByCode(string $code){
-        return self::where(['code'=>$code,'status'=>1])->field('id,name,code,status')->find()->toArray();
+        return self::where(['code'=>$code,'status'=>1])->field('id,name,code,status')->find();
     }
 
 }

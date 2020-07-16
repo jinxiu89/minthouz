@@ -12,7 +12,7 @@ use think\facade\Route;
 use think\facade\Session;
 use think\facade\Request;
 
-Route::get('/', function () {
+Route::get('/$', function () {
     $code = (Session::get('lang_var')) ? (Session::get('lang_var')) : get_lang(Request::instance()->header());
     return redirect('/' . $code.'/', 200);
 });

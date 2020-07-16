@@ -1,5 +1,4 @@
 <?php
-declare(strict_types=1);
 /**
  * @Create by PhpStorm
  * @author:jinxiu89@163.com
@@ -13,31 +12,11 @@ declare(strict_types=1);
 namespace app\admin\controller\content;
 
 
-use app\admin\controller\BaseAdmin;
-use think\App;
-use app\admin\middleware\Auth;
+use app\admin\controller\baseAdmin;
 
-/**
- * Class Index
- * @package app\admin\controller\content
- */
-class Index extends BaseAdmin
+class index extends baseAdmin
 {
-    public function __construct(App $app)
-    {
-        parent::__construct($app);
-    }
-
-    protected $middleware = [
-//        Auth::class=>['except'=>['index']]
-        Auth::class
-    ];
-
-    /**
-     * @return string
-     */
-    public function index()
-    {
+    public function index(){
         return "hello world in content";
     }
 }

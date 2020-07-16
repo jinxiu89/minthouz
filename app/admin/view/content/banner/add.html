@@ -1,0 +1,100 @@
+{extend name="common:base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-row">
+        <form class="layui-form">
+            <div class="layui-form-item">
+                <label for="parent_id" class="layui-form-label">
+                    <span class="x-red">*</span>类型
+                </label>
+                <div class="layui-input-inline">
+                    <select name="parent_id" lay-verify="required" id="parent_id">
+                        <option value="0">顶级</option>
+                        {notempty name='category'}
+                        {volist name="category" id="vo"}
+                        <option value="{$vo.id}" {if($parent_id== $vo.id)}selected{/if}>{$vo.delimiter|raw}{$vo.name}</option>
+                        {/volist}
+                        {/notempty}
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="title" class="layui-form-label">
+                    标题
+                </label>
+                <div class="layui-input-block" style="width: 50%">
+                    <input type="text" id="title" name="title" required="" lay-verify="required"
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="description" class="layui-form-label">
+                    <span class="x-red">*</span>描述
+                </label>
+                <div class="layui-input-block" style="width: 50%">
+                    <textarea name="description" id="description" placeholder="请输入内容" class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="button" class="layui-form-label">
+                    按钮文案
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="button" name="button" required="" lay-verify="required"
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="path" class="layui-form-label">
+                    指向链接
+                </label>
+                <div class="layui-input-block" style="width: 50%" >
+                    <input type="text" id="path" name="path" required="" lay-verify="required"
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">
+                </label>
+                <button class="layui-btn" lay-filter="add" lay-submit="">
+                    增加
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{/block}
+{block name="copyright"}
+{/block}
+{block name="javascript"}
+<script>
+    layui.use(['form', 'layer'],
+        function () {
+            $ = layui.jquery;
+            var form = layui.form,
+                layer = layui.layer;
+
+            //监听提交
+            form.on('submit(add)',
+                function (data) {
+                    $.ajax({
+                        url: "{:url('category/add_product')}",
+                        type: 'POST',
+                        data: data.field,
+                        'success': function (result) {
+                            if (result.status === 1) {
+                                layer.msg(result.message, {'icon': 1, 'time': 1000}, function () {
+                                    xadmin.close();
+                                    xadmin.father_reload();
+                                });
+                            } else {
+                                layer.msg(result.message, {'icon': 5, 'time': 8000});
+                            }
+                        }
+                    }, 'JSON');
+                    return false;
+                });
+
+        });
+</script>
+{/block}

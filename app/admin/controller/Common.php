@@ -11,9 +11,10 @@
 
 namespace app\admin\controller;
 
+use app\admin\service\system\Language;
 use app\libs\utils\cloud\AliOss;
-use think\facade\Env;
-use think\facade\Filesystem;
+use think\facade\Request;
+use think\facade\Session;
 
 /**
  * Class Common
@@ -21,14 +22,27 @@ use think\facade\Filesystem;
  */
 class Common extends BaseAdmin
 {
-    public function imageUpload(){
-        if($this->request->isPost()){
+    public function imageUpload()
+    {
+        if ($this->request->isPost()) {
             $file = $this->request->file('file');
 //            print_r($file->getPathname());  print_r($file->getRealPath()); // 获得文件的文件路径 path
-            $key=$file->hashName(null);
+            $key = $file->hashName(null);
             print_r($key);
             AliOss::putFile();
         }
 //        print_r(Env::get('ali.accessKeyId'));
+    }
+
+    /**
+     * @return \think\response\Redirect
+     */
+    public function changeLanguage()
+    {
+        $language = input('get.code', 'en_us', 'trim,htmlspecialchars');
+        $refer = Request::header('referer')?Request::header('referer'): url('dashboard/index');
+        $result = (new Language())->getLanguageByCode((string)$language);
+        Session::set('current_language', $result['id']);
+        return redirect($refer);
     }
 }

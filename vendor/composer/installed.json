@@ -1,5 +1,54 @@
 [
     {
+        "name": "aliyuncs/oss-sdk-php",
+        "version": "v2.3.1",
+        "version_normalized": "2.3.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/aliyun/aliyun-oss-php-sdk.git",
+            "reference": "053d7ba9e798e4c09b9c5c1edab153d25ea9643a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/aliyun/aliyun-oss-php-sdk/zipball/053d7ba9e798e4c09b9c5c1edab153d25ea9643a",
+            "reference": "053d7ba9e798e4c09b9c5c1edab153d25ea9643a",
+            "shasum": "",
+            "mirrors": [
+                {
+                    "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                    "preferred": true
+                }
+            ]
+        },
+        "require": {
+            "php": ">=5.3"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0",
+            "satooshi/php-coveralls": "~1.0"
+        },
+        "time": "2019-11-15T11:05:42+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "OSS\\": "src/OSS"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Aliyuncs",
+                "homepage": "http://www.aliyun.com"
+            }
+        ],
+        "description": "Aliyun OSS SDK for PHP",
+        "homepage": "http://www.aliyun.com/product/oss/"
+    },
+    {
         "name": "league/flysystem",
         "version": "1.0.46",
         "version_normalized": "1.0.46.0",
@@ -148,17 +197,17 @@
     },
     {
         "name": "opis/closure",
-        "version": "3.5.3",
-        "version_normalized": "3.5.3.0",
+        "version": "3.5.5",
+        "version_normalized": "3.5.5.0",
         "source": {
             "type": "git",
             "url": "https://github.com/opis/closure.git",
-            "reference": "cac47092144043d5d676e2e7cf8d0d2f83fc89ca"
+            "reference": "dec9fc5ecfca93f45cd6121f8e6f14457dff372c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/opis/closure/zipball/cac47092144043d5d676e2e7cf8d0d2f83fc89ca",
-            "reference": "cac47092144043d5d676e2e7cf8d0d2f83fc89ca",
+            "url": "https://api.github.com/repos/opis/closure/zipball/dec9fc5ecfca93f45cd6121f8e6f14457dff372c",
+            "reference": "dec9fc5ecfca93f45cd6121f8e6f14457dff372c",
             "shasum": "",
             "mirrors": [
                 {
@@ -174,7 +223,7 @@
             "jeremeamia/superclosure": "^2.0",
             "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0"
         },
-        "time": "2020-05-25T09:32:45+00:00",
+        "time": "2020-06-17T14:59:55+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -439,17 +488,17 @@
     },
     {
         "name": "symfony/polyfill-mbstring",
-        "version": "v1.17.0",
-        "version_normalized": "1.17.0.0",
+        "version": "v1.17.1",
+        "version_normalized": "1.17.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/polyfill-mbstring.git",
-            "reference": "fa79b11539418b02fc5e1897267673ba2c19419c"
+            "reference": "7110338d81ce1cbc3e273136e4574663627037a7"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/fa79b11539418b02fc5e1897267673ba2c19419c",
-            "reference": "fa79b11539418b02fc5e1897267673ba2c19419c",
+            "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/7110338d81ce1cbc3e273136e4574663627037a7",
+            "reference": "7110338d81ce1cbc3e273136e4574663627037a7",
             "shasum": "",
             "mirrors": [
                 {
@@ -464,11 +513,15 @@
         "suggest": {
             "ext-mbstring": "For best performance"
         },
-        "time": "2020-05-12T16:47:27+00:00",
+        "time": "2020-06-06T08:46:27+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
                 "dev-master": "1.17-dev"
+            },
+            "thanks": {
+                "name": "symfony/polyfill",
+                "url": "https://github.com/symfony/polyfill"
             }
         },
         "installation-source": "dist",
@@ -568,18 +621,18 @@
         ]
     },
     {
-        "name": "symfony/var-dumper",
-        "version": "v4.4.8",
-        "version_normalized": "4.4.8.0",
+        "name": "symfony/polyfill-php80",
+        "version": "v1.17.1",
+        "version_normalized": "1.17.1.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/symfony/var-dumper.git",
-            "reference": "c587e04ce5d1aa62d534a038f574d9a709e814cf"
+            "url": "https://github.com/symfony/polyfill-php80.git",
+            "reference": "4a5b6bba3259902e386eb80dd1956181ee90b5b2"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/var-dumper/zipball/c587e04ce5d1aa62d534a038f574d9a709e814cf",
-            "reference": "c587e04ce5d1aa62d534a038f574d9a709e814cf",
+            "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/4a5b6bba3259902e386eb80dd1956181ee90b5b2",
+            "reference": "4a5b6bba3259902e386eb80dd1956181ee90b5b2",
             "shasum": "",
             "mirrors": [
                 {
@@ -589,9 +642,84 @@
             ]
         },
         "require": {
-            "php": "^7.1.3",
+            "php": ">=7.0.8"
+        },
+        "time": "2020-06-06T08:46:27+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.17-dev"
+            },
+            "thanks": {
+                "name": "symfony/polyfill",
+                "url": "https://github.com/symfony/polyfill"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Polyfill\\Php80\\": ""
+            },
+            "files": [
+                "bootstrap.php"
+            ],
+            "classmap": [
+                "Resources/stubs"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Ion Bazan",
+                "email": "ion.bazan@gmail.com"
+            },
+            {
+                "name": "Nicolas Grekas",
+                "email": "p@tchwork.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony polyfill backporting some PHP 8.0+ features to lower PHP versions",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "compatibility",
+            "polyfill",
+            "portable",
+            "shim"
+        ]
+    },
+    {
+        "name": "symfony/var-dumper",
+        "version": "v4.4.10",
+        "version_normalized": "4.4.10.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/var-dumper.git",
+            "reference": "56b3aa5eab0ac6720dcd559fd1d590ce301594ac"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/var-dumper/zipball/56b3aa5eab0ac6720dcd559fd1d590ce301594ac",
+            "reference": "56b3aa5eab0ac6720dcd559fd1d590ce301594ac",
+            "shasum": "",
+            "mirrors": [
+                {
+                    "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                    "preferred": true
+                }
+            ]
+        },
+        "require": {
+            "php": ">=7.1.3",
             "symfony/polyfill-mbstring": "~1.0",
-            "symfony/polyfill-php72": "~1.5"
+            "symfony/polyfill-php72": "~1.5",
+            "symfony/polyfill-php80": "^1.15"
         },
         "conflict": {
             "phpunit/phpunit": "<4.8.35|<5.4.3,>=5.0",
@@ -608,7 +736,7 @@
             "ext-intl": "To show region name in time zone dump",
             "symfony/console": "To use the ServerDumpCommand and/or the bin/var-dump-server script"
         },
-        "time": "2020-04-12T16:14:02+00:00",
+        "time": "2020-05-30T20:06:45+00:00",
         "bin": [
             "Resources/bin/var-dump-server"
         ],
@@ -653,17 +781,17 @@
     },
     {
         "name": "topthink/framework",
-        "version": "v6.0.2",
-        "version_normalized": "6.0.2.0",
+        "version": "v6.0.3",
+        "version_normalized": "6.0.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/top-think/framework.git",
-            "reference": "1444cce94b40a836958380b160a5fb7bfc165daf"
+            "reference": "b4046fb21e6163ba23a792b694162693dbe71b4b"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/top-think/framework/zipball/1444cce94b40a836958380b160a5fb7bfc165daf",
-            "reference": "1444cce94b40a836958380b160a5fb7bfc165daf",
+            "url": "https://api.github.com/repos/top-think/framework/zipball/b4046fb21e6163ba23a792b694162693dbe71b4b",
+            "reference": "b4046fb21e6163ba23a792b694162693dbe71b4b",
             "shasum": "",
             "mirrors": [
                 {
@@ -690,7 +818,7 @@
             "mockery/mockery": "^1.2",
             "phpunit/phpunit": "^7.0"
         },
-        "time": "2020-01-13T05:48:05+00:00",
+        "time": "2020-06-26T16:03:10+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -720,6 +848,63 @@
             "orm",
             "thinkphp"
         ]
+    },
+    {
+        "name": "topthink/think-captcha",
+        "version": "v3.0.3",
+        "version_normalized": "3.0.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/top-think/think-captcha.git",
+            "reference": "1eef3717c1bcf4f5bbe2d1a1c704011d330a8b55"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/top-think/think-captcha/zipball/1eef3717c1bcf4f5bbe2d1a1c704011d330a8b55",
+            "reference": "1eef3717c1bcf4f5bbe2d1a1c704011d330a8b55",
+            "shasum": "",
+            "mirrors": [
+                {
+                    "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                    "preferred": true
+                }
+            ]
+        },
+        "require": {
+            "topthink/framework": "^6.0.0"
+        },
+        "time": "2020-05-19T10:55:45+00:00",
+        "type": "library",
+        "extra": {
+            "think": {
+                "services": [
+                    "think\\captcha\\CaptchaService"
+                ],
+                "config": {
+                    "captcha": "src/config.php"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "think\\captcha\\": "src/"
+            },
+            "files": [
+                "src/helper.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "yunwuxin",
+                "email": "448901948@qq.com"
+            }
+        ],
+        "description": "captcha package for thinkphp"
     },
     {
         "name": "topthink/think-helper",
@@ -769,18 +954,70 @@
         "description": "The ThinkPHP6 Helper Package"
     },
     {
-        "name": "topthink/think-orm",
-        "version": "v2.0.32",
-        "version_normalized": "2.0.32.0",
+        "name": "topthink/think-multi-app",
+        "version": "v1.0.13",
+        "version_normalized": "1.0.13.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/top-think/think-orm.git",
-            "reference": "03aaaa4d8c4475115b3acaa5aa2498bf5792e017"
+            "url": "https://github.com/top-think/think-multi-app.git",
+            "reference": "21ac02a99bd69e29444963841e09c5d39b2bcecb"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/top-think/think-orm/zipball/03aaaa4d8c4475115b3acaa5aa2498bf5792e017",
-            "reference": "03aaaa4d8c4475115b3acaa5aa2498bf5792e017",
+            "url": "https://api.github.com/repos/top-think/think-multi-app/zipball/21ac02a99bd69e29444963841e09c5d39b2bcecb",
+            "reference": "21ac02a99bd69e29444963841e09c5d39b2bcecb",
+            "shasum": "",
+            "mirrors": [
+                {
+                    "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                    "preferred": true
+                }
+            ]
+        },
+        "require": {
+            "php": ">=7.1.0",
+            "topthink/framework": "^6.0.0"
+        },
+        "time": "2020-04-24T08:53:21+00:00",
+        "type": "library",
+        "extra": {
+            "think": {
+                "services": [
+                    "think\\app\\Service"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "think\\app\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "liu21st",
+                "email": "liu21st@gmail.com"
+            }
+        ],
+        "description": "thinkphp6 multi app support"
+    },
+    {
+        "name": "topthink/think-orm",
+        "version": "v2.0.33",
+        "version_normalized": "2.0.33.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/top-think/think-orm.git",
+            "reference": "35ca511a1e4d671b39f7afb4c887703c16ef6957"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/top-think/think-orm/zipball/35ca511a1e4d671b39f7afb4c887703c16ef6957",
+            "reference": "35ca511a1e4d671b39f7afb4c887703c16ef6957",
             "shasum": "",
             "mirrors": [
                 {
@@ -796,7 +1033,7 @@
             "psr/simple-cache": "^1.0",
             "topthink/think-helper": "^3.1"
         },
-        "time": "2020-04-26T13:54:48+00:00",
+        "time": "2020-06-22T14:57:28+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -820,6 +1057,51 @@
             "database",
             "orm"
         ]
+    },
+    {
+        "name": "topthink/think-template",
+        "version": "v2.0.7",
+        "version_normalized": "2.0.7.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/top-think/think-template.git",
+            "reference": "e98bdbb4a4c94b442f17dfceba81e0134d4fbd19"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/top-think/think-template/zipball/e98bdbb4a4c94b442f17dfceba81e0134d4fbd19",
+            "reference": "e98bdbb4a4c94b442f17dfceba81e0134d4fbd19",
+            "shasum": "",
+            "mirrors": [
+                {
+                    "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                    "preferred": true
+                }
+            ]
+        },
+        "require": {
+            "php": ">=7.1.0",
+            "psr/simple-cache": "^1.0"
+        },
+        "time": "2019-09-20T15:31:04+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "think\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "liu21st",
+                "email": "liu21st@gmail.com"
+            }
+        ],
+        "description": "the php template engine"
     },
     {
         "name": "topthink/think-trace",
@@ -875,5 +1157,50 @@
             }
         ],
         "description": "thinkphp debug trace"
+    },
+    {
+        "name": "topthink/think-view",
+        "version": "v1.0.14",
+        "version_normalized": "1.0.14.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/top-think/think-view.git",
+            "reference": "edce0ae2c9551ab65f9e94a222604b0dead3576d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/top-think/think-view/zipball/edce0ae2c9551ab65f9e94a222604b0dead3576d",
+            "reference": "edce0ae2c9551ab65f9e94a222604b0dead3576d",
+            "shasum": "",
+            "mirrors": [
+                {
+                    "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                    "preferred": true
+                }
+            ]
+        },
+        "require": {
+            "php": ">=7.1.0",
+            "topthink/think-template": "^2.0"
+        },
+        "time": "2019-11-06T11:40:13+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "think\\view\\driver\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "liu21st",
+                "email": "liu21st@gmail.com"
+            }
+        ],
+        "description": "thinkphp template driver"
     }
 ]

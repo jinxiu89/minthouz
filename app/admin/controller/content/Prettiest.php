@@ -52,6 +52,7 @@ class Prettiest extends BaseAdmin
     {
         if ($this->request->isGet()) {
             $type = input('get.type', 1, 'intval');
+            print_r($this->language);
             $data = $this->service->getDataByType((int)$type, (int)$this->language);
             View::assign('type', input('get.type'));
             View::assign('data', $data);

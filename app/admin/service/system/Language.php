@@ -25,4 +25,15 @@ class Language extends BaseService
     {
         $this->model=new Model();
     }
+
+    /**
+     * @param string $code
+     */
+    public function getLanguageByCode(string $code){
+        try{
+            return $this->model::getDataByCode($code);
+        }catch (\Exception $exception){
+            return [];
+        }
+    }
 }

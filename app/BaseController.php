@@ -5,6 +5,9 @@ namespace app;
 
 use think\App;
 use think\exception\ValidateException;
+use think\facade\Request;
+use think\facade\Session;
+use think\response\Redirect;
 use think\Validate;
 
 /**
@@ -90,5 +93,11 @@ abstract class BaseController
 
         return $v->failException(true)->check($data);
     }
-
+    /**
+     *
+     */
+    public function isLogin(){
+        if(Session::get('adminUser', '')) return true;
+        return  false;
+    }
 }
