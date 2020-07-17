@@ -27,14 +27,13 @@ class ProductCategory extends BaseModel
     protected $table='tb_product_category';
 
     /**
-     * @param int $status
      * @param int $language
      * @return Collection
      * @throws DataNotFoundException
      * @throws DbException
      * @throws ModelNotFoundException
      */
-    public static function getDataByLanguage(int $status, int $language){
-        return self::where(['status' => $status, 'language_id' => $language])->field('*')->select();
+    public static function getDataByLanguage(int $language){
+        return self::where(['language_id' => $language])->field('*')->select();
     }
 }

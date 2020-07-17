@@ -16,6 +16,7 @@ Route::group('system', function () {
     Route::rule('/language$', 'system.Language/index','GET');
     Route::rule('/add_language$', 'system.Language/addLanguage','GET|POST');
     Route::rule('/edit_language$', 'system.Language/editLanguage','GET|POST');
+    Route::rule('/change_status$', 'system.Language/changeStatus','GET');
     Route::rule('/setting$', 'system.Setting/setting','GET|POST');
     Route::rule('/changeLanguage$','Common/changeLanguage','GET');
 });

@@ -9,8 +9,8 @@
                 </label>
                 <div class="layui-input-inline">
                     <button class="layui-btn" type="button" onclick="xadmin.open('选择图片','{:url(\'media/image_list\',[\'path\'=>\'images\/\'])}')"><i class="layui-icon"></i>选择</button>
-                    <div class="image" style="height: 92px;padding-top: 5px">
-                        <img src="" alt="" style="height: 92px">
+                    <div class="image" style="height: 150px;padding-top: 5px">
+                        <div style="height: 120px;background: #454545;margin: 10px;padding: 10px;text-align: center"><img src="{$data.logo}" alt="" style="height: 80%;" ></div>
                         <input type="hidden" name="logo" value="{$data.logo}" id="logo">
                     </div>
                 </div>

@@ -36,12 +36,14 @@ class BaseModel extends Model
     {
         return self::update($data, ['id' => $id]);
     }
+
     /**
      * @param int $language
      * @return array|Model
      */
-    public static function getDtaByLanguage(int $language){
-        return self::where(['language_id'=>$language])->findOrEmpty();
+    public static function getDtaByLanguage(int $language)
+    {
+        return self::where(['language_id' => $language])->findOrEmpty();
     }
 
     /**
@@ -59,10 +61,20 @@ class BaseModel extends Model
     }
 
     /**
+     * @return mixed|Paginator
+     * @throws DbException
+     */
+    public static function getObj()
+    {
+        return self::order(['id' => 'desc'])->paginate();
+    }
+
+    /**
      * @param int $id
      * @return mixed
      */
-    public static function getDataById(int $id){
+    public static function getDataById(int $id)
+    {
         return self::findOrEmpty($id);
     }
 }

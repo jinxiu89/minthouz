@@ -63,15 +63,14 @@ class ProductCategory extends BaseService
     }
 
     /**
-     * @param int $status
      * @param int $language
      * @return array
      */
 
-    public function getDataByLanguage(int $status, int $language)
+    public function getDataByLanguage( int $language): array
     {
         try {
-            $obj = $this->model::getDataByLanguage((int)$status, (int)$language);
+            $obj = $this->model::getDataByLanguage((int)$language);
             return $obj->toArray();
         } catch (\Exception $exception) {
             if (!Env::get('app_debug')) abort(500, $exception->getMessage());

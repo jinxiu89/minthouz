@@ -94,6 +94,20 @@ class BaseService
     }
 
     /**
+     * @return mixed
+     * 当后台需要读出所有数据时使用
+     */
+    public function getObj(){
+        try{
+            $obj = $this->model::getObj();
+            return $obj->toArray();
+        }catch (\Exception $exception){
+            if (true == Env::get('APP_DEBUG')) abort(500, $exception->getMessage());
+            abort(500, '服务器内部错误');
+        }
+    }
+
+    /**
      * @param int $id
      * @return mixed
      *

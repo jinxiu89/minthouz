@@ -14,14 +14,17 @@ namespace app\admin\controller\system;
 
 
 use app\admin\controller\BaseAdmin;
-use Exception;
-use think\App;
-use think\facade\Session;
-use think\facade\View;
 use app\admin\service\system\Language as service;
 use app\admin\validate\system\Language as validate;
+use Exception;
+use think\App;
+use think\facade\View;
 use think\response\Json;
 
+/**
+ * Class Language
+ * @package app\admin\controller\system
+ */
 class Language extends BaseAdmin
 {
 
@@ -48,7 +51,7 @@ class Language extends BaseAdmin
     public function index()
     {
         if ($this->request->isGet()) {
-            $data = $this->service->getDataByStatus((int)1);
+            $data = $this->service->getObj();
             View::assign('data', $data);
             return View::fetch();
         }
@@ -96,5 +99,18 @@ class Language extends BaseAdmin
             }
             return show(0, '新增失败，未知原因');
         }
+    }
+
+    /**
+     * @return Json
+     */
+    public function changeStatus(){
+        $id = input('get.id');
+        $status = input('get.status');
+        $result = $this->service->changeStatus((int)$id, (int)$status);
+        if ($result->id) {
+            return show(1, '保存成功');
+        }
+        return show(0, '保存失败，未知原因');
     }
 }

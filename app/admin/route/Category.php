@@ -14,6 +14,7 @@ Route::group('category', function () {
     Route::rule('/add_product$', 'category.ProductCategory/add');
     Route::rule('/edit_product$', 'category.ProductCategory/edit');
     Route::rule('/product_list$', 'category.ProductCategory/lists');
+    Route::rule('/change_status$', 'category.ProductCategory/changeStatus','GET');
 
 //    Route::rule('/add_setting$', 'system.Setting/add','GET|POST');
 //    Route::rule('/language/add$', 'system.Language/addLanguage','GET|POST');

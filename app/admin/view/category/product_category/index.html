@@ -34,8 +34,8 @@
                             <th width="70">ID</th>
                             <th>栏目名</th>
                             <th width="50">排序</th>
-                            <th width="80">状态</th>
-                            <th width="250">操作</th>
+                            <th width="50">状态</th>
+                            <th width="310">操作</th>
                         </thead>
                         <tbody class="x-cate">
                         {notempty name="category"}
@@ -56,7 +56,11 @@
                             </td>
                             <td><input type="text" class="layui-input x-sort" name="order" value="{$vo.listorder}"></td>
                             <td>
-                                <input type="checkbox" name="status" lay-text="开启|停用" checked="" lay-skin="switch">
+                                {if($vo.status == 1)}
+                                <button class="layui-btn layui-btn-normal layui-btn-mini">启用</button>
+                                {else /}
+                                <button class="layui-btn layui-btn-danger layui-btn-mini">禁用</button>
+                                {/if}
                             </td>
                             <td class="td-manage">
                                 <button class="layui-btn layui-btn layui-btn-xs"
@@ -65,8 +69,16 @@
                                 </button>
                                 {if($vo.is_parent === 1)}
                                 <button class="layui-btn layui-btn-warm layui-btn-xs"
-                                        onclick="xadmin.open('添加子栏目','{:url(\'category/add_product\',[\'id\'=>$vo.id])}')"><i class="layui-icon">&#xe642;</i>添加子栏目
+                                        onclick="xadmin.open('添加子分类','{:url(\'category/add_product\',[\'id\'=>$vo.id])}')">
+                                    <i class="layui-icon">&#xe624;</i>子栏目
                                 </button>
+                                {/if}
+                                {if($vo.status == 2)}
+                                <button class="layui-btn layui-btn-normal layui-btn-mini"
+                                        onclick="changeStatus('{:url(\'category/change_status\',[\'id\'=>$vo.id,\'status\'=>1])}')">启用</button>
+                                {else /}
+                                <button class="layui-btn layui-btn-danger layui-btn-mini"
+                                        onclick="changeStatus('{:url(\'category/change_status\',[\'id\'=>$vo.id,\'status\'=>2])}')">禁用</button>
                                 {/if}
                                 <button class="layui-btn-danger layui-btn layui-btn-xs"
                                         onclick="member_del(this,'要删除的id')" href="javascript:;"><i class="layui-icon">&#xe640;</i>删除
@@ -84,6 +96,7 @@
 </div>
 {/block}
 {block name="javascript"}
+<script src="{{admin}}/js/common.js"></script>
 <script>
 
     layui.use(['form'], function () {

@@ -19,6 +19,7 @@ use app\libs\utils\Category;
 use think\App;
 use think\facade\Session;
 use think\facade\View;
+use think\response\Json;
 
 /**
  * Class ProductCategory
@@ -42,7 +43,7 @@ class ProductCategory extends BaseAdmin
         parent::__construct($app);
         $this->service = new service();
         $this->validate = new validate();
-        $arr = $this->service->getDataByLanguage((int)$status = 1, (int)$this->language);
+        $arr = $this->service->getDataByLanguage((int)$this->language);
         $this->category = Category::toLevel((array)$arr, '&nbsp;&nbsp;');
         View::assign('category', $this->category);
 
@@ -60,7 +61,7 @@ class ProductCategory extends BaseAdmin
     }
 
     /**
-     * @return \think\response\Json
+     * @return Json
      */
     public function lists()
     {
@@ -133,5 +134,18 @@ class ProductCategory extends BaseAdmin
             }
             return show(0, '新增失败，未知原因');
         }
+    }
+
+    /**
+     * @return Json
+     */
+    public function changeStatus(){
+        $id = input('get.id');
+        $status = input('get.status');
+        $result = $this->service->changeStatus((int)$id, (int)$status);
+        if ($result->id) {
+            return show(1, '保存成功');
+        }
+        return show(0, '保存失败，未知原因');
     }
 }
