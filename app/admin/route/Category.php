@@ -10,12 +10,10 @@
  **/
 use think\facade\Route;
 Route::group('category', function () {
-    Route::rule('/product$', 'category.ProductCategory/index');
-    Route::rule('/add_product$', 'category.ProductCategory/add');
-    Route::rule('/edit_product$', 'category.ProductCategory/edit');
-    Route::rule('/product_list$', 'category.ProductCategory/lists');
-    Route::rule('/change_status$', 'category.ProductCategory/changeStatus','GET');
-
-//    Route::rule('/add_setting$', 'system.Setting/add','GET|POST');
-//    Route::rule('/language/add$', 'system.Language/addLanguage','GET|POST');
+    // 路径逻辑：为了能够清晰看到路径的逻辑，将路由的路径做层级优化，但这样有个问题，就是没办法用路由映射
+    Route::rule('/product/index$', 'category.ProductCategory/index');
+    Route::rule('/product/add$', 'category.ProductCategory/add');
+    Route::rule('/product/edit$', 'category.ProductCategory/edit');
+    Route::rule('/product/list$', 'category.ProductCategory/lists');
+    Route::rule('/product/change_status$', 'category.ProductCategory/changeStatus','GET');
 });

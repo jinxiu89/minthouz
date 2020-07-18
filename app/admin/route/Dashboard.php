@@ -14,4 +14,5 @@ use think\facade\Route;
 
 Route::group('dashboard',function (){
     Route::rule('/index','BaseAdmin/index')->name('dashboardIndex');
+    Route::rule('/','BaseAdmin/index')->name('dashboardIndex');
 });

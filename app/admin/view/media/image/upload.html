@@ -37,7 +37,7 @@
             let form = layui.form, upload = layui.upload, element = layui.element, layer = layui.layer;
             upload.render({
                 elem: '#upload'
-                ,url: '{:url(\'media/image_upload\')}' //改成您自己的上传接口
+                ,url: '{:url(\'media/image/upload\')}' //改成您自己的上传接口
                 ,multiple: true
                 ,before: function(obj){
                     //预读本地文件示例，不支持ie8
@@ -66,27 +66,5 @@
                     })
                 }
             });
-
-            /*//监听提交
-            form.on('submit(add)',
-                function (data) {
-                    $.ajax({
-                        url: "{:url('content/add_product')}",
-                        type: 'POST',
-                        data: data.field,
-                        'success': function (result) {
-                            if (result.status === 1) {
-                                layer.msg(result.message, {'icon': 1, 'time': 1000}, function () {
-                                    xadmin.close();
-                                    xadmin.father_reload();
-                                });
-                            } else {
-                                layer.msg(result.message, {'icon': 5, 'time': 8000});
-                            }
-                        }
-                    }, 'JSON');
-                    return false;
-                });*/
-        });
 </script>
 {/block}

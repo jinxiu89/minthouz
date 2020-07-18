@@ -18,7 +18,7 @@
                 <div class="layui-card-body ">
                 </div>
                 <div class="layui-card-header">
-                    <button class="layui-btn" onclick="xadmin.full('添加','{:url(\'content/add_prettiest\',[\'type\'=>$type])}')"><i class="layui-icon"></i>添加</button>
+                    <button class="layui-btn" onclick="xadmin.full('添加','{:url(\'content/prettiest/add\',[\'type\'=>$type])}')"><i class="layui-icon"></i>添加</button>
                 </div>
                 <div class="layui-card-body ">
                     <table class="layui-table layui-form">
@@ -58,15 +58,15 @@
                             </td>
                             <td class="td-manage">
                                 <button class="layui-btn layui-btn layui-btn-xs"
-                                        onclick="xadmin.full('编辑','{:url(\'content/edit_prettiest\',[\'id\'=>$vo.id])}')">
+                                        onclick="xadmin.full('编辑','{:url(\'content/prettiest/edit\',[\'id\'=>$vo.id])}')">
                                     <i class="layui-icon">&#xe642;</i>编辑
                                 </button>
                                 {if($vo.status == 2)}
                                 <button class="layui-btn layui-btn-normal layui-btn-mini"
-                                        onclick="changeStatus('{:url(\'content/status_prettiest\',[\'id\'=>$vo.id,\'status\'=>1])}')">启用</button>
+                                        onclick="changeStatus('{:url(\'content/prettiest/change_status\',[\'id\'=>$vo.id,\'status\'=>1])}')">启用</button>
                                 {else /}
                                 <button class="layui-btn layui-btn-danger layui-btn-mini"
-                                        onclick="changeStatus('{:url(\'content/status_prettiest\',[\'id\'=>$vo.id,\'status\'=>2])}')">禁用</button>
+                                        onclick="changeStatus('{:url(\'content/prettiest/change_status\',[\'id\'=>$vo.id,\'status\'=>2])}')">禁用</button>
                                 {/if}
                             </td>
                         </tr>

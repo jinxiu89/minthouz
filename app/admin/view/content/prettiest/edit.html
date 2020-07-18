@@ -28,7 +28,7 @@
                     <span class="x-red">*</span>图片
                 </label>
                 <div class="layui-input-inline">
-                    <button class="layui-btn" type="button" onclick="xadmin.open('选择图片','{:url(\'media/image_list\',[\'path\'=>\'images\/\'])}')"><i class="layui-icon"></i>选择</button>
+                    <button class="layui-btn" type="button" onclick="xadmin.open('选择图片','{:url(\'media/image/list\',[\'path\'=>\'images\/\',\'type\'=>\'1\'])}')"><i class="layui-icon"></i>选择</button>
                     <div class="image" style="height: 92px;padding-top: 5px">
                         <img src="{$data.image}" alt="" style="height: 92px">
                         <input type="hidden" name="image" value="{$data.image}" id="image">
@@ -92,7 +92,7 @@
             form.on('submit(add)',
                 function (data) {
                     $.ajax({
-                        url: "{:url('content/edit_prettiest')}",
+                        url: "{:url('content/prettiest/edit')}",
                         type: 'POST',
                         data: data.field,
                         'success': function (result) {

@@ -105,15 +105,13 @@
                                 <span class="x-red">*</span>描述
                             </label>
                             <div class="layui-input-block w50">
-                                <textarea name="description" id="description" placeholder="请输入内容"
-                                          class="layui-textarea">{$data.description}</textarea>
+                                <textarea name="description" id="description" class="layui-textarea">{$data.description}</textarea>
                             </div>
                         </div>
                     </div>
                     <div class="layui-tab-item">
                         <div class="layui-input-block">
-                                <textarea name="specifications" id="specifications" placeholder="请输入内容"
-                                          class="layui-textarea" lay-verify="specifications">{$data.specifications}</textarea>
+                                <textarea name="specifications" id="specifications"  class="layui-textarea" lay-verify="specifications">{$data.specifications}</textarea>
                         </div>
                     </div>
                     <div class="layui-tab-item">
@@ -122,7 +120,7 @@
                                 缩略图
                             </label>
                             <div class="layui-input-inline">
-                                <button class="layui-btn" type="button" onclick="xadmin.open('添加产品','{:url(\'media/image_list\',[\'path\'=>\'images\/\'])}')"><i class="layui-icon"></i>选择</button>
+                                <button class="layui-btn" type="button" onclick="xadmin.open('添加缩略图','{:url(\'media/image/list\',[\'path\'=>\'images\/\',\'type\'=>\'1\'])}')"><i class="layui-icon"></i>选择</button>
                                 <div class="image" style="height: 92px;padding-top: 5px">
                                     <img src="{$data.thumbnail}" alt="" style="height: 92px">
                                     <input type="hidden" name="thumbnail" value="{$data.thumbnail}" id="thumbnail" >
@@ -130,11 +128,11 @@
                             </div>
                         </div>
                         <div class="layui-form-item">
-                            <label for="album" class="layui-form-label">
+                            <label  class="layui-form-label">
                                 相册
                             </label>
                             <div class="layui-input-block">
-                                <button class="layui-btn" type="button" onclick="xadmin.open('选择图片','{:url(\'media/image_list\',[\'path\'=>\'images\/\'])}')"><i class="layui-icon"></i>选择</button>
+                                <button class="layui-btn" type="button" onclick="xadmin.open('选择图片','{:url(\'media/image/list\',[\'path\'=>\'images\/\',\'type\'=>\'1\'])}')"><i class="layui-icon"></i>选择</button>
                                 <blockquote class="layui-elem-quote layui-quote-nm" style="margin-top: 10px;min-height: 100px">
                                     <div class="img-list" id="img-list">
                                         {notempty name="data.albums"}
@@ -152,16 +150,12 @@
                                 特色描述
                             </label>
                             <div class="layui-input-block">
-                                <textarea name="features" id="features" placeholder="请输入内容"
-                                          class="layui-textarea" lay-verify="features">{$data.features}</textarea>
+                                <textarea name="features" id="features" class="layui-textarea" lay-verify="features">{$data.features}</textarea>
                             </div>
                         </div>
                     </div>
                     <div class="layui-tab-item">
                         <div class="layui-form-item">
-                            <!--<label for="pc" class="layui-form-label">
-                                大屏幕
-                            </label>-->
                             <div class="layui-input-block">
                                 <textarea name="desktop" id="desktop" placeholder="请输入内容" class="layui-textarea"
                                           lay-verify="desktop">{$data.content.desktop}</textarea>
@@ -170,11 +164,8 @@
                     </div>
                     <div class="layui-tab-item">
                         <div class="layui-form-item">
-                            <!-- <label for="mobile" class="layui-form-label">
-                                 小屏幕
-                             </label>-->
                             <div class="layui-input-block">
-                                <textarea name="mobile" id="mobile" placeholder="请输入内容" class="layui-textarea"
+                                <textarea name="mobile" id="mobile" class="layui-textarea"
                                           lay-verify="mobile">{$data.content.mobile}</textarea>
                             </div>
                         </div>
@@ -186,7 +177,7 @@
                 </label>
                 <input name="id" type="hidden" value="{$data.id}">
                 <button class="layui-btn" lay-filter="add" lay-submit="">
-                    增加
+                    保存
                 </button>
             </div>
         </form>
@@ -275,7 +266,7 @@
             form.on('submit(add)',
                 function (data) {
                     $.ajax({
-                        url: "{:url('content/edit_product')}",
+                        url: "{:url('content/product/edit')}",
                         type: 'POST',
                         data: data.field,
                         'success': function (result) {

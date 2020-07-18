@@ -16,7 +16,7 @@
         <div class="layui-col-md12">
             <div class="layui-card">
                 <div class="layui-card-header">
-                    <button class="layui-btn" onclick="xadmin.open('添加','{:url(\'system/add_language\')}',600,360)"><i
+                    <button class="layui-btn" onclick="xadmin.open('添加','{:url(\'system/language/add\')}',600,360)"><i
                             class="layui-icon"></i>添加
                     </button>
                 </div>
@@ -61,14 +61,14 @@
                                 {/if}
                             </td>
                             <td class="td-manage">
-                                <a title="编辑" onclick="xadmin.open('编辑','{:url(\'system/edit_language\',[\'id\'=>$vo.id])}',600,400)"
+                                <a title="编辑" onclick="xadmin.open('编辑','{:url(\'system/language/edit\',[\'id\'=>$vo.id])}',600,400)"
                                    href="javascript:;" class="layui-btn">
                                     <i class="layui-icon" style="font-size: 22px">&#xe642;</i>
                                 </a>
                                 {if($vo.status == 2)}
-                                <button class="layui-btn layui-btn-normal layui-btn-mini" onclick="changeStatus('{:url(\'system/change_status\',[\'id\'=>$vo.id,\'status\'=>1])}')">启用</button>
+                                <button class="layui-btn layui-btn-normal layui-btn-mini" onclick="changeStatus('{:url(\'system/language/change_status\',[\'id\'=>$vo.id,\'status\'=>1])}')">启用</button>
                                 {else /}
-                                <button class="layui-btn layui-btn-danger layui-btn-mini" onclick="changeStatus('{:url(\'system/change_status\',[\'id\'=>$vo.id,\'status\'=>2])}')">禁用</button>
+                                <button class="layui-btn layui-btn-danger layui-btn-mini" onclick="changeStatus('{:url(\'system/language/change_status\',[\'id\'=>$vo.id,\'status\'=>2])}')">禁用</button>
                                 {/if}
                                 <!--<a title="删除" onclick="changeStatus(this,'要删除的id')" href="javascript:;" class="layui-btn layui-btn-danger">
                                     <i class="layui-icon" style="font-size: 22px">&#xe640;</i>

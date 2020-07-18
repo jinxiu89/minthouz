@@ -13,13 +13,14 @@ use think\facade\Route;
 Route::group('content',function (){
     Route::rule('/index','content.Index/index');
 //    产品
-    Route::rule('/product_index','content.Product/index');
-    Route::rule('/add_product','content.Product/add','GET|POST');
-    Route::rule('/edit_product','content.Product/edit','GET|POST');
+    Route::rule('/product/index','content.Product/index');
+    Route::rule('/product/add','content.Product/add','GET|POST');
+    Route::rule('/product/edit','content.Product/edit','GET|POST');
+
     //Prettiest 优质产品 首页霸屏，栏目推介位
-    Route::rule('/prettiest_index','content.Prettiest/index','GET');
-    Route::rule('/add_prettiest','content.Prettiest/add','GET|POST');
-    Route::rule('/edit_prettiest','content.Prettiest/edit','GET|POST');
-    Route::rule('/status_prettiest','content.Prettiest/changeStatus','GET');
+    Route::rule('/prettiest/index','content.Prettiest/index','GET');
+    Route::rule('/prettiest/add','content.Prettiest/add','GET|POST');
+    Route::rule('/prettiest/edit','content.Prettiest/edit','GET|POST');
+    Route::rule('/prettiest/change_status','content.Prettiest/changeStatus','GET');
     Route::rule('/notice','content.Notice/notice','GET|POST');
 });

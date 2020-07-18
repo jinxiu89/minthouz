@@ -49,7 +49,7 @@
             form.on('submit(add)',
                 function (data) {
                     $.ajax({
-                        url: "{:url('media/create_image_folder')}",
+                        url: "{:url('media/image/create_folder')}",
                         type: 'POST',
                         data: data.field,
                         'success': function (result) {

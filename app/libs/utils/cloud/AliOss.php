@@ -36,7 +36,7 @@ class AliOss
         try {
             return new OssClient($accessKeyID, $accessKeySecret, $endpoint, false);
         } catch (OssException $ossException) {
-            //todo: 抛出异常
+            // todo: 抛出异常
         }
     }
 

@@ -12,7 +12,4 @@
 namespace app\admin\route;
 use think\facade\Route;
 
-
-Route::group('dashboard',function (){
-    Route::rule('/index','content.Index/hello')->name('dashboardIndex');
-});
+Route::get('/$','BaseAdmin/index');

@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 /**
  * @Create by PhpStorm
  * @author:jinxiu89@163.com

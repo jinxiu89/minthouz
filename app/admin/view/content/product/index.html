@@ -17,14 +17,14 @@
             <div class="layui-card">
                 <div class="layui-card-body ">
                     <form class="layui-form layui-col-space5">
-                        <div class="layui-inline layui-show-xs-block">
+                        <!--<div class="layui-inline layui-show-xs-block">
                             <input class="layui-input"  autocomplete="off" placeholder="开始日" name="start" id="start">
                         </div>
                         <div class="layui-inline layui-show-xs-block">
                             <input class="layui-input"  autocomplete="off" placeholder="截止日" name="end" id="end">
-                        </div>
+                        </div>-->
                         <div class="layui-inline layui-show-xs-block">
-                            <input type="text" name="username"  placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                            <input type="text" name="username"  placeholder="请输入产品名称或者型号/关键词" autocomplete="off" class="layui-input">
                         </div>
                         <div class="layui-inline layui-show-xs-block">
                             <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
@@ -32,8 +32,8 @@
                     </form>
                 </div>
                 <div class="layui-card-header">
-                    <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
-                    <button class="layui-btn" onclick="xadmin.full('添加产品','{:url(\'content/add_product\')}')"><i class="layui-icon"></i>添加</button>
+                    <!--<button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>-->
+                    <button class="layui-btn" onclick="xadmin.full('添加产品','{:url(\'content/product/add\')}')"><i class="layui-icon"></i>添加</button>
                 </div>
                 <div class="layui-card-body ">
                     <table class="layui-table layui-form">
@@ -75,7 +75,7 @@
                                     <i class="layui-icon">&#xe601;</i>
                                 </a>-->
                                 <button class="layui-btn layui-btn layui-btn-xs"
-                                        onclick="xadmin.full('编辑','{:url(\'content/edit_product\',[\'id\'=>$vo.id])}')">
+                                        onclick="xadmin.full('编辑','{:url(\'content/product/edit\',[\'id\'=>$vo.id])}')">
                                     <i class="layui-icon">&#xe642;</i>编辑
                                 </button>
                                 <a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;">

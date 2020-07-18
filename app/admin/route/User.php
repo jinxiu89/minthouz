@@ -14,5 +14,4 @@ Route::group('user',function (){
     Route::rule('/login','user.User/login','GET|POST');
     Route::rule('/register','user.User/register','GET|POST');
     Route::rule('/logout','user.User/logout','GET');
-//    Route::rule('/language/adsd$', 'system.Language/addLanguage');
 });
