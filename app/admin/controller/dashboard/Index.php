@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @Create by PhpStorm
  * @author:jinxiu89@163.com
@@ -10,6 +11,7 @@
  **/
 
 namespace app\admin\controller\dashboard;
+
 use app\admin\controller\BaseAdmin;
 use think\App;
 use think\facade\View;
@@ -29,6 +31,18 @@ class Index extends BaseAdmin
      * @return string
      */
     public function index()
+    {
+        return View::fetch();
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @Author: kevin qiu
+     * @DateTime: 2020-07-20
+     * @return void
+     */
+    public function welcome()
     {
         return View::fetch();
     }

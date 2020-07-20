@@ -1,70 +1,81 @@
-{extend name="common:base" /}
-{block name="body"}
+{extend name="common:base" /} {block name="body"}
 <div class="layui-fluid">
-    <div class="layui-row">
-        <form class="layui-form">
-            <div class="layui-form-item">
-                <div class="layui-input-block">
-                    <button type="button" class="layui-btn" id="upload">多图片上传</button>
-                    <blockquote class="layui-elem-quote layui-quote-nm"
-                                style="margin-top: 10px;min-height: 100px">
-                        <div class="layui-upload-list" id="list"></div>
-                    </blockquote>
-                    <input type="hidden" name="album" id="album">
-                </div>
-                <br>
-                <div class="layui-input-block">
-                    <label class="layui-form-label">
-                        上传进度
-                    </label>
-                    <div class="layui-progress" lay-showPercent="true" lay-filter="progress">
-                        <div class="layui-progress-bar layui-bg-green" lay-percent=""></div>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
+  <div class="layui-row">
+    <form class="layui-form">
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button type="button" class="layui-btn" id="upload">
+            多图片上传
+          </button>
+          <blockquote
+            class="layui-elem-quote layui-quote-nm"
+            style="margin-top: 10px; min-height: 100px;"
+          >
+            <div class="layui-upload-list" id="list"></div>
+          </blockquote>
+          <input type="hidden" name="album" id="album" />
+        </div>
+        <br />
+        <div class="layui-input-block">
+          <label class="layui-form-label">
+            上传进度
+          </label>
+          <div
+            class="layui-progress"
+            lay-showPercent="true"
+            lay-filter="progress"
+          >
+            <div class="layui-progress-bar layui-bg-green" lay-percent=""></div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
-{/block}
-{block name="copyright"}
-{/block}
-{block name="javascript"}
-
+{/block} {block name="copyright"} {/block} {block name="javascript"}
 <script>
-    layui.use(['form', 'layer', 'upload', 'jquery','element'],
-        function () {
-            let $ = layui.jquery;
-            let form = layui.form, upload = layui.upload, element = layui.element, layer = layui.layer;
-            upload.render({
-                elem: '#upload'
-                ,url: '{:url(\'media/image/upload\')}' //改成您自己的上传接口
-                ,multiple: true
-                ,before: function(obj){
-                    //预读本地文件示例，不支持ie8
-                    obj.preview(function(index, file, result){
-                        $('#list').append('<img src="'+ result +'" alt="'+ file.name +'" class="layui-upload-img" style="margin-right: 10px;width: 100px">')
-                    });
-                }
-                ,progress:function (n,elem) {
-                    let percent= n+'%'
-                    element.progress('progress',percent);
-                }
-                ,allDone:function (object) {
-                    if(object.code === 1){
-                        layer.msg('上传成功',{icon:1,time:3000},function () {
-                            xadmin.close();
-                            xadmin.father_reload();
-                        })
-                    }
-                }
-                ,done: function(res){
-
-                    //上传完毕
-                },error:function () {
-                    layer.msg('上传失败',{icon:5,time:1000},function () {
-                        return false;
-                    })
-                }
-            });
+  layui.use(["form", "layer", "upload", "jquery", "element"], function () {
+    let $ = layui.jquery;
+    let upload = layui.upload,
+      element = layui.element,
+      layer = layui.layer;
+    upload.render({
+      elem: "#upload",
+      url: "{:url('media/image/upload')}", //改成您自己的上传接口
+      multiple: true,
+      before: function (obj) {
+        //预读本地文件示例，不支持ie8
+        obj.preview(function (index, file, result) {
+          $("#list").append(
+            '<img src="' +
+              result +
+              '" alt="' +
+              file.name +
+              '" class="layui-upload-img" style="margin-right: 10px;width: 100px">'
+          );
+        });
+      },
+      progress: function (n, elem) {
+        let percent = n + "%";
+        element.progress("progress", percent);
+      },
+      allDone: function (object) {
+        if (object.code === 1) {
+          layer.msg("上传成功", { icon: 1, time: 3000 }, function () {
+            xadmin.close();
+            xadmin.father_reload();
+          });
+        }
+      },
+      done: function (res) {
+        //上传完毕
+      },
+      error: function () {
+        layer.msg("上传失败", { icon: 5, time: 1000 }, function () {
+          return false;
+        });
+      },
+    });
+  });
 </script>
 {/block}

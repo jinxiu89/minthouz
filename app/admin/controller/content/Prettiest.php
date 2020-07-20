@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * @Create by PhpStorm
@@ -31,7 +32,8 @@ class Prettiest extends BaseAdmin
         '1' => '幻灯片(活动/新品)',
         '2' => '热门(实力担当)',
         '3' => '重金打造(镇馆之宝)',
-        '4' => '霸屏横幅(实力推荐)'];
+        '4' => '霸屏横幅(实力推荐)'
+    ];
 
     public function initialize()
     {
@@ -111,7 +113,7 @@ class Prettiest extends BaseAdmin
      */
     public function changeStatus()
     {
-//        parent::changeStatus();
+        //        parent::changeStatus();
         $id = input('get.id');
         $status = input('get.status');
 
