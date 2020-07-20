@@ -12,4 +12,4 @@
 namespace app\admin\route;
 use think\facade\Route;
 
-Route::get('/$','BaseAdmin/index');
+Route::rule('/$','dashboard.index/index'); //后台首页 欢迎页面

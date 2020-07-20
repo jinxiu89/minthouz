@@ -12,7 +12,7 @@
 namespace app\admin\route;
 use think\facade\Route;
 
-Route::group('dashboard',function (){
-    Route::rule('/index','BaseAdmin/index')->name('dashboardIndex');
-    Route::rule('/','BaseAdmin/index')->name('dashboardIndex');
+Route::group('dashboard',function (){ //仪表板首页
+    Route::rule('/index','dashboard.index/index')->name('dashboardIndex');
+    Route::rule('/','dashboard.index/index')->name('dashboardIndex');
 });

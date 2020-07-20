@@ -21,8 +21,9 @@ use think\facade\View;
  * Class baseAdmin
  * @package app\admin\controller
  */
-class baseAdmin extends BaseController
+class BaseAdmin extends BaseController
 {
+    protected $service;
     /**
      * baseAdmin constructor.
      * @param App $app

@@ -12,9 +12,11 @@
 namespace app\admin\controller\content;
 
 
-use app\admin\controller\baseAdmin;
+//use app\admin\controller\baseAdmin;
 
-class index extends baseAdmin
+use app\admin\controller\BaseAdmin;
+
+class index extends BaseAdmin
 {
     public function index(){
         return "hello world in content";

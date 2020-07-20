@@ -35,6 +35,9 @@ class Notice extends BaseAdmin
         $this->service = new service();
     }
 
+    /**
+     * @return string|\think\response\Json
+     */
     public function notice()
     {
         if ($this->request->isGet()) {

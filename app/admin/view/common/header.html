@@ -28,19 +28,11 @@
         </li>
     </ul>-->
     <ul class="layui-nav right" lay-filter="">
-        <li class="layui-nav-item to-index"><a href="/">{$adminUser.title}:{$adminUser.username}</a></li>
+
         <li class="layui-nav-item to-index"><a href="/">前台首页</a></li>
         <li class="layui-nav-item">
             <a href="{:url('user/logout')}">退出登录</a>
         </li>
-        <li class="layui-nav-item">
-            <a href="javascript:;">切换语言</a>
-            <dl class="layui-nav-child">
-                <!-- 二级菜单 -->
-                {volist name="languageList" id="vo"}
-                <dd><a href="{:url('system/changeLanguage',['code'=>$vo.code])}">{$vo.name}</a></dd>
-                {/volist}
-            </dl>
-        </li>
+
     </ul>
 </div>
