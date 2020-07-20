@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @Create by PhpStorm
  * @author:jinxiu89@163.com
@@ -13,11 +14,13 @@ use think\facade\Route;
 
 Route::group('system', function () {
     Route::rule('/index$', 'system.Index/index');
-    Route::rule('/language/index$', 'system.Language/index','GET');
-    Route::rule('/language/add$', 'system.Language/addLanguage','GET|POST');
-    Route::rule('/language/edit$', 'system.Language/editLanguage','GET|POST');
-    Route::rule('/language/change_status$', 'system.Language/changeStatus','GET');
-    Route::rule('/setting$', 'system.Setting/setting','GET|POST');
-
-    Route::rule('/changeLanguage$','Common/changeLanguage','GET');
+    Route::rule('/language/index$', 'system.Language/index', 'GET');
+    Route::rule('/language/add$', 'system.Language/addLanguage', 'GET|POST');
+    Route::rule('/language/edit$', 'system.Language/editLanguage', 'GET|POST');
+    Route::rule('/language/change_status$', 'system.Language/changeStatus', 'GET');
+    Route::rule('/setting$', 'system.Setting/setting', 'GET|POST');
+    Route::rule('/about/index$', 'system.About/index', 'GET');
+    Route::rule('/about/add$', 'system.About/index', 'GET|POST');
+    Route::rule('/about/edit$', 'system.About/index', 'GET|POST');
+    Route::rule('/changeLanguage$', 'Common/changeLanguage', 'GET');
 });
