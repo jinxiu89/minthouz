@@ -9,8 +9,8 @@
                     <span class="x-red">*</span>语言
                 </label>
                 <div class="layui-input-inline">
-                    <input type="text" id="name" name="name" required="" lay-verify="required"
-                           autocomplete="off" class="layui-input" value="{$result.name}">
+                    <input type="text" id="name" name="name" required="" lay-verify="required" autocomplete="off"
+                        class="layui-input" value="{$result.name}">
                 </div>
                 <div class="layui-form-mid layui-word-aux">
 
@@ -21,8 +21,8 @@
                     <span class="x-red">*</span>标识
                 </label>
                 <div class="layui-input-inline">
-                    <input type="text" id="code" name="code" required="" lay-verify="required"
-                           autocomplete="off" class="layui-input" value="{$result.code}">
+                    <input type="text" id="code" name="code" required="" lay-verify="required" autocomplete="off"
+                        class="layui-input" value="{$result.code}">
                 </div>
                 <div class="layui-form-mid layui-word-aux">
 
@@ -34,7 +34,7 @@
                 </label>
                 <div class="layui-input-block">
                     <textarea name="remark" id="remark" placeholder="请输入内容"
-                              class="layui-textarea">{$result.remark}</textarea>
+                        class="layui-textarea">{$result.remark}</textarea>
                 </div>
             </div>
 
@@ -63,17 +63,17 @@
             form.on('submit(edit)',
                 function (data) {
                     $.ajax({
-                        url: "{:url('system/edit_language')}",
+                        url: "{:url('system/language/edit')}",
                         type: 'POST',
                         data: data.field,
                         'success': function (result) {
                             if (result.status === 1) {
-                                layer.msg(result.message, {'icon': 1, 'time': 1000}, function () {
+                                layer.msg(result.message, { 'icon': 1, 'time': 1000 }, function () {
                                     xadmin.close();
                                     xadmin.father_reload();
                                 });
                             } else {
-                                layer.msg(result.message, {'icon': 5, 'time': 8000});
+                                layer.msg(result.message, { 'icon': 5, 'time': 8000 });
                             }
                         }
                     }, 'JSON');

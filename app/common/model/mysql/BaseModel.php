@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @Create by PhpStorm
  * @author:jinxiu89@163.com
@@ -61,12 +62,16 @@ class BaseModel extends Model
     }
 
     /**
-     * @return mixed|Paginator
-     * @throws DbException
+     * 获取指定语言的数据
+     *
+     * @Author: kevin qiu
+     * @DateTime: 2020-07-21
+     * @param integer $language
+     * @return void
      */
-    public static function getObj()
+    public static function getObj(int $language)
     {
-        return self::order(['id' => 'desc'])->paginate();
+        return self::where(['language_id' => $language])->order(['id' => 'desc'])->paginate();
     }
 
     /**

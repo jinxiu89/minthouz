@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * @Create by PhpStorm
@@ -94,14 +95,19 @@ class BaseService
     }
 
     /**
-     * @return mixed
-     * 当后台需要读出所有数据时使用
+     * 公用获取时速局
+     *
+     * @Author: kevin qiu
+     * @DateTime: 2020-07-21
+     * @param integer $language
+     * @return void
      */
-    public function getObj(){
-        try{
-            $obj = $this->model::getObj();
+    public function getObj(int $language = 1)
+    {
+        try {
+            $obj = $this->model::getObj((int) $language);
             return $obj->toArray();
-        }catch (\Exception $exception){
+        } catch (\Exception $exception) {
             if (true == Env::get('APP_DEBUG')) abort(500, $exception->getMessage());
             abort(500, '服务器内部错误');
         }

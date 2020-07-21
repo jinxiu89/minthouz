@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @Create by PhpStorm
  * @author:jinxiu89@163.com
@@ -56,7 +57,7 @@ class Product extends BaseAdmin
     public function index()
     {
         if ($this->request->isGet()) {
-            $data = $this->service->getDataByStatus();
+            $data = $this->service->getObj((int) $this->language);
             View::assign('data', $data);
             return View::fetch();
         }
@@ -89,7 +90,7 @@ class Product extends BaseAdmin
             $product['specifications'] = $data['specifications'];
             $product['create_time'] = $product['update_time'] = time();
             //相册分表
-            $album = $data['album'];//是个数组
+            $album = $data['album']; //是个数组
             //内容分表
             $content['desktop'] = $data['desktop'];
             $content['mobile'] = $data['mobile'];
@@ -112,14 +113,14 @@ class Product extends BaseAdmin
     {
         if ($this->request->isGet()) {
             $id = input('get.id');
-            $data=$this->service->getDataByID((int)$id);
-            View::assign('data',$data);
+            $data = $this->service->getDataByID((int)$id);
+            View::assign('data', $data);
             return View::fetch();
         }
-        if($this->request->isPost()){
+        if ($this->request->isPost()) {
             $data = input('post.', [], 'trim');
             //主表
-            $product['id']=$data['id'];
+            $product['id'] = $data['id'];
             $product['category_id'] = $data['category_id'];
             $product['language_id'] = $this->language;
             $product['hot'] = $data['hot'];
@@ -135,7 +136,7 @@ class Product extends BaseAdmin
             $product['specifications'] = $data['specifications'];
             $product['create_time'] = $product['update_time'] = time();
             //相册分表
-            $album = $data['album'];//是个数组
+            $album = $data['album']; //是个数组
             //内容分表
             $content['desktop'] = $data['desktop'];
             $content['mobile'] = $data['mobile'];
@@ -151,11 +152,9 @@ class Product extends BaseAdmin
 
     public function del()
     {
-
     }
 
     public function changeStatus()
     {
-
     }
 }

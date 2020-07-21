@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @Create by PhpStorm
  * @author:jinxiu89@163.com
@@ -33,8 +34,19 @@ class Language extends BaseModel
      * @throws DbException
      * @throws ModelNotFoundException
      */
-    public static function getDataByCode(string $code){
-        return self::where(['code'=>$code,'status'=>1])->field('id,name,code,status')->find();
+    public static function getDataByCode(string $code)
+    {
+        return self::where(['code' => $code, 'status' => 1])->field('id,name,code,status')->find();
     }
-
+    /**
+     * Undocumented function
+     *
+     * @Author: kevin qiu
+     * @DateTime: 2020-07-21
+     * @return void
+     */
+    public static function getLanguage()
+    {
+        return self::order(['id' => 'desc'])->paginate();
+    }
 }

@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace app\common\model\mysql\system;
+
 use app\common\model\mysql\BaseModel;
 
 /**
@@ -16,4 +18,16 @@ use app\common\model\mysql\BaseModel;
 class About extends BaseModel
 {
     protected $table = 'tb_about';
+    /**
+     * 根据语言获取列表
+     *
+     * @Author: kevin qiu
+     * @DateTime: 2020-07-21
+     * @param integer $language
+     * @return void
+     */
+    public static function getObj(int $language)
+    {
+        return self::where(['language_id' => $language])->order(['id' => 'desc'])->field('id,title,keywords,description,status,update_time')->paginate();
+    }
 }

@@ -20,7 +20,8 @@ Route::group('system', function () {
     Route::rule('/language/change_status$', 'system.Language/changeStatus', 'GET');
     Route::rule('/setting$', 'system.Setting/setting', 'GET|POST');
     Route::rule('/about/index$', 'system.About/index', 'GET');
-    Route::rule('/about/add$', 'system.About/index', 'GET|POST');
-    Route::rule('/about/edit$', 'system.About/index', 'GET|POST');
+    Route::rule('/about/add$', 'system.About/add', 'GET|POST');
+    Route::rule('/about/edit$', 'system.About/edit', 'GET|POST');
+    Route::rule('/about/change_status$', 'system.About/changeStatus', 'GET');
     Route::rule('/changeLanguage$', 'Common/changeLanguage', 'GET');
 });

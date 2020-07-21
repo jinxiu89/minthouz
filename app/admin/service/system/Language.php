@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @Create by PhpStorm
  * @author:jinxiu89@163.com
@@ -14,6 +15,7 @@ namespace app\admin\service\system;
 
 use app\admin\service\BaseService;
 use app\common\model\mysql\system\Language as Model;
+use Exception;
 
 /**
  * Class Language
@@ -23,17 +25,27 @@ class Language extends BaseService
 {
     public function __construct()
     {
-        $this->model=new Model();
+        $this->model = new Model();
     }
 
     /**
      * @param string $code
      */
-    public function getLanguageByCode(string $code){
-        try{
+    public function getLanguageByCode(string $code)
+    {
+        try {
             return $this->model::getDataByCode($code);
-        }catch (\Exception $exception){
+        } catch (\Exception $exception) {
             return [];
+        }
+    }
+    public function getLanguage()
+    {
+        try {
+            $obj = $this->model::getLanguage();
+            return $obj->toArray();
+        } catch (Exception $exception) {
+            return $exception->getMessage();
         }
     }
 }

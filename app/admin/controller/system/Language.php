@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * @Create by PhpStorm
@@ -45,13 +46,13 @@ class Language extends BaseAdmin
     }
 
     /**
-     * @return string
+     * @return strings
      * @throws Exception
      */
     public function index()
     {
         if ($this->request->isGet()) {
-            $data = $this->service->getObj();
+            $data = $this->service->getLanguage();
             View::assign('data', $data);
             return View::fetch();
         }
@@ -104,7 +105,8 @@ class Language extends BaseAdmin
     /**
      * @return Json
      */
-    public function changeStatus(){
+    public function changeStatus()
+    {
         $id = input('get.id');
         $status = input('get.status');
         $result = $this->service->changeStatus((int)$id, (int)$status);

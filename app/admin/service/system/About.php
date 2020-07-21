@@ -2,7 +2,11 @@
 
 declare(strict_types=1);
 
+namespace app\admin\service\system;
+
 use app\admin\service\BaseService;
+use app\common\model\mysql\system\About as model;
+use think\facade\Env;
 
 /**
  * @Create by vscode,
@@ -19,5 +23,23 @@ class About extends BaseService
     public function __construct()
     {
         $this->model = new model();
+    }
+    /**
+     * 获取
+     *
+     * @Author: kevin qiu
+     * @DateTime: 2020-07-21
+     * @param integer $language
+     * @return void
+     */
+    public function getObj(int $language = 1)
+    {
+        try {
+            $obj = $this->model::getObj((int) $language);
+            return $obj->toArray();
+        } catch (\Exception $exception) {
+            if (true == Env::get('APP_DEBUG')) abort(500, $exception->getMessage());
+            abort(500, '服务器内部错误');
+        }
     }
 }

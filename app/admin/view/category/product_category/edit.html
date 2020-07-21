@@ -12,7 +12,8 @@
                         <option value="0">顶级</option>
                         {notempty name='category'}
                         {volist name="category" id="vo"}
-                        <option value="{$vo.id}" {if($vo.id === $result.parent_id)} selected{/if}>{$vo.delimiter|raw}{$vo.name}</option>
+                        <option value="{$vo.id}" {if($vo.id===$result.parent_id)} selected{/if}>
+                            {$vo.delimiter|raw}{$vo.name}</option>
                         {/volist}
                         {/notempty}
                     </select>
@@ -23,8 +24,8 @@
                     <span class="x-red">*</span>分类名
                 </label>
                 <div class="layui-input-inline">
-                    <input type="text" id="name" name="name" required="" lay-verify="required"
-                           autocomplete="off" class="layui-input" value="{$result.name}">
+                    <input type="text" id="name" name="name" required="" lay-verify="required" autocomplete="off"
+                        class="layui-input" value="{$result.name}">
                 </div>
             </div>
             <div class="layui-form-item">
@@ -32,8 +33,8 @@
                     <span class="x-red">*</span>目录
                 </label>
                 <div class="layui-input-block" id="is_parent">
-                    <input type="radio" name="is_parent" value="1" title="是" {if($result.is_parent === 1)}checked{/if}>
-                    <input type="radio" name="is_parent" value="2" title="否"  {if($result.is_parent === 2)}checked{/if}>
+                    <input type="radio" name="is_parent" value="1" title="是" {if($result.is_parent===1)}checked{/if}>
+                    <input type="radio" name="is_parent" value="2" title="否" {if($result.is_parent===2)}checked{/if}>
                 </div>
             </div>
             <div class="layui-form-item">
@@ -41,8 +42,8 @@
                     <span class="x-red">*</span>分类标题
                 </label>
                 <div class="layui-input-block" style="width: 50%">
-                    <input type="text" id="title" name="title" required="" lay-verify="required"
-                           autocomplete="off" class="layui-input" value="{$result.title}">
+                    <input type="text" id="title" name="title" required="" lay-verify="required" autocomplete="off"
+                        class="layui-input" value="{$result.title}">
                 </div>
             </div>
             <div class="layui-form-item">
@@ -51,7 +52,7 @@
                 </label>
                 <div class="layui-input-block" style="width: 50%">
                     <input type="text" id="keywords" name="keywords" required="" lay-verify="required"
-                           autocomplete="off" class="layui-input" value="{$result.keywords}">
+                        autocomplete="off" class="layui-input" value="{$result.keywords}">
                 </div>
             </div>
             <div class="layui-form-item">
@@ -59,7 +60,8 @@
                     <span class="x-red">*</span>描述
                 </label>
                 <div class="layui-input-block">
-                    <textarea name="description" id="description" placeholder="请输入内容" class="layui-textarea">{$result.description}</textarea>
+                    <textarea name="description" id="description" placeholder="请输入内容"
+                        class="layui-textarea">{$result.description}</textarea>
                 </div>
             </div>
             <input type="hidden" name="id" value="{$result.id}">
@@ -93,12 +95,12 @@
                         data: data.field,
                         'success': function (result) {
                             if (result.status === 1) {
-                                layer.msg(result.message, {'icon': 1, 'time': 1000}, function () {
+                                layer.msg(result.message, { 'icon': 1, 'time': 1000 }, function () {
                                     xadmin.close();
                                     xadmin.father_reload();
                                 });
-                            }else{
-                                layer.msg(result.message,{'icon':5,'time':8000});
+                            } else {
+                                layer.msg(result.message, { 'icon': 5, 'time': 8000 });
                             }
                         }
                     }, 'JSON');

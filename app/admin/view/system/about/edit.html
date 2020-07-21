@@ -1,0 +1,160 @@
+{extend name="common:base" /}
+{block name="style"}
+<link rel="stylesheet" href="{{admin}}/lib/codemirror/lib/codemirror.css">
+<link rel="stylesheet" href="{{admin}}/lib/codemirror/addon/fold/foldgutter.css">
+<link rel="stylesheet" href="{{admin}}/lib/codemirror/theme/monokai.css">
+<style>
+    .CodeMirror div.CodeMirror-cursor {
+        border-left: 1px solid #ffffff;
+    }
+
+    .CodeMirror {
+        border: 1px solid #eee;
+        font-size: 16px !important;
+        line-height: 22px !important;
+    }
+</style>
+{/block}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-row">
+        <form class="layui-form">
+            <div class="layui-form-item">
+                <label for="title" class="layui-form-label">
+                    <span class="x-red">*</span>Title
+                </label>
+                <div class="layui-input-block" style="width: 50%;">
+                    <input type="text" id="title" name="title" required="" lay-verify="required" autocomplete="off"
+                        value="{$result.title}" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">
+
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="keywords" class="layui-form-label">
+                    <span class="x-red">*</span>关键词
+                </label>
+                <div class="layui-input-block" style="width: 50%;">
+                    <input type="text" id="keywords" name="keywords" required="" lay-verify="required"
+                        value="{$result.keywords}" autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">
+
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="description" class="layui-form-label">
+                    <span class="x-red">*</span>描述
+                </label>
+                <div class="layui-input-block" style="width: 50%;">
+                    <textarea name="description" id="description" placeholder="请输入内容"
+                        class="layui-textarea">{$result.description}</textarea>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="desktop" class="layui-form-label">
+                    <span class="x-red">*</span>桌面
+                </label>
+                <div class="layui-input-block">
+                    <textarea name="desktop" id="desktop" placeholder="请输入内容" class="layui-textarea"
+                        lay-verify="desktop">{$result.desktop}</textarea>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="mobile" class="layui-form-label">
+                    <span class="x-red">*</span>移动
+                </label>
+                <div class="layui-input-block">
+                    <textarea name="mobile" id="mobile" placeholder="请输入内容" class="layui-textarea"
+                        lay-verify="mobile">{$result.mobile}</textarea>
+                </div>
+            </div>
+            <input type="hidden" name="id" value="{$result.id}">
+            <div class="layui-form-item">
+                <label class="layui-form-label">
+                </label>
+                <button class="layui-btn" lay-filter="add" lay-submit="">
+                    保存
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{/block}
+{block name="copyright"}
+{/block}
+{block name="javascript"}
+<script src="{{admin}}/lib/codemirror/lib/codemirror.js"></script>
+<script src="{{admin}}/lib/codemirror/addon/edit/closetag.js"></script>
+<script src="{{admin}}/lib/codemirror/addon/fold/foldcode.js"></script>
+<script src="{{admin}}/lib/codemirror/addon/fold/foldgutter.js"></script>
+<script src="{{admin}}/lib/codemirror/addon/fold/brace-fold.js"></script>
+<script src="{{admin}}/lib/codemirror/addon/fold/xml-fold.js"></script>
+<script src="{{admin}}/lib/codemirror/addon/fold/comment-fold.js"></script>
+<script src="{{admin}}/lib/codemirror/mode/xml/xml.js"></script>
+<script src="{{admin}}/lib/codemirror/mode/javascript/javascript.js"></script>
+<script src="{{admin}}/lib/codemirror/mode/css/css.js"></script>
+<script src="{{admin}}/lib/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+<script>
+    window.onload = function () {
+        window.desktop = CodeMirror.fromTextArea(document.getElementById("desktop"), {
+            mode: "text/html",
+            lineNumbers: true,
+            lineWrapping: true,
+            extraKeys: { "Ctrl-Q": function (cm) { cm.foldCode(cm.getCursor()); } },
+            foldGutter: true,
+            gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+            theme: "monokai",
+        });
+        desktop.setSize('', '950px');
+        window.mobile = CodeMirror.fromTextArea(document.getElementById("mobile"), {
+            mode: "text/html",
+            lineNumbers: true,
+            lineWrapping: true,
+            extraKeys: { "Ctrl-Q": function (cm) { cm.foldCode(cm.getCursor()); } },
+            foldGutter: true,
+            gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+            theme: "monokai",
+        })
+        mobile.setSize('', '950px');
+    };
+    layui.use(['form', 'layer'],
+        function () {
+            $ = layui.jquery;
+            var form = layui.form,
+                layer = layui.layer;
+            form.verify({
+                desktop: function () {
+                    window.desktop.save();
+                    // tinyMCE.get("desktop").save() //好苦啊，tinyMCE需要这样保存到input框
+                },
+                mobile: function () {
+                    window.mobile.save();
+                    // tinyMCE.get("mobile").save()
+                }
+            });
+            //监听提交
+            form.on('submit(add)',
+                function (data) {
+                    $.ajax({
+                        url: "{:url('system/about/edit')}",
+                        type: 'POST',
+                        data: data.field,
+                        'success': function (result) {
+                            if (result.status === 1) {
+                                layer.msg(result.message, { 'icon': 1, 'time': 1000 }, function () {
+                                    xadmin.close();
+                                    xadmin.father_reload();
+                                });
+                            } else {
+                                layer.msg(result.message, { 'icon': 5, 'time': 8000 });
+                            }
+                        }
+                    }, 'JSON');
+                    return false;
+                });
+
+        });
+</script>
+{/block}
