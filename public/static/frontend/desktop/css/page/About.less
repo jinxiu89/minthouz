@@ -7,7 +7,33 @@
 @import "../public/mixins";
 @import "../public/variables";
 
+.g-hd .nav {
+  position: static;
+  background: @whiteColor;
+}
 section {
   min-height: 800px;
 
+  .About-menu {
+    .clearFix();
+    padding: 22px 0 14px;
+    .menu-item {
+      .fl();
+      padding: 0 15px;
+      border-left: 1px solid @borderColor;
+      &:nth-of-type(1) {
+        padding-left: 0;
+        border-left: none;
+      }
+    }
+    .menu-item a {
+      color: #333;
+      &:hover {
+        color: @activeColor;
+      }
+    }
+    .active a {
+      color: @activeColor;
+    }
+  }
 }
