@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * @Create by PhpStorm
@@ -35,10 +36,10 @@ class Prettiest extends BaseService
      */
     public function getDataByType(int $type, int $language)
     {
-        try{
+        try {
             $obj = $this->model::getDataByType((int)$type, (int)$language);
             return $obj->toArray();
-        }catch (\Exception $exception){
+        } catch (\Exception $exception) {
             if (!Env::get('app_debug')) abort(500, $exception->getMessage());
             abort(500, $exception->getMessage());
         }

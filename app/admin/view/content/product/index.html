@@ -1,14 +1,14 @@
 {extend name="common:base" /}
 {block name="body"}
 <div class="x-nav">
-          <span class="layui-breadcrumb">
-            <a href="">首页</a>
-            <a href="">语言管理</a>
-            <a>
-              <cite>语言列表</cite></a>
-          </span>
+    <span class="layui-breadcrumb">
+        <a href="">首页</a>
+        <a href="">语言管理</a>
+        <a>
+            <cite>语言列表</cite></a>
+    </span>
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
-       onclick="location.reload()" title="刷新">
+        onclick="location.reload()" title="刷新">
         <i class="layui-icon layui-icon-refresh" style="line-height:30px"></i></a>
 </div>
 <div class="layui-fluid">
@@ -24,72 +24,85 @@
                             <input class="layui-input"  autocomplete="off" placeholder="截止日" name="end" id="end">
                         </div>-->
                         <div class="layui-inline layui-show-xs-block">
-                            <input type="text" name="username"  placeholder="请输入产品名称或者型号/关键词" autocomplete="off" class="layui-input">
+                            <input type="text" name="username" placeholder="请输入产品名称或者型号/关键词" autocomplete="off"
+                                class="layui-input">
                         </div>
                         <div class="layui-inline layui-show-xs-block">
-                            <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
+                            <button class="layui-btn" lay-submit="" lay-filter="sreach"><i
+                                    class="layui-icon">&#xe615;</i></button>
                         </div>
                     </form>
                 </div>
                 <div class="layui-card-header">
                     <!--<button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>-->
-                    <button class="layui-btn" onclick="xadmin.full('添加产品','{:url(\'content/product/add\')}')"><i class="layui-icon"></i>添加</button>
+                    <button class="layui-btn" onclick="xadmin.full('添加产品','{:url(\'content/product/add\')}')"><i
+                            class="layui-icon"></i>添加</button>
                 </div>
                 <div class="layui-card-body ">
                     <table class="layui-table layui-form">
                         <thead>
-                        <tr>
-                            <th>
-                                <input type="checkbox" name=""  lay-skin="primary">
-                            </th>
-                            <th>ID</th>
-                            <th>封面图</th>
-                            <th>产品标题</th>
-                            <th>型号</th>
-                            <th>关键词</th>
-                            <th>创建时间</th>
-                            <th>状态</th>
-                            <th>操作</th>
+                            <tr>
+                                <th>
+                                    <input type="checkbox" name="" lay-skin="primary">
+                                </th>
+                                <th>ID</th>
+                                <th>封面图</th>
+                                <th>产品标题</th>
+                                <th>型号</th>
+                                <th>关键词</th>
+                                <th>创建时间</th>
+                                <th>状态</th>
+                                <th>操作</th>
                         </thead>
                         <tbody>
-                        {notempty name="data.data"}
-                        {volist name="data.data" id="vo"}
-                        <tr>
-                            <td>
-                                <input type="checkbox" name=""  lay-skin="primary">
-                            </td>
-                            <td>{$vo.id}</td>
-                            <td>
-                                <span style="width: 100px;height: 100px;display: inline-block" >
-                                    <img src="{$vo.thumbnail}" alt=""  style="width: 100%;height: 100%">
-                                </span>
+                            {notempty name="data.data"}
+                            {volist name="data.data" id="vo"}
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="" lay-skin="primary">
+                                </td>
+                                <td>{$vo.id}</td>
+                                <td>
+                                    <span style="width: 100px;height: 100px;display: inline-block">
+                                        <img src="{$vo.thumbnail}" alt="" style="width: 100%;height: 100%">
+                                    </span>
 
-                            </td>
-                            <td>{$vo.title}</td>
-                            <td>{$vo.model}</td>
-                            <td>{$vo.keywords}</td>
-                            <td>{notempty name="vo.create_time"}{$vo.create_time|date="Y-m-d"}{/notempty}</td>
-                            <td class="td-status"><span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td>
-                            <td class="td-manage">
-                                <!--<a onclick="member_stop(this,'10001')" href="javascript:;"  title="启用">
+                                </td>
+                                <td>{$vo.title}</td>
+                                <td>{$vo.model}</td>
+                                <td>{$vo.keywords}</td>
+                                <td>{notempty name="vo.create_time"}{$vo.create_time|date="Y-m-d"}{/notempty}</td>
+                                <td class="td-status">
+                                    {if($vo.status == 1)}
+                                    <button class="layui-btn layui-btn-normal layui-btn-mini">启用</button>
+                                    {else /}
+                                    <button class="layui-btn layui-btn-danger layui-btn-mini">禁用</button>
+                                    {/if}
+                                </td>
+                                <td class="td-manage">
+                                    <!--<a onclick="member_stop(this,'10001')" href="javascript:;"  title="启用">
                                     <i class="layui-icon">&#xe601;</i>
                                 </a>-->
-                                <button class="layui-btn layui-btn layui-btn-xs"
+                                    <button class="layui-btn layui-btn layui-btn-xs"
                                         onclick="xadmin.full('编辑','{:url(\'content/product/edit\',[\'id\'=>$vo.id])}')">
-                                    <i class="layui-icon">&#xe642;</i>编辑
-                                </button>
-                                <a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;">
-                                    <i class="layui-icon">&#xe640;</i>
-                                </a>
-                            </td>
-                        </tr>
-                        {/volist}
-                        {/notempty}
+                                        <i class="layui-icon">&#xe642;</i>编辑
+                                    </button>
+                                    {if($vo.status == 2 )}
+                                    <button class="layui-btn layui-btn-normal layui-btn-mini"
+                                        onclick="changeStatus('{:url(\'content/product/change_status\',[\'id\'=>$vo.id,\'status\'=>1])}')">启用</button>
+                                    {else /}
+                                    <button class="layui-btn layui-btn-danger layui-btn-mini"
+                                        onclick="changeStatus('{:url(\'content/product/change_status\',[\'id\'=>$vo.id,\'status\'=>2])}')">禁用</button>
+                                    {/if}
+                                </td>
+                            </tr>
+                            {/volist}
+                            {/notempty}
                         </tbody>
                     </table>
                 </div>
                 <div class="layui-card-body ">
-                    <div class="page" id="page"></div>
+                    <div id="page" class="page"></div>
                 </div>
             </div>
         </div>
@@ -97,7 +110,21 @@
 </div>
 {/block}
 {block name="javascript"}
+<script src="{{admin}}/js/common.js"></script>
 <script>
-
+    layui.use(['laypage'], function () {
+        var laypage = layui.laypage;
+        laypage.render({
+            elem: 'page',
+            count: '{$data.total}',
+            limit: '{$data.per_page}',
+            curr: '{$data.current_page}',
+            jump: function (obj, first) {
+                if (!first) {
+                    location.href = '?page=' + obj.curr;
+                }
+            }
+        });
+    });
 </script>
 {/block}

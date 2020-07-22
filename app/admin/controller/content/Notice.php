@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * @Create by PhpStorm
@@ -61,5 +62,4 @@ class Notice extends BaseAdmin
             return show(0, '新增失败，未知原因');
         }
     }
-
 }
