@@ -1,0 +1,99 @@
+<header class="g-hd">
+
+    <div class="hd">
+        <div class="common-width">
+            <div class="about">
+                <span><a href="#">MINTHOUZ</a></span>
+                <span><a href="#">About Us</a></span>
+                <span><a href="#" target="_blank">Find Us on Facebook</a></span>
+            </div>
+
+            <div class="store">
+                <span><a href="#" target="_blank">Amazon</a></span>
+                <span><a href="#" target="_blank">Newegg</a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav" id="nav">
+        <div class="common-width">
+            <div class="logo">
+                <h1>
+                    <a href="#">
+                        <img src="{$BaseSetting.logo}" alt="">
+                    </a>
+                </h1>
+            </div>
+
+            <div class="menu-box">
+                <ul class="menu-list" id="menu-list">
+                    <li class="menu-item">
+                        <a class="item-link" href="#">All Products</a>
+
+                        <!--<div class="all-category">
+                            <ul class="category-list">
+                                <li class="category-item">
+                                    <a href="#">USB Fan</a> <span class="iconfont iconnext"></span>
+                                    <div class="box">
+                                    </div>
+                                </li>
+                                <li class="category-item"><a href="#">Table Lamp</a> <span class="iconfont iconnext"></span></li>
+                                <li class="category-item"><a href="#">Holder</a> <span class="iconfont iconnext"></span></li>
+                                <li class="category-item"><a href="#">Humidifier</a> <span class="iconfont iconnext"></span></li>
+                                <li class="category-item"><a href="#">Aromatherapy Diffuse</a> <span class="iconfont iconnext"></span></li>
+                                <li class="category-item"><a href="#">Others</a> <span class="iconfont iconnext"></span></li>
+                            </ul>
+                        </div>-->
+
+                    </li>
+                    {volist name="treeCategory" id="vo"}
+                    <li class="menu-item">
+                        <a class="item-link" href="#">{$vo.name}</a>
+                        <div class="item-children">
+                            <ul class="common-width">
+                                <li class="children-list">
+                                    <a href="#">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/miBoxS.jpg?width=140&height=140" alt="">
+                                        <p>Mi Box S</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="#">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/Projector.jpg?width=140&height=140" alt="">
+                                        <p>Mi Laser Projector 150''</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="#">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/Product/smartcompactprojector/compactprojector140.jpg?width=140&height=140" alt="">
+                                        <p>Mi Smart Compact Projector</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="#">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/secutrity-camera-140140.jpg?width=140&height=140" alt="">
+                                        <p>Mi Home Security Camera</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="#">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/Product/360camera/140pic.jpg?width=140&height=140" alt="">
+                                        <p>Mi Home Security Camera 360° 1080P</p>
+                                    </a>
+                                </li>
+                                <li class="children-list">
+                                    <a href="#">
+                                        <img src="https://i01.appmifile.com/webfile/globalimg/us/800/DeskLamp.png?width=140&height=140" alt="">
+                                        <p>Mi LED Desk Lamp</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</header>
