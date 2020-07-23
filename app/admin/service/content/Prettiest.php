@@ -34,10 +34,10 @@ class Prettiest extends BaseService
      * @param int $language
      * @return array
      */
-    public function getDataByType(int $type, int $language)
+    public function getDataByType(int $type, int $language, int $status)
     {
         try {
-            $obj = $this->model::getDataByType((int)$type, (int)$language);
+            $obj = $this->model::getDataByType((int)$type, (int)$language, (int) $status);
             return $obj->toArray();
         } catch (\Exception $exception) {
             if (!Env::get('app_debug')) abort(500, $exception->getMessage());

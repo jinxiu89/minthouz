@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * @Create by PhpStorm
@@ -32,7 +33,8 @@ class Notice extends BaseModel
      * @throws \think\db\exception\DbException
      * @throws \think\db\exception\ModelNotFoundException
      */
-    public static function getNoticeByLanguage(int $language, int $status=1){
-        return self::where(['language_id'=>$language,'status'=>$status])->find();
+    public static function getNoticeByLanguage(int $language, int $status = 1)
+    {
+        return self::where(['language_id' => $language, 'status' => $status])->find();
     }
 }

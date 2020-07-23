@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @Create by PhpStorm
  * @author:jinxiu89@163.com
@@ -24,14 +25,13 @@ class Prettiest extends BaseService
      * @param int $language
      * @param int $type
      */
-    public function getPrettiest(int $type, int $language)
+    public function getPrettiest(int $type, int $language, int $status)
     {
         try {
-            $obj = $this->model::getDataByType((int)$type, (int)$language);
+            $obj = $this->model::getDataByType((int)$type, (int)$language, (int) $status);
             return $obj->toArray()['data'];
         } catch (\Exception $exception) {
             //todo:
         }
-
     }
 }

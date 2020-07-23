@@ -36,9 +36,14 @@ class Prettiest extends BaseModel
      * @return Paginator
      * @throws DbException
      */
-    public static function getDataByType(int $type, int $language)
+    public static function getDataByType(int $type, int $language, int $status = 1)
     {
-        return self::where(['type' => $type, 'language_id' => $language])->order(['listorder' => 'desc', 'id' => 'desc'])->paginate(5);
+        if ($status == 0) {
+            $map = ['type' => $type, 'language_id' => $language];
+        } else {
+            $map = ['type' => $type, 'language_id' => $language, 'status' => $status];
+        }
+        return self::where($map)->order(['listorder' => 'desc', 'id' => 'desc'])->paginate(5);
     }
 
     /**
