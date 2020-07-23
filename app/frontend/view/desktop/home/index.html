@@ -14,99 +14,99 @@
 
 {block name="body"}
 <div class="banner swiper-container">
-        <div class=" swiper-wrapper">
-            {volist name="banner" id="vo"}
-            <div class="swiper-slide">
-                <div class="des">
-                    <h3 data-swiper-parallax="-500" data-swiper-parallax-opacity="0">
-                        {$vo.title}
-                    </h3>
-                    <p data-swiper-parallax="-1500" data-swiper-parallax-opacity="0">
-                        {$vo.description}
-                    </p>
-                    <span>
-                        <a href="#" data-swiper-parallax="-4500" data-swiper-parallax-opacity="0">
-                            {$vo.button}
-                        </a>
-                    </span>
-                </div>
-                <div class="img-box">
-                    <a href="{$vo.path}">
-                        <img src="{$vo.image}" alt="">
+    <div class=" swiper-wrapper">
+        {volist name="banner" id="vo"}
+        <div class="swiper-slide">
+            <div class="des">
+                <h3 data-swiper-parallax="-500" data-swiper-parallax-opacity="0">
+                    {$vo.title}
+                </h3>
+                <p data-swiper-parallax="-1500" data-swiper-parallax-opacity="0">
+                    {$vo.description}
+                </p>
+                <span>
+                    <a href="#" data-swiper-parallax="-4500" data-swiper-parallax-opacity="0">
+                        {$vo.button}
                     </a>
-                </div>
+                </span>
             </div>
-            {/volist}
+            <div class="img-box">
+                <a href="{$vo.path}">
+                    <img src="{$vo.image}" alt="">
+                </a>
+            </div>
         </div>
-        <div class="swiper-pagination"></div><!--分页器-->
-        <div class="swiper-button-prev"></div><!--左箭头-->
-        <div class="swiper-button-next"></div><!--右箭头-->
+        {/volist}
     </div>
+    <div class="swiper-pagination"></div><!--分页器-->
+    <div class="swiper-button-prev"></div><!--左箭头-->
+    <div class="swiper-button-next"></div><!--右箭头-->
+</div>
 <div class="hot common-width">
-        <div class="min-list">
-            {volist name="hot" id="vo"}
-            <div class="min-item">
+    <div class="min-list">
+        {volist name="hot" id="vo"}
+        <div class="min-item">
+            <a href="{$vo.path}"><img src="{$vo.image}" alt=""></a>
+        </div>
+        {/volist}
+    </div>
+</div>
+<div class="star common-width">
+    <h3><span>STAR PRODUCTS</span></h3>
+    <div class="star-list">
+        <div class="left">
+            <div class="star-item">
+                <a href="{$starProduct[0]['path']}"><img src="{$starProduct[0]['image']}" alt=""></a>
+            </div>
+        </div>
+        <div class="right">
+            {volist name="starProduct" id="vo" offset='1' length="3"}
+            <div class="star-item">
                 <a href="{$vo.path}"><img src="{$vo.image}" alt=""></a>
             </div>
             {/volist}
         </div>
     </div>
-<div class="star common-width">
-        <h3><span>STAR PRODUCTS</span></h3>
-        <div class="star-list">
-            <div class="left">
-                <div class="star-item">
-                    <a href="{$starProduct[0]['path']}"><img src="{$starProduct[0]['image']}" alt=""></a>
-                </div>
-            </div>
-            <div class="right">
-                {volist name="starProduct" id="vo" offset='1' length="3"}
-                <div class="star-item">
-                    <a href="{$vo.path}"><img src="{$vo.image}" alt=""></a>
-                </div>
-                {/volist}
-            </div>
-        </div>
-    </div>
+</div>
 <div class="video common-width">
-        <h3><span>VIDEOS</span></h3>
-        <div class="video-list">
-            <div class="thumbnail">
-                <a class="play" href="javascript:void(0)" data-url="//china.wavlink.com/videos/690AD5.mp4" data-title="VITESSE - AC1900 High-speed Gaming WiFi Adapter with USB3.0 Dock">
-                    <div class="img-box">
-                        <img src="//china.wavlink.com/images/vitesse/VITESSE_AC1900.jpg" alt="...">
-                        <div class="icon-box">
-                            <span class="iconfont"></span>
-                        </div>
+    <h3><span>VIDEOS</span></h3>
+    <div class="video-list">
+        <div class="thumbnail">
+            <a class="play" href="javascript:void(0)" data-url="//china.wavlink.com/videos/690AD5.mp4" data-title="VITESSE - AC1900 High-speed Gaming WiFi Adapter with USB3.0 Dock">
+                <div class="img-box">
+                    <img src="//china.wavlink.com/images/vitesse/VITESSE_AC1900.jpg" alt="...">
+                    <div class="icon-box">
+                        <span class="iconfont"></span>
                     </div>
-                </a>
-            </div>
-        </div>
-        <div class="video-list">
-            <div class="thumbnail">
-                <a class="play" href="javascript:void(0)" data-url="https://www.youtube.com/embed/ffpfdN4MxXk" data-title="Wavlink HALO Base AC1200 Dual-band Whole Home WiFi Mesh System with Touchlink">
-                    <div class="img-box">
-                        <img src="https://s3.amazonaws.com/files.wavlink.com/video/2020/01/wavlink_HALO_Base_AC1200.jpg" alt="...">
-                        <div class="icon-box">
-                            <span class="iconfont"></span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="video-list">
-            <div class="thumbnail">
-                <a class="play" href="javascript:void(0)" data-url="https://www.youtube.com/embed/sZl057HvSt0" data-title="Why Should Choose AERIAL X WiFi Range Extender?">
-                    <div class="img-box">
-                        <img src="https://s3.amazonaws.com/files.wavlink.com/video/2020/01/AERIAL_X.jpg" alt="...">
-                        <div class="icon-box">
-                            <span class="iconfont"></span>
-                        </div>
-                    </div>
-                </a>
-            </div>
+                </div>
+            </a>
         </div>
     </div>
+    <div class="video-list">
+        <div class="thumbnail">
+            <a class="play" href="javascript:void(0)" data-url="https://www.youtube.com/embed/ffpfdN4MxXk" data-title="Wavlink HALO Base AC1200 Dual-band Whole Home WiFi Mesh System with Touchlink">
+                <div class="img-box">
+                    <img src="https://s3.amazonaws.com/files.wavlink.com/video/2020/01/wavlink_HALO_Base_AC1200.jpg" alt="...">
+                    <div class="icon-box">
+                        <span class="iconfont"></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="video-list">
+        <div class="thumbnail">
+            <a class="play" href="javascript:void(0)" data-url="https://www.youtube.com/embed/sZl057HvSt0" data-title="Why Should Choose AERIAL X WiFi Range Extender?">
+                <div class="img-box">
+                    <img src="https://s3.amazonaws.com/files.wavlink.com/video/2020/01/AERIAL_X.jpg" alt="...">
+                    <div class="icon-box">
+                        <span class="iconfont"></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
 {/block}
 
 <!--私有业务开始-->
