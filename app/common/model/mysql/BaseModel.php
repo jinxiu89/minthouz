@@ -82,4 +82,9 @@ class BaseModel extends Model
     {
         return self::findOrEmpty($id);
     }
+
+    public static function getDataByUrl(string $url, int $language)
+    {
+        return self::where(['url' => $url, 'language_id' => $language])->findOrEmpty();
+    }
 }

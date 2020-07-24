@@ -7,6 +7,7 @@ namespace app\frontend\controller\about;
 use app\frontend\controller\Base;
 use think\App;
 use think\facade\View;
+use app\frontend\service\About;
 
 /**
  * @Create by vscode,
@@ -22,19 +23,24 @@ class Index extends Base
     public function __construct(App $app)
     {
         parent::__construct($app);
+        $this->service = new About();
     }
     public function index()
     {
         if ($this->request->isGet()) {
             //todo::拿about文章
+            $data = $this->service->getDataByUrl((string) htmlspecialchars(trim('about')), (int)$this->language['id']);
+            View::assign('data', $data);
+            View::assign('current', 'about');
             return  View::fetch($this->template . '/about/index.html');
         }
     }
     public function detail($url)
     {
         if ($this->request->isGet()) {
-            print_r($url);
-            // exit;
+            $data = $this->service->getDataByUrl((string) htmlspecialchars(trim($url)), (int)$this->language['id']);
+            View::assign('data', $data);
+            View::assign('current', $url);
             return View::fetch($this->template . '/about/detail.html');
         }
     }

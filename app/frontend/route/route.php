@@ -11,9 +11,18 @@
  **/
 
 use think\facade\Route;
-
+//done::首页
 Route::get('/$', 'home.index/index');
 Route::get('/index$', 'home.index/index');
-
+//done::关于我们
 Route::get('/about$', 'about.Index/index');
+Route::get('/about/$', 'about.Index/index');
 Route::get('/about/:url$', 'about.Index/detail')->parent(['url' => '[\w|\-]+']);
+Route::get('/about/:url/$', 'about.Index/detail')->parent(['url' => '[\w|\-]+']);
+//done::产品列表页
+Route::get('/product/index$', 'product.Index/index');
+Route::get('/product/index/$', 'product.Index/index');
+Route::get('/product/:category$', 'product.Index/lists');
+Route::get('/product/:category/$', 'product.Index/lists');
+Route::get('/product/detail/:url$', 'product.Index/detail');
+Route::get('/product/detail/:url/$', 'product.Index/detail');
