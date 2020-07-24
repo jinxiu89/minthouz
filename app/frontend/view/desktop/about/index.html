@@ -10,7 +10,24 @@
     <link rel="stylesheet" href="{{frontend}}/desktop/css/page/About.css">
     <!--私有页面样式结束-->
     <style>
+        .About-bg {
+            padding: 100px 0;
+            background: url("../../../../../public/static/frontend/desktop/img/about/userAgreement-bg.jpg") center no-repeat;
+        }
+        .About-bg h2 {
+            color: #fff;
+            text-align: center;
+            font-size: 40px;
+        }
+        .About-bg p {
+            margin: 20px 200px 0;
+            color: #fff;
+            text-align: center;
+            font-size: 14px;
+            line-height: 20px;
+        }
         .About-content {
+            margin-top: 40px;
             padding: 55px 125px 100px;
             background: #fff;
             line-height: 21px;
@@ -42,6 +59,30 @@
         }
         .About-content li:nth-of-type(1) {
             margin-top: 0;
+        }
+        @media screen and (min-width: 768px) and (max-width: 991px) {
+            .About-bg {
+                padding: 60px 0;
+            }
+            .About-bg p {
+                margin: 10px 10px 0;
+            }
+            .About-content {
+                margin-top: 20px;
+                padding: 20px 10px;
+            }
+        }
+        @media screen and (min-width: 992px) and (max-width: 1199px) {
+            .About-bg {
+                padding: 60px 0;
+            }
+            .About-bg p {
+                margin: 15px 15px 0;
+            }
+            .About-content {
+                margin-top: 20px;
+                padding: 20px 15px;
+            }
         }
     </style>
 </head>
@@ -321,6 +362,12 @@
             <li class="menu-item"><a href="#">Privacy Policy</a></li>
             <li class="menu-item"><a href="#">Certification</a></li>
         </ul>
+    </div>
+    <div class="About-bg">
+        <div class="des-box common-width">
+            <h2>USER AGREEMENT</h2>
+            <p>Xiaomi User Agreement (the "Agreement") is entered into among you (or "User", means all individuals or entities who register, log in, use or browse our Services), Xiaomi Inc., its subsidiaries and affiliates (hereinafter referred to as "Xiaomi" or "we") and our operational cooperators (hereinafter referred to as "Cooperator"), with respect to www.mi.com (hereinafter referred to as "Site") and the products, programs and services (hereinafter referred to as "Services", including but not limited to Mi Talk and MIUI) of xiaomi.</p>
+        </div>
     </div>
     <div class="About-content common-width">
         <div class="main">

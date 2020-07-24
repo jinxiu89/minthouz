@@ -1,3 +1,169 @@
+<!-- 2020.07.22尝试切模块 -->
+<!-- 原文件见本文件末尾注释 -->
+
+{extend name="desktop/common/base" /}
+<title>{$BaseSetting.title} - mintHouz</title>
+<!--{block name="seo"}-->
+<meta name="description" content="{$BaseSetting.description}">
+<meta name="keywords" content="{$BaseSetting.keywords}">
+<!--{/block}-->
+{block name="style"}
+<link rel="stylesheet" href="{{frontend}}/lib/Swiper/swiper.min.css">
+<link rel="stylesheet" href="{{frontend}}/desktop/css/page/Home.css">
+{/block}
+
+{block name="body"}
+<div class="banner swiper-container">
+    <div class=" swiper-wrapper">
+        {volist name="banner" id="vo"}
+        <div class="swiper-slide">
+            <div class="des">
+                <h3 data-swiper-parallax="-500" data-swiper-parallax-opacity="0">
+                    {$vo.title}
+                </h3>
+                <p data-swiper-parallax="-1500" data-swiper-parallax-opacity="0">
+                    {$vo.description}
+                </p>
+                <span>
+                    <a href="#" data-swiper-parallax="-4500" data-swiper-parallax-opacity="0">
+                        {$vo.button}
+                    </a>
+                </span>
+            </div>
+            <div class="img-box">
+                <a href="{$vo.path}">
+                    <img src="{$vo.image}" alt="">
+                </a>
+            </div>
+        </div>
+        {/volist}
+    </div>
+    <div class="swiper-pagination"></div><!--分页器-->
+    <div class="swiper-button-prev"></div><!--左箭头-->
+    <div class="swiper-button-next"></div><!--右箭头-->
+</div>
+<div class="hot common-width">
+    <div class="min-list">
+        {volist name="hot" id="vo"}
+        <div class="min-item">
+            <a href="{$vo.path}"><img src="{$vo.image}" alt=""></a>
+        </div>
+        {/volist}
+    </div>
+</div>
+<div class="star common-width">
+    <h3><span>STAR PRODUCTS</span></h3>
+    <div class="star-list">
+        <div class="left">
+            <div class="star-item">
+                <a href="{$starProduct[0]['path']}"><img src="{$starProduct[0]['image']}" alt=""></a>
+            </div>
+        </div>
+        <div class="right">
+            {volist name="starProduct" id="vo" offset='1' length="3"}
+            <div class="star-item">
+                <a href="{$vo.path}"><img src="{$vo.image}" alt=""></a>
+            </div>
+            {/volist}
+        </div>
+    </div>
+</div>
+<div class="video common-width">
+    <h3><span>VIDEOS</span></h3>
+    <div class="video-list">
+        <div class="thumbnail">
+            <a class="play" href="javascript:void(0)" data-url="//china.wavlink.com/videos/690AD5.mp4" data-title="VITESSE - AC1900 High-speed Gaming WiFi Adapter with USB3.0 Dock">
+                <div class="img-box">
+                    <img src="//china.wavlink.com/images/vitesse/VITESSE_AC1900.jpg" alt="...">
+                    <div class="icon-box">
+                        <span class="iconfont"></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="video-list">
+        <div class="thumbnail">
+            <a class="play" href="javascript:void(0)" data-url="https://www.youtube.com/embed/ffpfdN4MxXk" data-title="Wavlink HALO Base AC1200 Dual-band Whole Home WiFi Mesh System with Touchlink">
+                <div class="img-box">
+                    <img src="https://s3.amazonaws.com/files.wavlink.com/video/2020/01/wavlink_HALO_Base_AC1200.jpg" alt="...">
+                    <div class="icon-box">
+                        <span class="iconfont"></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="video-list">
+        <div class="thumbnail">
+            <a class="play" href="javascript:void(0)" data-url="https://www.youtube.com/embed/sZl057HvSt0" data-title="Why Should Choose AERIAL X WiFi Range Extender?">
+                <div class="img-box">
+                    <img src="https://s3.amazonaws.com/files.wavlink.com/video/2020/01/AERIAL_X.jpg" alt="...">
+                    <div class="icon-box">
+                        <span class="iconfont"></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+{/block}
+
+<!--私有业务开始-->
+{block name="javascript"}
+<script src="{{frontend}}/lib/layer/2.4/layer.js"></script>
+<script src="{{frontend}}/lib/Swiper/swiper.min.js"></script>
+<script>
+    var mySwiper = new Swiper('.swiper-container', {
+        loop: true,
+        autoplay: {    //可选选项，自动滑动
+            delay: 8000,   //自动滑动间隔
+            stopOnLastSlide: false,//如果设置为true，当切换到最后一个slide时停止自动切换。（loop模式下无效）。
+            disableOnInteraction: false//用户操作swiper之后，是否禁止autoplay。默认为true：停止。
+        },
+        speed: 1000,
+        pagination: {   //分页器
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {  //左右箭头
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            hideOnClick: true,
+        },
+        grabCursor: true,//鼠标变手
+        parallax: true,//dl过度效果
+    });
+
+    $(function () {
+        $('.play').click(function () {
+            var url = $(this).attr('data-url');
+            var title = $(this).attr('data-title');
+            layer.open({
+                type: 2,
+                title: title,
+                maxmin: true,
+                shadeClose: true,
+                area: ['800px', '600px'],
+                content: url,
+            })
+        });
+    })
+</script>
+{/block}
+<!--私有业务结束-->
+
+
+
+
+
+
+
+
+
+
+<!-- 原文件 -->
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,22 +174,22 @@
     <meta name="description" content="{$BaseSetting.description}">
     <link rel="stylesheet" href="{{frontend}}/lib/iconfont/iconfont.css">
     <link rel="stylesheet" href="{{frontend}}/desktop/css/public/components.css">
-    <!--私有页面样式文件-->
+    &lt;!&ndash;私有页面样式文件&ndash;&gt;
     <link rel="stylesheet" href="{{frontend}}/lib/Swiper/swiper.min.css">
     <link rel="stylesheet" href="{{frontend}}/desktop/css/page/Home.css">
-    <!--私有页面样式结束-->
+    &lt;!&ndash;私有页面样式结束&ndash;&gt;
 </head>
 <body>
-<!-- 重大通知栏 -->
+&lt;!&ndash; 重大通知栏 &ndash;&gt;
 {notempty name="notice"}
 <div class="g-notice" id="g-notice">
     <a href="{$notice.path}" class="des">{$notice.notice}</a>
     <span class="close">X</span>
 </div>
 {/notempty}
-<!-- 重大通知栏 -->
+&lt;!&ndash; 重大通知栏 &ndash;&gt;
 
-<!--header-->
+&lt;!&ndash;header&ndash;&gt;
 <header class="g-hd">
 
     <div class="hd">
@@ -56,7 +222,7 @@
                     <li class="menu-item">
                         <a class="item-link" href="#">All Products</a>
 
-                        <!--<div class="all-category">
+                        &lt;!&ndash;<div class="all-category">
                             <ul class="category-list">
                                 <li class="category-item">
                                     <a href="#">USB Fan</a> <span class="iconfont iconnext"></span>
@@ -69,7 +235,7 @@
                                 <li class="category-item"><a href="#">Aromatherapy Diffuse</a> <span class="iconfont iconnext"></span></li>
                                 <li class="category-item"><a href="#">Others</a> <span class="iconfont iconnext"></span></li>
                             </ul>
-                        </div>-->
+                        </div>&ndash;&gt;
 
                     </li>
                     {volist name="treeCategory" id="vo"}
@@ -123,8 +289,8 @@
     </div>
 
 </header>
-<!--header /-->
-<!--main-->
+&lt;!&ndash;header /&ndash;&gt;
+&lt;!&ndash;main&ndash;&gt;
 <section>
 
     <div class="banner swiper-container">
@@ -152,9 +318,9 @@
             </div>
             {/volist}
         </div>
-        <div class="swiper-pagination"></div><!--分页器-->
-        <div class="swiper-button-prev"></div><!--左箭头-->
-        <div class="swiper-button-next"></div><!--右箭头-->
+        <div class="swiper-pagination"></div>&lt;!&ndash;分页器&ndash;&gt;
+        <div class="swiper-button-prev"></div>&lt;!&ndash;左箭头&ndash;&gt;
+        <div class="swiper-button-next"></div>&lt;!&ndash;右箭头&ndash;&gt;
     </div>
 
     <div class="hot common-width">
@@ -226,8 +392,8 @@
     </div>
 
 </section>
-<!--main /-->
-<!--footer-->
+&lt;!&ndash;main /&ndash;&gt;
+&lt;!&ndash;footer&ndash;&gt;
 <footer class="g-foot">
     <div class="about">
         <div class="common-width">
@@ -293,11 +459,11 @@
         <p>{$BaseSetting.information|raw}</p>
     </div>
 </footer>
-<!--footer /-->
+&lt;!&ndash;footer /&ndash;&gt;
 <script src="{{frontend}}/lib/JQuery/JQuery-3.4.0.js"></script>
 <script src="{{frontend}}/desktop/js/public.js"></script>
 {$BaseSetting.analysis_code|raw}
-<!--私有业务开始-->
+&lt;!&ndash;私有业务开始&ndash;&gt;
 <script src="{{frontend}}/lib/layer/2.4/layer.js"></script>
 <script src="{{frontend}}/lib/Swiper/swiper.min.js"></script>
 <script>
@@ -337,6 +503,6 @@
         });
     })
 </script>
-<!--私有业务结束-->
+&lt;!&ndash;私有业务结束&ndash;&gt;
 </body>
-</html>
+</html>-->
