@@ -1,0 +1,25 @@
+{extend name="mobile/common/base" /}
+<title>{$data.title} - mintHouz</title>
+{block name="seo"}
+<meta name="description" content="{$data.description}">
+<meta name="keywords" content="{$data.keywords}">
+{/block}
+{block name="style"}
+<link rel="stylesheet" href="{{frontend}}/mobile/css/page/About.css">
+{/block}
+
+{block name="body"}
+<div class="About-menu">
+    <ul class="common-width">
+        {volist name="list" id="vo"}
+        <li class="menu-item {if($current == $vo.url)}active{/if}"><a href="/{$code}/about/{$vo.url}">{$vo.title}</a></li>
+        {/volist}s
+    </ul>
+</div>
+{$data.mobile|raw}
+{/block}
+
+<!--私有业务开始-->
+{block name="javascript"}
+{/block}
+<!--私有业务结束-->

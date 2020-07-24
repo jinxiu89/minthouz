@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="{{frontend}}/lib/iconfont/iconfont.css">
+    <link rel="stylesheet" href="{{frontend}}/mobile/css/public/components.css">
+    {block name="style"}
+    <!-- 私有页面样式 -->
+    {/block}
+</head>
+<body>
+<!-- 重大通知栏 -->
+{notempty name="notice"}
+<div class="g-notice" id="g-notice">
+    <a href="{$notice.path}" class="des">{$notice.notice}</a>
+    <span class="close">X</span>
+</div>
+{/notempty}
+
+{block name="nav"}
+{include file="mobile/common/nav" /}
+{/block}
+
+<section>
+    {block name="body"}
+    <!-- 主体内容 -->
+
+    {/block}
+</section>
+
+<!-- goTop -->
+<div class="g-top" id="g-top">
+    <div class="box">
+        <span class="iconfont iconyooxi"></span>
+    </div>
+</div>
+
+{block name="footer"}
+{include file="mobile/common/footer"}
+{/block}
+
+<script src="{{frontend}}/lib/JQuery/JQuery-3.4.0.js"></script>
+<script src="{{frontend}}/mobile/js/public.js"></script>
+{block name="javascript"}
+<!--私有JS-->
+{/block}
+{$BaseSetting.analysis_code|raw}
+</body>
+</html>
