@@ -584,3 +584,43 @@ body {
 }
 //g-path End
 
+//全局侧边栏
+.g-aside {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    z-index: 9999;
+    background: rgba(0, 168, 45, 0.8);
+    border-radius: 20px;
+    .community {
+        li {
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+        li a {
+            color: @whiteColor;
+            &:hover {
+                color: @borderColor;
+            }
+        }
+        li .iconfont {
+            font-size: 24px
+        }
+    }
+    .g-top {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        border-bottom: 1px solid @borderColor;
+        cursor: pointer;
+        .iconfont {
+            color: #fff;
+            font-size: 24px
+        }
+    }
+}
+//全局侧边栏结束
+

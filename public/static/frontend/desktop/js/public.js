@@ -14,10 +14,19 @@ function menuHover () {
     })
 }
 
+function gTop () {
+    var g_top = $("#g-top");
+    g_top.click(function () {
+        $("html,body").animate({"scrollTop": 0}, 300);
+    });
+}
+
 $(function () {
 
     gNotice();
 
     menuHover();
+
+    gTop();
 
 });

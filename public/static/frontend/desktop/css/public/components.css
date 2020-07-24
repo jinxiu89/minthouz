@@ -780,4 +780,39 @@ body {
 .g-path li a:hover {
   color: #00A82D;
 }
+.g-aside {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  z-index: 9999;
+  background: rgba(0, 168, 45, 0.8);
+  border-radius: 20px;
+}
+.g-aside .community li {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+.g-aside .community li a {
+  color: #fff;
+}
+.g-aside .community li a:hover {
+  color: #eaeaea;
+}
+.g-aside .community li .iconfont {
+  font-size: 24px;
+}
+.g-aside .g-top {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-bottom: 1px solid #eaeaea;
+  cursor: pointer;
+}
+.g-aside .g-top .iconfont {
+  color: #fff;
+  font-size: 24px;
+}
 /*# sourceMappingURL=components.css.map */
