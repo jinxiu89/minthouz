@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * @Create by PhpStorm
@@ -12,6 +13,7 @@ declare(strict_types=1);
 
 namespace app\frontend\service;
 
+use Exception;
 use think\facade\Env;
 use think\facade\View;
 
@@ -29,5 +31,15 @@ class BaseService
     {
         //共用的 变量赋值在这里处理
         $this->debug = Env::get('APP_DEBUG', false);
+    }
+    public function getDataByUrl(string $url = 'about', int $language)
+    {
+        try {
+            $obj = $this->model::getDataByUrl((string) $url, (int) $language);
+            return $obj->toArray();
+        } catch (Exception $eexception) {
+            //todo:: 异常问题 后期修正，要做日志 
+            return [];
+        }
     }
 }
