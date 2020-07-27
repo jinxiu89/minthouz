@@ -24,5 +24,5 @@ Route::get('/product/index$', 'product.Index/index');
 Route::get('/product/index/$', 'product.Index/index');
 Route::get('/product/:category$', 'product.Index/lists');
 Route::get('/product/:category/$', 'product.Index/lists');
-Route::get('/product/detail/:url$', 'product.Index/detail');
-Route::get('/product/detail/:url/$', 'product.Index/detail');
+Route::get('/product/:url/detail$', 'product.Index/detail');
+Route::get('/product/:url/detail/$', 'product.Index/detail');
