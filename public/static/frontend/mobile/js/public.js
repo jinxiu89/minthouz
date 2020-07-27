@@ -1,3 +1,10 @@
+function gNotice () {
+    var close = $('#g-notice .close');
+    close.click(function () {
+        $(this).parents('#g-notice').slideUp()
+    })
+}
+
 function menuBar () {
     var bar = $('#menu-bar'),
         menu = $('#menu-box');
@@ -31,6 +38,7 @@ function gTop () {
 }
 
 $(function () {
+    gNotice();
 
     menuBar();
 

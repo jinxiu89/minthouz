@@ -32,9 +32,9 @@
             <div class="foot-item">
                 <dl>
                     <dt>About</dt>
-                    <dd><a href="#">minthouz</a></dd>
-                    <dd><a href="#">User Agreement</a></dd>
-                    <dd><a href="#">Privacy Policy</a></dd>
+                    {volist name="list" id="vo"}
+                    <dd><a href="/{$code}/about/{$vo.url}">{$vo.title}</a></dd>
+                    {/volist}
                 </dl>
                 <dl>
                     <dt>STORE</dt>

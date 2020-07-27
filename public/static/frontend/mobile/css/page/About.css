@@ -7,4 +7,34 @@
 section {
   min-height: 800px;
 }
+section .About-menu {
+  padding: 22px 10px 14px;
+}
+section .About-menubefore,
+section .About-menu:after {
+  content: " ";
+  display: table;
+  zoom: 1;
+}
+section .About-menu:after {
+  clear: both;
+}
+section .About-menu .menu-item {
+  float: left;
+  padding: 0 15px;
+  border-left: 1px solid #eaeaea;
+}
+section .About-menu .menu-item:nth-of-type(1) {
+  padding-left: 0;
+  border-left: none;
+}
+section .About-menu .menu-item a {
+  color: #333;
+}
+section .About-menu .menu-item a:hover {
+  color: #00A82D;
+}
+section .About-menu .active a {
+  color: #00A82D;
+}
 /*# sourceMappingURL=About.css.map */

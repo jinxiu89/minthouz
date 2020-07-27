@@ -17,16 +17,16 @@
 .banner .swiper-pagination-bullet-active {
   background: #00A82D;
 }
-.min {
+.hot {
   margin: 10px;
 }
-.min .min-list .min-item {
+.hot .min-list .min-item {
   margin-bottom: 10px;
 }
-.min .min-list .min-item:nth-last-of-type(1) {
+.hot .min-list .min-item:nth-last-of-type(1) {
   margin-bottom: 0;
 }
-.min .min-list .min-item img {
+.hot .min-list .min-item img {
   display: block;
   max-width: 100%;
   height: auto;

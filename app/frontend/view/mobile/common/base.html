@@ -5,7 +5,7 @@
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="{{frontend}}/lib/iconfont/iconfont.css">
-    <link rel="stylesheet" href="{{frontend}}/desktop/css/public/components.css">
+    <link rel="stylesheet" href="{{frontend}}/mobile/css/public/components.css">
     {block name="style"}
     <!-- 私有页面样式 -->
     {/block}
@@ -20,7 +20,7 @@
 {/notempty}
 
 {block name="nav"}
-{include file="desktop/common/nav" /}
+{include file="mobile/common/nav" /}
 {/block}
 
 <section>
@@ -30,25 +30,19 @@
     {/block}
 </section>
 
-<!-- 侧边栏第三方账户 -->
-<div class="g-aside">
-    <div class="g-top" id="g-top" title="Go Top"><span class="iconfont iconyooxi"></span></div>
-    <div class="community">
-        <ul>
-            <li><a href="#" title="Facebook"><span class="iconfont iconicon-test1"></span></a></li>
-            <li><a href="#" title="Twitter"><span class="iconfont iconicon-test2"></span></a></li>
-            <li><a href="#" title="YouTube"><span class="iconfont iconyoutube"></span></a></li>
-            <li><a href="#" title="Instagram"><span class="iconfont iconinstagram"></span></a></li>
-        </ul>
+<!-- goTop -->
+<div class="g-top" id="g-top">
+    <div class="box">
+        <span class="iconfont iconyooxi"></span>
     </div>
 </div>
 
 {block name="footer"}
-{include file="desktop/common/footer"}
+{include file="mobile/common/footer"}
 {/block}
 
 <script src="{{frontend}}/lib/JQuery/JQuery-3.4.0.js"></script>
-<script src="{{frontend}}/desktop/js/public.js"></script>
+<script src="{{frontend}}/mobile/js/public.js"></script>
 {block name="javascript"}
 <!--私有JS-->
 {/block}
