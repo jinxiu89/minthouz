@@ -1,9 +1,9 @@
 {extend name="desktop/common/base" /}
-<title>{$BaseSetting.title} - mintHouz</title>
-<!--{block name="seo"}-->
-<meta name="description" content="{$BaseSetting.description}">
-<meta name="keywords" content="{$BaseSetting.keywords}">
-<!--{/block}-->
+<title>{$data.title} - mintHouz</title>
+{block name="seo"}
+<meta name="description" content="{$data.description}">
+<meta name="keywords" content="{$data.keywords}">
+{/block}
 {block name="style"}
 <link rel="stylesheet" href="{{frontend}}/lib/Swiper/swiper.min.css">
 <link rel="stylesheet" href="{{frontend}}/desktop/css/page/Home.css">
@@ -22,7 +22,7 @@
                     {$vo.description}
                 </p>
                 <span>
-                    <a href="#" data-swiper-parallax="-4500" data-swiper-parallax-opacity="0">
+                    <a href="{$vo.path}" data-swiper-parallax="-4500" data-swiper-parallax-opacity="0">
                         {$vo.button}
                     </a>
                 </span>

@@ -67,7 +67,7 @@
   margin-right: 0;
 }
 .product-nav .sub_nav .active {
-  color: #888;
+  color: #00A82D;
   cursor: default;
 }
 .product-nav .sub_nav a {
@@ -139,4 +139,4 @@
   padding: 15px !important;
   border-left: 1px solid #eaeaea;
 }
-/*# sourceMappingURL=product-detail.css.map */
+/*# sourceMappingURL=Product-detail.css.map */
