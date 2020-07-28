@@ -7,140 +7,125 @@
 {block name="style"}
 <link rel="stylesheet" href="{{frontend}}/desktop/css/page/Product-detail.css">
 <style>
-    *{
-        margin: 0;
-        padding: 0
+    /* 字体大小 */
+    @media screen and (max-width:767px) and (min-width:318px){
+        div#Detail_page_all > div.container-fluid > div.row strong { font-size:1.2em !important }
+        div#Detail_page_all > div.container-fluid > div.row p { font-size:1em;color:#888 !important }
     }
-    div#detail_page_box > section > div > div.detail_box_text > strong {
-        display:inline-block
+    @media screen and (width:768px){
+        div#Detail_page_all > div.container-fluid > div.row strong { font-size:1.2em !important }
+        div#Detail_page_all > div.container-fluid > div.row p { font-size:1em  }
     }
-    .relative {
-        position:relative
+    @media screen and (max-width:1366px) and (min-width:1024px){
+        div#Detail_page_all > div.container-fluid > div.row strong { font-size:1.5em !important }
+        div#Detail_page_all > div.container-fluid > div.row p { font-size:1em  }
     }
-    .absolute {
-        position:absolute
+    @media screen and (width:1366px){
+        div#Detail_page_all > div.container-fluid > div.row strong { font-size:2em !important ;font-weight: bold}
+        div#Detail_page_all > div.container-fluid > div.row p { font-size:1.25em  }
     }
-    .text_center {
-        text-align:center
+    @media screen and (min-width:1367px){
+        div#Detail_page_all > div.container-fluid > div.row strong { font-size:2.5em !important ;font-weight: bold}
+        div#Detail_page_all > div.container-fluid > div.row p { font-size:1.5em  }
     }
-    div#detail_page_box > section > div > div.detail_box_img > img {
-        width:100%
+    div#Detail_page_all > div.container-fluid > div.row strong {
+        display:inline-block;
+        margin-bottom:2%;
     }
-    div#detail_page_box > section > div > div.detail_box_text > strong { margin-bottom:2% }
+
+    .img-responsive { display: block; max-width: 100%; height: auto; }
+    .center-block { margin-left: auto; margin-right: auto; }
+    .relative { position: relative; }
+    .absolute { position: absolute; z-index: 1; }
+    .text-center { text-align: center; }
+
+    @media screen and (max-width: 767px) {
+        .col-xs-1 { width: 8.333333% }
+        .col-xs-2 { width: 16.666666% }
+        .col-xs-3 { width: 25% }
+        .col-xs-4 { width: 33.333333% }
+        .col-xs-5 { width: 41.666666% }
+        .col-xs-6 { width: 50% }
+        .col-xs-7 { width: 58.333333% }
+        .col-xs-8 { width: 66.666666% }
+        .col-xs-9 { width: 75% }
+        .col-xs-10 { width: 83.333333% }
+        .col-xs-11 { width: 91.666666% }
+        .col-xs-12 { width: 100% }
+    }
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+        .col-sm-1 { width: 8.333333% }
+        .col-sm-2 { width: 16.666666% }
+        .col-sm-3 { width: 25% }
+        .col-sm-4 { width: 33.333333% }
+        .col-sm-5 { width: 41.666666% }
+        .col-sm-6 { width: 50% }
+        .col-sm-7 { width: 58.333333% }
+        .col-sm-8 { width: 66.666666% }
+        .col-sm-9 { width: 75% }
+        .col-sm-10 { width: 83.333333% }
+        .col-sm-11 { width: 91.666666% }
+        .col-sm-12 { width: 100% }
+    }
+    @media screen and (min-width: 992px) and (max-width: 1199px) {
+        .col-md-1 { width: 8.333333% }
+        .col-md-2 { width: 16.666666% }
+        .col-md-3 { width: 25% }
+        .col-md-4 { width: 33.333333% }
+        .col-md-5 { width: 41.666666% }
+        .col-md-6 { width: 50% }
+        .col-md-7 { width: 58.333333% }
+        .col-md-8 { width: 66.666666% }
+        .col-md-9 { width: 75% }
+        .col-md-10 { width: 83.333333% }
+        .col-md-11 { width: 91.666666% }
+        .col-md-12 { width: 100% }
+    }
+    @media screen and (min-width: 1199px) {
+        .col-lg-1 { width: 8.333333% }
+        .col-lg-2 { width: 16.666666% }
+        .col-lg-3 { width: 25% }
+        .col-lg-4 { width: 33.333333% }
+        .col-lg-5 { width: 41.666666% }
+        .col-lg-6 { width: 50% }
+        .col-lg-7 { width: 58.333333% }
+        .col-lg-8 { width: 66.666666% }
+        .col-lg-9 { width: 75% }
+        .col-lg-10 { width: 83.333333% }
+        .col-lg-11 { width: 91.666666% }
+        .col-lg-12 { width: 100% }
+    }
+
+    .detail_page_one>.detail_page_text_cont{top: 10%;left: 24.9%;}
+    .detail_page_two>.detail_page_text_cont{top: 10%;left: 24.9%;}
+    .detail_page_three>.detail_page_text_cont{top: 25%;right: 4.15%;}
+    .detail_page_four>.detail_page_text_cont{top: 10%;left: 8%;}
+    .detail_page_five>.detail_page_text_cont{top: 10%;left: 8%;}
+    .detail_page_six>.detail_page_text_cont{top: 10%;right: 24.9%;}
+    .detail_page_seven>.detail_page_text_cont{top: 10%;right: 24.9%;}
+    .detail_page_eight>.detail_page_text_cont{top: 10%;left: 24.9%;}
+    @media screen and (min-width:992px) and (max-width: 1199px) {
+        .detail_page_one>.detail_page_text_cont{top: 10%;left: 16.6%;}
+        .detail_page_two>.detail_page_text_cont{top: 10%;left: 16.6%;}
+        .detail_page_three>.detail_page_text_cont{top: 20%;right: 4.15%;}
+        .detail_page_four>.detail_page_text_cont{top: 10%;left: 8%;}
+        .detail_page_five>.detail_page_text_cont{top: 10%;left: 8%;}
+        .detail_page_six>.detail_page_text_cont{top: 10%;right: 16.6%;}
+        .detail_page_seven>.detail_page_text_cont{top: 5%;right: 16.6%;}
+        .detail_page_eight>.detail_page_text_cont{top: 7%;left: 16.6%;}
+    }
+    @media screen and (min-width:768px) and (max-width: 991px) {
+        .detail_page_one>.detail_page_text_cont{top: 10%;left: 8.3%;}
+        .detail_page_two>.detail_page_text_cont{top: 10%;left: 8.3%;}
+        .detail_page_three>.detail_page_text_cont{top: 5%;right: 4.15%;}
+        .detail_page_four>.detail_page_text_cont{top: 10%;left: 8%;}
+        .detail_page_five>.detail_page_text_cont{top: 10%;left: 8%;}
+        .detail_page_six>.detail_page_text_cont{top: 10%;right: 8.3%;}
+        .detail_page_seven>.detail_page_text_cont{top: 5%;right: 8.3%;}
+        .detail_page_eight>.detail_page_text_cont{top: 7%;left: 8.3%;}
+    }
     @media screen and (max-width:767px){
-        .img_pc { display:none }
-        div#detail_page_box > section > div > div.detail_box_text > strong { font-size:16px }
-        div#detail_page_box > section > div > div.detail_box_text > p { font-size:14px }
-        div#detail_page_box > section > div > div.detail_box_text {
-            position:inherit;
-            text-align:left;
-            padding:56px 15px 28px
-        }
-    }
-    @media screen and (min-width:768px){
-        .img_mobile { display:none }
-        div#detail_page_box > section > div > div.detail_box_img { line-height:0 }
-        div#detail_page_box > section > div > div.detail_box_text > strong { font-size:18px }
-        div#detail_page_box > section > div > div.detail_box_text > p { font-size:13px }
-        div#detail_page_box > section > div.detail_box_two > div.detail_box_text > strong,
-        div#detail_page_box > section > div.detail_box_two > div.detail_box_text > p,
-        div#detail_page_box > section > div.detail_box_three > div.detail_box_text > strong,
-        div#detail_page_box > section > div.detail_box_three > div.detail_box_text > p,
-        div#detail_page_box > section > div.detail_box_four > div.detail_box_text > strong,
-        div#detail_page_box > section > div.detail_box_four > div.detail_box_text > p,
-        div#detail_page_box > section > div.detail_box_five > div.detail_box_text > strong,
-        div#detail_page_box > section > div.detail_box_five > div.detail_box_text > p,
-        div#detail_page_box > section > div.detail_box_six > div.detail_box_text > strong,
-        div#detail_page_box > section > div.detail_box_six > div.detail_box_text > p,
-        div#detail_page_box > section > div.detail_box_seven > div.detail_box_text > strong,
-        div#detail_page_box > section > div.detail_box_seven > div.detail_box_text > p,
-        div#detail_page_box > section > div.detail_box_eight > div.detail_box_text > strong,
-        div#detail_page_box > section > div.detail_box_eight > div.detail_box_text > p,
-        div#detail_page_box > section > div.detail_box_nine > div.detail_box_text > strong,
-        div#detail_page_box > section > div.detail_box_nine > div.detail_box_text > p {
-            color:#fff
-        }
-        div#detail_page_box > section > div.detail_box_one > div.detail_box_text {
-            width:46%;
-            margin-left:27%;
-            top:16%
-        }
-        div#detail_page_box > section > div.detail_box_two > div.detail_box_text {
-            width:64%;
-            margin-left:18%;
-            top:7%
-        }
-        div#detail_page_box > section > div.detail_box_three > div.detail_box_text {
-            width:60%;
-            margin-left:20%;
-            top:7%
-        }
-        div#detail_page_box > section > div.detail_box_four > div.detail_box_text {
-            width:50%;
-            margin-left:25%;
-            top:8%
-        }
-        div#detail_page_box > section > div.detail_box_five > div.detail_box_text {
-            width:60%;
-            margin-left:20%;
-            top:10%
-        }
-        div#detail_page_box > section > div.detail_box_six > div.detail_box_text {
-            width:60%;
-            margin-left:20%;
-            top:10%
-        }
-        div#detail_page_box > section > div.detail_box_seven > div.detail_box_text {
-            width:64%;
-            margin-left:18%;
-            top:8%
-        }
-        div#detail_page_box > section > div.detail_box_eight > div.detail_box_text {
-            width:26%;
-            margin-left:55%;
-            top:36%
-        }
-        div#detail_page_box > section > div.detail_box_nine > div.detail_box_text {
-            width:30%;
-            margin-left:13.5%;
-            top:18%
-        }
-    }
-    @media screen and (min-width:992px){
-        div#detail_page_box > section > div > div.detail_box_text > strong { font-size:22px }
-        div#detail_page_box > section > div > div.detail_box_text > p { font-size:14px }
-    }
-    @media screen and (min-width:1100px){
-        div#detail_page_box > section > div.detail_box_one > div.detail_box_text { width:40%; margin-left:30% }
-        div#detail_page_box > section > div.detail_box_seven > div.detail_box_text { width:56%; margin-left:22% }
-    }
-    @media screen and (min-width:1300px){
-        div#detail_page_box > section > div > div.detail_box_text > strong { font-size:26px }
-        div#detail_page_box > section > div > div.detail_box_text > p { font-size:16px }
-    }
-    @media screen and (min-width:1400px){
-        div#detail_page_box > section > div.detail_box_one > div.detail_box_text {
-            width:40%;
-            margin-left:30%
-        }
-        div#detail_page_box > section > div.detail_box_two > div.detail_box_text {
-            top:7%
-        }
-        div#detail_page_box > section > div.detail_box_seven > div.detail_box_text { width:48%; margin-left:26% }
-    }
-    @media screen and (min-width:1600px){
-        div#detail_page_box > section > div > div.detail_box_text > strong { font-size:30px }
-        div#detail_page_box > section > div > div.detail_box_text > p { font-size:18px }
-    }
-    @media screen and (min-width:1700px){
-        div#detail_page_box > section > div > div.detail_box_text > strong { font-size:35px }
-        div#detail_page_box > section > div > div.detail_box_text > p { font-size:21px }
-    }
-    @media screen and (min-width: 1366px){
-        div#detail_page_box > section > div > div.detail_box_text > strong,div#detail_page_box > section > div > div.detail_box_text > p {
-            opacity: 0;
-            margin-top: 5%
-        }
+        .detail_page_text_cont{background: #fff!important;text-align: left;padding: 0 15px!important;position:static!important}
     }
 </style>
 {/block}
@@ -159,139 +144,124 @@
         </div>
     </div>
 
-    <div class="product-Overview">
-        <div id="detail_page_box">
-            <!-- one -->
-            <section>
-                <div class="detail_box_one relative">
-                    <div class="detail_box_text text_center absolute">
-                        <strong style="opacity: 1; margin-top: 0px;">AC2100  MU-MIMO Dual-band Smart Wi-Fi Router with Touchlink</strong>
-                        <p style="opacity: 1; margin-top: 0px;">
-                            Superfast AC Speeds for your Life Without Interruptions
-                        </p>
-                    </div>
-                    <div class="detail_box_img">
-                        <img class="" src="https://cloud.wavlink.com/index.php?user/publicLink&amp;fid=1dcatoocVeytoV_Kcm208V1W_TByAhY7cn8wkj04y11hdOeDcHBu3b8BfXlwChE2n_HBsBobnobvwwexroIfE4XJnbOsZ4dk70xAfQe5At0WCahZ7a-7QW_QKeSolQhQ93vqx4B-8LFirLiR35nInXzd8tlemdyZxhE&amp;file_name=/1.jpg" alt="">
-                    </div>
+    <div class="product-Overview common-width">
+        <div id="Detail_page_all">
+            <div class="container-fluid">
+                <div class="row">
+                    <!--one-->
+                    <section>
+                        <div class="detail_page_one relative">
+                            <div class="detail_page_text_cont absolute text-center col-lg-6 col-md-8 col-sm-10 col-xs-12">
+                                <strong>A Router, also an Artwork</strong>
+                                <p>
+                                    <br />
+                                </p>
+                            </div>
+                            <div class="detail_page_img_content">
+                                <img class="img-responsive center-block" src="https://cloud.wavlink.com/index.php?user/publicLink&fid=b65aJRzFxJia839JJuuChAyJvGCOBwB_l74PS3q0riX3-ARNaZ2_Fymty5rtV5Qz0WiMX8_7d1iMzh2l_HafjbMK_bwzOuyUwxyj8HDNm_cnPZHGrRbGhErhG4e64HOj_6PepW7u9pyF9MVRQFG1mFdwYudiikWgdWA&file_name=/1.jpg" />
+                            </div>
+                        </div>
+                    </section>
+                    <!--two-->
+                    <section>
+                        <div class="detail_page_two relative">
+                            <div class="detail_page_text_cont absolute text-center col-lg-6 col-md-8 col-sm-10 col-xs-12">
+                                <strong>Minimalist, Perfect, Eternal</strong>
+                                <p>
+                                    <br />
+                                </p>
+                            </div>
+                            <div class="detail_page_img_content">
+                                <img class="img-responsive center-block" src="https://cloud.wavlink.com/index.php?user/publicLink&fid=f107soyDDzg35HgPIY4uiE7hm62u2iNOUARGx6L5c6-c_XUEqRtCwLeMfEe1FeVdjVhN6RGIgKrntY1cmcvbjWRi0QXgJvws1hhMd3d-ONMGbodhhrLHux9FKByavWKjU-DGspJO2vQK2Kkrkrqp2fNd-L2LW3MiC5k&file_name=/2.jpg" />
+                            </div>
+                        </div>
+                    </section>
+                    <!--three-->
+                    <section>
+                        <div class="detail_page_three relative">
+                            <div class="detail_page_text_cont absolute col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                                <strong>Jacob Jensen</strong>
+                                <p>
+                                    Jacob Jensen was a prominent Danish Industrial designer, his Nordic minimalism style design with Bang &amp; Olufsen had influenced Danish Modern Movement extensively. Quantum DAX is one outstanding paradigm of his minimalism masterpiece with powerful performance and design of understated elegance and luxury.
+                                </p>
+                            </div>
+                            <div class="detail_page_img_content">
+                                <img class="img-responsive center-block" src="https://cloud.wavlink.com/index.php?user/publicLink&fid=2a30YntbwJnP1cvE8mhkybhufd7EnAgHb-m5eBNFlH8e2_QFsUFK08RPNM4tvyzBOAwM2FtBA-7c9rIkLgC_aIfGHkMPlZ7WNMkxNQaYtQ3-S4feBRz-LwuOG3Fqjmm6dY270eAuxKnflkcWTDfNMMrOJc_mxr7DtCA&file_name=/3.jpg" />
+                            </div>
+                        </div>
+                    </section>
+                    <!--four-->
+                    <section>
+                        <div class="detail_page_four relative">
+                            <div class="detail_page_text_cont absolute col-lg-5 col-md-5 col-sm-6 col-xs-12">
+                                <strong>A Strong Core, A Powerful Router</strong>
+                                <p>
+                                    <br />
+                                </p>
+                            </div>
+                            <div class="detail_page_img_content">
+                                <img class="img-responsive center-block" src="https://cloud.wavlink.com/index.php?user/publicLink&fid=2ed6-w8SmAQ78lMDu_0HoiGkttm5xBAHC5gL0FF13vPuRcCS6JJn750m0aFDux3U9UO_7LMiJVxV8CLNiNFLpar6dXh_T5xsZHPpiOeAEwgdXGvw9uriu7F5wQPYDTKlaPl4mdnP1q5Nl9yLd8uyOTipm4nXEuhjFj8&file_name=/4.jpg" />
+                            </div>
+                        </div>
+                    </section>
+                    <!--five-->
+                    <section>
+                        <div class="detail_page_five relative">
+                            <div class="detail_page_text_cont absolute col-lg-4 col-md-4 col-sm-5 col-xs-12">
+                                <strong>LCD Screen Displays Key Info</strong>
+                                <p>
+                                    All product relevant information is Visible on the LCD screen.
+                                </p>
+                            </div>
+                            <div class="detail_page_img_content">
+                                <img class="img-responsive center-block" src="https://cloud.wavlink.com/index.php?user/publicLink&fid=fb1emRLBaB3tGQeetPZiH0oXZr2SlM0HbwAsbW6_8_7t5-EJVSzZE4u1UKa8vr8XA8D_9StLsj9ujVDv-DZIMAFwYsdMbOOG-ldbHy3KQhXu70dZdvR4kTIDUYCrZE41NCmUj1o4ALFg9xSlnNIJqP2vo2Siwtjo7Ko&file_name=/5.jpg" />
+                            </div>
+                        </div>
+                    </section>
+                    <!--six-->
+                    <section>
+                        <div class="detail_page_six relative">
+                            <div class="detail_page_text_cont absolute text-center col-lg-6 col-md-8 col-sm-10 col-xs-12">
+                                <strong>True Gigabit, Beyond Fast High Power, Beyond Strong</strong>
+                                <p>
+                                    <br />
+                                </p>
+                            </div>
+                            <div class="detail_page_img_content">
+                                <img class="img-responsive center-block" src="https://cloud.wavlink.com/index.php?user/publicLink&fid=a110aDMz2zIL6ox00SjXRu6pnHNem-otczO5zKlKuudBpA1fgwDJhw9GkDvtGFM0eMDppuEmiQPZ2avjp24w8y_65IzpkSR2fq3HjkQDsGXuM5MF_WEffNQEkoZGjgtv-nkkzK8J0c3inrM2WJscM8fA7pUUjIGvfEU&file_name=/6.jpg" />
+                            </div>
+                        </div>
+                    </section>
+                    <!--seven-->
+                    <section>
+                        <div class="detail_page_seven relative">
+                            <div class="detail_page_text_cont absolute text-center col-lg-6 col-md-8 col-sm-10 col-xs-12">
+                                <strong>Protect Online Safety Filter Inappropriate Content</strong>
+                                <p>
+                                    DAX protects your family from improper content, especially giving your children a healthier and safer online experience.
+                                </p>
+                            </div>
+                            <div class="detail_page_img_content">
+                                <img class="img-responsive center-block" src="https://cloud.wavlink.com/index.php?user/publicLink&fid=505ekAjxSlDaQ7_Akwarv1-scrE6SrkOwl6T02f2LAaPrhtZo8PE41W-_uuqSi3PlidEyDbnBKnAtNbb-AMt6e5u8ZGODft28JoJLvg7HgAsOKmlZ8gMGBXMhLRy8qEw4udnyrntX57h3ksDpnoII9702JweZb7J4NO6HH52&file_name=/7_new.jpg" />
+                            </div>
+                        </div>
+                    </section>
+                    <!--eight-->
+                    <section>
+                        <div class="detail_page_eight relative">
+                            <div class="detail_page_text_cont absolute text-center col-lg-6 col-md-8 col-sm-10 col-xs-12">
+                                <strong>Flush Your Heat Away!</strong>
+                                <p>
+                                    With the help of interior dissipation board, DAX assures you a longer lifespan.
+                                </p>
+                            </div>
+                            <div class="detail_page_img_content">
+                                <img class="img-responsive center-block" src="https://cloud.wavlink.com/index.php?user/publicLink&fid=f1a03BfZitzCibTcWYW3REcKslvyzVA76Wu2i8BZXakwbQLXcVQS0tNLDktzyiE7PdgY6xLIWpZisdymPIsTZv670g7892XHNSDors0zBHiZiXgXiEshIUJOd4Ywid--bASgT4InDSEN-JEs1MvO6E__Xkja2HC4fOA&file_name=/8.jpg" />
+                            </div>
+                        </div>
+                    </section>
                 </div>
-            </section>
-            <!-- two -->
-            <section>
-                <div class="detail_box_two relative">
-                    <div class="detail_box_text text_center absolute">
-                        <strong style="opacity: 1; margin-top: 0px;">Experience Incredible Wireless Speeds</strong>
-                        <p style="opacity: 1; margin-top: 0px;">
-                            WN531A6 gives you dominating AC Wi-Fi speeds up to
-                            2100Mbps that keeps a strong, steady signal flowing throughout your
-                            home so that you can enjoy exceptionally smooth,
-                            responsive gameplay and uninterrupted streaming.
-                        </p>
-                    </div>
-                    <div class="detail_box_img">
-                        <img class="" src="https://cloud.wavlink.com/index.php?user/publicLink&amp;fid=6580l0Z00iBhPlB-1jcizB9la1znq4ehzLqYc2oqpNFpTWUy6-quQy6A3UgD8d8sV7sEGSwD4Dv5lSdTyvlLBa8xu__DY18kchX0sj0RruKtJ2ZQ1pz7JW7z8VFm-4UCA9YxcvrKp-sw6JU98EXXoIn01ddDX7uDkjY&amp;file_name=/2.jpg" alt="">
-                    </div>
-                </div>
-            </section>
-            <!-- three -->
-            <section>
-                <div class="detail_box_three relative">
-                    <div class="detail_box_text text_center absolute">
-                        <strong style="opacity: 1; margin-top: 0px;">Stronger Signal Everywhere</strong>
-                        <p style="opacity: 1; margin-top: 0px;">
-                            Unlike single-band router, it is composed of two radio frequencies – 2.4GHz and 5GHZ, dual-band technology avoids signal congestion in traffic and provides the ability to switch between two bands so that you can experience good signal anywhere at home.
-                        </p>
-                    </div>
-                    <div class="detail_box_img">
-                        <img class="" src="https://cloud.wavlink.com/index.php?user/publicLink&amp;fid=635crG_WS7q2pEBmqP1eEJs61yR7WUhEfx1TOOowxerz449iH3c3niNaiV_nCHquYRTvDKU7qIdACMqr6AEyyLtMqzYEc8q09Y9chIpCvei9UrCQNLuu1KBuuJLcewcL3oWRsoAsesdPB9LDu93NJ0qc00QlfDKRZb4&amp;file_name=/3.jpg" alt="">
-                    </div>
-                </div>
-            </section>
-            <!-- four -->
-            <section>
-                <div class="detail_box_four relative">
-                    <div class="detail_box_text text_center absolute">
-                        <strong style="opacity: 1; margin-top: 0px;">High-Gain Omni-directional Patent Antennas for Maximized Range</strong>
-                        <p style="opacity: 1; margin-top: 0px;">
-                            Equipped with six omnidirectional smart antennas,
-                            this router can expand Wi-Fi signal to everywhere in your home,
-                            which optimizes the wireless network coverage to its best ability.
-                        </p>
-                    </div>
-                    <div class="detail_box_img">
-                        <img class="" src="https://cloud.wavlink.com/index.php?user/publicLink&amp;fid=6aee7gi6TPft6dt05CGTp9-NN_f8wNUnLHmeqCqCv6zPB0RQ26sr5r6BPCcigdYhlDCvaHwPQAgx8tVeAUmgobSGiJqnJfm4b1992uTekf4H2KqW6KYFQmFC1ylq9piEkEQYQHAjG2xEJyxKkPgkWCYJVrI-m2yR1yU&amp;file_name=/4.jpg" alt="">
-                    </div>
-                </div>
-            </section>
-            <!-- five -->
-            <section>
-                <div class="detail_box_five relative">
-                    <div class="detail_box_text text_center absolute">
-                        <strong style="opacity: 1; margin-top: 0px;">MU-MIMO – more client devices, no more worries!</strong>
-                        <p style="opacity: 1; margin-top: 0px;">
-                            Complying with 802.11ac Wave 2 standard, one noticeable feature of MU-MIMO is it allows an access point to transmit data to multiple client devices simultaneously. Simply put, even many people connect to the same router,  it is still probable that they enjoy the same speed of Internet.
-                        </p>
-                    </div>
-                    <div class="detail_box_img">
-                        <img class="" src="https://cloud.wavlink.com/index.php?user/publicLink&amp;fid=573cifasLs52wwPo8z6Jo-T8UGQozYQMTmAMJWt_H5LK1c8eEsKFDB0vdUqdh124j90UooMj6vWKABr3XjncykIh161tgbbYM1eZIpxdnswArAxnRIQDIC8lOQvmtzx_yauu118vOVOkL_5tFjkU8cm2Z3-KkVIZbos&amp;file_name=/5.jpg" alt="">
-                    </div>
-                </div>
-            </section>
-            <!-- six -->
-            <section>
-                <div class="detail_box_six relative">
-                    <div class="detail_box_text text_center absolute">
-                        <strong style="opacity: 1; margin-top: 0px;">Full Gigabit Ports Ultra-Fast Wired Connection</strong>
-                        <p style="opacity: 1; margin-top: 0px;">
-                            Five Gigabit Ethernet ports, 10X faster than conventional Fast Ethernet, can be aggregated to double the connection speed to wired computers, wired printers and other network devices at ultra-fast wired speeds.
-                        </p>
-                    </div>
-                    <div class="detail_box_img">
-                        <img class="" src="https://cloud.wavlink.com/index.php?user/publicLink&amp;fid=9cf8w5Xtj3rKoLZwpu3Hwab_4hcPsIM-OxWRDz1xPI9Q4LvMXWkdRAxEO3mGfhVGqRFLSJuLiqo_er1Z27UQ4eNG_8Kjysbd0xfC86Z7qcDJPX6QJlLKMq7qDQvO-lx_ZuAjNYaoQa_8rafrEcyS7Lq8-xCStbvBs9Y&amp;file_name=/6.jpg" alt="">
-                    </div>
-                </div>
-            </section>
-            <!-- seven -->
-            <section>
-                <div class="detail_box_seven relative">
-                    <div class="detail_box_text text_center absolute">
-                        <strong style="opacity: 1; margin-top: 0px;">USB 3.0 Port</strong>
-                        <p style="opacity: 1; margin-top: 0px;">
-                            On this router there is a USB3.0 port, approximately 10 times faster than USB2.0, for faster data transmission, media storage and media sharing across your network.
-                        </p>
-                    </div>
-                    <div class="detail_box_img">
-                        <img class="" src="https://cloud.wavlink.com/index.php?user/publicLink&amp;fid=c495eudwi9LkI0_yXQAP_ndSs1ROM9AVjBg8PZBdFexFHfGwiIafiTJ0x5b0c0V0oA38uHGq5JY_Umo0Jdmc7-izmrZ8VDCQSI0KNHUbPlbl2V16kG5VaKzc-5JVQ5H4yivvVJoXXrUDlhoaOx_bnQIztSONyDQkHeg&amp;file_name=/7.jpg" alt="">
-                    </div>
-                </div>
-            </section>
-            <!-- eight -->
-            <section>
-                <div class="detail_box_eight relative">
-                    <div class="detail_box_text absolute">
-                        <strong style="opacity: 1; margin-top: 0px;">Friendly User Interface</strong>
-                        <p style="opacity: 1; margin-top: 0px;">
-                            To control your network by enabling parental control, blocking unwanted devices, monitoring Internet activity and creating Wi-Fi guest networks is easier than ever on our user interface.
-                        </p>
-                    </div>
-                    <div class="detail_box_img">
-                        <img class="" src="https://cloud.wavlink.com/index.php?user/publicLink&amp;fid=9bd8OM1G7Bc-6gd6278G7MHtBG4ijgLAbByKpkT0iFgL2THalUZtiwCijzZmLqMXGhfSf_RVMphObI8wM6Vx8wim0mUruSKIHBMPq3Y5orp2W5YXhFiHzxVOYHGbfcHya-0wkOZd0pn4EnNd9c2nE3sGqPga9J5MEvY&amp;file_name=/8.jpg" alt="">
-                    </div>
-                </div>
-            </section>
-            <!-- nine -->
-            <section>
-                <div class="detail_box_nine relative">
-                    <div class="detail_box_text absolute">
-                        <strong style="opacity: 1; margin-top: 0px;">TURBO technology</strong>
-                        <p style="opacity: 1; margin-top: 0px;">
-                            Push TURBO button, your network will be optimized immediately. Accordingly, endless buffering and reboots are not supposed to bother you again.
-                        </p>
-                    </div>
-                    <div class="detail_box_img">
-                        <img class="" src="https://cloud.wavlink.com/index.php?user/publicLink&amp;fid=e0b0CxfE4qGRc1artrIBcltprMJnxBu9NtbuvbX7Qe3XNooHYy6UxHQlVt4ud4k27WjiTYPpZO8_3Kaohv9n-BWod14rigHTbhDyRaofZh44uFkMZpRWF5L-NV3LWRw27KcpwtJc2a4kOW8qFemfBHKsu8JtUdtVjV8&amp;file_name=/9.jpg" alt="">
-                    </div>
-                </div>
-            </section>
+            </div>
         </div>
     </div>
 
