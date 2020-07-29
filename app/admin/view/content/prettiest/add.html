@@ -19,18 +19,34 @@
                 </label>
                 <div class="layui-input-inline">
                     <input type="text" id="listorder" name="listorder" required="" lay-verify="required"
-                           autocomplete="off" class="layui-input" value="100">
+                        autocomplete="off" class="layui-input" value="100">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label for="image" class="layui-form-label">
-                    <span class="x-red">*</span>图片
+                    <span class="x-red">*</span>桌面端
                 </label>
                 <div class="layui-input-inline">
-                    <button class="layui-btn" type="button" onclick="xadmin.open('选择图片','{:url(\'media/image/list\',[\'path\'=>\'images\/\',\'type\'=>\'1\'])}')"><i class="layui-icon"></i>选择</button>
+                    <button class="layui-btn" type="button"
+                        onclick="xadmin.open('选择图片','{:url(\'media/image/list\',[\'path\'=>\'images\/\',\'type\'=>\'1\'])}')"><i
+                            class="layui-icon"></i>选择</button>
                     <div class="image" style="height: 92px;padding-top: 5px">
                         <img src="" alt="" style="height: 92px">
                         <input type="hidden" name="image" value="" id="image">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="image" class="layui-form-label">
+                    <span class="x-red">*</span>移动端
+                </label>
+                <div class="layui-input-inline">
+                    <button class="layui-btn" type="button"
+                        onclick="xadmin.open('选择图片','{:url(\'media/image/list\',[\'path\'=>\'images\/\',\'type\'=>\'1\'])}')"><i
+                            class="layui-icon"></i>选择</button>
+                    <div class="mobile" style="height: 92px;padding-top: 5px">
+                        <img src="" alt="" style="height: 92px">
+                        <input type="hidden" name="mobile" value="" id="mobile">
                     </div>
                 </div>
             </div>
@@ -62,7 +78,7 @@
                 <label for="path" class="layui-form-label">
                     指向链接
                 </label>
-                <div class="layui-input-block" style="width: 50%" >
+                <div class="layui-input-block" style="width: 50%">
                     <input type="text" id="path" name="path" required="" autocomplete="off" class="layui-input">
                 </div>
             </div>
@@ -96,12 +112,12 @@
                         data: data.field,
                         'success': function (result) {
                             if (result.status === 1) {
-                                layer.msg(result.message, {'icon': 1, 'time': 600}, function () {
+                                layer.msg(result.message, { 'icon': 1, 'time': 600 }, function () {
                                     xadmin.close();
                                     xadmin.father_reload();
                                 });
                             } else {
-                                layer.msg(result.message, {'icon': 5, 'time': 8000});
+                                layer.msg(result.message, { 'icon': 5, 'time': 8000 });
                             }
                         }
                     }, 'JSON');

@@ -85,6 +85,7 @@ class Base extends BaseController
     {
         //主页SEO、统计、版权声明
         $BaseSetting = (new Setting())->getDataByLanguage((int)$language);
+        // print_r($BaseSetting);
         //通知 不用走缓存
         $notice = (new Notice())->getNoticeByLanguage((int)$language, (int)$status = 1);
         $treeCategory = (new Category())->getDataByLanguage((int)$language);

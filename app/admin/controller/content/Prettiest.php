@@ -116,11 +116,8 @@ class Prettiest extends BaseAdmin
         //        parent::changeStatus();
         $id = input('get.id');
         $status = input('get.status');
-
         $result = $this->service->changeStatus((int)$id, (int)$status);
-        if ($result->id) {
-            return show(1, '保存成功');
-        }
+        if ($result->id) return show(1, '保存成功');
         return show(0, '保存失败，未知原因');
     }
 }

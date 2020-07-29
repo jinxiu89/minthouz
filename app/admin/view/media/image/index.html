@@ -7,18 +7,23 @@
         padding: 0 5px 10px;
         cursor: pointer;
     }
+
     .item-link-box:hover {
         background: #fff;
     }
-    .item-list:hover .item-link-box{
+
+    .item-list:hover .item-link-box {
         display: block;
     }
+
     .item-link-box {
         display: none;
     }
+
     .dropDown-menu {
         display: none;
     }
+
     .dropDown:hover .dropDown-menu {
         display: block;
     }
@@ -26,16 +31,16 @@
 {/block}
 {block name="body"}
 <div class="x-nav">
-          <span class="layui-breadcrumb">
-              <a href="">首页</a>
-              <a href="{:url('media/image/list',['path'=>'images/'])}">图片管理</a>
-              {volist name="nav" id="vo" offset="1"}
-              <a href="{:url('media/image/list',['path'=>$vo.path])}">{$vo.name}</a>
-              {/volist}
-<!--            <a><cite>图片列表</cite></a>-->
-          </span>
+    <span class="layui-breadcrumb">
+        <a href="">首页</a>
+        <a href="{:url('media/image/list',['path'=>'images/'])}">图片管理</a>
+        {volist name="nav" id="vo" offset="1"}
+        <a href="{:url('media/image/list',['path'=>$vo.path])}">{$vo.name}</a>
+        {/volist}
+        <!--            <a><cite>图片列表</cite></a>-->
+    </span>
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
-       onclick="location.reload()" title="刷新">
+        onclick="location.reload()" title="刷新">
         <i class="layui-icon layui-icon-refresh" style="line-height:30px"></i></a>
 </div>
 <div class="layui-fluid">
@@ -43,41 +48,57 @@
         <div class="layui-col-md12">
             <div class="layui-card">
                 <div class="layui-card-header">
-                    <button class="layui-btn" onclick="xadmin.open('上传','{:url(\'media/image/upload\')}',600,600)"><i class="layui-icon"></i>上传图片</button>
-                    <button class="layui-btn" onclick="xadmin.open('创建目录','{:url(\'media/image/create_folder\')}',600,300)"><i class="iconfont">&#xe83c;</i> 创建目录</button>
+                    <button class="layui-btn" onclick="xadmin.open('上传','{:url(\'media/image/upload\')}',600,600)"><i
+                            class="layui-icon"></i>上传图片</button>
+                    <button class="layui-btn"
+                        onclick="xadmin.open('创建目录','{:url(\'media/image/create_folder\')}',600,300)"><i
+                            class="iconfont">&#xe83c;</i> 创建目录</button>
                 </div>
                 <div class="layui-card-body layui-clear">
                     {notempty name="items"}
                     {volist name="items" id="item"}
                     {if(isset($item['dir']) && $item['dir'] == true)}
-                    <div class="item-list" style="position: relative;display: inline-block;padding: 10px;text-align: center;float: left">
+                    <div class="item-list"
+                        style="position: relative;display: inline-block;padding: 10px;text-align: center;float: left">
                         <div style="height: 126px;display: inline-block;padding: 10px;text-align: center;float: left">
                             <a href="{:url('media/image/list',['path'=>$item.key])}" style="display: inline-block">
-                                <i class="iconfont" style="font-size: 100px;color: #ffdc69;line-height: 100px">&#xe83c;</i>
+                                <i class="iconfont"
+                                    style="font-size: 100px;color: #ffdc69;line-height: 100px">&#xe83c;</i>
                             </a>
                             <p><a href="{:url('media/image/list',['path'=>$item.key])}">{$item['name']}</a></p>
                         </div>
                     </div>
                     {else /}
-                    <div class="item-list" style="position: relative;display: inline-block;padding: 10px;text-align: center;float: left">
+                    <div class="item-list"
+                        style="position: relative;display: inline-block;padding: 10px;text-align: center;float: left">
                         <div style="line-height: 110px;background: #dedede">
-                            <img src="{$baseUrl}/{$item.key}" alt="140x140" class="radius"
-                                 style="height: 100px">
+                            <img src="{$baseUrl}/{$item.key}" alt="140x140" class="radius" style="height: 100px">
                         </div>
-                        <p style="text-overflow: ellipsis;white-space: nowrap;overflow: hidden; width: 100px"><a href="#" title="{$item.name}">{$item.name}</a></p>
+                        <p style="text-overflow: ellipsis;white-space: nowrap;overflow: hidden; width: 100px"><a
+                                href="#" title="{$item.name}">{$item.name}</a></p>
                         <div class="item-link-box" style="position: absolute; top: 5px; left: 5px;z-index: 999">
                             <span class="dropDown dropDown_hover">
-                                <a class="dropDown_A" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="display: block">
+                                <a class="dropDown_A" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+                                    style="display: block">
                                     <i class="iconfont" style="font-size: 16px; color: #00a9ff">&#xe6a6;</i>
                                 </a>
                                 <ul class="dropDown-menu menu radius box-shadow">
-                                    <input class="ByCopy" type="text" value="{$baseUrl}/{$item.key}" style="position: absolute;top: 0;left: 0;z-index: -99;width: 1px;height: 1px;border: none;background: transparent">
-                                    <li class="btnCopy"><a href="#" title="复制url链接"><span class="iconfont" style="font-size: 16px">&#xe744;</span>复制</a></li>
-                                    <li><a href="javascript:;" onclick="del('{:url(\'media/image/del\',[\'key\'=>$item.key])}')" title="删除" style="font-size: 16px"><span class="iconfont">&#xe69d;</span><span style="font-size: 12px"> 删除</span></a></li>
-                                    {notempty name="type"}
-                                    <li><a href="javascript:;" onclick="insert('image','{$baseUrl}/{$item.key}')" title="选择并插入" style="font-size: 16px"><span class="iconfont">&#xe6f7;</span><span style="font-size: 12px"> 插入到</span></a></li>
-                                    <li><a href="javascript:;" onclick="in_list('img/list','{$baseUrl}/{$item.key}')" title="插入到列表" style="font-size: 16px"><span class="iconfont">&#xe6f7;</span><span style="font-size: 12px"> 插入相册</span></a></li>
-                                    {/notempty}
+                                    <input class="ByCopy" type="text" value="{$baseUrl}/{$item.key}"
+                                        style="position: absolute;top: 0;left: 0;z-index: -99;width: 1px;height: 1px;border: none;background: transparent">
+                                    <li class="btnCopy"><a href="#" title="复制url链接"><span class="iconfont"
+                                                style="font-size: 16px">&#xe744;</span>复制</a></li>
+                                    <li><a href="javascript:;"
+                                            onclick="del('{:url(\'media/image/del\',[\'key\'=>$item.key])}')" title="删除"
+                                            style="font-size: 16px"><span class="iconfont">&#xe69d;</span><span
+                                                style="font-size: 12px"> 删除</span></a></li>
+                                    <li><a href="javascript:;" onclick="insert('image','{$baseUrl}/{$item.key}')"
+                                            title="选择并插入" style="font-size: 16px"><span
+                                                class="iconfont">&#xe6f7;</span><span style="font-size: 12px">
+                                                插入到</span></a></li>
+                                    <li><a href="javascript:;" onclick="in_list('img/list','{$baseUrl}/{$item.key}')"
+                                            title="插入到列表" style="font-size: 16px"><span
+                                                class="iconfont">&#xe6f7;</span><span style="font-size: 12px">
+                                                插入相册</span></a></li>
                                 </ul>
                             </span>
                         </div>
@@ -96,15 +117,15 @@
 {block name="javascript"}
 <script src="{{admin}}/js/common.js"></script>
 <script>
-$(document).ready(function () {
-    layui.use(['jquery', 'layer'],function () {
-        let $ = layui.jquery,layer=layui.layer;
-        $('.btnCopy').click(function () {
-            $(this).siblings('.ByCopy').select()
-            document.execCommand("Copy"); //执行浏览器复制命令
-            layer.msg('复制成功',{icon: 1, time: 1000});
+    $(document).ready(function () {
+        layui.use(['jquery', 'layer'], function () {
+            let $ = layui.jquery, layer = layui.layer;
+            $('.btnCopy').click(function () {
+                $(this).siblings('.ByCopy').select()
+                document.execCommand("Copy"); //执行浏览器复制命令
+                layer.msg('复制成功', { icon: 1, time: 1000 });
+            });
         });
     });
-});
 </script>
 {/block}
