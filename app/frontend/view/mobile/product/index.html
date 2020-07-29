@@ -1,8 +1,9 @@
 {extend name="mobile/common/base" /}
 <title>{$data.title} - mintHouz</title>
 {block name="seo"}
-<meta name="description" content="{$data.description}">
-<meta name="keywords" content="{$data.keywords}">
+<title>{$BaseSetting.title} - mintHouz</title>
+<meta name="description" content="{$BaseSetting.description}">
+<meta name="keywords" content="{$BaseSetting.keywords}">
 {/block}
 {block name="style"}
 <link rel="stylesheet" href="{{frontend}}/mobile/css/page/Product-list.css">
