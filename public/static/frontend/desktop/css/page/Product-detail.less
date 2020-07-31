@@ -9,10 +9,10 @@
 
 .g-hd .nav {
     background: @whiteColor;
+    position: static;
 }
 
 .product-container {
-    padding-top: 100px;
     .nav-active {
         position: fixed;
         top: 0;
@@ -73,6 +73,28 @@
             &:hover {
                 background: @activeColor - 20;
             }
+        }
+    }
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+        padding: 0 10px;
+        height: auto;
+        h3 {
+            display: none;
+            font-size: 20px;
+        }
+        .sub_nav span {
+            margin: 0 10px;
+        }
+    }
+    @media screen and (min-width: 992px) and (max-width: 1199px) {
+        padding: 0 15px;
+        height: auto;
+        h3 {
+            display: none;
+            font-size: 20px;
+        }
+        .sub_nav span {
+            margin: 0 10px;
         }
     }
 }
