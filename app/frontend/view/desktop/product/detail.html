@@ -7,126 +7,20 @@
 {block name="style"}
 <link rel="stylesheet" href="{{frontend}}/desktop/css/page/Product-detail.css">
 <style>
-    /* 字体大小 */
-    @media screen and (max-width:767px) and (min-width:318px){
-        div#Detail_page_all > div.container-fluid > div.row strong { font-size:1.2em !important }
-        div#Detail_page_all > div.container-fluid > div.row p { font-size:1em;color:#888 !important }
-    }
-    @media screen and (width:768px){
-        div#Detail_page_all > div.container-fluid > div.row strong { font-size:1.2em !important }
-        div#Detail_page_all > div.container-fluid > div.row p { font-size:1em  }
-    }
-    @media screen and (max-width:1366px) and (min-width:1024px){
-        div#Detail_page_all > div.container-fluid > div.row strong { font-size:1.5em !important }
-        div#Detail_page_all > div.container-fluid > div.row p { font-size:1em  }
-    }
-    @media screen and (width:1366px){
-        div#Detail_page_all > div.container-fluid > div.row strong { font-size:2em !important ;font-weight: bold}
-        div#Detail_page_all > div.container-fluid > div.row p { font-size:1.25em  }
-    }
-    @media screen and (min-width:1367px){
-        div#Detail_page_all > div.container-fluid > div.row strong { font-size:2.5em !important ;font-weight: bold}
-        div#Detail_page_all > div.container-fluid > div.row p { font-size:1.5em  }
-    }
-    div#Detail_page_all > div.container-fluid > div.row strong {
-        display:inline-block;
-        margin-bottom:2%;
-    }
+    .page-one .des-box { width: 50%; top: 8%; left: 6% }
+    .page-two .des-box { width: 80%; top: 5%; left: 10%; text-align: center; }
+    .page-three .des-box { width: 80%; top: 5%; left: 10%; text-align: center; }
+    .page-four .des-box { width: 80%; top: 5%; left: 10%; text-align: center; }
+    .page-five .des-box { width: 80%; top: 8%; left: 10%; text-align: center; }
+    .page-six .des-box { width: 50%; top: 8%; left: 6% }
+    .page-seven .des-box { width: 30%; top: 5%; right: 4.7% }
+    .page-eight .des-box { width: 50%; top: 8%; left: 6% }
+    .page-nine .des-box { width: 50%; top: 8%; left: 6% }
 
-    .img-responsive { display: block; max-width: 100%; height: auto; }
-    .center-block { margin-left: auto; margin-right: auto; }
-    .relative { position: relative; }
-    .absolute { position: absolute; z-index: 1; }
-    .text-center { text-align: center; }
-
-    @media screen and (max-width: 767px) {
-        .col-xs-1 { width: 8.333333% }
-        .col-xs-2 { width: 16.666666% }
-        .col-xs-3 { width: 25% }
-        .col-xs-4 { width: 33.333333% }
-        .col-xs-5 { width: 41.666666% }
-        .col-xs-6 { width: 50% }
-        .col-xs-7 { width: 58.333333% }
-        .col-xs-8 { width: 66.666666% }
-        .col-xs-9 { width: 75% }
-        .col-xs-10 { width: 83.333333% }
-        .col-xs-11 { width: 91.666666% }
-        .col-xs-12 { width: 100% }
-    }
     @media screen and (min-width: 768px) and (max-width: 991px) {
-        .col-sm-1 { width: 8.333333% }
-        .col-sm-2 { width: 16.666666% }
-        .col-sm-3 { width: 25% }
-        .col-sm-4 { width: 33.333333% }
-        .col-sm-5 { width: 41.666666% }
-        .col-sm-6 { width: 50% }
-        .col-sm-7 { width: 58.333333% }
-        .col-sm-8 { width: 66.666666% }
-        .col-sm-9 { width: 75% }
-        .col-sm-10 { width: 83.333333% }
-        .col-sm-11 { width: 91.666666% }
-        .col-sm-12 { width: 100% }
+        .page-seven .des-box { width: 39%; top: 2%; right: 10px; }
     }
-    @media screen and (min-width: 992px) and (max-width: 1199px) {
-        .col-md-1 { width: 8.333333% }
-        .col-md-2 { width: 16.666666% }
-        .col-md-3 { width: 25% }
-        .col-md-4 { width: 33.333333% }
-        .col-md-5 { width: 41.666666% }
-        .col-md-6 { width: 50% }
-        .col-md-7 { width: 58.333333% }
-        .col-md-8 { width: 66.666666% }
-        .col-md-9 { width: 75% }
-        .col-md-10 { width: 83.333333% }
-        .col-md-11 { width: 91.666666% }
-        .col-md-12 { width: 100% }
-    }
-    @media screen and (min-width: 1199px) {
-        .col-lg-1 { width: 8.333333% }
-        .col-lg-2 { width: 16.666666% }
-        .col-lg-3 { width: 25% }
-        .col-lg-4 { width: 33.333333% }
-        .col-lg-5 { width: 41.666666% }
-        .col-lg-6 { width: 50% }
-        .col-lg-7 { width: 58.333333% }
-        .col-lg-8 { width: 66.666666% }
-        .col-lg-9 { width: 75% }
-        .col-lg-10 { width: 83.333333% }
-        .col-lg-11 { width: 91.666666% }
-        .col-lg-12 { width: 100% }
-    }
-
-    .detail_page_one>.detail_page_text_cont{top: 10%;left: 24.9%;}
-    .detail_page_two>.detail_page_text_cont{top: 10%;left: 24.9%;}
-    .detail_page_three>.detail_page_text_cont{top: 25%;right: 4.15%;}
-    .detail_page_four>.detail_page_text_cont{top: 10%;left: 8%;}
-    .detail_page_five>.detail_page_text_cont{top: 10%;left: 8%;}
-    .detail_page_six>.detail_page_text_cont{top: 10%;right: 24.9%;}
-    .detail_page_seven>.detail_page_text_cont{top: 10%;right: 24.9%;}
-    .detail_page_eight>.detail_page_text_cont{top: 10%;left: 24.9%;}
-    @media screen and (min-width:992px) and (max-width: 1199px) {
-        .detail_page_one>.detail_page_text_cont{top: 10%;left: 16.6%;}
-        .detail_page_two>.detail_page_text_cont{top: 10%;left: 16.6%;}
-        .detail_page_three>.detail_page_text_cont{top: 20%;right: 4.15%;}
-        .detail_page_four>.detail_page_text_cont{top: 10%;left: 8%;}
-        .detail_page_five>.detail_page_text_cont{top: 10%;left: 8%;}
-        .detail_page_six>.detail_page_text_cont{top: 10%;right: 16.6%;}
-        .detail_page_seven>.detail_page_text_cont{top: 5%;right: 16.6%;}
-        .detail_page_eight>.detail_page_text_cont{top: 7%;left: 16.6%;}
-    }
-    @media screen and (min-width:768px) and (max-width: 991px) {
-        .detail_page_one>.detail_page_text_cont{top: 10%;left: 8.3%;}
-        .detail_page_two>.detail_page_text_cont{top: 10%;left: 8.3%;}
-        .detail_page_three>.detail_page_text_cont{top: 5%;right: 4.15%;}
-        .detail_page_four>.detail_page_text_cont{top: 10%;left: 8%;}
-        .detail_page_five>.detail_page_text_cont{top: 10%;left: 8%;}
-        .detail_page_six>.detail_page_text_cont{top: 10%;right: 8.3%;}
-        .detail_page_seven>.detail_page_text_cont{top: 5%;right: 8.3%;}
-        .detail_page_eight>.detail_page_text_cont{top: 7%;left: 8.3%;}
-    }
-    @media screen and (max-width:767px){
-        .detail_page_text_cont{background: #fff!important;text-align: left;padding: 0 15px!important;position:static!important}
-    }
+    @media screen and (min-width: 991px) and (max-width: 1199px) {}
 </style>
 {/block}
 
@@ -144,124 +38,121 @@
         </div>
     </div>
 
-    <div class="product-Overview common-width">
-        <div id="Detail_page_all">
-            <div class="container-fluid">
-                <div class="row">
-                    <!--one-->
-                    <section>
-                        <div class="detail_page_one relative">
-                            <div class="detail_page_text_cont absolute text-center col-lg-6 col-md-8 col-sm-10 col-xs-12">
-                                <strong>A Router, also an Artwork</strong>
-                                <p>
-                                    <br />
-                                </p>
-                            </div>
-                            <div class="detail_page_img_content">
-                                <img class="img-responsive center-block" src="https://cloud.wavlink.com/index.php?user/publicLink&fid=b65aJRzFxJia839JJuuChAyJvGCOBwB_l74PS3q0riX3-ARNaZ2_Fymty5rtV5Qz0WiMX8_7d1iMzh2l_HafjbMK_bwzOuyUwxyj8HDNm_cnPZHGrRbGhErhG4e64HOj_6PepW7u9pyF9MVRQFG1mFdwYudiikWgdWA&file_name=/1.jpg" />
-                            </div>
-                        </div>
-                    </section>
-                    <!--two-->
-                    <section>
-                        <div class="detail_page_two relative">
-                            <div class="detail_page_text_cont absolute text-center col-lg-6 col-md-8 col-sm-10 col-xs-12">
-                                <strong>Minimalist, Perfect, Eternal</strong>
-                                <p>
-                                    <br />
-                                </p>
-                            </div>
-                            <div class="detail_page_img_content">
-                                <img class="img-responsive center-block" src="https://cloud.wavlink.com/index.php?user/publicLink&fid=f107soyDDzg35HgPIY4uiE7hm62u2iNOUARGx6L5c6-c_XUEqRtCwLeMfEe1FeVdjVhN6RGIgKrntY1cmcvbjWRi0QXgJvws1hhMd3d-ONMGbodhhrLHux9FKByavWKjU-DGspJO2vQK2Kkrkrqp2fNd-L2LW3MiC5k&file_name=/2.jpg" />
-                            </div>
-                        </div>
-                    </section>
-                    <!--three-->
-                    <section>
-                        <div class="detail_page_three relative">
-                            <div class="detail_page_text_cont absolute col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                                <strong>Jacob Jensen</strong>
-                                <p>
-                                    Jacob Jensen was a prominent Danish Industrial designer, his Nordic minimalism style design with Bang &amp; Olufsen had influenced Danish Modern Movement extensively. Quantum DAX is one outstanding paradigm of his minimalism masterpiece with powerful performance and design of understated elegance and luxury.
-                                </p>
-                            </div>
-                            <div class="detail_page_img_content">
-                                <img class="img-responsive center-block" src="https://cloud.wavlink.com/index.php?user/publicLink&fid=2a30YntbwJnP1cvE8mhkybhufd7EnAgHb-m5eBNFlH8e2_QFsUFK08RPNM4tvyzBOAwM2FtBA-7c9rIkLgC_aIfGHkMPlZ7WNMkxNQaYtQ3-S4feBRz-LwuOG3Fqjmm6dY270eAuxKnflkcWTDfNMMrOJc_mxr7DtCA&file_name=/3.jpg" />
-                            </div>
-                        </div>
-                    </section>
-                    <!--four-->
-                    <section>
-                        <div class="detail_page_four relative">
-                            <div class="detail_page_text_cont absolute col-lg-5 col-md-5 col-sm-6 col-xs-12">
-                                <strong>A Strong Core, A Powerful Router</strong>
-                                <p>
-                                    <br />
-                                </p>
-                            </div>
-                            <div class="detail_page_img_content">
-                                <img class="img-responsive center-block" src="https://cloud.wavlink.com/index.php?user/publicLink&fid=2ed6-w8SmAQ78lMDu_0HoiGkttm5xBAHC5gL0FF13vPuRcCS6JJn750m0aFDux3U9UO_7LMiJVxV8CLNiNFLpar6dXh_T5xsZHPpiOeAEwgdXGvw9uriu7F5wQPYDTKlaPl4mdnP1q5Nl9yLd8uyOTipm4nXEuhjFj8&file_name=/4.jpg" />
-                            </div>
-                        </div>
-                    </section>
-                    <!--five-->
-                    <section>
-                        <div class="detail_page_five relative">
-                            <div class="detail_page_text_cont absolute col-lg-4 col-md-4 col-sm-5 col-xs-12">
-                                <strong>LCD Screen Displays Key Info</strong>
-                                <p>
-                                    All product relevant information is Visible on the LCD screen.
-                                </p>
-                            </div>
-                            <div class="detail_page_img_content">
-                                <img class="img-responsive center-block" src="https://cloud.wavlink.com/index.php?user/publicLink&fid=fb1emRLBaB3tGQeetPZiH0oXZr2SlM0HbwAsbW6_8_7t5-EJVSzZE4u1UKa8vr8XA8D_9StLsj9ujVDv-DZIMAFwYsdMbOOG-ldbHy3KQhXu70dZdvR4kTIDUYCrZE41NCmUj1o4ALFg9xSlnNIJqP2vo2Siwtjo7Ko&file_name=/5.jpg" />
-                            </div>
-                        </div>
-                    </section>
-                    <!--six-->
-                    <section>
-                        <div class="detail_page_six relative">
-                            <div class="detail_page_text_cont absolute text-center col-lg-6 col-md-8 col-sm-10 col-xs-12">
-                                <strong>True Gigabit, Beyond Fast High Power, Beyond Strong</strong>
-                                <p>
-                                    <br />
-                                </p>
-                            </div>
-                            <div class="detail_page_img_content">
-                                <img class="img-responsive center-block" src="https://cloud.wavlink.com/index.php?user/publicLink&fid=a110aDMz2zIL6ox00SjXRu6pnHNem-otczO5zKlKuudBpA1fgwDJhw9GkDvtGFM0eMDppuEmiQPZ2avjp24w8y_65IzpkSR2fq3HjkQDsGXuM5MF_WEffNQEkoZGjgtv-nkkzK8J0c3inrM2WJscM8fA7pUUjIGvfEU&file_name=/6.jpg" />
-                            </div>
-                        </div>
-                    </section>
-                    <!--seven-->
-                    <section>
-                        <div class="detail_page_seven relative">
-                            <div class="detail_page_text_cont absolute text-center col-lg-6 col-md-8 col-sm-10 col-xs-12">
-                                <strong>Protect Online Safety Filter Inappropriate Content</strong>
-                                <p>
-                                    DAX protects your family from improper content, especially giving your children a healthier and safer online experience.
-                                </p>
-                            </div>
-                            <div class="detail_page_img_content">
-                                <img class="img-responsive center-block" src="https://cloud.wavlink.com/index.php?user/publicLink&fid=505ekAjxSlDaQ7_Akwarv1-scrE6SrkOwl6T02f2LAaPrhtZo8PE41W-_uuqSi3PlidEyDbnBKnAtNbb-AMt6e5u8ZGODft28JoJLvg7HgAsOKmlZ8gMGBXMhLRy8qEw4udnyrntX57h3ksDpnoII9702JweZb7J4NO6HH52&file_name=/7_new.jpg" />
-                            </div>
-                        </div>
-                    </section>
-                    <!--eight-->
-                    <section>
-                        <div class="detail_page_eight relative">
-                            <div class="detail_page_text_cont absolute text-center col-lg-6 col-md-8 col-sm-10 col-xs-12">
-                                <strong>Flush Your Heat Away!</strong>
-                                <p>
-                                    With the help of interior dissipation board, DAX assures you a longer lifespan.
-                                </p>
-                            </div>
-                            <div class="detail_page_img_content">
-                                <img class="img-responsive center-block" src="https://cloud.wavlink.com/index.php?user/publicLink&fid=f1a03BfZitzCibTcWYW3REcKslvyzVA76Wu2i8BZXakwbQLXcVQS0tNLDktzyiE7PdgY6xLIWpZisdymPIsTZv670g7892XHNSDors0zBHiZiXgXiEshIUJOd4Ywid--bASgT4InDSEN-JEs1MvO6E__Xkja2HC4fOA&file_name=/8.jpg" />
-                            </div>
-                        </div>
-                    </section>
+    <div class="product-Detail" id="product-Detail">
+        <div class="detail-page common-width">
+            <!-- one -->
+            <div class="page-one page-box">
+                <div class="des-box">
+                    <h3>Rechargeable Battery Operated Fan With 3 Speeds</h3>
+                    <p>
+                        A life saver on hot days
+                    </p>
+                </div>
+                <div class="img-box">
+                    <img src="//minthouz.oss-cn-shenzhen.aliyuncs.com/images/product/English/Fan1/PC/1.jpg" alt="">
                 </div>
             </div>
+            <!-- two -->
+            <div class="page-two page-box">
+                <div class="des-box">
+                    <h3>3 Speeds Cool You Down Fast</h3>
+                    <p>
+                        The ingenious fan features three speeds: low, medium, and high, fit-ting anyone's cooling needs.
+                        Just press the button to switch the fan on and adjust wind modes.
+                    </p>
+                </div>
+                <div class="img-box">
+                    <img src="//minthouz.oss-cn-shenzhen.aliyuncs.com/images/product/English/Fan1/PC/2.jpg" alt="">
+                </div>
+            </div>
+            <!-- three -->
+            <div class="page-three page-box">
+                <div class="des-box">
+                    <h3>A Portable But Furthermore, A Desktop Fan</h3>
+                    <p>
+                        It can be a handheld fan or as a desktop air fan according to your individual needs.
+                        With a plus stand you can use it as a desktop fan as well.
+                    </p>
+                </div>
+                <div class="img-box">
+                    <img src="//minthouz.oss-cn-shenzhen.aliyuncs.com/images/product/English/Fan1/PC/3.jpg" alt="">
+                </div>
+            </div>
+            <!-- four -->
+            <div class="page-four page-box">
+                <div class="des-box">
+                    <h3>Dual Power Source</h3>
+                    <p>
+                        This fan comes with a built-in 1200mAh 18650 Li-ion battery, working up to 8 hours after a full charge.
+                        It can also be used via USB port from your computer, power bank, USB charger or other devices with USB output.
+                    </p>
+                </div>
+                <div class="img-box">
+                    <img src="//minthouz.oss-cn-shenzhen.aliyuncs.com/images/product/English/Fan1/PC/4.jpg" alt="">
+                </div>
+            </div>
+            <!-- five -->
+            <div class="page-five page-box">
+                <div class="des-box">
+                    <h3>Choose Your Desire Direction of Wind</h3>
+                    <p>
+                        The head of this  fan can rotates up to 180 degrees and the handle is extendable.
+                        Therefore, so you can direct the cool air to where you need it most.
+                    </p>
+                </div>
+                <div class="img-box">
+                    <img src="//minthouz.oss-cn-shenzhen.aliyuncs.com/images/product/English/Fan1/PC/5.jpg" alt="">
+                </div>
+            </div>
+            <!-- six -->
+            <div class="page-six page-box">
+                <div class="des-box">
+                    <h3>Enjoy A Whispering Breeze</h3>
+                    <p>
+                        The fan moves loads of air yet it is very quiet.
+                        Its brushless motor keeps you cool and comfortable while you are concentrating or sleeping.
+                    </p>
+                </div>
+                <div class="img-box">
+                    <img src="//minthouz.oss-cn-shenzhen.aliyuncs.com/images/product/English/Fan1/PC/6.jpg" alt="">
+                </div>
+            </div>
+            <!-- seven -->
+            <div class="page-seven page-box">
+                <div class="des-box">
+                    <h3>Removable Grill Cool and Clean</h3>
+                    <p>
+                        Fans would accumulate dirt and dust overtime. While the grill of our fan can be removed easily by turning it anticlockwise. Place the grill in a sink and turn on the faucet. Dust the blades with a brush or sponge.
+                    </p>
+                </div>
+                <div class="img-box">
+                    <img src="//minthouz.oss-cn-shenzhen.aliyuncs.com/images/product/English/Fan1/PC/7.jpg" alt="">
+                </div>
+            </div>
+            <!-- eight -->
+            <!--<div class="page-eight page-box">
+                <div class="des-box">
+                    <h3></h3>
+                    <p>
+
+                    </p>
+                </div>
+                <div class="img-box">
+                    <img src="//minthouz.oss-cn-shenzhen.aliyuncs.com/images/product/English/Fan1/PC/8.jpg" alt="">
+                </div>
+            </div>
+            &lt;!&ndash; nine &ndash;&gt;
+            <div class="page-nine page-box">
+                <div class="des-box">
+                    <h3></h3>
+                    <p>
+
+                    </p>
+                </div>
+                <div class="img-box">
+                    <img src="//minthouz.oss-cn-shenzhen.aliyuncs.com/images/product/English/Fan1/PC/9.jpg" alt="">
+                </div>
+            </div>-->
         </div>
     </div>
 
@@ -398,22 +289,23 @@
         var gHd = hd + nav;
         if (document_sT > gHd) {
             $('.product-nav').addClass('nav-active');
-            $('.product-Overview').css('paddingTop', '60px')
+            $('.product-Detail').css('paddingTop', '60px')
         }
         $(window).bind("scroll", function () {
             var document_sT = $(document).scrollTop();
             if (document_sT > gHd) {
                 $('.product-nav').addClass('nav-active');
-                $('.product-Overview').css('paddingTop', '60px')
+                $('.product-Detail').css('paddingTop', '60px')
             } else {
                 $('.product-nav').removeClass('nav-active');
-                $('.product-Overview').css('paddingTop', '0')
+                $('.product-Detail').css('paddingTop', '0')
             }
         });
     }
+
     function navTableChange () {
         var subNav = $('.sub_nav span'),
-            overviewDom = $('.product-Overview'),
+            overviewDom = $('.product-Detail'),
             SpecificationsDom = $('.product-Specifications');
         subNav.click(function () {
             var a = $(this).index();
@@ -430,6 +322,7 @@
             }
         });
     }
+
     $(function () {
         productNav();
         navTableChange()
