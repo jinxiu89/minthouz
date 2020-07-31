@@ -83,9 +83,49 @@
 .product-nav .sub_nav a:hover {
   background: #009419;
 }
-/*  */
-.product-Overview {
+/* 產品詳情 */
+.product-Detail {
   margin-bottom: 50px;
+}
+.product-Detail .page-box {
+  position: relative;
+}
+.product-Detail .img-box img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.product-Detail .des-box {
+  position: absolute;
+  z-index: 1;
+}
+.product-Detail .des-box h3 {
+  font-size: 32px;
+}
+.product-Detail .des-box p {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #666;
+  line-height: 22px;
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .product-Detail .des-box h3 {
+    font-size: 18px;
+  }
+  .product-Detail .des-box p {
+    margin-top: 5px;
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .product-Detail .des-box h3 {
+    font-size: 24px;
+  }
+  .product-Detail .des-box p {
+    font-size: 16px;
+  }
 }
 /* 參數 */
 .product-Specifications {
