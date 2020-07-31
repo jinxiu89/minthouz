@@ -22,6 +22,7 @@
 /* 產品畫廊 */
 .product-gallery {
     h3 {
+        .text-overflow();
         padding: 0 10px;
         line-height: 60px;
         font-size: 18px;
@@ -85,8 +86,42 @@
 }
 
 /* 產品描述 */
-.product-Overview {
-    margin-bottom: 50px;
+.product-Detail {
+    .img-box img {
+        .center-block();
+        .img-responsive();
+    }
+    .des-box {
+        padding: 40px 10px 20px;
+        background: @whiteColor;
+        h3 {
+            font-size: 16px;
+        }
+        p {
+            margin-top: 10px;
+            font-size: 14px;
+            color: @whiteSmoke;
+            line-height: 22px;
+        }
+    }
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+        .des-box h3 {
+            font-size: 18px;
+        }
+        .des-box p {
+            margin-top: 5px;
+            font-size: 14px;
+            line-height: 18px;
+        }
+    }
+    @media screen and (min-width: 992px) and (max-width: 1199px) {
+        .des-box h3 {
+            font-size: 24px;
+        }
+        .des-box p {
+            font-size: 16px;
+        }
+    }
 }
 
 /* 參數 */

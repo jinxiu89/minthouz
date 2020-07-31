@@ -7,20 +7,34 @@
 {block name="style"}
 <link rel="stylesheet" href="{{frontend}}/desktop/css/page/Product-detail.css">
 <style>
-    .page-one .des-box { width: 50%; top: 8%; left: 6% }
-    .page-two .des-box { width: 80%; top: 5%; left: 10%; text-align: center; }
-    .page-three .des-box { width: 80%; top: 5%; left: 10%; text-align: center; }
-    .page-four .des-box { width: 80%; top: 5%; left: 10%; text-align: center; }
-    .page-five .des-box { width: 80%; top: 8%; left: 10%; text-align: center; }
-    .page-six .des-box { width: 50%; top: 8%; left: 6% }
-    .page-seven .des-box { width: 30%; top: 5%; right: 4.7% }
+    .page-one .des-box { width: 30%; top: 10%; left: 10% }
+    .page-two .des-box { width: 50%; top: 10%; left: 25%; text-align: center; }
+    .page-three .des-box { width: 50%; top: 8%; left: 25%; text-align: center; }
+    .page-four .des-box { width: 50%; top: 8%; left: 25%; text-align: center; }
+    .page-five .des-box { width: 50%; top: 10%; left: 25%; text-align: center; }
+    .page-six .des-box { width: 30%; top: 15%; left: 6% }
+    .page-seven .des-box { width: 30%; top: 15%; right: 4.7% }
     .page-eight .des-box { width: 50%; top: 8%; left: 6% }
     .page-nine .des-box { width: 50%; top: 8%; left: 6% }
 
     @media screen and (min-width: 768px) and (max-width: 991px) {
-        .page-seven .des-box { width: 39%; top: 2%; right: 10px; }
+        .page-one .des-box { width: 45%; top: 10%; left: 5% }
+        .page-two .des-box { width: 80%; top: 5%; left: 10%; text-align: center; }
+        .page-three .des-box { width: 80%; top: 3%; left: 10%; text-align: center; }
+        .page-four .des-box { width: 80%; top: 3%; left: 10%; text-align: center; }
+        .page-five .des-box { width: 80%; top: 8%; left: 10%; text-align: center; }
+        .page-six .des-box { width: 45%; top: 15%; left: 6% }
+        .page-seven .des-box { width: 39%; top: 5%; right: 10px; }
     }
-    @media screen and (min-width: 991px) and (max-width: 1199px) {}
+    @media screen and (min-width: 991px) and (max-width: 1199px) {
+        .page-one .des-box { width: 45%; top: 10%; left: 8% }
+        .page-two .des-box { width: 80%; top: 5%; left: 10%; text-align: center; }
+        .page-three .des-box { width: 80%; top: 3%; left: 10%; text-align: center; }
+        .page-four .des-box { width: 80%; top: 3%; left: 10%; text-align: center; }
+        .page-five .des-box { width: 80%; top: 8%; left: 10%; text-align: center; }
+        .page-six .des-box { width: 45%; top: 15%; left: 6% }
+        .page-seven .des-box { width: 39%; top: 5%; right: 10px; }
+    }
 </style>
 {/block}
 
@@ -28,7 +42,7 @@
 <div class="product-container">
     <div class="product-nav">
         <div class="common-width">
-            <h3>Mi Sphere Camera Kit</h3>
+            <h3>Rechargeable Battery Operated Fan With 3 Speeds</h3>
             <div class="sub_nav">
                 <span class="active">Overview</span>
                 <span>Specs</span>
@@ -39,7 +53,7 @@
     </div>
 
     <div class="product-Detail" id="product-Detail">
-        <div class="detail-page common-width">
+        <div class="detail-page">
             <!-- one -->
             <div class="page-one page-box">
                 <div class="des-box">
@@ -286,6 +300,7 @@
         var document_sT = $(document).scrollTop(),
             hd = $('.g-hd .hd').height(),
             nav = $('.g-hd .nav').height();
+        console.log(hd);
         var gHd = hd + nav;
         if (document_sT > gHd) {
             $('.product-nav').addClass('nav-active');
