@@ -387,12 +387,6 @@ body {
   width: 16.666%;
   padding: 50px 15px;
 }
-.g-hd .nav .item-children .children-list:nth-of-type(1) {
-  padding-left: 0;
-}
-.g-hd .nav .item-children .children-list:nth-last-of-type(1) {
-  padding-right: 0;
-}
 .g-hd .nav .item-children .children-list a {
   display: block;
   color: #333;
@@ -413,6 +407,16 @@ body {
   height: auto;
   margin-left: auto;
   margin-right: auto;
+}
+.g-hd .nav .item-children .children-list a p {
+  width: 3;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  position: relative;
+  line-height: 22px;
+  height: 66px;
 }
 .g-hd .nav .menu-box .all-category {
   position: absolute;
