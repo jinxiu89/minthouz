@@ -470,14 +470,17 @@
 
     function productNav() {
         var document_sT = $(document).scrollTop(),
-            nav = $('.g-hd .nav').height();
-        if (document_sT > nav) {
+            notice = $('.g-notice').outerHeight() || 0,
+            nav = $('.g-hd .nav').outerHeight() || 0,
+            gallery = $('.product-gallery').outerHeight() || 0;
+        var topHeight = notice + nav + gallery;
+        if (document_sT > topHeight) {
             $('.product-nav').addClass('nav-active');
             $('.product-Detail').css('paddingTop', '60px')
         }
         $(window).bind("scroll", function () {
             var document_sT = $(document).scrollTop();
-            if (document_sT > nav) {
+            if (document_sT > topHeight) {
                 $('.product-nav').addClass('nav-active');
                 $('.product-Detail').css('paddingTop', '60px')
             } else {
