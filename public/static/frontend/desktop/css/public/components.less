@@ -258,12 +258,6 @@ body {
             .fl();
             width: 16.666%;
             padding: 50px 15px;
-            &:nth-of-type(1) {
-                padding-left: 0;
-            }
-            &:nth-last-of-type(1) {
-                padding-right: 0;
-            }
         }
         .item-children .children-list a {
             display: block;
@@ -278,6 +272,9 @@ body {
         .item-children .children-list a img {
             .img-responsive();
             .center-block();
+        }
+        .item-children .children-list a p {
+            .text-overflow-many(3)
         }
         //item-children End
         //all-category
