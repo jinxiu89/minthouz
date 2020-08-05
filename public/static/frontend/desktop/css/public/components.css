@@ -311,8 +311,17 @@ body {
 .g-hd .nav .menu-box {
   float: right;
 }
+.g-hd .nav .menu-box .menu-listbefore,
+.g-hd .nav .menu-box .menu-list:after {
+  content: " ";
+  display: table;
+  zoom: 1;
+}
+.g-hd .nav .menu-box .menu-list:after {
+  clear: both;
+}
 .g-hd .nav .menu-box .menu-list .menu-item {
-  display: inline-block;
+  float: left;
   padding: 20px 15px;
 }
 .g-hd .nav .menu-box .menu-list .menu-item:hover .item-link {

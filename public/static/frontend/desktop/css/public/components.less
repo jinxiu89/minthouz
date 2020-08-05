@@ -204,8 +204,11 @@ body {
         .menu-box {
             .fr();
         }
+        .menu-box .menu-list {
+            .clearFix();
+        }
         .menu-box .menu-list .menu-item {
-            display: inline-block;
+            .fl();
             padding: 20px 15px;
             &:hover .item-link {
                 color: @activeColor;
