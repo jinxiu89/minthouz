@@ -9,9 +9,10 @@ function menuHover () {
     var nav = $('#nav'),
         navItem = $('#menu-list .menu-item');
     navItem.hover(function () {
-        nav.toggleClass('navActive');
+        nav.addClass('navActive');
         $(this).children('.item-children').css('display', 'block');
     }, function () {
+        nav.removeClass('navActive');
         $(this).children('.item-children').css('display', 'none');
     })
 }
