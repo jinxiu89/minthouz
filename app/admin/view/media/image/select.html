@@ -33,9 +33,9 @@
 <div class="x-nav">
     <span class="layui-breadcrumb">
         <a href="">首页</a>
-        <a href="{:url('media/image/list',['path'=>'images/'])}">图片管理</a>
+        <a href="{:url('media/image/select',['path'=>'images/','pos'=>$pos])}">图片管理</a>
         {volist name="nav" id="vo" offset="1"}
-        <a href="{:url('media/image/list',['path'=>$vo.path])}">{$vo.name}</a>
+        <a href="{:url('media/image/select',['path'=>$vo.path,'pos'=>$pos])}">{$vo.name}</a>
         {/volist}
         <!--            <a><cite>图片列表</cite></a>-->
     </span>
@@ -48,11 +48,11 @@
         <div class="layui-col-md12">
             <div class="layui-card">
                 <div class="layui-card-header">
-                    <button class="layui-btn" onclick="xadmin.open('上传','{:url(\'media/image/upload\')}',600,600)"><i
-                            class="layui-icon"></i>上传图片</button>
+                    <button class="layui-btn" onclick="xadmin.open('上传','{:url(\'media/image/upload\')}',600,600)">
+                        <i class="layui-icon"></i>上传图片</button>
                     <button class="layui-btn"
-                        onclick="xadmin.open('创建目录','{:url(\'media/image/create_folder\')}',600,300)"><i
-                            class="iconfont">&#xe83c;</i> 创建目录</button>
+                        onclick="xadmin.open('创建目录','{:url(\'media/image/create_folder\')}',600,300)">
+                        <i class="iconfont">&#xe83c;</i> 创建目录</button>
                 </div>
                 <div class="layui-card-body layui-clear">
                     {notempty name="items"}
