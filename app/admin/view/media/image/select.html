@@ -61,11 +61,14 @@
                     <div class="item-list"
                         style="position: relative;display: inline-block;padding: 10px;text-align: center;float: left">
                         <div style="height: 126px;display: inline-block;padding: 10px;text-align: center;float: left">
-                            <a href="{:url('media/image/list',['path'=>$item.key])}" style="display: inline-block">
+                            <a href="{:url('media/image/select',['path'=>$item.key,'pos'=>$pos])}"
+                                style="display: inline-block">
                                 <i class="iconfont"
                                     style="font-size: 100px;color: #ffdc69;line-height: 100px">&#xe83c;</i>
                             </a>
-                            <p><a href="{:url('media/image/list',['path'=>$item.key])}">{$item['name']}</a></p>
+                            <p><a
+                                    href="{:url('media/image/select',['path'=>$item.key,'pos'=>$pos])}">{$item['name']}</a>
+                            </p>
                         </div>
                     </div>
                     {else /}
@@ -87,10 +90,14 @@
                                         style="position: absolute;top: 0;left: 0;z-index: -99;width: 1px;height: 1px;border: none;background: transparent">
                                     <li class="btnCopy"><a href="#" title="复制url链接"><span class="iconfont"
                                                 style="font-size: 16px">&#xe744;</span>复制</a></li>
-                                    <li><a href="javascript:;"
-                                            onclick="del('{:url(\'media/image/del\',[\'key\'=>$item.key])}')" title="删除"
-                                            style="font-size: 16px"><span class="iconfont">&#xe69d;</span><span
-                                                style="font-size: 12px"> 删除</span></a></li>
+                                    <li><a href="javascript:;" onclick="insert('{$pos}','{$baseUrl}/{$item.key}')"
+                                            title="选择并插入" style="font-size: 16px"><span
+                                                class="iconfont">&#xe6f7;</span><span style="font-size: 12px">
+                                                插入到</span></a></li>
+                                    <li><a href="javascript:;" onclick="in_list('img/list','{$baseUrl}/{$item.key}')"
+                                            title="插入到列表" style="font-size: 16px"><span
+                                                class="iconfont">&#xe6f7;</span><span style="font-size: 12px">
+                                                插入相册</span></a></li>
                                 </ul>
                             </span>
                         </div>
