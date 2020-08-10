@@ -16,7 +16,7 @@
         <div class="swiper-slide">
             <div class="img-box">
                 <a href="{$vo.path}">
-                    <img src="{$vo.image}" alt="">
+                    <img src="{$vo.mobile}" alt="">
                 </a>
             </div>
         </div>
@@ -30,7 +30,7 @@
     <div class="min-list">
         {volist name="hot" id="vo"}
         <div class="min-item">
-            <a href="{$vo.path}"><img src="{$vo.image}" alt=""></a>
+            <a href="{$vo.path}"><img src="{$vo.mobile}" alt=""></a>
         </div>
         {/volist}
     </div>
@@ -40,13 +40,13 @@
     <div class="star-list">
         <div class="left">
             <div class="star-item">
-                <a href="{$starProduct[0]['path']}"><img src="{$starProduct[0]['image']}" alt=""></a>
+                <a href="{$starProduct[0]['path']}"><img src="{$starProduct[0]['mobile']}" alt=""></a>
             </div>
         </div>
         <div class="right">
             {volist name="starProduct" id="vo" offset='1' length="3"}
             <div class="star-item">
-                <a href="{$vo.path}"><img src="{$vo.image}" alt=""></a>
+                <a href="{$vo.path}"><img src="{$vo.mobile}" alt=""></a>
             </div>
             {/volist}
         </div>
