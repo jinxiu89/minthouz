@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @Create by PhpStorm
  * @author:jinxiu89@163.com
@@ -48,7 +49,7 @@ class Image extends BaseAdmin
     {
         if ($this->request->isGet()) {
             $path = input('get.path', 'images/', 'htmlspecialchars,trim');
-            $type = input('get.type', '', 'trim,intval');//这个类型是用来去除掉插入到/插入两个操作的，当在别的功能里调用该功能是就需要显示，反之则不要
+            $type = input('get.type', '', 'trim,intval'); //这个类型是用来去除掉插入到/插入两个操作的，当在别的功能里调用该功能是就需要显示，反之则不要
             Session::set('path', $path); //上传行为需要用到这个path
             $nav = array_filter(explode('/', $path));
             $navbar = [];
@@ -60,6 +61,38 @@ class Image extends BaseAdmin
             $items = AliOss::listObj((string)$this->bucket, (string)$path);
             $baseUrl = Env::get('oss.baseUrl'); //传递到前端 防止换来换去，全部都要手撸
             View::assign('type', $type);
+            View::assign('baseUrl', $baseUrl);
+            View::assign('items', $items);
+            View::assign('path', $path);
+            View::assign('nav', $navbar);
+            return View::fetch();
+        }
+    }
+    /**
+     * 选择图片的方法，后面有用再说明
+     *
+     * @Author: kevin qiu
+     * @DateTime: 2020-08-10
+     * @return void
+     */
+    public function select()
+    {
+        if ($this->request->isGet()) {
+            $path = input('get.path', 'images/', 'htmlspecialchars,trim');
+            $type = input('get.type', '', 'trim,intval'); //这个类型是用来去除掉插入到/插入两个操作的，当在别的功能里调用该功能是就需要显示，反之则不要
+            $pos = input('get.pos', '', 'trim,htmlspecialchars');
+            Session::set('path', $path); //上传行为需要用到这个path
+            $nav = array_filter(explode('/', $path));
+            $navbar = [];
+            foreach ($nav as $item) {
+                $temp['name'] = $item;
+                $temp['path'] = substr($path, 0, strpos($path, '/' . $item)) . '/' . $item;
+                $navbar[] = $temp;
+            }
+            $items = AliOss::listObj((string)$this->bucket, (string)$path);
+            $baseUrl = Env::get('oss.baseUrl'); //传递到前端 防止换来换去，全部都要手撸
+            View::assign('type', $type);
+            View::assign('pos', $pos);
             View::assign('baseUrl', $baseUrl);
             View::assign('items', $items);
             View::assign('path', $path);
