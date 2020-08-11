@@ -46,7 +46,10 @@
     <div class="min-list">
         {volist name="hot" id="vo"}
         <div class="min-item">
-            <a href="{$vo.path}"><img src="{$vo.desktop}" alt=""></a>
+            <a href="{$vo.path}">
+                <h3 class="des">{$vo.title}</h3>
+                <img src="{$vo.desktop}" alt="">
+            </a>
         </div>
         {/volist}
     </div>

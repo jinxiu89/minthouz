@@ -12,9 +12,10 @@
 }
 .banner .swiper-wrapper .swiper-slide .des {
   position: absolute;
-  top: 30%;
-  left: 15%;
-  width: 45%;
+  top: 35%;
+  left: 10%;
+  width: 35%;
+  color: #333;
   cursor: auto;
 }
 .banner .swiper-wrapper .swiper-slide .des h3 {
@@ -117,6 +118,7 @@
 }
 .hot .min-list .min-item {
   float: left;
+  position: relative;
   width: 33.33%;
 }
 .hot .min-list .min-item img {
@@ -137,14 +139,32 @@
 .hot .min-list .min-item a {
   display: block;
 }
+.hot .min-list .min-item a .des {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  width: 55%;
+  text-align: left;
+  color: #333;
+  font-size: 18px;
+}
 .hot .min-list .min-item:nth-of-type(1) a {
   padding: 0 13.33333333px 0 0;
+}
+.hot .min-list .min-item:nth-of-type(1) a .des {
+  padding-left: 10px;
 }
 .hot .min-list .min-item:nth-of-type(2) a {
   padding: 0 6.66666667px;
 }
+.hot .min-list .min-item:nth-of-type(2) a .des {
+  padding-left: 16.66666667px;
+}
 .hot .min-list .min-item:nth-last-of-type(1) a {
   padding: 0 0 0 13.33333333px;
+}
+.hot .min-list .min-item:nth-last-of-type(1) a .des {
+  padding-left: 23.33333333px;
 }
 .star {
   text-align: center;
