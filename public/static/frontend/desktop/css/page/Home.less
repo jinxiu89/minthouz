@@ -15,9 +15,10 @@
         position: relative;
         .des {
             position: absolute;
-            top: 30%;
-            left: 15%;
-            width: 45%;
+            top: 35%;
+            left: 10%;
+            width: 35%;
+            color: @baseColor;
             cursor: auto;
         }
         .des h3 {
@@ -107,6 +108,7 @@
     }
     .min-list .min-item {
         .fl();
+        position: relative;
         width: 33.33%;
         img {
             #transition(box-shadow .2s linear);
@@ -119,14 +121,32 @@
         a {
             display: block;
         }
+        a .des {
+            position: absolute;
+            top: 20%;
+            left: 0;
+            width: 55%;
+            text-align: left;
+            color: @baseColor;
+            font-size: 18px;
+        }
         &:nth-of-type(1) a {
             padding: 0 40/3px 0 0;
+            .des {
+                padding-left: 10px;
+            }
         }
         &:nth-of-type(2) a {
             padding: 0 20/3px;
+            .des {
+                padding-left: 20/3 + 10px;
+            }
         }
         &:nth-last-of-type(1) a {
             padding: 0 0 0 40/3px;
+            .des {
+                padding-left: 40/3 + 10px;
+            }
         }
     }
 }
