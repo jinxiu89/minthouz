@@ -10,12 +10,35 @@ function menuHover () {
         navItem = $('#menu-list .menu-item');
     navItem.hover(function () {
         nav.addClass('navActive');
-        $(this).children('.item-children').css('display', 'block');
-    }, function () {
-        nav.removeClass('navActive');
-        $(this).children('.item-children').css('display', 'none');
+        $(this).children('.item-children').stop(false, true).fadeToggle(300);
     })
 }
+
+/*function newMenu () {
+    var nav = $('#nav'),
+        navList = $('#menu-list'),
+        navItem = $('#menu-list .menu-item');
+    navList.hover(function () {
+        nav.addClass('navActive');
+    }, function () {
+        nav.removeClass('navActive');
+    });
+
+    navItem.mouseenter(function () {
+        if (nav.hasClass('navActive')) {
+            $(this).children('.item-children').css('display', 'block');
+        } else {
+            $(this).children('.item-children').slideDown(300);
+        }
+    });
+    navItem.mouseleave(function () {
+        var x = navList.mouseover();
+        console.log(x);
+        if (nav.hasClass('navActive')) {
+            $(this).children('.item-children').css('display', 'none');
+        }
+    });
+}*/
 
 function gTop () {
     var g_top = $("#g-top");
@@ -29,6 +52,8 @@ $(function () {
     gNotice();
 
     menuHover();
+
+    // newMenu();
 
     gTop();
 
