@@ -18,11 +18,26 @@
     .swiper-pagination-bullet-active {
         background: @activeColor;
     }
+    .img-box {
+        position: relative;
+    }
+    .img-box .des {
+        position: absolute;
+        top: 20px;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        padding: 0 10px;
+        font-size: 18px;
+        color: @baseColor;
+        text-align: center;
+    }
 }
 
 .hot {
     margin: 10px;
     .min-list .min-item {
+        position: relative;
         margin-bottom: 10px;
         &:nth-last-of-type(1) {
             margin-bottom: 0;
@@ -30,6 +45,15 @@
         img {
             .img-responsive();
             .center-block();
+        }
+        .des {
+            position: absolute;
+            top: 20%;
+            left: 0;
+            z-index: 1;
+            width: 50%;
+            padding: 0 10px;
+            font-size: 16px;
         }
     }
 }

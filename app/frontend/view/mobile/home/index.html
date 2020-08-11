@@ -16,6 +16,7 @@
         <div class="swiper-slide">
             <div class="img-box">
                 <a href="{$vo.path}">
+                    <h3 class="des">{$vo.title}</h3>
                     <img src="{$vo.mobile}" alt="">
                 </a>
             </div>
@@ -30,6 +31,7 @@
     <div class="min-list">
         {volist name="hot" id="vo"}
         <div class="min-item">
+            <h3 class="des">{$vo.title}</h3>
             <a href="{$vo.path}"><img src="{$vo.mobile}" alt=""></a>
         </div>
         {/volist}
