@@ -89,6 +89,7 @@ class Base extends BaseController
         //通知 不用走缓存
         $notice = (new Notice())->getNoticeByLanguage((int)$language, (int)$status = 1);
         $treeCategory = (new Category())->getDataByLanguage((int)$language);
+        print_r($treeCategory);
         $list = (new About())->getAboutList((int) $this->language['id']);
         View::assign('notice', $notice);
         View::assign('list', $list);

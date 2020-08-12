@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * @Create by PhpStorm
@@ -47,7 +48,6 @@ class ProductCategory extends BaseAdmin
         $arr = $this->service->getDataByLanguage((int)$this->language);
         $this->category = Category::toLevel((array)$arr, '&nbsp;&nbsp;');
         View::assign('category', $this->category);
-
     }
 
     /**
@@ -126,7 +126,7 @@ class ProductCategory extends BaseAdmin
                 $data['level'] = 0;
                 $data['is_parent'] = 1;
             } else {
-                $parent = $this->service->getParent($data['parent_id']);
+                $parent = $this->service->getParent((int)$data['parent_id']);
                 $data['level'] = $parent->level + 1;
                 $data['path'] = $parent->path . $parent->id . '-';
             }
@@ -140,7 +140,8 @@ class ProductCategory extends BaseAdmin
     /**
      * @return Json
      */
-    public function changeStatus(){
+    public function changeStatus()
+    {
         $id = input('get.id');
         $status = input('get.status');
         $result = $this->service->changeStatus((int)$id, (int)$status);

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @Create by PhpStorm
  * @author:jinxiu89@163.com
@@ -24,7 +25,7 @@ use think\db\exception\ModelNotFoundException;
  */
 class ProductCategory extends BaseModel
 {
-    protected $table='tb_product_category';
+    protected $table = 'tb_product_category';
 
     /**
      * @param int $language
@@ -33,7 +34,8 @@ class ProductCategory extends BaseModel
      * @throws DbException
      * @throws ModelNotFoundException
      */
-    public static function getDataByLanguage(int $language){
-        return self::where(['language_id' => $language])->field('*')->select();
+    public static function getDataByLanguage(int $status, int $language)
+    {
+        return self::where(['status' => $status, 'language_id' => $language])->field('id,parent_id,path,is_parent,level,name,title,url_title')->order('listorder desc')->select();
     }
 }

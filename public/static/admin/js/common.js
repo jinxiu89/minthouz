@@ -29,7 +29,6 @@ function del(url) {
  */
 function insert(pos, key) {
     let index = parent.layer.getFrameIndex(window.name);
-    console.log(key);
     parent.$('.' + pos + ' img').attr('src', key);
     parent.$('.' + pos + ' input').val(key);
     parent.layer.close(index);
