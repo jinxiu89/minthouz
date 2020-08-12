@@ -12,6 +12,7 @@
 {block name="body"}
 <div class="banner swiper-container">
     <div class=" swiper-wrapper">
+        {notempty name="banner"}
         {volist name="banner" id="vo"}
         <div class="swiper-slide">
             <div class="des">
@@ -34,6 +35,7 @@
             </div>
         </div>
         {/volist}
+        {/notempty}
     </div>
     <div class="swiper-pagination"></div>
     <!--分页器-->
@@ -44,6 +46,7 @@
 </div>
 <div class="hot common-width">
     <div class="min-list">
+        {notempty name="not"}
         {volist name="hot" id="vo"}
         <div class="min-item">
             <a href="{$vo.path}">
@@ -52,6 +55,7 @@
             </a>
         </div>
         {/volist}
+        {/notempty}
     </div>
 </div>
 <div class="star common-width">
@@ -59,15 +63,19 @@
     <div class="star-list">
         <div class="left">
             <div class="star-item">
+                {notempty name="starProduct"}
                 <a href="{$starProduct[0]['path']}"><img src="{$starProduct[0]['desktop']}" alt=""></a>
+                {/notempty}
             </div>
         </div>
         <div class="right">
+            {notempty name="starProduct"}
             {volist name="starProduct" id="vo" offset='1' length="3"}
             <div class="star-item">
                 <a href="{$vo.path}"><img src="{$vo.desktop}" alt=""></a>
             </div>
             {/volist}
+            {/notempty}
         </div>
     </div>
 </div>
