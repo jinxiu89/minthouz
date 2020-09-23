@@ -36,6 +36,6 @@ class ProductCategory extends BaseModel
      */
     public static function getDataByLanguage(int $status, int $language)
     {
-        return self::where(['status' => $status, 'language_id' => $language])->field('id,parent_id,path,is_parent,level,name,title,url_title')->order('listorder desc')->select();
+        return self::where(['status' => $status, 'language_id' => $language])->field('id,parent_id,path,is_parent,level,name,title,url_title,listorder,status')->order('listorder desc')->select();
     }
 }

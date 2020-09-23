@@ -45,7 +45,7 @@ class ProductCategory extends BaseAdmin
         parent::__construct($app);
         $this->service = new service();
         $this->validate = new validate();
-        $arr = $this->service->getDataByLanguage((int)$this->language);
+        $arr = $this->service->getDataByLanguage((int) 1, (int)$this->language);
         $this->category = Category::toLevel((array)$arr, '&nbsp;&nbsp;');
         View::assign('category', $this->category);
     }

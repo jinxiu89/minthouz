@@ -61,11 +61,13 @@
                     <div class="item-list"
                         style="position: relative;display: inline-block;padding: 10px;text-align: center;float: left">
                         <div style="height: 126px;display: inline-block;padding: 10px;text-align: center;float: left">
-                            <a href="{:url('media/image/select',['path'=>$item.key])}" style="display: inline-block">
+                            <a href="{:url('media/image/select',['path'=>$item.key,'class'=>$class])}"
+                                style="display: inline-block">
                                 <i class="iconfont"
                                     style="font-size: 100px;color: #ffdc69;line-height: 100px">&#xe83c;</i>
                             </a>
-                            <p><a href="{:url('media/image/select',['path'=>$item.key])}">{$item['name']}</a>
+                            <p><a
+                                    href="{:url('media/image/select',['path'=>$item.key,'class'=>$class])}">{$item['name']}</a>
                             </p>
                         </div>
                     </div>

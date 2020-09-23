@@ -54,8 +54,10 @@
                                     {/if}
                                     {$vo.name}
                                 </td>
-                                <td><input type="text" class="layui-input x-sort" name="listorder value="
-                                        {$vo.listorder}"></td>
+                                <td>
+                                    <input type="text" class="layui-input x-sort" name="listorder"
+                                        value="{$vo.listorder}">
+                                </td>
                                 <td>
                                     {if($vo.status == 1)}
                                     <button class="layui-btn layui-btn-normal layui-btn-mini">启用</button>
