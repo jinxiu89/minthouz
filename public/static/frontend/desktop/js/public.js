@@ -9,7 +9,7 @@ function menuHover () {
     var nav = $('#nav'),
         navItem = $('#menu-list .menu-item');
     navItem.hover(function () {
-        nav.addClass('navActive');
+        nav.toggleClass('navActive');
         $(this).children('.item-children').stop(false, true).fadeToggle(300);
     })
 }

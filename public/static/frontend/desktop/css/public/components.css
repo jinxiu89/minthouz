@@ -418,7 +418,7 @@ body {
   margin-right: auto;
 }
 .g-hd .nav .item-children .children-list a p {
-  width: 3;
+  width: 100%;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -828,4 +828,3 @@ body {
   color: #fff;
   font-size: 24px;
 }
-/*# sourceMappingURL=components.css.map */
