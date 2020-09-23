@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @Create by PhpStorm
  * @author:jinxiu89@163.com
@@ -40,7 +41,7 @@ class ProductCategory extends BaseService
         try {
             //todo:: 缓存
             $data = $this->model->field('id,name,is_parent,parent_id,level,path')->where(['language_id' => $language, 'status' => $status])->select()->toArray();
-            return Category::toLevel($data, '&nbsp;&nbsp;');
+            return Category::toLevel($data, '&nbsp;');
         } catch (\Exception $exception) {
             if (!Env::get('app_debug')) abort(500, $exception->getMessage());
             abort(500, '服务器内部错误');
@@ -67,7 +68,7 @@ class ProductCategory extends BaseService
      * @return array
      */
 
-    public function getDataByLanguage( int $language): array
+    public function getDataByLanguage(int $language): array
     {
         try {
             $obj = $this->model::getDataByLanguage((int)$language);

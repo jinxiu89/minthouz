@@ -79,8 +79,7 @@ class Image extends BaseAdmin
     {
         if ($this->request->isGet()) {
             $path = input('get.path', 'images/', 'htmlspecialchars,trim');
-            $type = input('get.type', '', 'trim,intval'); //这个类型是用来去除掉插入到/插入两个操作的，当在别的功能里调用该功能是就需要显示，反之则不要
-            $pos = input('get.pos', '', 'trim,htmlspecialchars');
+            $class = input('get.class', 'image', 'htmlspecialchars,trim');
             Session::set('path', $path); //上传行为需要用到这个path
             $nav = array_filter(explode('/', $path));
             $navbar = [];
@@ -91,11 +90,10 @@ class Image extends BaseAdmin
             }
             $items = AliOss::listObj((string)$this->bucket, (string)$path);
             $baseUrl = Env::get('oss.baseUrl'); //传递到前端 防止换来换去，全部都要手撸
-            View::assign('type', $type);
-            View::assign('pos', $pos);
             View::assign('baseUrl', $baseUrl);
             View::assign('items', $items);
             View::assign('path', $path);
+            View::assign('class', $class);
             View::assign('nav', $navbar);
             return View::fetch();
         }

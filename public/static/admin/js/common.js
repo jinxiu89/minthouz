@@ -24,13 +24,14 @@ function del(url) {
 /**
  * 缩略图插入
  * 注意：缩略图和相册列表的字段注意统一
- * @param pos  // 该参数是可以确定插入的位置的
+ * $('.' + cls + ' img')  // $('.image img') 解析出来是这个样子的，所以 img input 前面需要加一个空格 来定位
+ * @param cls  // 该参数是可以确定插入的位置的
  * @param key
  */
-function insert(pos, key) {
+function insert(cls, key) {
     let index = parent.layer.getFrameIndex(window.name);
-    parent.$('.' + pos + ' img').attr('src', key);
-    parent.$('.' + pos + ' input').val(key);
+    parent.$('.' + cls + ' img').attr('src', key);
+    parent.$('.' + cls + ' input').val(key);
     parent.layer.close(index);
 }
 
@@ -42,7 +43,6 @@ function insert(pos, key) {
  */
 function in_list(id, key) {
     let index = parent.layer.getFrameIndex(window.name);
-
     let img = '<img src="' + key + '" alt="" style="height: 92px;padding-right: 5px;">'
     let input = '<input type="hidden" name="album[]" value="' + key + '">'
     let into = parent.$('.' + id + '');

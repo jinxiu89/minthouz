@@ -7,6 +7,7 @@
     .CodeMirror div.CodeMirror-cursor {
         border-left: 1px solid #ffffff;
     }
+
     .CodeMirror {
         border: 1px solid #eee;
         font-size: 16px !important;
@@ -58,7 +59,7 @@
                             </label>
                             <div class="layui-input-inline">
                                 <input type="text" id="listorder" name="listorder" required="" lay-verify="required"
-                                       autocomplete="off" class="layui-input">
+                                    autocomplete="off" class="layui-input">
 
                             </div>
                         </div>
@@ -68,7 +69,7 @@
                             </label>
                             <div class="layui-input-block w50">
                                 <input type="text" id="title" name="title" required="" lay-verify="required"
-                                       autocomplete="off" class="layui-input">
+                                    autocomplete="off" class="layui-input">
                             </div>
                         </div>
                         <div class="layui-form-item">
@@ -77,7 +78,7 @@
                             </label>
                             <div class="layui-input-block w50">
                                 <input type="text" id="keywords" name="keywords" required="" lay-verify="required"
-                                       autocomplete="off" class="layui-input">
+                                    autocomplete="off" class="layui-input">
                             </div>
                         </div>
                         <div class="layui-form-item">
@@ -86,7 +87,7 @@
                             </label>
                             <div class="layui-input-inline">
                                 <input type="text" id="model" name="model" required="" lay-verify="required"
-                                       autocomplete="off" class="layui-input">
+                                    autocomplete="off" class="layui-input">
 
                             </div>
                         </div>
@@ -96,7 +97,7 @@
                             </label>
                             <div class="layui-input-inline">
                                 <input type="text" id="ean" name="ean" required="" lay-verify="required"
-                                       autocomplete="off" class="layui-input">
+                                    autocomplete="off" class="layui-input">
 
                             </div>
                         </div>
@@ -106,14 +107,14 @@
                             </label>
                             <div class="layui-input-block w50">
                                 <textarea name="description" id="description" placeholder="请输入内容"
-                                          class="layui-textarea"></textarea>
+                                    class="layui-textarea"></textarea>
                             </div>
                         </div>
                     </div>
                     <div class="layui-tab-item">
                         <div class="layui-input-block">
-                                <textarea name="specifications" id="specifications" placeholder="请输入内容"
-                                          class="layui-textarea" lay-verify="specifications"></textarea>
+                            <textarea name="specifications" id="specifications" placeholder="请输入内容"
+                                class="layui-textarea" lay-verify="specifications"></textarea>
                         </div>
                     </div>
                     <div class="layui-tab-item">
@@ -122,7 +123,9 @@
                                 缩略图
                             </label>
                             <div class="layui-input-inline">
-                                <button class="layui-btn" type="button" onclick="xadmin.open('添加缩略图','{:url(\'media/image/list\',[\'path\'=>\'images\/\',\'type\'=>\'1\'])}')"><i class="layui-icon"></i>选择</button>
+                                <button class="layui-btn" type="button"
+                                    onclick="xadmin.open('添加缩略图','{:url(\'media/image/select\',[\'path\'=>\'images\/\',\'class\'=>\'image\'])}')">
+                                    <i class="layui-icon"></i>选择</button>
                                 <div class="image" style="height: 92px;padding-top: 5px">
                                     <img src="" alt="" style="height: 92px">
                                     <input type="hidden" name="thumbnail" value="" id="thumbnail">
@@ -134,8 +137,11 @@
                                 相册
                             </label>
                             <div class="layui-input-block">
-                                <button class="layui-btn" type="button" onclick="xadmin.open('选择图片','{:url(\'media/image/list\',[\'path\'=>\'images\/\',\'type\'=>\'1\'])}')"><i class="layui-icon"></i>选择</button>
-                                <blockquote class="layui-elem-quote layui-quote-nm" style="margin-top: 10px;min-height: 100px">
+                                <button class="layui-btn" type="button"
+                                    onclick="xadmin.open('选择图片','{:url(\'media/image/select\',[\'path\'=>\'images\/\',\'class\'=>\'image\'])}')"><i
+                                        class="layui-icon"></i>选择</button>
+                                <blockquote class="layui-elem-quote layui-quote-nm"
+                                    style="margin-top: 10px;min-height: 100px">
                                     <div class="img-list" id="img-list">
                                     </div>
                                 </blockquote>
@@ -146,22 +152,24 @@
                                 特色描述
                             </label>
                             <div class="layui-input-block">
-                                <textarea name="features" id="features" placeholder="请输入内容"
-                                          class="layui-textarea" lay-verify="features"></textarea>
+                                <textarea name="features" id="features" placeholder="请输入内容" class="layui-textarea"
+                                    lay-verify="features"></textarea>
                             </div>
                         </div>
                     </div>
                     <div class="layui-tab-item">
                         <div class="layui-form-item">
                             <div class="layui-input-block">
-                                <textarea name="desktop" id="desktop" placeholder="请输入内容" class="layui-textarea" lay-verify="desktop"></textarea>
+                                <textarea name="desktop" id="desktop" placeholder="请输入内容" class="layui-textarea"
+                                    lay-verify="desktop"></textarea>
                             </div>
                         </div>
                     </div>
                     <div class="layui-tab-item">
                         <div class="layui-form-item">
                             <div class="layui-input-block">
-                                <textarea name="mobile" id="mobile" placeholder="请输入内容" class="layui-textarea" lay-verify="mobile"></textarea>
+                                <textarea name="mobile" id="mobile" placeholder="请输入内容" class="layui-textarea"
+                                    lay-verify="mobile"></textarea>
                             </div>
                         </div>
                     </div>
@@ -193,38 +201,38 @@
 <script src="{{admin}}/lib/codemirror/mode/css/css.js"></script>
 <script src="{{admin}}/lib/codemirror/mode/htmlmixed/htmlmixed.js"></script>
 <script>
-    window.onload = function(){
-        window.desktop=CodeMirror.fromTextArea(document.getElementById("desktop"),{
-            mode:"text/html",
-            lineNumbers:true,
-            lineWrapping:true,
-            extraKeys:{"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }},
+    window.onload = function () {
+        window.desktop = CodeMirror.fromTextArea(document.getElementById("desktop"), {
+            mode: "text/html",
+            lineNumbers: true,
+            lineWrapping: true,
+            extraKeys: { "Ctrl-Q": function (cm) { cm.foldCode(cm.getCursor()); } },
             foldGutter: true,
             gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
             theme: "monokai",
         });
-        desktop.setSize('','950px');
-        window.mobile=CodeMirror.fromTextArea(document.getElementById("mobile"),{
-            mode:"text/html",
-            lineNumbers:true,
-            lineWrapping:true,
-            extraKeys:{"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }},
+        desktop.setSize('', '950px');
+        window.mobile = CodeMirror.fromTextArea(document.getElementById("mobile"), {
+            mode: "text/html",
+            lineNumbers: true,
+            lineWrapping: true,
+            extraKeys: { "Ctrl-Q": function (cm) { cm.foldCode(cm.getCursor()); } },
             foldGutter: true,
             gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
             theme: "monokai",
         })
-        mobile.setSize('','950px');
+        mobile.setSize('', '950px');
         /*desktop.foldCode(CodeMirror.Pos(13, 0));
         desktop.foldCode(CodeMirror.Pos(1, 0));
         mobile.foldCode(CodeMirror.Pos(13, 0));
         mobile.foldCode(CodeMirror.Pos(1, 0));*/
     }
-    layui.extend({tinymce: '{{admin}}/lib/extend/tinymce/tinymce'}).use(['form', 'layer', 'upload', 'tinymce', 'jquery'],
+    layui.extend({ tinymce: '{{admin}}/lib/extend/tinymce/tinymce' }).use(['form', 'layer', 'upload', 'tinymce', 'jquery'],
         function () {
             let $ = layui.jquery;
             let form = layui.form, upload = layui.upload, tinymce = layui.tinymce, layer = layui.layer;
-            tinymce.render({elem:"#features", height:300, plugins:'code', toolbar:'code', menubar:false,forced_root_block:false,});
-            tinymce.render({elem:"#specifications", height:300, plugins:'code', toolbar:'code', menubar:false,forced_root_block:false,});
+            tinymce.render({ elem: "#features", height: 300, plugins: 'code', toolbar: 'code', menubar: false, forced_root_block: false, });
+            tinymce.render({ elem: "#specifications", height: 300, plugins: 'code', toolbar: 'code', menubar: false, forced_root_block: false, });
             /*tinymce.render({elem: "#desktop", height: $(window).height()-80,
                 plugins: 'code autosave quickbars print preview searchreplace autolink fullscreen image link media codesample table charmap hr advlist lists wordcount imagetools indent2em',
                 toolbar: 'code undo redo | forecolor backcolor bold italic underline strikethrough | indent2em alignleft aligncenter alignright alignjustify outdent indent | link bullist numlist image table codesample | formatselect fontselect fontsizeselect',
@@ -239,17 +247,17 @@
                 forced_root_block:false,
             });*/
             form.verify({
-                features:function(){
+                features: function () {
                     tinyMCE.get("features").save()
                 },
-                specifications:function(){
+                specifications: function () {
                     tinyMCE.get("specifications").save()
                 },
                 desktop: function () {
                     window.desktop.save();
                     // tinyMCE.get("desktop").save() //好苦啊，tinyMCE需要这样保存到input框
                 },
-                mobile:function () {
+                mobile: function () {
                     window.mobile.save();
                     // tinyMCE.get("mobile").save()
                 }
@@ -263,12 +271,12 @@
                         data: data.field,
                         'success': function (result) {
                             if (result.status === 1) {
-                                layer.msg(result.message, {'icon': 1, 'time': 1000}, function () {
+                                layer.msg(result.message, { 'icon': 1, 'time': 1000 }, function () {
                                     xadmin.close();
                                     xadmin.father_reload();
                                 });
                             } else {
-                                layer.msg(result.message, {'icon': 5, 'time': 8000});
+                                layer.msg(result.message, { 'icon': 5, 'time': 8000 });
                             }
                         }
                     }, 'JSON');
