@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * @Create by PhpStorm
@@ -14,6 +15,7 @@ namespace app\frontend\service;
 
 use app\common\model\mysql\category\ProductCategory as model;
 use app\libs\utils\Category as Helper;
+use Exception;
 
 /**
  * Class Category
@@ -38,11 +40,18 @@ class Category extends BaseService
         try {
             $obj = $this->model::getDataByLanguage((int)$status = 1, (int)$language)->toArray();
             return Helper::toLayer((array)$obj, (string)'child', (int)0);
-
         } catch (\Exception $exception) {
             return [];
         }
     }
 
-
+    public function getProductByCategory(int $status, int $language)
+    {
+        try {
+            $obj = $this->model::getProductByCategory((int) $status, (int) $language);
+            return Helper::toLayer((array) $obj, (string)'child', (int)0);
+        } catch (Exception $exception) {
+            return $exception->getMessage();
+        }
+    }
 }
