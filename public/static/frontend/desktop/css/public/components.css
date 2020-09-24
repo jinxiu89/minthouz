@@ -162,6 +162,7 @@ body {
   background: #f5f5f5;
   transition: all 0.3S;
   font-size: 14px;
+  color: #333;
 }
 .common-width {
   width: 1200px;
@@ -828,3 +829,4 @@ body {
   color: #fff;
   font-size: 24px;
 }
+/*# sourceMappingURL=components.css.map */

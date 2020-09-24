@@ -18,6 +18,7 @@ section {
   padding-top: 20px;
 }
 .product-list .title h3 {
+  display: inline-block;
   margin: 15px 0;
   color: #00A82D;
   font-size: 18px;
@@ -43,7 +44,6 @@ section {
   border-color: #00A82D;
 }
 .product-list .list-box {
-  border-top: 1px solid #eaeaea;
   border-left: 1px solid #eaeaea;
 }
 .product-list .list-boxbefore,
@@ -62,6 +62,13 @@ section {
   border: 1px solid #eaeaea;
   border-left: none;
   border-top: none;
+}
+.product-list .list-box .list-item:nth-of-type(1),
+.product-list .list-box .list-item:nth-of-type(2),
+.product-list .list-box .list-item:nth-of-type(3),
+.product-list .list-box .list-item:nth-of-type(4),
+.product-list .list-box .list-item:nth-of-type(5) {
+  border-top: 1px solid #eaeaea;
 }
 .product-list .list-box .list-item a {
   display: block;
