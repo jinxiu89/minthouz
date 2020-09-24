@@ -8,6 +8,7 @@ use app\frontend\controller\Base;
 use think\App;
 use think\facade\View;
 use app\frontend\service\Category;
+use app\frontend\service\Product;
 
 /**
  * @Create by vscode,
@@ -27,11 +28,14 @@ class Index extends Base
     public function index()
     {
         $data = (new Category())->getProductByCategory((int) $status = 1, (int) $this->language);
-        print_r($data);
+        View::assign('data', $data);
         return View::fetch($this->template . '/product/index.html');
     }
     public function detail($url)
     {
+        $data = (new Product())->getDataByUrlTitle((string) $url, (int) $this->language);
+        // print_r($data);
+        View::assign('data', $data);
         return View::fetch($this->template . '/product/detail.html');
     }
 }

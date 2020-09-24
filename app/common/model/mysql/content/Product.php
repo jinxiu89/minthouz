@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @Create by PhpStorm
  * @author:jinxiu89@163.com
@@ -49,5 +50,9 @@ class Product extends BaseModel
     public static function getDataByID(int $id)
     {
         return self::where(['id' => $id])->with(['content', 'albums'])->find()->toArray();
+    }
+    public static function getDataByUrlTitle(string $url_title, int $language)
+    {
+        return self::with(['content', 'albums'])->where(['url_title' => $url_title, 'language_id' => $language])->find()->toArray();
     }
 }

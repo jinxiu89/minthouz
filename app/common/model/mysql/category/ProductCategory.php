@@ -31,7 +31,7 @@ class ProductCategory extends BaseModel
 
     public function products()
     {
-        return $this->hasMany(productModel::class, 'category_id')->order(['listorder desc', 'id asc']);
+        return $this->hasMany(productModel::class, 'category_id');
     }
     /**
      * @param int $language
@@ -44,12 +44,24 @@ class ProductCategory extends BaseModel
     {
         return self::where(['status' => $status, 'language_id' => $language])->field('id,parent_id,path,is_parent,level,name,title,url_title,listorder,status')->order('listorder desc')->select();
     }
-
+    /**
+     * getProductByCategory  本方法 使用了 闭包函数，感觉很复杂  function($query) use (要传入的父级参数)
+     * 闭包查询 在thinkphp中一样要写select()
+     *
+     * @Author: kevin qiu
+     * @DateTime: 2020-09-24
+     * @param integer $status
+     * @param integer $language
+     * @return void
+     */
     public static function getProductByCategory(int $status, int $language)
     {
-        $category = self::with('products')->where(['status' => $status, 'language_id' => $language])
+        return self::with(['products' => function ($query) use ($status, $language) {
+            $query->field(['category_id', 'url_title', 'title', 'thumbnail'])
+                ->order(['listorder desc', 'id asc'])->where(['status' => $status, 'language_id' => $language])
+                ->select();
+        }])->where(['status' => $status, 'language_id' => $language])
             ->field('id,parent_id,path,is_parent,level,name,title,url_title,listorder,status')
-            ->order('listorder desc')->select();
-        return $category->visible(['products' => ['id', 'url_title', 'title', 'thumbnail', 'listorder']])->toArray();
+            ->order('listorder desc')->select()->toArray();
     }
 }
