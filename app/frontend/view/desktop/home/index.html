@@ -16,12 +16,14 @@
         {volist name="banner" id="vo"}
         <div class="swiper-slide">
             <div class="des">
-                <h3 data-swiper-parallax="-500" data-swiper-parallax-opacity="0">
-                    {$vo.title}
-                </h3>
-                <p data-swiper-parallax="-1500" data-swiper-parallax-opacity="0">
-                    {$vo.description}
-                </p>
+                <a href="{$vo.path}">
+                    <h3 data-swiper-parallax="-500" data-swiper-parallax-opacity="0">
+                        {$vo.title}
+                    </h3>
+                    <p data-swiper-parallax="-1500" data-swiper-parallax-opacity="0">
+                        {$vo.description}
+                    </p>
+                </a>
                 <span>
                     <a href="{$vo.path}" data-swiper-parallax="-4500" data-swiper-parallax-opacity="0">
                         {$vo.button}
