@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @Create by PhpStorm
  * @author:jinxiu89@163.com
@@ -28,7 +29,8 @@ return [
     'taglib_begin'  => '{',
     // 标签库标签结束标记
     'taglib_end'    => '}',
-    'tpl_replace_string'=>[
-        '{{admin}}'     =>'/static/admin'
+    'tpl_replace_string' => [
+        '{{admin}}'     => '/static/admin',
+        '{{frontend}}'  => '/static/frontend'
     ],
 ];

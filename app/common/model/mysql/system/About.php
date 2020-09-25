@@ -30,4 +30,8 @@ class About extends BaseModel
     {
         return self::where(['language_id' => $language])->order(['id' => 'desc'])->field('id,title,keywords,description,status,update_time')->paginate();
     }
+    public static function getDataByUrl(string $url, int $language)
+    {
+        return self::where(['url' => $url, 'language_id' => $language])->find();
+    }
 }

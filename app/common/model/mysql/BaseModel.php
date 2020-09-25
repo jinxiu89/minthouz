@@ -87,4 +87,7 @@ class BaseModel extends Model
     {
         return self::where(['url' => $url, 'language_id' => $language])->findOrEmpty();
     }
+    // public static function sortorder(array $data){
+    //     return self::where([])
+    // }
 }

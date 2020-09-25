@@ -54,8 +54,8 @@
                                     {/if}
                                     {$vo.name}
                                 </td>
-                                <td>
-                                    <input type="text" class="layui-input x-sort" name="listorder"
+                                <td class="x-sort">
+                                    <input type="text" class="layui-input" attr-id="{$vo.id}" name="listorder"
                                         value="{$vo.listorder}">
                                 </td>
                                 <td>
@@ -100,22 +100,13 @@
 {/block}
 {block name="javascript"}
 <script src="{{admin}}/js/common.js"></script>
+<script src="{{frontend}}/lib/layer/2.4/layer.js"></script>
 <script>
 
     layui.use(['form'], function () {
         form = layui.form;
     });
 
-    /*/!*用户-删除*!/
-    function member_del(obj,id){
-        layer.confirm('确认要删除吗？',function(index){
-            //发异步删除数据
-            $(obj).parents("tr").remove();
-            layer.msg('已删除!',{icon:1,time:1000});
-        });
-    }*/
-    // 分类展开收起的分类的逻辑
-    //
     $(function () {
         $("tbody.x-cate tr[fid!='0']").hide();
         // 栏目多级显示效果
@@ -135,7 +126,7 @@
                     $("tbody tr[cate-id=" + cateIds[i] + "]").hide().find('.x-show').html('&#xe623;').attr('status', 'true');
                 }
             }
-        })
+        });
     })
 
     var cateIds = [];
@@ -146,6 +137,25 @@
             cateIds.push(id);
             getCateId(id);
         });
-    }
+    };
+    $('.x-sort input').blur(function () {
+        let $var = $(this)
+        let id = $var.attr('attr-id');
+        let listorder = $var.val();
+        let postData = {
+            'id': id,
+            'listorder': listorder
+        };
+        let url = '{:url(\'category/order\')}';
+        $.post(url, postData, function (result) {
+            if (result.status === 1) {
+                layer.msg(result.message, { 'icon': 1, 'time': 1000 }, function () {
+                    window.location.reload();
+                });
+            } else {
+                layer.msg(result.message, { 'icon': 5, 'time': 8000 });
+            }
+        }, 'json');
+    });
 </script>
 {/block}

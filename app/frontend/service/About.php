@@ -27,6 +27,7 @@ class About extends BaseService
         parent::__construct();
         $this->model = new model();
     }
+
     public function getAboutList(int $language)
     {
         try {

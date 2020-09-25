@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace app\admin\service;
 
+use Exception;
 use think\facade\Env;
 
 /**
@@ -75,6 +76,16 @@ class BaseService
         try {
             return $this->model::update((array)['id' => $id, 'status' => $status]);
         } catch (\Exception $exception) {
+            if (true == Env::get('APP_DEBUG')) abort(500, $exception->getMessage());
+            abort(500, '服务器内部错误');
+        }
+    }
+
+    public function sortorder(array $data)
+    {
+        try {
+            return $this->model::updateDataById((int) $data['id'], (array) $data);
+        } catch (Exception $exception) {
             if (true == Env::get('APP_DEBUG')) abort(500, $exception->getMessage());
             abort(500, '服务器内部错误');
         }

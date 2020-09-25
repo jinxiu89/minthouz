@@ -31,6 +31,10 @@ class Index extends Base
         View::assign('data', $data);
         return View::fetch($this->template . '/product/index.html');
     }
+    public function category($category)
+    {
+        print_r($category);
+    }
     public function detail($url)
     {
         $data = (new Product())->getDataByUrlTitle((string) $url, (int) $this->language);

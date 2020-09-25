@@ -75,7 +75,8 @@ class Base extends BaseController
     public function autoload()
     {
         $code = (Session::get('lang_var')) ? (Session::get('lang_var')) : 'en_us';
-        return redirect('/' . $code, 200);
+        // return redirect('/' . $code, 200);
+        return redirect('/en_us', 200);
     }
 
     /**
@@ -85,11 +86,10 @@ class Base extends BaseController
     {
         //主页SEO、统计、版权声明
         $BaseSetting = (new Setting())->getDataByLanguage((int)$language);
-        // print_r($BaseSetting);
         //通知 不用走缓存
         $notice = (new Notice())->getNoticeByLanguage((int)$language, (int)$status = 1);
         $treeCategory = (new Category())->getDataByLanguage((int)$language);
-        $list = (new About())->getAboutList((int) $this->language['id']);
+        $list = (new About())->getAboutList((int) $language);
         View::assign('notice', $notice);
         View::assign('list', $list);
         View::assign('treeCategory', $treeCategory);

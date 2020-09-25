@@ -19,6 +19,7 @@ use think\Collection;
 use think\db\exception\DataNotFoundException;
 use think\db\exception\DbException;
 use think\db\exception\ModelNotFoundException;
+use think\model\Relation;
 use think\db\Query;
 
 /**
@@ -42,7 +43,9 @@ class ProductCategory extends BaseModel
      */
     public static function getDataByLanguage(int $status, int $language)
     {
-        return self::where(['status' => $status, 'language_id' => $language])->field('id,parent_id,path,is_parent,level,name,title,url_title,listorder,status')->order('listorder desc')->select();
+        return self::with(['products' => function (Relation $query) use ($status, $language) {
+            $query->field(['category_id', 'url_title', 'title', 'thumbnail'])->order(['listorder desc', 'id asc'])->where(['status' => $status, 'language_id' => $language])->withLimit(5)->select();
+        }])->where(['status' => $status, 'language_id' => $language])->field('id,parent_id,path,is_parent,level,name,title,url_title,listorder,status')->order(['listorder desc', 'id asc'])->select();
     }
     /**
      * getProductByCategory  本方法 使用了 闭包函数，感觉很复杂  function($query) use (要传入的父级参数)

@@ -19,6 +19,7 @@ Route::group('content', function () {
     Route::rule('/product/add', 'content.Product/add', 'GET|POST');
     Route::rule('/product/edit', 'content.Product/edit', 'GET|POST');
     Route::rule('/product/change_status', 'content.Product/changeStatus', 'GET|POST');
+    Route::rule('/product/order', 'content.Product/order', 'POST');
 
     //Prettiest 优质产品 首页霸屏，栏目推介位
     Route::rule('/prettiest/index', 'content.Prettiest/index', 'GET');

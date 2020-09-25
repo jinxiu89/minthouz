@@ -13,7 +13,7 @@ use think\facade\Session;
 use think\facade\Request;
 
 Route::get('/$', function () {
-    $code = (Session::get('lang_var')) ? (Session::get('lang_var')) : get_lang(Request::instance()->header()); // 后期开通中文 后走这个
-    // $code = 'en_us';
+    // $code = (Session::get('lang_var')) ? (Session::get('lang_var')) : get_lang(Request::instance()->header()); // 后期开通中文 后走这个
+    $code = 'en_us';
     return redirect('/' . $code . '/', 200);
 });

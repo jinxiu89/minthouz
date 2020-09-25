@@ -150,4 +150,23 @@ class ProductCategory extends BaseAdmin
         }
         return show(0, '保存失败，未知原因');
     }
+    /**
+     * sortorder
+     *
+     * @Author: kevin qiu
+     * @DateTime: 2020-09-25
+     * @return void
+     */
+    public function sortorder()
+    {
+        if ($this->request->isPost()) {
+            $data = input('post.', [], 'trim');
+            if (!$this->validate->scene('sortorder')->check($data)) return show(0, $this->validate->getError()); //后台验证数据合法性
+            $status = $this->service->sortorder((array) $data);
+            if ($status == true) {
+                return show(1, '排序成功');
+            }
+            return show(0, '不明原因，排序失败');
+        }
+    }
 }

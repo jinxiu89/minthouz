@@ -32,14 +32,14 @@ class BaseService
         //共用的 变量赋值在这里处理
         $this->debug = Env::get('APP_DEBUG', false);
     }
-    public function getDataByUrl(string $url = 'about', int $language)
+    public function getDataByUrl(string $url = '', int $language)
     {
         try {
             $obj = $this->model::getDataByUrl((string) $url, (int) $language);
             return $obj->toArray();
-        } catch (Exception $eexception) {
+        } catch (Exception $exception) {
             //todo:: 异常问题 后期修正，要做日志 
-            return [];
+            return $exception->getMessage();
         }
     }
 }

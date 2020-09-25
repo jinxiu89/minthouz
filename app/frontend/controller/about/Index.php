@@ -25,11 +25,11 @@ class Index extends Base
         parent::__construct($app);
         $this->service = new About();
     }
-    public function index()
+    public function index($about)
     {
         if ($this->request->isGet()) {
             //todo::拿about文章
-            $data = $this->service->getDataByUrl((string) htmlspecialchars(trim('about')), (int)$this->language['id']);
+            $data = $this->service->getDataByUrl((string) htmlspecialchars(trim($about)), (int)$this->language['id']);
             View::assign('data', $data);
             View::assign('current', 'about');
             return  View::fetch($this->template . '/about/index.html');

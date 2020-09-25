@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @Create by PhpStorm
  * @author:jinxiu89@163.com
@@ -26,6 +27,7 @@ class ProductCategory extends Validate
         'title' => 'require|max:255',
         'keywords' => 'require|max:120',
         'description' => 'require|max:255',
+        'listorder' => 'require|number'
     ];
     protected $message = [
         'id.require' => 'ID为必填项',
@@ -38,9 +40,11 @@ class ProductCategory extends Validate
         'keywords.max' => '关键词不能超过控制范围（120个字符）',
         'description.require' => '描述不能为空',
         'description.max' => '描述不能超过控制范围（120个字符）',
+        'listorder' => '输入的排序不合法'
     ];
     protected $scene = [
         'add' => ['name', 'title', 'keywords', 'description'],
-        'edit' => ['id', 'name', 'title', 'keywords', 'description']
+        'edit' => ['id', 'name', 'title', 'keywords', 'description'],
+        'sortorder' => ['id', 'listorder']
     ];
 }
