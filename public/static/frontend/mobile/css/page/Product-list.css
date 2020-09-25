@@ -12,6 +12,7 @@
   padding: 20px 10px 0;
 }
 .product-list .title h3 {
+  display: inline-block;
   margin: 15px 0;
   color: #00A82D;
   font-size: 18px;

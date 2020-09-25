@@ -101,24 +101,6 @@
   color: #888;
   line-height: 22px;
 }
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  .product-Detail .des-box h3 {
-    font-size: 18px;
-  }
-  .product-Detail .des-box p {
-    margin-top: 5px;
-    font-size: 14px;
-    line-height: 18px;
-  }
-}
-@media screen and (min-width: 992px) and (max-width: 1199px) {
-  .product-Detail .des-box h3 {
-    font-size: 24px;
-  }
-  .product-Detail .des-box p {
-    font-size: 16px;
-  }
-}
 /* 參數 */
 .product-Specifications #specification {
   background: #fff;
