@@ -51,42 +51,14 @@
                         <a class="item-link" href="/{$code}/product/index.html">{$vo.name}</a>
                         <div class="item-children">
                             <ul class="common-width">
+                                {volist name="vo.products" id="lo"}
                                 <li class="children-list">
-                                    <a href="/{$code}/product/hello/detail.html">
-                                        <img src="//minthouz.oss-cn-shenzhen.aliyuncs.com/images/product/English/Fan1/Fan1.png" alt="">
-                                        <p>Fan1</p>
+                                    <a href="/{$code}/product/{$lo.url_title}/detail.html">
+                                        <img src="{$lo.thumbnail}" alt="">
+                                        <p>{$lo.title}</p>
                                     </a>
                                 </li>
-                                <li class="children-list">
-                                    <a href="/{$code}/product/hello/detail.html">
-                                        <img src="//minthouz.oss-cn-shenzhen.aliyuncs.com/images/product/English/Fan1/Fan1.png" alt="">
-                                        <p>Rechargeable Battery Operated Fan With 3 Speeds</p>
-                                    </a>
-                                </li>
-                                <li class="children-list">
-                                    <a href="/{$code}/product/hello/detail.html">
-                                        <img src="//minthouz.oss-cn-shenzhen.aliyuncs.com/images/product/English/Fan1/Fan1.png" alt="">
-                                        <p>Rechargeable Battery Operated Fan With 3 Speeds</p>
-                                    </a>
-                                </li>
-                                <li class="children-list">
-                                    <a href="/{$code}/product/hello/detail.html">
-                                        <img src="//minthouz.oss-cn-shenzhen.aliyuncs.com/images/product/English/Fan1/Fan1.png" alt="">
-                                        <p>Rechargeable Battery Operated Fan With 3 Speeds Rechargeable Battery Operated Fan With 3 Speeds</p>
-                                    </a>
-                                </li>
-                                <li class="children-list">
-                                    <a href="/{$code}/product/hello/detail.html">
-                                        <img src="//minthouz.oss-cn-shenzhen.aliyuncs.com/images/product/English/Fan1/Fan1.png" alt="">
-                                        <p>Rechargeable Battery Operated Fan With 3 Speeds</p>
-                                    </a>
-                                </li>
-                                <li class="children-list">
-                                    <a href="/{$code}/product/hello/detail.html">
-                                        <img src="//minthouz.oss-cn-shenzhen.aliyuncs.com/images/product/English/Fan1/Fan1.png" alt="">
-                                        <p>Rechargeable Battery Operated Fan With 3 Speeds</p>
-                                    </a>
-                                </li>
+                                {/volist}
                             </ul>
                         </div>
                     </li>
