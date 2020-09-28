@@ -8,195 +8,224 @@
 @import "../public/variables";
 
 .g-hd .nav {
-    background: @whiteColor;
-    position: relative;
-    top: 0;
+  background: @whiteColor;
+  position: relative;
+  top: 0;
 }
 
 .product-container {
-    .nav-active {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 9999;
-        background: @whiteColor;
-        box-shadow: 0 5px 5px rgba(0, 0, 0, .1);
-    }
+  .nav-active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background: @whiteColor;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .1);
+  }
 }
 
 /* 產品導航 */
 .product-nav {
-    width: 100%;
-    height: 60px;
-    .clearFix();
-    background: transparent;
-    #transition(all .2s linear);
+  width: 100%;
+  height: 60px;
+  background: transparent;
+  #transition(all .2s linear);
+
+  .common-width {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  h3 {
+    flex: 1;
+    margin: 0;
+    line-height: 60px;
+    color: #333;
+    font-size: 24px;
+  }
+
+  .sub_nav {
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+
+    span {
+      display: block;
+      height: 100%;
+      line-height: 60px;
+      margin: 0 16px;
+      color: #434a54;
+      font-size: 14px;
+      cursor: pointer;
+
+      &:nth-of-type(1) {
+        margin-left: 0;
+      }
+
+      &:nth-last-of-type(1) {
+        margin-right: 0;
+      }
+    }
+
+    .active {
+      color: @activeColor;
+      cursor: default;
+    }
+
+    a {
+      display: block;
+      height: 24px;
+      line-height: 24px;
+      width: auto;
+      margin: 18px 0;
+      padding: 0 12px;
+      background: @activeColor;
+      color: @whiteColor;
+
+      &:hover {
+        background: @activeColor - 20;
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    padding: 0 10px;
+    height: auto;
     h3 {
-        .fl();
-        margin: 0;
-        line-height: 60px;
-        color: #333;
-        font-size: 24px;
+      font-size: 20px;
     }
-    .sub_nav {
-        .fr();
-        height: 100%;
-        overflow: hidden;
-        span {
-            .fl();
-            display: block;
-            height: 100%;
-            line-height: 60px;
-            margin: 0 16px;
-            color: #434a54;
-            font-size: 14px;
-            cursor: pointer;
-            &:nth-of-type(1) {
-                margin-left: 0;
-            }
-            &:nth-last-of-type(1) {
-                margin-right: 0;
-            }
-        }
-        .active {
-            color: @activeColor;
-            cursor: default;
-        }
-        a {
-            display: block;
-            height: 24px;
-            line-height: 24px;
-            width: auto;
-            margin: 18px 0;
-            padding: 0 12px;
-            background: @activeColor;
-            color: @whiteColor;
-            &:hover {
-                background: @activeColor - 20;
-            }
-        }
+
+    .sub_nav span {
+      margin: 0 10px;
     }
-    @media screen and (min-width: 768px) and (max-width: 991px) {
-        padding: 0 10px;
-        height: auto;
-        h3 {
-            display: none;
-            font-size: 20px;
-        }
-        .sub_nav span {
-            margin: 0 10px;
-        }
+  }
+  @media screen and (min-width: 992px) and (max-width: 1199px) {
+    padding: 0 15px;
+    height: auto;
+    h3 {
+      font-size: 20px;
     }
-    @media screen and (min-width: 992px) and (max-width: 1199px) {
-        padding: 0 15px;
-        height: auto;
-        h3 {
-            display: none;
-            font-size: 20px;
-        }
-        .sub_nav span {
-            margin: 0 10px;
-        }
+
+    .sub_nav span {
+      margin: 0 10px;
     }
+  }
 }
 
 /* 產品詳情 */
 .product-Detail {
-    margin-bottom: 50px;
-    .page-box {
-        position: relative;
+  margin-bottom: 50px;
+
+  .page-box {
+    position: relative;
+  }
+
+  .img-box img {
+    .center-block();
+    .img-responsive();
+  }
+
+  .des-box {
+    position: absolute;
+    z-index: 1;
+
+    h3 {
+      font-size: 55px;
     }
-    .img-box img {
-        .center-block();
-        .img-responsive();
+
+    p {
+      margin-top: 10px;
+      font-size: 25px;
     }
-    .des-box {
-        position: absolute;
-        z-index: 1;
-        h3 {
-            font-size: 55px;
-        }
-        p {
-            margin-top: 10px;
-            font-size: 25px;
-        }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    .des-box h3 {
+      font-size: 20px;
     }
-    @media screen and (min-width: 768px) and (max-width: 991px) {
-        .des-box h3 {
-            font-size: 20px;
-        }
-        .des-box p {
-            margin-top: 5px;
-            font-size: 14px;
-        }
+
+    .des-box p {
+      margin-top: 5px;
+      font-size: 14px;
     }
-    @media screen and (min-width: 992px) and (max-width: 1199px) {
-        .des-box h3 {
-            font-size: 24px;
-        }
-        .des-box p {
-            font-size: 16px;
-        }
+  }
+  @media screen and (min-width: 992px) and (max-width: 1199px) {
+    .des-box h3 {
+      font-size: 24px;
     }
-    @media screen and (min-width: 1200px) and (max-width: 1365px) {
-        .des-box h3 {
-            font-size: 30px;
-        }
-        .des-box p {
-            font-size: 18px;
-        }
+
+    .des-box p {
+      font-size: 16px;
     }
-    @media screen and (min-width: 1366px) and (max-width: 1600px) {
-        .des-box h3 {
-            font-size: 36px;
-        }
-        .des-box p {
-            font-size: 20px;
-        }
+  }
+  @media screen and (min-width: 1200px) and (max-width: 1365px) {
+    .des-box h3 {
+      font-size: 30px;
     }
+
+    .des-box p {
+      font-size: 18px;
+    }
+  }
+  @media screen and (min-width: 1366px) and (max-width: 1600px) {
+    .des-box h3 {
+      font-size: 36px;
+    }
+
+    .des-box p {
+      font-size: 20px;
+    }
+  }
 }
 
 /* 參數 */
 .product-Specifications {
-    #specification {
-        padding: 4% 0;
-        background: #fff;
+  #specification {
+    padding: 4% 0;
+    background: #fff;
 
-        ul {
-            width: 65%;
-            margin: auto;
-        }
-        ul > li {
-            .clearFix();
-            min-height: 50px;
-            line-height: 50px;
-            border-bottom: 1px solid #eaeaea;
-        }
-        ul > li.li_title > strong {
-            color: #333;
-            line-height: 20px;
-            vertical-align: middle;
-        }
-        ul > li:first-child > strong {
-            font-size: 15px;
-        }
-        ul > li > strong {
-            float: left;
-            width: 30%;
-            padding: 0 15px;
-            color: #666;
-        }
-        ul > li > div {
-            float: left;
-        }
-        ul > li > div > p {
-            line-height: 24px;
-            color: #666;
-            font-size: 12px;
-        }
-        ul > li > div {
-            padding: 15px !important;
-            border-left: 1px solid #eaeaea;
-        }
+    ul {
+      width: 65%;
+      margin: auto;
     }
+
+    ul > li {
+      .clearFix();
+      min-height: 50px;
+      line-height: 50px;
+      border-bottom: 1px solid #eaeaea;
+    }
+
+    ul > li.li_title > strong {
+      color: #333;
+      line-height: 20px;
+      vertical-align: middle;
+    }
+
+    ul > li:first-child > strong {
+      font-size: 15px;
+    }
+
+    ul > li > strong {
+      float: left;
+      width: 30%;
+      padding: 0 15px;
+      color: #666;
+    }
+
+    ul > li > div {
+      float: left;
+    }
+
+    ul > li > div > p {
+      line-height: 24px;
+      color: #666;
+      font-size: 12px;
+    }
+
+    ul > li > div {
+      padding: 15px !important;
+      border-left: 1px solid #eaeaea;
+    }
+  }
 }

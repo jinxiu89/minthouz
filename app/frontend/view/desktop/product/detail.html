@@ -16,8 +16,8 @@
             <div class="sub_nav">
                 <span class="active">Overview</span>
                 <span>Specs</span>
-                <span><a href="#">Shop at Amazon</a></span>
-                <span><a href="#">Shop at Newegg</a></span>
+<!--                <span><a href="#">Shop at Amazon</a></span>-->
+<!--                <span><a href="#">Shop at Newegg</a></span>-->
             </div>
         </div>
     </div>
@@ -61,8 +61,9 @@
             overviewDom = $('.product-Detail');
         function animateScroll (that) {
             var index = that.index();
-            if(index<=1){
-                var div_height = overviewDom.children('div').eq(index).offset().top || 0;
+            var thatDiv = overviewDom.children('div').eq(index)
+            if(index<=1 && thatDiv.length !== 0){
+                var div_height = thatDiv.offset().top || 0;
                 var scroll_top = div_height - navH;
                 that.siblings('span').removeClass('active');
                 that.addClass('active');
