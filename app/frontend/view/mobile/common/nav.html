@@ -19,21 +19,11 @@
             <li class="menu-item">
                 <a class="item-link" href="/{$code}/product/index.html">All Products</a>
             </li>
+            {volist name="treeCategory" id="vo"}
             <li class="menu-item">
-                <a class="item-link" href="/{$code}/product/index.html">USB Fan</a>
+                <a class="item-link" href="/{$code}/product/index.html">{$vo.name}</a>
             </li>
-            <li class="menu-item">
-                <a class="item-link" href="/{$code}/product/index.html">Table Lamp</a>
-            </li>
-            <li class="menu-item">
-                <a class="item-link" href="/{$code}/product/index.html">Holder</a>
-            </li>
-            <li class="menu-item">
-                <a class="item-link" href="/{$code}/product/index.html">Humidifier</a>
-            </li>
-            <li class="menu-item">
-                <a class="item-link" href="/{$code}/product/index.html">Aromatherapy Diffuse</a>
-            </li>
+            {/volist}
             <li class="menu-item">
                 <a class="item-link" href="#">Store <span class="iconfont iconarrow-down"></span></a>
                 <ul class="child-menu">
