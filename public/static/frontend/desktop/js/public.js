@@ -5,44 +5,6 @@ function gNotice() {
     })
 }
 
-/*function menuHover () {
-    var nav = $('#nav'),
-        navItem = $('#menu-list .menu-item');
-    navItem.hover(function () {
-        nav.addClass('navActive');
-        $(this).children('.item-children').css('display', 'block');
-    }, function () {
-        nav.removeClass('navActive');
-        $(this).children('.item-children').css('display', 'none');
-    })
-}*/
-
-/*function newMenu () {
-    var nav = $('#nav'),
-        navList = $('#menu-list'),
-        navItem = $('#menu-list .menu-item');
-    navList.hover(function () {
-        nav.addClass('navActive');
-    }, function () {
-        nav.removeClass('navActive');
-    });
-
-    navItem.mouseenter(function () {
-        if (nav.hasClass('navActive')) {
-            $(this).children('.item-children').css('display', 'block');
-        } else {
-            $(this).children('.item-children').slideDown(300);
-        }
-    });
-    navItem.mouseleave(function () {
-        var x = navList.mouseover();
-        console.log(x);
-        if (nav.hasClass('navActive')) {
-            $(this).children('.item-children').css('display', 'none');
-        }
-    });
-}*/
-
 // 2020.10.08 添加导航交互样式 - 新版
 function handelMenuHover() {
     var nav = $('#nav'),
@@ -85,10 +47,6 @@ function gTop() {
 $(function () {
 
     gNotice();
-
-    // menuHover();
-
-    // newMenu();
 
     handelMenuHover()
 
