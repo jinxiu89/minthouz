@@ -15,7 +15,7 @@
   display: inline-block;
   margin: 15px 0;
   color: #00A82D;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 30px;
   font-weight: 400;
   cursor: pointer;
@@ -26,7 +26,7 @@
   *display: inline;
   width: 20px;
   height: 20px;
-  margin-right: 18px;
+  margin-right: 15px;
   border: 1px solid #b0b0b0;
   border-radius: 15px;
   color: #b0b0b0;
@@ -39,7 +39,6 @@
 }
 .product-list .list-box {
   margin: 0 10px;
-  border-top: 1px solid #eaeaea;
   border-left: 1px solid #eaeaea;
 }
 .product-list .list-boxbefore,
@@ -57,6 +56,10 @@
   text-align: center;
   border-bottom: 1px solid #eaeaea;
   border-right: 1px solid #eaeaea;
+}
+.product-list .list-box .list-item:nth-of-type(1),
+.product-list .list-box .list-item:nth-of-type(2) {
+  border-top: 1px solid #eaeaea;
 }
 .product-list .list-box .list-item a {
   display: block;

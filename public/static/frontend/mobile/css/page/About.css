@@ -21,6 +21,9 @@ section .About-menu:after {
 section .About-menu:after {
   clear: both;
 }
+section .About-menu ul {
+  border-left: 1px solid #eaeaea;
+}
 section .About-menu ulbefore,
 section .About-menu ul:after {
   content: " ";
@@ -36,20 +39,13 @@ section .About-menu .menu-item {
   white-space: nowrap;
   overflow: hidden;
   width: 50%;
-  line-height: 30px;
+  padding: 8px 4px;
   border-top: 1px solid #eaeaea;
-}
-section .About-menu .menu-item:nth-of-type(1),
-section .About-menu .menu-item:nth-of-type(2) {
-  border-top: transparent;
-}
-section .About-menu .menu-item:nth-of-type(2n + 1) {
-  padding-right: 5px;
   border-right: 1px solid #eaeaea;
 }
-section .About-menu .menu-item:nth-of-type(2n + 2) {
-  padding-left: 5px;
-  border-left: 1px solid transparent;
+section .About-menu .menu-item:nth-last-of-type(1),
+section .About-menu .menu-item:nth-last-of-type(2) {
+  border-bottom: 1px solid #eaeaea;
 }
 section .About-menu .menu-item a {
   color: #333;

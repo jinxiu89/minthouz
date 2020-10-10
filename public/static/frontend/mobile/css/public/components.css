@@ -152,6 +152,7 @@ html {
 }
 a {
   color: #25a4bb;
+  word-break: break-all;
 }
 textarea,
 input[type="text"],

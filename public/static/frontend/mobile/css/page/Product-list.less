@@ -18,7 +18,7 @@
             display: inline-block;
             margin: 15px 0;
             color: @activeColor;
-            font-size: 18px;
+            font-size: 16px;
             line-height: 30px;
             font-weight: 400;
             cursor: pointer;
@@ -29,7 +29,7 @@
             *display: inline;
             width: 20px;
             height: 20px;
-            margin-right: 18px;
+            margin-right: 15px;
             border: 1px solid #b0b0b0;
             border-radius: 15px;
             color: #b0b0b0;
@@ -45,7 +45,6 @@
     .list-box {
         .clearFix();
         margin: 0 10px;
-        border-top: 1px solid @borderColor;
         border-left: 1px solid @borderColor;
         .list-item {
             float: left;
@@ -53,6 +52,10 @@
             text-align: center;
             border-bottom: 1px solid @borderColor;
             border-right: 1px solid @borderColor;
+            &:nth-of-type(1),
+            &:nth-of-type(2) {
+                border-top: 1px solid @borderColor;
+            }
         }
         .list-item a {
             display: block;
