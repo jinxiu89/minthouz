@@ -105,6 +105,7 @@ html {
 
 a {
   color: #25a4bb;
+  word-break: break-all;
 }
 
 @font-face {
@@ -124,8 +125,13 @@ body {
   .clearFix();
   width: 1200px;
   margin: 0 auto;
-  @media screen and (max-width: 1199px) {
+  @media screen and (min-width: 768px) and (max-width: 991px) {
     width: 100%;
+    padding: 0 10px;
+  }
+  @media screen and (min-width: 992px) and (max-width: 1199px) {
+    width: 100%;
+    padding: 0 10px;
   }
 }
 
@@ -366,13 +372,8 @@ body {
   }
 
   @media screen and (min-width: 768px) and (max-width: 991px) {
-    .hd {
-      padding: 0 10px;
-    }
-
     .nav {
       position: static;
-      padding: 0 10px;
       background: @whiteColor;
     }
 
@@ -404,14 +405,6 @@ body {
     }
   }
   @media screen and (min-width: 992px) and (max-width: 1199px) {
-    .hd {
-      padding: 0 15px;
-    }
-
-    .nav {
-      padding: 0 15px;
-    }
-
     .nav .menu-box .menu-list .menu-item {
       padding: 20px 10px;
     }
@@ -621,7 +614,7 @@ body {
   @media screen and (min-width: 768px) and (max-width: 991px) {
     .about {
       .clearFix();
-      padding: 40px 10px;
+      padding: 40px 0;
       background: @bodyBgColor;
     }
 
@@ -650,7 +643,7 @@ body {
     }
 
     .foot {
-      padding: 100px 10px;
+      padding: 100px 0;
     }
 
     .copyright {
@@ -660,7 +653,7 @@ body {
   @media screen and (min-width: 992px) and (max-width: 1199px) {
     .about {
       .clearFix();
-      padding: 40px 15px;
+      padding: 40px 0;
       background: @bodyBgColor;
     }
 
@@ -689,7 +682,7 @@ body {
     }
 
     .foot {
-      padding: 100px 15px;
+      padding: 100px 0;
     }
   }
 }

@@ -36,20 +36,18 @@ section .About-menu .menu-item {
   white-space: nowrap;
   overflow: hidden;
   width: 50%;
-  line-height: 30px;
-  border-top: 1px solid #eaeaea;
+  padding: 8px 4px;
+  border-right: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
 }
 section .About-menu .menu-item:nth-of-type(1),
 section .About-menu .menu-item:nth-of-type(2) {
-  border-top: transparent;
+  border-top: 1px solid #eaeaea;
 }
 section .About-menu .menu-item:nth-of-type(2n + 1) {
-  padding-right: 5px;
-  border-right: 1px solid #eaeaea;
-}
-section .About-menu .menu-item:nth-of-type(2n + 2) {
-  padding-left: 5px;
-  border-left: 1px solid transparent;
+  border-left: 1px solid #eaeaea;
 }
 section .About-menu .menu-item a {
   color: #333;
