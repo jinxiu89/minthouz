@@ -92,4 +92,10 @@
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
+.product-list .product-empty {
+  margin: 0 10px;
+  padding: 15px 0;
+  text-align: center;
+  border: 1px solid #eaeaea;
+}
 /*# sourceMappingURL=Product-list.css.map */

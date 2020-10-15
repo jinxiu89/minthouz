@@ -58,4 +58,68 @@ section .About-menu .menu-item a:hover {
 section .About-menu .active a {
   color: #00A82D;
 }
+section .About-bg {
+  display: none;
+}
+section .About-content {
+  margin-top: 0;
+  padding: 20px 10px;
+  background: #fff;
+}
+section .About-content a {
+  word-wrap: break-word;
+}
+section .About-content h3 {
+  margin: 20px 0 5px;
+  font-size: 16px;
+}
+section .About-content h4 {
+  margin: 20px 0 5px;
+  font-size: 14px;
+}
+section .About-content h5 {
+  margin: 10px 0 5px;
+  font-size: 14px;
+}
+section .About-content h6 {
+  margin: 10px 0 5px;
+  font-size: 14px;
+}
+section .About-content strong {
+  display: block;
+  margin: 15px 0 5px;
+  color: #333;
+  font-size: 12px;
+}
+section .About-content p {
+  margin: 5px 0;
+  font-size: 12px;
+  color: #888;
+}
+section .About-content span {
+  display: block;
+  font-size: 12px;
+  color: #888;
+}
+section .About-content ul {
+  margin: 15px 0 15px 18px;
+}
+section .About-content li {
+  margin-top: 5px;
+  color: #888;
+  list-style: disc;
+}
+section .About-content li:nth-of-type(1) {
+  margin-top: 0;
+}
+section .About-content li span {
+  display: block;
+  margin-top: 10px;
+}
+section .About-content li span:nth-of-type(1) {
+  margin-top: 0;
+}
+section .About-content table {
+  margin: 14px 0 35px;
+}
 /*# sourceMappingURL=About.css.map */

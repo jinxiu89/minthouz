@@ -10,33 +10,197 @@
 .g-hd .nav {
   position: static;
   background: @whiteColor;
+
   .item-children {
     top: 130px;
   }
 }
+
 section {
   min-height: 800px;
 
   .About-menu {
     .clearFix();
     padding: 22px 0 14px;
+
     .menu-item {
       .fl();
       padding: 0 15px;
       border-left: 1px solid @borderColor;
+
       &:nth-of-type(1) {
         padding-left: 0;
         border-left: none;
       }
     }
+
     .menu-item a {
       color: #333;
+
       &:hover {
         color: @activeColor;
       }
     }
+
     .active a {
       color: @activeColor;
+    }
+  }
+
+  .About-bg {
+    padding: 100px 0;
+    background: url("//minthouz.oss-cn-shenzhen.aliyuncs.com/images/About/userAgreement-bg.jpg") center no-repeat;
+
+    h2 {
+      color: #fff;
+      text-align: center;
+      font-size: 40px;
+    }
+
+    p {
+      margin: 20px 200px 0;
+      color: #fff;
+      text-align: center;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  .About-content {
+    margin-top: 40px;
+    padding: 55px 125px 100px;
+    background: @whiteColor;
+    line-height: 21px;
+
+    a {
+      word-wrap: break-word;
+    }
+
+    h3 {
+      margin: 18px 0;
+      font-size: 28px;
+      color: @baseColor;
+    }
+
+    h4 {
+      margin: 35px 0 17.5px;
+      font-size: 18px;
+      color: @baseColor;
+    }
+
+    h5 {
+      margin: 20px 0 10px;
+      font-size: 16px;
+      color: @baseColor;
+    }
+
+    strong {
+      display: block;
+      margin: 15px 0 0;
+      font-size: 14px;
+      color: @baseColor;
+    }
+
+    p {
+      margin: 14px 0;
+      font-size: 14px;
+      color: @whiteSmoke;
+    }
+
+    span {
+      display: block;
+      font-size: 14px;
+      color: @whiteSmoke;
+    }
+
+    ul {
+      margin: 14px 0 14px 21px;
+    }
+
+    li {
+      margin-top: 14px;
+      color: @whiteSmoke;
+      list-style: disc;
+    }
+
+    li:nth-of-type(1) {
+      margin-top: 0;
+    }
+
+    li span {
+      display: block;
+      margin-top: 10px;
+    }
+
+    li span:nth-of-type(1) {
+      margin-top: 0;
+    }
+
+    table {
+      margin: 14px 0 35px;
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    .About-bg {
+      padding: 60px 0;
+
+      h2 {
+        font-size: 28px;
+      }
+
+      p {
+        margin: 10px 10px 0;
+        font-size: 12px;
+      }
+    }
+
+    .About-content {
+      margin-top: 20px;
+      padding: 20px 10px;
+
+      h2 {
+        font-size: 18px;
+      }
+
+      h3 {
+        font-size: 18px;
+      }
+
+      h4 {
+        font-size: 16px;
+      }
+
+      h5 {
+        font-size: 14px;
+      }
+
+      strong {
+        color: #333;
+        font-size: 12px;
+      }
+
+      p {
+        font-size: 12px;
+      }
+
+      li {
+        font-size: 12px;
+      }
+    }
+  }
+  @media screen and (min-width: 992px) and (max-width: 1199px) {
+    .About-bg {
+      padding: 60px 0;
+
+      p {
+        margin: 15px 15px 0;
+      }
+    }
+
+    .About-content {
+      margin-top: 20px;
+      padding: 20px 15px;
     }
   }
 }

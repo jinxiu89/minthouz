@@ -44,4 +44,131 @@ section .About-menu .menu-item a:hover {
 section .About-menu .active a {
   color: #00A82D;
 }
+section .About-bg {
+  padding: 100px 0;
+  background: url("//minthouz.oss-cn-shenzhen.aliyuncs.com/images/About/userAgreement-bg.jpg") center no-repeat;
+}
+section .About-bg h2 {
+  color: #fff;
+  text-align: center;
+  font-size: 40px;
+}
+section .About-bg p {
+  margin: 20px 200px 0;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+}
+section .About-content {
+  margin-top: 40px;
+  padding: 55px 125px 100px;
+  background: #fff;
+  line-height: 21px;
+}
+section .About-content a {
+  word-wrap: break-word;
+}
+section .About-content h3 {
+  margin: 18px 0;
+  font-size: 28px;
+  color: #333;
+}
+section .About-content h4 {
+  margin: 35px 0 17.5px;
+  font-size: 18px;
+  color: #333;
+}
+section .About-content h5 {
+  margin: 20px 0 10px;
+  font-size: 16px;
+  color: #333;
+}
+section .About-content strong {
+  display: block;
+  margin: 15px 0 0;
+  font-size: 14px;
+  color: #333;
+}
+section .About-content p {
+  margin: 14px 0;
+  font-size: 14px;
+  color: #888;
+}
+section .About-content span {
+  display: block;
+  font-size: 14px;
+  color: #888;
+}
+section .About-content ul {
+  margin: 14px 0 14px 21px;
+}
+section .About-content li {
+  margin-top: 14px;
+  color: #888;
+  list-style: disc;
+}
+section .About-content li:nth-of-type(1) {
+  margin-top: 0;
+}
+section .About-content li span {
+  display: block;
+  margin-top: 10px;
+}
+section .About-content li span:nth-of-type(1) {
+  margin-top: 0;
+}
+section .About-content table {
+  margin: 14px 0 35px;
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  section .About-bg {
+    padding: 60px 0;
+  }
+  section .About-bg h2 {
+    font-size: 28px;
+  }
+  section .About-bg p {
+    margin: 10px 10px 0;
+    font-size: 12px;
+  }
+  section .About-content {
+    margin-top: 20px;
+    padding: 20px 10px;
+  }
+  section .About-content h2 {
+    font-size: 18px;
+  }
+  section .About-content h3 {
+    font-size: 18px;
+  }
+  section .About-content h4 {
+    font-size: 16px;
+  }
+  section .About-content h5 {
+    font-size: 14px;
+  }
+  section .About-content strong {
+    color: #333;
+    font-size: 12px;
+  }
+  section .About-content p {
+    font-size: 12px;
+  }
+  section .About-content li {
+    font-size: 12px;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  section .About-bg {
+    padding: 60px 0;
+  }
+  section .About-bg p {
+    margin: 15px 15px 0;
+  }
+  section .About-content {
+    margin-top: 20px;
+    padding: 20px 15px;
+  }
+}
 /*# sourceMappingURL=About.css.map */
