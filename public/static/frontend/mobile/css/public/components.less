@@ -9,84 +9,104 @@
 
 //基礎樣式重置
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
 body, ul, ol, dl, dd, h1, h2, h3, h4, h5, h6, figure, form, fieldset, legend, input, textarea, button, p, blockquote, th, td, pre, xmp {
-    margin: 0;
-    padding: 0
+  margin: 0;
+  padding: 0
 }
+
 h1, h2, h3, h4, h5, h6, b, strong {
-    font-weight: normal
+  font-weight: normal
 }
+
 address, cite, dfn, em, i, optgroup, var {
-    font-style: normal
+  font-style: normal
 }
+
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    text-align: left
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-align: left
 }
+
 caption, th {
-    text-align: inherit
+  text-align: inherit
 }
+
 ul, ol, menu {
-    list-style: none
+  list-style: none
 }
+
 fieldset, img {
-    border: 0
+  border: 0
 }
+
 input, button {
-    -webkit-appearance: none;
-    outline: none;
-    border: none;
-    background: none;
+  -webkit-appearance: none;
+  outline: none;
+  border: none;
+  background: none;
 }
+
 img, object, input, textarea, button, select {
-    vertical-align: middle
+  vertical-align: middle
 }
+
 article, aside, footer, header, section, nav, figure, figcaption, hgroup, details, menu {
-    display: block
+  display: block
 }
+
 audio, canvas, video {
-    display: inline-block;
-    *display: inline;
-    *zoom: 1
+  display: inline-block;
+  *display: inline;
+  *zoom: 1
 }
+
 blockquote:before, blockquote:after, q:before, q:after {
-    content: "\0020"
+  content: "\0020"
 }
+
 textarea {
-    overflow: auto;
-    resize: vertical
+  overflow: auto;
+  resize: vertical
 }
+
 input, textarea, button, select, a {
-    outline: 0 none;
-    border: none;
+  outline: 0 none;
+  border: none;
 }
+
 button::-moz-focus-inner, input::-moz-focus-inner {
-    padding: 0;
-    border: 0
+  padding: 0;
+  border: 0
 }
+
 mark {
-    background-color: transparent
+  background-color: transparent
 }
+
 a, ins, s, u, del {
-    text-decoration: none
+  text-decoration: none
 }
+
 sup, sub {
-    vertical-align: baseline
+  vertical-align: baseline
 }
+
 html {
-    overflow-x: hidden;
-    height: 100%;
-    -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+  height: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
+
 a {
-    color: #25a4bb;
-    word-break: break-all;
+  color: #25a4bb;
 }
+
 textarea,
 input[type="text"],
 input[type="email"],
@@ -94,256 +114,299 @@ input[type="password"],
 input[type="button"],
 input[type="submit"],
 input[type="reset"] {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
+
 @font-face {
-    font-family: Neo_Sans;
-    src: url("../../../lib/font/maax/Maax Rounded.otf");
+  font-family: Neo_Sans;
+  src: url("../../../lib/font/maax/Maax Rounded.otf");
 }
+
 body {
-    font-family: Neo_Sans, "Microsoft YaHei", Helvetica, "Meiryo UI", "Malgun Gothic", "Segoe UI", "Trebuchet MS", "Monaco", monospace, Tahoma, STXihei, "华文细黑", STHeiti, "Helvetica Neue", "Droid Sans", "wenquanyi micro hei", FreeSans, Arimo, Arial, SimSun, "宋体", Heiti, "黑体", sans-serif;
-    background: @bodyBgColor;
-    transition: all .3S;
-    font-size: 14px;
-    color: #333;
+  font-family: Neo_Sans, "Microsoft YaHei", Helvetica, "Meiryo UI", "Malgun Gothic", "Segoe UI", "Trebuchet MS", "Monaco", monospace, Tahoma, STXihei, "华文细黑", STHeiti, "Helvetica Neue", "Droid Sans", "wenquanyi micro hei", FreeSans, Arimo, Arial, SimSun, "宋体", Heiti, "黑体", sans-serif;
+  background: @bodyBgColor;
+  transition: all .3S;
+  font-size: 14px;
+  color: #333;
 }
 
 //重大通知
 .g-notice {
-    padding: 20px 10px;
-    text-align: center;
+  padding: 20px 10px;
+  text-align: center;
+  color: @whiteSmoke;
+  font-size: 12px;
+
+  .des {
+    display: inline;
     color: @whiteSmoke;
+    #transition(all .2s linear);
+
+    &:hover {
+      color: @activeColor;
+      text-decoration: underline;
+    }
+  }
+
+  .close {
+    margin-left: 20px;
+    cursor: pointer;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    height: 40px;
+    line-height: 40px;
     font-size: 12px;
-    .des {
-        display: inline;
-        color: @whiteSmoke;
-        #transition(all .2s linear);
-        &:hover {
-            color: @activeColor;
-            text-decoration: underline;
-        }
-    }
-    .close {
-        margin-left: 20px;
-        cursor: pointer;
-    }
-    @media screen and (min-width: 768px) and (max-width: 991px) {
-        height: 40px;
-        line-height: 40px;
-        font-size: 12px;
-    }
+  }
 }
+
 //重大通知
 
 //g-hd
 .g-hd {
+  width: 100%;
+  background: @activeColor;
+
+  .nav {
+    .clearFix();
     width: 100%;
-    background: @activeColor;
-    .nav {
-        .clearFix();
-        width: 100%;
-        height: 60px;
+    height: 60px;
+  }
+
+  .nav .logo {
+    .fl();
+    margin-left: 10px;
+
+    img {
+      .img-responsive();
+      .center-block();
+      height: 50px;
+      margin: 5px 0;
     }
-    .nav .logo {
-        .fl();
-        margin-left: 10px;
-        img {
-            .img-responsive();
-            .center-block();
-            height: 50px;
-            margin: 5px 0;
-        }
+  }
+
+  .nav .menu-bar {
+    .fr();
+    position: relative;
+    width: 24px;
+    height: 60px;
+    margin-right: 10px;
+
+    span, span:before, span:after {
+      position: absolute;
+      left: 0;
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: @whiteColor;
     }
 
-    .nav .menu-bar {
+    span {
+      top: 50%;
+      margin-top: -1px;
+    }
+
+    span::before {
+      content: '';
+      top: 8px;
+    }
+
+    span::after {
+      content: '';
+      top: -8px;
+    }
+  }
+
+  .menu-box {
+    display: none;
+    background: @whiteColor;
+
+    .menu-item .item-link {
+      display: block;
+      padding: 0 10px;
+      border-bottom: 1px solid @borderColor;
+      line-height: 50px;
+      color: @baseColor;
+
+      .iconfont {
         .fr();
-        position: relative;
-        width: 24px;
-        height: 60px;
-        margin-right: 10px;
-        span, span:before, span:after {
-            position: absolute;
-            left: 0;
-            display: block;
-            width: 24px;
-            height: 2px;
-            background: @whiteColor;
-        }
-        span {
-            top: 50%;
-            margin-top: -1px;
-        }
-        span::before {
-            content: '';
-            top: 8px;
-        }
-        span::after {
-            content: '';
-            top: -8px;
-        }
+        font-size: 24px;
+      }
     }
 
-    .menu-box {
-        display: none;
-        background: @whiteColor;
-        .menu-item .item-link {
-            display: block;
-            padding: 0 10px;
-            border-bottom: 1px solid @borderColor;
-            line-height: 50px;
-            color: @baseColor;
-            .iconfont {
-                .fr();
-                font-size: 24px;
-            }
-        }
-        .child-menu .item-link {
-            padding: 0 20px;
-        }
-        .child-menu {
-            display: none;
-        }
+    .child-menu .item-link {
+      padding: 0 20px;
     }
+
+    .child-menu {
+      display: none;
+    }
+  }
 }
+
 //g-hd End
 
 //g-foot
 .g-foot {
-    margin-top: 100px;
-    .foot {
-        .clearFix();
-        padding: 50px 10px;
-        background: @baseColor;
-    }
-    .foot .foot-item {
-        .clearFix();
-    }
-    .foot .foot-item dl {
-        /*.fl();
-        width: 50%;*/
-        line-height: 30px;
-        margin-bottom: 20px;
-        dt {
-            color: @whiteColor;
-            font-weight: 600;
-        }
-        dd .iconfont {
-            color: @whiteSmoke;
-            font-size: 16px;
-        }
-        dd a {
-            color: @whiteSmoke;
-            #transition(all .2s linear);
-            &:hover {
-                color: @activeColor;
-            }
-        }
+  margin-top: 100px;
+
+  .foot {
+    .clearFix();
+    padding: 50px 10px;
+    background: @baseColor;
+  }
+
+  .foot .foot-item {
+    .clearFix();
+  }
+
+  .foot .foot-item dl {
+    /*.fl();
+    width: 50%;*/
+    line-height: 30px;
+    margin-bottom: 20px;
+
+    dt {
+      color: @whiteColor;
+      font-weight: 600;
     }
 
-    .foot .foot-contact {
-        margin-bottom: 20px;
-        h3 {
-            font-size: 14px;
-            color: @whiteColor;
-            line-height: 30px;
-            font-weight: 600;
-        }
-        p {
-            color: @whiteSmoke;
-            font-size: 14px;
-            line-height: 30px;
-        }
+    dd .iconfont {
+      color: @whiteSmoke;
+      font-size: 16px;
     }
 
-    .foot .contact {
-        .des h3 {
-            font-size: 14px;
-            color: @whiteColor;
-            line-height: 30px;
-            font-weight: 600;
-        }
-        .des p {
-            font-size: 14px;
-            color: @whiteSmoke;
-            line-height: 30px;
-        }
-        form {
-            .clearFix();
-            margin: 10px 0;
-        }
-        form .iconfont {
-            color: @baseColor;
-            font-size: 28px;
-        }
-        form input {
-            .fl();
-            height: 30px;
-            line-height: 30px;
-            border-radius: 0;
-            &[type="email"] {
-                width: 238px;
-                padding: 0 5px 0 15px;
-                background: @whiteColor;
-                color: @baseColor;
-                border: 1px solid @borderColor;
-            }
-            &[type="submit"] {
-                width: 30px;
-                text-align: center;
-                background: @whiteColor;
-                color: @baseColor;
-                cursor: pointer;
-                border: 1px solid @borderColor;
-                border-left: none;
-                #transition(all .2s linear);
-                &:hover {
-                    background: @activeColor - 20;
-                    color: @whiteColor;
-                }
-            }
-        }
+    dd a {
+      color: @whiteSmoke;
+      #transition(all .2s linear);
+
+      &:hover {
+        color: @activeColor;
+      }
     }
+  }
+
+  .foot .foot-contact {
+    margin-bottom: 20px;
+
+    h3 {
+      font-size: 14px;
+      color: @whiteColor;
+      line-height: 30px;
+      font-weight: 600;
+    }
+
+    p {
+      color: @whiteSmoke;
+      font-size: 14px;
+      line-height: 30px;
+    }
+  }
+
+  .foot .contact {
+    .des h3 {
+      font-size: 14px;
+      color: @whiteColor;
+      line-height: 30px;
+      font-weight: 600;
+    }
+
+    .des p {
+      font-size: 14px;
+      color: @whiteSmoke;
+      line-height: 30px;
+    }
+
+    form {
+      .clearFix();
+      margin: 10px 0;
+    }
+
+    form .iconfont {
+      color: @baseColor;
+      font-size: 28px;
+    }
+
+    form input {
+      .fl();
+      height: 30px;
+      line-height: 30px;
+      border-radius: 0;
+
+      &[type="email"] {
+        width: 238px;
+        padding: 0 5px 0 15px;
+        background: @whiteColor;
+        color: @baseColor;
+        border: 1px solid @borderColor;
+      }
+
+      &[type="submit"] {
+        width: 30px;
+        text-align: center;
+        background: @whiteColor;
+        color: @baseColor;
+        cursor: pointer;
+        border: 1px solid @borderColor;
+        border-left: none;
+        #transition(all .2s linear);
+
+        &:hover {
+          background: @activeColor - 20;
+          color: @whiteColor;
+        }
+      }
+    }
+  }
 }
+
 //g-foot End
 
 //g-path
 .g-path {
-    margin: 10px 0;
-    padding: 0 10px;
-    background: @whiteColor;
-    li {
-        display: inline-block;
-        line-height: 50px;
-        a {
-            color: @baseColor;
-            #transition(all .2s linear);
-            &:hover {
-                color: @activeColor;
-            }
-        }
+  margin: 10px 0;
+  padding: 0 10px;
+  background: @whiteColor;
+
+  li {
+    display: inline-block;
+    line-height: 50px;
+
+    a {
+      color: @baseColor;
+      #transition(all .2s linear);
+
+      &:hover {
+        color: @activeColor;
+      }
     }
+  }
 }
+
 //g-path End
 
 //g-top
 .g-top {
-    display: none;
-    position: fixed;
-    bottom: 10%;
-    right: 10px;
-    z-index: 9999;
-    .box {
-        width: 50px;
-        height: 50px;
-        line-height: 50px;
-        text-align: center;
-        background: rgba(0, 168, 45, .8);
-        border-radius: 50%;
-    }
-    .box .iconfont {
-        color: @whiteColor;
-        font-size: 24px;
-    }
+  display: none;
+  position: fixed;
+  bottom: 10%;
+  right: 10px;
+  z-index: 9999;
+
+  .box {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: rgba(0, 168, 45, .8);
+    border-radius: 50%;
+  }
+
+  .box .iconfont {
+    color: @whiteColor;
+    font-size: 24px;
+  }
 }
+
 //g-top End
 

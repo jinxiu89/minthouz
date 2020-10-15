@@ -20,11 +20,11 @@
 </div>
 <div class="product-container">
     {volist name="data" id="vo"}
-    {notempty name="vo.products"}
     <div class="product-list common-width">
         <div class="title">
             <h3><span class="iconfont iconarrow-down"></span>{$vo.name}</h3>
         </div>
+        {notempty name="vo.products"}
         <div class="list-box">
             {volist name="vo.products" id="lo"}
             <div class="list-item">
@@ -35,8 +35,13 @@
             </div>
             {/volist}
         </div>
+        {/notempty}
+        {empty name="vo.products"}
+        <div class="product-empty list-box">
+            暂无数据
+        </div>
+        {/empty}
     </div>
-    {/notempty}
     {/volist}
 </div>
 {/block}

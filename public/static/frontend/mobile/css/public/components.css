@@ -152,7 +152,6 @@ html {
 }
 a {
   color: #25a4bb;
-  word-break: break-all;
 }
 textarea,
 input[type="text"],
@@ -311,7 +310,7 @@ body {
 }
 .g-foot .foot .foot-item dl {
   /*.fl();
-        width: 50%;*/
+    width: 50%;*/
   line-height: 30px;
   margin-bottom: 20px;
 }
