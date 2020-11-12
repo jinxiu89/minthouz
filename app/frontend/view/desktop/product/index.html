@@ -28,7 +28,7 @@
         <div class="list-box">
             {volist name="vo.products" id="lo"}
             <div class="list-item">
-                <a href="/{$code}/product/{$lo.url_title}/detail.html" title="Fan1">
+                <a href="/{$code}/product/{$lo.url_title}/detail.html" title="{$lo.title}">
                     <img src="{$lo.thumbnail}" alt="">
                     <p>{$lo.title}</p>
                 </a>
