@@ -23,7 +23,7 @@ class ProductCategory extends Validate
 {
     protected $rule = [
         'id' => 'require|number',
-        'name' => 'require|max:20',
+        'name' => 'require|max:32',
         'title' => 'require|max:255',
         'keywords' => 'require|max:120',
         'description' => 'require|max:255',
@@ -33,7 +33,7 @@ class ProductCategory extends Validate
         'id.require' => 'ID为必填项',
         'id.number' => 'ID不合法',
         'name.require' => '分类名称不能为空',
-        'name.max' => '分类名称不能超过有效范围（20个字符）',
+        'name.max' => '分类名称不能超过有效范围（32个字符）',
         'title.require' => '网站标题不能为空',
         'title.max' => '网站标题不能超过设置的范围（120个字符）',
         'keywords.require' => '关键词不能为空',
