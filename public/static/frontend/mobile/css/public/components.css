@@ -174,13 +174,13 @@ body {
   color: #333;
 }
 .g-notice {
-  padding: 20px 10px;
   text-align: center;
-  color: #888;
   font-size: 12px;
 }
 .g-notice .des {
-  display: inline;
+  padding: 20px 10px;
+}
+.g-notice .des a {
   color: #888;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
@@ -188,20 +188,15 @@ body {
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
-.g-notice .des:hover {
-  color: #00A82D;
-  text-decoration: underline;
-}
-.g-notice .close {
+.g-notice .des .close {
   margin-left: 20px;
   cursor: pointer;
 }
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  .g-notice {
-    height: 40px;
-    line-height: 40px;
-    font-size: 12px;
-  }
+.g-hd-fixed {
+  position: fixed!important;
+  top: 0;
+  left: 0;
+  z-index: 9999;
 }
 .g-hd {
   width: 100%;
@@ -444,4 +439,3 @@ body {
   color: #fff;
   font-size: 24px;
 }
-/*# sourceMappingURL=components.css.map */

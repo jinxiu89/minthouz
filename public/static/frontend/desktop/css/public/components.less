@@ -168,8 +168,16 @@ body {
 //重大通知
 
 //g-hd
+.g-hd-fixed {
+  position: fixed!important;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
 .g-hd {
-  position: relative;
+  width: 100%;
 
   .hd {
     height: 30px;
@@ -223,13 +231,10 @@ body {
   }
 
   .nav {
+    position: relative;
     .clearFix();
-    position: absolute;
-    top: 30px;
-    left: 0;
-    z-index: 9999;
     width: 100%;
-    background: transparent;
+    background: #fff;
     #transition(all .2s linear);
 
     .logo {

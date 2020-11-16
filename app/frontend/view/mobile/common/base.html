@@ -16,8 +16,10 @@
 <!-- 重大通知栏 -->
 {notempty name="notice"}
 <div class="g-notice" id="g-notice">
-    <a href="{$notice.path}" class="des">{$notice.notice}</a>
-    <span class="close">X</span>
+    <div class="des">
+        <a href="{$notice.path}">{$notice.notice}</a>
+        <span class="close">X</span>
+    </div>
 </div>
 {/notempty}
 

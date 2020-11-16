@@ -6,7 +6,7 @@ function gNotice() {
 }
 
 // 2020.10.08 添加导航交互样式 - 新版
-function handelMenuHover() {
+function gMenuHover() {
     var nav = $('#nav'),
         navItem = $('#menu-list .menu-item');
     nav.mouseleave(function () {
@@ -35,6 +35,22 @@ function handelMenuHover() {
     });
 }
 
+function gNavPositionTop () {
+    var nav = $('.g-hd');
+    var notice = $('.g-notice');
+    $(window).bind('scroll', function () {
+        var scroll = $(document).scrollTop();
+        var noticeH = notice.css('display') === 'none' ? 0 : notice.height();
+        if (scroll > noticeH) {
+            nav.addClass('g-hd-fixed');
+            $('section').css('padding-top', nav.height() || 0)
+        } else {
+            nav.removeClass('g-hd-fixed');
+            $('section').css('padding-top', 0)
+        }
+    })
+}
+
 function gTop() {
     var g_top = $("#g-top");
     g_top.click(function () {
@@ -46,7 +62,9 @@ $(function () {
 
     gNotice();
 
-    handelMenuHover()
+    gMenuHover();
+
+    gNavPositionTop();
 
     gTop();
 
