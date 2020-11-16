@@ -7,14 +7,6 @@
 .g-hd .nav {
   background: #fff;
 }
-section {
-  padding-top: 100px;
-}
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  section {
-    padding-top: 0;
-  }
-}
 .product-container {
   padding: 0 0 100px;
   background: #fff;
@@ -112,4 +104,3 @@ section {
   border: 1px solid #eaeaea;
   border-radius: 5px;
 }
-/*# sourceMappingURL=Product-list.css.map */

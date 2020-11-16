@@ -15,7 +15,7 @@
             <h3>{$data.title}</h3>
             <div class="sub_nav">
                 <span class="active">Overview</span>
-                <span>Specs</span>
+<!--                <span>Specs</span>-->
 <!--                <span><a href="#">Shop at Amazon</a></span>-->
 <!--                <span><a href="#">Shop at Newegg</a></span>-->
             </div>
@@ -33,52 +33,5 @@
 
 <!--私有业务开始-->
 {block name="javascript"}
-<script>
-    function productNav() {
-        var document_sT = $(document).scrollTop(),
-            hd = $('.g-hd .hd').height(),
-            nav = $('.g-hd .nav').height();
-        var gHd = hd + nav;
-        if (document_sT > gHd) {
-            $('.product-nav').addClass('nav-active');
-            $('.product-Detail').css('paddingTop', '60px')
-        }
-        $(window).bind("scroll", function () {
-            var document_sT = $(document).scrollTop();
-            if (document_sT > gHd) {
-                $('.product-nav').addClass('nav-active');
-                $('.product-Detail').css('paddingTop', '60px')
-            } else {
-                $('.product-nav').removeClass('nav-active');
-                $('.product-Detail').css('paddingTop', '0')
-            }
-        });
-    }
-
-    function navTableChange () {
-        var navH = $(".product-nav").innerHeight();
-        var subNav = $('.sub_nav span'),
-            overviewDom = $('.product-Detail');
-        function animateScroll (that) {
-            var index = that.index();
-            var thatDiv = overviewDom.children('div').eq(index)
-            if(index<=1 && thatDiv.length !== 0){
-                var div_height = thatDiv.offset().top || 0;
-                var scroll_top = div_height - navH;
-                that.siblings('span').removeClass('active');
-                that.addClass('active');
-                $("html,body").animate({"scrollTop":scroll_top},300);
-            }
-        }
-        subNav.click(function () {
-            animateScroll($(this))
-        });
-    }
-
-    $(function () {
-        productNav();
-        navTableChange()
-    });
-</script>
 {/block}
 <!--私有业务结束-->

@@ -12,41 +12,8 @@
 
 {block name="body"}
 <div class="product-container">
-
-    <!--<div class="product-gallery">
-        <h3>Rechargeable Battery Operated Fan With 3 Speeds</h3>
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="//minthouz.oss-cn-shenzhen.aliyuncs.com/images/product/English/Fan1/Scale/1.jpg" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="//minthouz.oss-cn-shenzhen.aliyuncs.com/images/product/English/Fan1/Scale/2.jpg" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="//minthouz.oss-cn-shenzhen.aliyuncs.com/images/product/English/Fan1/Scale/3.jpg" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="//minthouz.oss-cn-shenzhen.aliyuncs.com/images/product/English/Fan1/Scale/4.jpg" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="//minthouz.oss-cn-shenzhen.aliyuncs.com/images/product/English/Fan1/Scale/5.jpg" alt="">
-                </div>
-            </div>
-            <div class="swiper-pagination"></div>&lt;!&ndash;分页器&ndash;&gt;
-            <div class="swiper-button-prev"></div>&lt;!&ndash;左箭头&ndash;&gt;
-            <div class="swiper-button-next"></div>&lt;!&ndash;右箭头&ndash;&gt;
-        </div>
-    </div>-->
-
     <div class="product-nav">
         <h3>{$data.title}</h3>
-        <div class="sub_nav">
-            <span class="active">Overview</span>
-            <span>Specs</span>
-<!--            <span><a href="#">Amazon</a></span>-->
-<!--            <span><a href="#">Newegg</a></span>-->
-        </div>
     </div>
 
     <div class="product-Detail" id="product-Detail">
@@ -80,53 +47,6 @@
         },
         grabCursor: true,//鼠标变手
         parallax: true,//dl过度效果
-    });
-
-    function productNav() {
-        var document_sT = $(document).scrollTop(),
-            notice = $('.g-notice').outerHeight() || 0,
-            nav = $('.g-hd .nav').outerHeight() || 0,
-            gallery = $('.product-gallery').outerHeight() || 0;
-        var topHeight = notice + nav + gallery;
-        if (document_sT > topHeight) {
-            $('.product-nav').addClass('nav-active');
-            $('.product-Detail').css('paddingTop', '60px')
-        }
-        $(window).bind("scroll", function () {
-            var document_sT = $(document).scrollTop();
-            if (document_sT > topHeight) {
-                $('.product-nav').addClass('nav-active');
-                $('.product-Detail').css('paddingTop', '60px')
-            } else {
-                $('.product-nav').removeClass('nav-active');
-                $('.product-Detail').css('paddingTop', '0')
-            }
-        });
-    }
-
-    function navTableChange () {
-        var subNav = $('.sub_nav span'),
-            overviewDom = $('.product-Detail'),
-            SpecificationsDom = $('.product-Specifications');
-        subNav.click(function () {
-            var a = $(this).index();
-            if (a === 0) {
-                overviewDom.css('display', 'block');
-                $(this).addClass('active');
-                SpecificationsDom.css('display', 'none');
-                $(this).siblings('span').removeClass('active');
-            } else if (a === 1) {
-                overviewDom.css('display', 'none');
-                $(this).addClass('active');
-                SpecificationsDom.css('display', 'block');
-                $(this).siblings('span').removeClass('active');
-            }
-        });
-    }
-
-    $(function () {
-        productNav();
-        navTableChange();
     });
 </script>
 {/block}
