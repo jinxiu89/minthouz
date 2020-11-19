@@ -35,23 +35,18 @@ function gMenuHover() {
     });
 }
 
-function fixedTop () {
+function navFixedTop () {
     var nav = $('.g-hd'),
         scroll = $(document).scrollTop(),
         notice = $('.g-notice'),
-        noticeH = notice.css('display') === 'none' ? 0 : notice.height();
+        noticeH = notice.css('display') === 'none' ? 0 : notice.outerHeight() || 0;
     if (scroll > noticeH) {
         nav.addClass('g-hd-fixed');
-        $('section').css('padding-top', nav.height() || 0)
+        $('section').css('padding-top', nav.outerHeight())
     } else {
         nav.removeClass('g-hd-fixed');
         $('section').css('padding-top', 0)
     }
-}
-
-function gNavTop () {
-    fixedTop();
-    $(window).bind('scroll', fixedTop)
 }
 
 function gTop() {
@@ -67,7 +62,9 @@ $(function () {
 
     gMenuHover();
 
-    gNavTop();
+    navFixedTop();
+
+    $(window).bind('scroll', navFixedTop);
 
     gTop();
 
