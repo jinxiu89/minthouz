@@ -190,8 +190,7 @@ body {
   }
 }
 .g-notice {
-  height: 60px;
-  line-height: 60px;
+  padding: 10px 0;
   text-align: center;
   color: #888;
   font-size: 14px;
@@ -215,8 +214,6 @@ body {
 }
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .g-notice {
-    height: 40px;
-    line-height: 40px;
     font-size: 12px;
   }
 }
