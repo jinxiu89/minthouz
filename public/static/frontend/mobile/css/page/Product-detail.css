@@ -102,30 +102,3 @@
   color: #888;
   line-height: 22px;
 }
-/* 參數 */
-.product-Specifications #specification {
-  background: #fff;
-}
-.product-Specifications #specification ul {
-  width: 100%;
-}
-.product-Specifications #specification ul > li {
-  line-height: 50px;
-  border-bottom: 1px solid #eaeaea;
-}
-.product-Specifications #specification ul > li > strong {
-  padding: 0 10px;
-  color: #333;
-}
-.product-Specifications #specification ul > li.li_title > strong {
-  font-weight: 700;
-}
-.product-Specifications #specification ul > li > div {
-  padding: 0 10px 10px;
-  border-left: 1px solid #eaeaea;
-}
-.product-Specifications #specification ul > li > div > p {
-  color: #888;
-  font-size: 12px;
-  line-height: 24px;
-}
