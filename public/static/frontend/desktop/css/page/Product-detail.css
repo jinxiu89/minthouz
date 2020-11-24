@@ -6,8 +6,6 @@
 */
 .g-hd .nav {
   background: #fff;
-  position: relative;
-  top: 0;
 }
 .product-container .nav-active {
   position: fixed;

@@ -153,6 +153,8 @@
     });
 
     $(function () {
+        var noticeHeight = $('.g-notice').outerHeight();
+        $('.g-hd').css({'top': noticeHeight});
         $('.play').click(function () {
             var url = $(this).attr('data-url');
             var title = $(this).attr('data-title');
