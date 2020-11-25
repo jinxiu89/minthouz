@@ -4,6 +4,26 @@
 * @author: Alan(alan_webdeveloper@163.com)
 * @update: 2020-05-28 10:23
 */
+.g-hd {
+  position: absolute;
+  left: 0;
+  z-index: 99999;
+  box-shadow: none;
+}
+.g-hd .nav {
+  background: none;
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .g-hd {
+    position: static;
+  }
+  .g-hd .nav {
+    background: #fff;
+  }
+}
+section {
+  padding-top: 0!important;
+}
 .banner .swiper-wrapper {
   height: auto;
 }
