@@ -24,10 +24,10 @@ function navFixedTop () {
         noticeH = notice.css('display') === 'none' ? 0 : notice.outerHeight() || 0;
     if (scroll > noticeH) {
         nav.addClass('g-hd-fixed');
-        $('section').css('padding-top', nav.outerHeight())
+        $('.g-section').css('padding-top', nav.outerHeight())
     } else {
         nav.removeClass('g-hd-fixed');
-        $('section').css('padding-top', 0)
+        $('.g-section').css('padding-top', 0)
     }
 }
 

@@ -1,7 +1,7 @@
 function gNotice() {
     var close = $('#g-notice .close');
     close.click(function () {
-        $(this).parents('#g-notice').stop(true, false).slideUp()
+        $(this).parents('#g-notice').stop(true, false).slideUp(200)
     })
 }
 

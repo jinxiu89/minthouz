@@ -155,6 +155,10 @@
     $(function () {
         var noticeHeight = $('.g-notice').outerHeight();
         $('.g-hd').css({'top': noticeHeight});
+        var close = $('#g-notice .close');
+        close.click(function () {
+            $('.g-hd').css({'top': 0});
+        });
         $('.play').click(function () {
             var url = $(this).attr('data-url');
             var title = $(this).attr('data-title');
