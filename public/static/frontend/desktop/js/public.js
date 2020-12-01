@@ -35,31 +35,66 @@ function gMenuHover() {
     });
 }
 
+//全局侧边栏的返回顶部的按钮
+function gTop() {
+    var g_top = $("#g-top");
+    g_top.click(function () {
+        $("html,body").animate({"scrollTop": 0}, 300);
+    });
+}
+
 /*todo: 导航交互改造
 * 1.当用户向下滑动页面时，导航条不会随之固定到视窗顶部。产品详情页用户向下滑动页面时，产品标题固定到视窗顶部
 * 2.当用户向上滑动页面时，导航条固定到视窗顶部（效果为滑动显示，而不是一瞬间出现导航）
 * 3.特别注意：首页由于导航做的时透明效果，所以当向上滑动时，需要额外给导航背景，以及在滑动到原本导航位置时需要移除背景，重新变成透明背景
 * */
 
-/*function navFixedTop () {
-    var nav = $('.g-hd'),
-        scroll = $(document).scrollTop(),
-        notice = $('.g-notice'),
-        noticeH = notice.css('display') === 'none' ? 0 : notice.outerHeight() || 0;
-    if (scroll > noticeH) {
-        nav.addClass('g-hd-fixed');
-        $('section').css('padding-top', nav.outerHeight())
-    } else {
-        nav.removeClass('g-hd-fixed');
-        $('section').css('padding-top', 0)
-    }
-}*/
+//1、判断滚动条是向上还是向下滚动
+function pageScroll() {
+    var p = 0,
+        t = 0;
+    $(window).scroll(function () {
+        p = $(this).scrollTop();
+        if (t < p) { // 向下滚动
+            scrollDown(p, t)
+        } else { // 向上滚动
+            scrollUp(p, t)
+        }
+        setTimeout(function () {t = p;}, 0)
+    })
+}
 
-function gTop() {
-    var g_top = $("#g-top");
-    g_top.click(function () {
-        $("html,body").animate({"scrollTop": 0}, 300);
-    });
+// todo: 基本功能完成，下一步需要添加渐变的效果
+function scrollDown (p, t) {
+    var header = $('.g-hd'),
+        noticeHeight = $('.g-notice').outerHeight(true) || 0,
+        hdHeight = $('.g-hd .hd').outerHeight(true) || 0,
+        navHeight = $('.g-hd .nav').outerHeight(true) || 0,
+        headerHeight = hdHeight + navHeight;
+    if (p >= (headerHeight + noticeHeight)) {
+        console.log('导航取消固定');
+        header.removeClass('cloneNav');
+        $('.g-section').css('paddingTop', 0 + 'px');
+    }
+}
+
+// todo: 基本功能完成，下一步需要添加渐变的效果
+function scrollUp (p, t) {
+    var header = $('.g-hd'),
+        noticeHeight = $('.g-notice').outerHeight(true) || 0,
+        hdHeight = $('.g-hd .hd').outerHeight(true) || 0,
+        navHeight = $('.g-hd .nav').outerHeight(true) || 0,
+        headerHeight = hdHeight + navHeight;
+    header.css('height', headerHeight + 'px');
+    if (p <= noticeHeight) {
+        console.log('导航取消固定');
+        header.removeClass('cloneNav');
+        $('.g-section').css('paddingTop', 0 + 'px');
+    } else {
+        console.log('导航固定');
+        header.addClass('cloneNav');
+        $('.g-section').css('paddingTop', headerHeight + 'px');
+    }
 }
 
 $(function () {
@@ -68,10 +103,8 @@ $(function () {
 
     gMenuHover();
 
-    // navFixedTop();
-
-    // $(window).bind('scroll', navFixedTop);
-
     gTop();
+
+    pageScroll()
 
 });

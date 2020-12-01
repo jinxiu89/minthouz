@@ -165,14 +165,20 @@ body {
 //重大通知
 
 //g-hd
-.g-hd-fixed {
+.cloneNav {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9999;
+  //height: 0;
+  //overflow: hidden;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  #transition(all .2s linear);
+  .nav .item-children {
+    position: fixed!important;
+    top: 130px!important;
+  }
 }
-
 .g-hd {
   width: 100%;
   #transition(all .2s linear);
@@ -421,6 +427,12 @@ body {
 }
 
 //g-hd End
+
+//g-section
+.g-section {
+  //#transition(all .2s linear);
+}
+//g-section end
 
 //g-foot
 .g-foot {
