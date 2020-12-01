@@ -35,7 +35,13 @@ function gMenuHover() {
     });
 }
 
-function navFixedTop () {
+/*todo: 导航交互改造
+* 1.当用户向下滑动页面时，导航条不会随之固定到视窗顶部。产品详情页用户向下滑动页面时，产品标题固定到视窗顶部
+* 2.当用户向上滑动页面时，导航条固定到视窗顶部（效果为滑动显示，而不是一瞬间出现导航）
+* 3.特别注意：首页由于导航做的时透明效果，所以当向上滑动时，需要额外给导航背景，以及在滑动到原本导航位置时需要移除背景，重新变成透明背景
+* */
+
+/*function navFixedTop () {
     var nav = $('.g-hd'),
         scroll = $(document).scrollTop(),
         notice = $('.g-notice'),
@@ -47,7 +53,7 @@ function navFixedTop () {
         nav.removeClass('g-hd-fixed');
         $('section').css('padding-top', 0)
     }
-}
+}*/
 
 function gTop() {
     var g_top = $("#g-top");
@@ -62,9 +68,9 @@ $(function () {
 
     gMenuHover();
 
-    navFixedTop();
+    // navFixedTop();
 
-    $(window).bind('scroll', navFixedTop);
+    // $(window).bind('scroll', navFixedTop);
 
     gTop();
 
