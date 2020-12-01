@@ -90,7 +90,7 @@ class Product extends BaseAdmin
             $product['specifications'] = $data['specifications'];
             $product['create_time'] = $product['update_time'] = time();
             //相册分表
-            $album = $data['album']; //是个数组
+            $album = is_array($data['album']) ? $data['album'] : []; //是个数组
             //内容分表
             $content['desktop'] = $data['desktop'];
             $content['mobile'] = $data['mobile'];
