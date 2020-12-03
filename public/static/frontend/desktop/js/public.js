@@ -16,15 +16,15 @@ function gMenuHover() {
     });
     navItem.mouseenter(function () {
         var _this = this,
-            _thisItemDom = $(_this).children('.item-children');
+            _thisItemChildren = $(_this).children('.item-children');
         nav.addClass('navActive');
         $(_this).siblings('li').removeClass('menu-item-active');
         $(_this).addClass('menu-item-active');
         navItem.toArray().forEach(function (item) {
-            var itemDom = $(item).children('.item-children');
-            if (itemDom.css('display') === 'block') {
-                _thisItemDom.css('display', 'block');
-                if (_thisItemDom.length === 0) {
+            var everItemDom = $(item).children('.item-children');
+            if (everItemDom.css('display') === 'block') {
+                _thisItemChildren.css('display', 'block');
+                if (_thisItemChildren.length === 0) {
                     $(_this).siblings('li').children('.item-children').stop(true, false).slideUp(200)
                 } else {
                     $(_this).siblings('li').children('.item-children').css('display', 'none');
@@ -43,7 +43,7 @@ function gTop() {
     });
 }
 
-//1、判断滚动条是向上还是向下滚动
+//判断滚动条是向上还是向下滚动
 function pageScroll() {
     var p = 0,
         t = 0;
@@ -61,35 +61,30 @@ function pageScroll() {
             headerHeight: headerHeight
         };
         p = $(this).scrollTop();
-        if (t < p) { // 向下滚动
-            scrollDown(p, scrollDom)
-        } else { // 向上滚动
-            scrollUp(p, scrollDom)
-        }
-        setTimeout(function () {t = p;}, 0)
+        // t < p 向下滚动；t > p 向上滚动
+        t < p ? scrollDown(p, scrollDom) : scrollUp(p, scrollDom);
+        setTimeout(function () {t = p;}, 100)
     })
 }
 
-// todo: 添加渐变的效果完成，下一步代码优化
-function scrollDown (p, scrollDom) { //向下滑动
+function scrollDown (p, scrollDom) {
     if (p <= (scrollDom.headerHeight + scrollDom.noticeHeight)) {
         $('.g-section').css('paddingTop', 0 + 'px');
     } else {
+        scrollDom.header.addClass('navFixed');
         scrollDom.header.css('height', 0 + 'px');
-        $('#menu-list .menu-item').children('.item-children').css({'display': 'none'});
         $('.g-section').css('paddingTop', scrollDom.headerHeight + 'px');
-        scrollDom.header.addClass('cloneNav');
+        $('#menu-list .menu-item .item-children').css({'display': 'none'});
     }
 }
 
-// todo: 添加渐变的效果完成，下一步代码优化
-function scrollUp (p, scrollDom) { //向上滑动
+function scrollUp (p, scrollDom) {
     if (p <= scrollDom.noticeHeight) {
-        scrollDom.header.removeClass('cloneNav');
+        scrollDom.header.removeClass('navFixed');
         scrollDom.header.css('height', '');
         $('.g-section').css('paddingTop', 0 + 'px');
     } else {
-        scrollDom.header.addClass('cloneNav');
+        scrollDom.header.addClass('navFixed');
         scrollDom.header.css('height', scrollDom.headerHeight + 'px');
         $('.g-section').css('paddingTop', scrollDom.headerHeight + 'px');
     }

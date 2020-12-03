@@ -190,13 +190,13 @@ body {
   }
 }
 .g-notice {
-  padding: 10px 0;
   text-align: center;
   color: #888;
   font-size: 14px;
 }
 .g-notice .des {
-  display: inline;
+  padding: 10px 0;
+  display: inline-block;
   color: #888;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
@@ -217,7 +217,7 @@ body {
     font-size: 12px;
   }
 }
-.cloneNav {
+.navFixed {
   position: fixed;
   top: 0;
   left: 0;
@@ -230,7 +230,7 @@ body {
   -o-transition: all 0.2s linear !important;
   transition: all 0.2s linear !important;
 }
-.cloneNav .nav .item-children {
+.navFixed .nav .item-children {
   position: fixed!important;
   top: 130px!important;
 }
@@ -473,10 +473,6 @@ body {
   line-height: 50px;
 }
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .g-hd .nav {
-    position: static;
-    background: #fff;
-  }
   .g-hd .nav .logo a {
     padding: 5px;
   }
@@ -494,7 +490,7 @@ body {
   }
   .g-hd .nav .item-children {
     padding: 0 10px;
-    top: 120px;
+    top: 90px;
   }
   .g-hd .nav .item-children .children-list {
     width: 33.333%;
@@ -507,6 +503,9 @@ body {
   }
   .g-hd .nav .item-children .children-list a {
     font-size: 12px;
+  }
+  .g-hd .nav .item-children .children-list a img {
+    width: 100px;
   }
 }
 @media screen and (min-width: 992px) and (max-width: 1199px) {
