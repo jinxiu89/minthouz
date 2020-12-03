@@ -16,15 +16,15 @@ function gMenuHover() {
     });
     navItem.mouseenter(function () {
         var _this = this,
-            _thisItemDom = $(_this).children('.item-children');
+            _thisItemChildren = $(_this).children('.item-children');
         nav.addClass('navActive');
         $(_this).siblings('li').removeClass('menu-item-active');
         $(_this).addClass('menu-item-active');
         navItem.toArray().forEach(function (item) {
-            var itemDom = $(item).children('.item-children');
-            if (itemDom.css('display') === 'block') {
-                _thisItemDom.css('display', 'block');
-                if (_thisItemDom.length === 0) {
+            var everItemDom = $(item).children('.item-children');
+            if (everItemDom.css('display') === 'block') {
+                _thisItemChildren.css('display', 'block');
+                if (_thisItemChildren.length === 0) {
                     $(_this).siblings('li').children('.item-children').stop(true, false).slideUp(200)
                 } else {
                     $(_this).siblings('li').children('.item-children').css('display', 'none');
@@ -35,31 +35,59 @@ function gMenuHover() {
     });
 }
 
-/*todo: 导航交互改造
-* 1.当用户向下滑动页面时，导航条不会随之固定到视窗顶部。产品详情页用户向下滑动页面时，产品标题固定到视窗顶部
-* 2.当用户向上滑动页面时，导航条固定到视窗顶部（效果为滑动显示，而不是一瞬间出现导航）
-* 3.特别注意：首页由于导航做的时透明效果，所以当向上滑动时，需要额外给导航背景，以及在滑动到原本导航位置时需要移除背景，重新变成透明背景
-* */
-
-/*function navFixedTop () {
-    var nav = $('.g-hd'),
-        scroll = $(document).scrollTop(),
-        notice = $('.g-notice'),
-        noticeH = notice.css('display') === 'none' ? 0 : notice.outerHeight() || 0;
-    if (scroll > noticeH) {
-        nav.addClass('g-hd-fixed');
-        $('section').css('padding-top', nav.outerHeight())
-    } else {
-        nav.removeClass('g-hd-fixed');
-        $('section').css('padding-top', 0)
-    }
-}*/
-
+//全局侧边栏的返回顶部的按钮
 function gTop() {
     var g_top = $("#g-top");
     g_top.click(function () {
         $("html,body").animate({"scrollTop": 0}, 300);
     });
+}
+
+//判断滚动条是向上还是向下滚动
+function pageScroll() {
+    var p = 0,
+        t = 0;
+    var header = $('.g-hd'),
+        noticeHeight = $('.g-notice').outerHeight(true) || 0,
+        hdHeight = $('.g-hd .hd').outerHeight(true) || 0,
+        navHeight = $('.g-hd .nav').outerHeight(true) || 0,
+        headerHeight = hdHeight + navHeight;
+    $(window).scroll(function () {
+        var scrollDom = {
+            header: header,
+            noticeHeight: noticeHeight,
+            hdHeight: hdHeight,
+            navHeight: navHeight,
+            headerHeight: headerHeight
+        };
+        p = $(this).scrollTop();
+        // t < p 向下滚动；t > p 向上滚动
+        t < p ? scrollDown(p, scrollDom) : scrollUp(p, scrollDom);
+        setTimeout(function () {t = p;}, 100)
+    })
+}
+
+function scrollDown (p, scrollDom) {
+    if (p <= (scrollDom.headerHeight + scrollDom.noticeHeight)) {
+        $('.g-section').css('paddingTop', 0 + 'px');
+    } else {
+        scrollDom.header.addClass('navFixed');
+        scrollDom.header.css('height', 0 + 'px');
+        $('.g-section').css('paddingTop', scrollDom.headerHeight + 'px');
+        $('#menu-list .menu-item .item-children').css({'display': 'none'});
+    }
+}
+
+function scrollUp (p, scrollDom) {
+    if (p <= scrollDom.noticeHeight) {
+        scrollDom.header.removeClass('navFixed');
+        scrollDom.header.css('height', '');
+        $('.g-section').css('paddingTop', 0 + 'px');
+    } else {
+        scrollDom.header.addClass('navFixed');
+        scrollDom.header.css('height', scrollDom.headerHeight + 'px');
+        $('.g-section').css('paddingTop', scrollDom.headerHeight + 'px');
+    }
 }
 
 $(function () {
@@ -68,10 +96,8 @@ $(function () {
 
     gMenuHover();
 
-    // navFixedTop();
-
-    // $(window).bind('scroll', navFixedTop);
-
     gTop();
+
+    pageScroll()
 
 });

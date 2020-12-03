@@ -136,13 +136,13 @@ body {
 
 //重大通知
 .g-notice {
-  padding: 10px 0;
   text-align: center;
   color: @whiteSmoke;
   font-size: 14px;
 
   .des {
-    display: inline;
+    padding: 10px 0;
+    display: inline-block;
     color: @whiteSmoke;
     #transition(all .2s linear);
 
@@ -165,14 +165,19 @@ body {
 //重大通知
 
 //g-hd
-.g-hd-fixed {
+.navFixed {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9999;
+  overflow: hidden;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  #transition(all .2s linear)!important;
+  .nav .item-children {
+    position: fixed!important;
+    top: 130px!important;
+  }
 }
-
 .g-hd {
   width: 100%;
   #transition(all .2s linear);
@@ -373,11 +378,6 @@ body {
   }
 
   @media screen and (min-width: 768px) and (max-width: 991px) {
-    .nav {
-      position: static;
-      background: @whiteColor;
-    }
-
     .nav .logo a {
       .clearFix();
       padding: 5px;
@@ -389,7 +389,7 @@ body {
 
     .nav .item-children {
       padding: 0 10px;
-      top: 120px;
+      top: 90px;
     }
 
     .nav .item-children .children-list {
@@ -403,6 +403,10 @@ body {
 
     .nav .item-children .children-list a {
       font-size: 12px;
+    }
+
+    .nav .item-children .children-list a img {
+      width: 100px;
     }
   }
   @media screen and (min-width: 992px) and (max-width: 1199px) {
@@ -421,6 +425,12 @@ body {
 }
 
 //g-hd End
+
+//g-section
+.g-section {
+  //#transition(all .2s linear);
+}
+//g-section end
 
 //g-foot
 .g-foot {
