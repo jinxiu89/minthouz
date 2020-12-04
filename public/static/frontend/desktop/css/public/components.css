@@ -155,7 +155,7 @@ a {
 }
 @font-face {
   font-family: Neo_Sans;
-  src: url("../../../lib/font/maax/Maax Rounded.otf");
+  src: url("../../../lib/font/Maax/Maax_Rounded.otf");
 }
 body {
   font-family: Neo_Sans, "Microsoft YaHei", Helvetica, "Meiryo UI", "Malgun Gothic", "Segoe UI", "Trebuchet MS", "Monaco", monospace, Tahoma, STXihei, "华文细黑", STHeiti, "Helvetica Neue", "Droid Sans", "wenquanyi micro hei", FreeSans, Arimo, Arial, SimSun, "宋体", Heiti, "黑体", sans-serif;
@@ -364,6 +364,7 @@ body {
   display: block;
   position: relative;
   color: #333;
+  font-size: 16px;
   line-height: 60px;
   font-weight: 700;
   -webkit-transition: all 0.2s;
@@ -488,6 +489,9 @@ body {
   .g-hd .nav .menu-box .menu-list .menu-item {
     padding: 15px 5px;
   }
+  .g-hd .nav .menu-box .menu-list .menu-item .item-link {
+    font-size: 14px;
+  }
   .g-hd .nav .item-children {
     padding: 0 10px;
     top: 90px;
@@ -511,6 +515,9 @@ body {
 @media screen and (min-width: 992px) and (max-width: 1199px) {
   .g-hd .nav .menu-box .menu-list .menu-item {
     padding: 20px 10px;
+  }
+  .g-hd .nav .menu-box .menu-list .menu-item .item-link {
+    font-size: 14px;
   }
   .g-hd .nav .item-children {
     padding: 0 15px;
