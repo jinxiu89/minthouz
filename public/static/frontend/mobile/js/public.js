@@ -9,11 +9,12 @@ function menuBar () {
     var bar = $('#menu-bar'),
         menu = $('#menu-box');
     bar.click(function () {
-        menu.stop(true, false).slideToggle();
-        menu.find('.item-link').siblings('.child-menu').slideUp();
+        menu.stop(true, false).slideToggle(300);
+        menu.find('.item-link').siblings('.child-menu').slideUp(300);
     });
     menu.find('.item-link').click(function () {
-        $(this).siblings('.child-menu').stop(true, false).slideToggle();
+        $(this).find('.iconfont').toggleClass('iconadd-select').toggleClass('iconsami-select');
+        $(this).siblings('.child-menu').stop(true, false).slideToggle(300);
     })
 }
 
