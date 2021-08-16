@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * @Create by PhpStorm
@@ -101,7 +102,7 @@ class AliOss
      * @param string $key
      * @return bool
      */
-    public static function mkdir(string $bucket,string $key)
+    public static function mkdir(string $bucket, string $key)
     {
         try {
             $result = self::createClient()->createObjectDir((string) $bucket, (string) $key);
@@ -110,7 +111,6 @@ class AliOss
             //todo：：日志
             return false;
         }
-
     }
 
     /**
@@ -122,7 +122,7 @@ class AliOss
     public static function putFile(string $key, $file)
     {
         try {
-            $data = self::createClient()->uploadFile((string)$bucket =Env::get('oss.bucket'), $key, $file);
+            $data = self::createClient()->uploadFile((string)$bucket = Env::get('oss.bucket'), $key, $file);
             return $data['info']['http_code'];
         } catch (OssException $exception) {
             //todo::待解决异常问题
