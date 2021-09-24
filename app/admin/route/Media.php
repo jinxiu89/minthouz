@@ -13,7 +13,7 @@
 use think\facade\Route;
 
 Route::group('media', function () {
-    Route::rule('/image/list', 'media.Image/index');
+    Route::rule('/image/list', 'media.Image/index')->name('media_index');
     Route::rule('/image/select', 'media.Image/select'); //专为选择图片而创造的url 后面有用就留下，没用就清除
     Route::rule('/image/upload', 'media.Image/upload');
     Route::rule('/image/create_folder', 'media.Image/createFolder');

@@ -19,7 +19,7 @@ Route::group('system', function () {
     Route::rule('/language/edit$', 'system.Language/editLanguage', 'GET|POST');
     Route::rule('/language/change_status$', 'system.Language/changeStatus', 'GET');
     Route::rule('/setting$', 'system.Setting/setting', 'GET|POST');
-    Route::rule('/about/index$', 'system.About/index', 'GET');
+    Route::rule('/about/index$', 'system.About/index', 'GET')->name('system_about');
     Route::rule('/about/add$', 'system.About/add', 'GET|POST');
     Route::rule('/about/edit$', 'system.About/edit', 'GET|POST');
     Route::rule('/about/change_status$', 'system.About/changeStatus', 'GET');
