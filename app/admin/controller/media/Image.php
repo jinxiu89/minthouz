@@ -17,6 +17,7 @@ use app\admin\controller\BaseAdmin;
 use app\libs\utils\cloud\AliOss;
 use Exception;
 use think\App;
+use think\facade\Cache;
 use think\facade\Env;
 use think\facade\Session;
 use think\facade\View;
@@ -29,6 +30,7 @@ use think\response\Json;
 class Image extends BaseAdmin
 {
     protected $bucket;
+    protected $path;
 
     public function initialize()
     {
@@ -50,7 +52,7 @@ class Image extends BaseAdmin
         if ($this->request->isGet()) {
             $path = input('get.path', 'images/', 'htmlspecialchars,trim');
             $type = input('get.type', '', 'trim,intval'); //这个类型是用来去除掉插入到/插入两个操作的，当在别的功能里调用该功能是就需要显示，反之则不要
-            Session::set('path', $path); //上传行为需要用到这个path
+            Cache::set('path', $path);
             $nav = array_filter(explode('/', $path));
             $navbar = [];
             foreach ($nav as $item) {
@@ -80,7 +82,7 @@ class Image extends BaseAdmin
         if ($this->request->isGet()) {
             $path = input('get.path', 'images/', 'htmlspecialchars,trim');
             $class = input('get.class', 'image', 'htmlspecialchars,trim');
-            Session::set('path', $path); //上传行为需要用到这个path
+            Cache::set('path', $path);
             $nav = array_filter(explode('/', $path));
             $navbar = [];
             foreach ($nav as $item) {
@@ -138,7 +140,7 @@ class Image extends BaseAdmin
         }
         if ($this->request->isPost()) {
             $file = $this->request->file('file');
-            $key = Session::get('path') . $file->getOriginalName();
+            $key = Cache::get('path') . $file->getOriginalName();
             $filePath = $file->getRealPath();
             if (AliOss::putFile($key, (string)$filePath)) {
                 return json(['code' => 1, 'msg' => 'ok', 'data' => ['src' => '']]);
