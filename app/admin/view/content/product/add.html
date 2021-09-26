@@ -124,7 +124,7 @@
                             </label>
                             <div class="layui-input-inline">
                                 <button class="layui-btn" type="button"
-                                    onclick="xadmin.open('添加缩略图','{:url(\'media/image/select\',[\'path\'=>\'images\/\',\'class\'=>\'image\'])}')">
+                                    onclick="xadmin.open('添加缩略图','{:url(\'media_select_image\',[\'path\'=>\'images\/\',\'class\'=>\'image\'])}')">
                                     <i class="layui-icon"></i>选择</button>
                                 <div class="image" style="height: 92px;padding-top: 5px">
                                     <img src="" alt="" style="height: 92px">
@@ -138,7 +138,7 @@
                             </label>
                             <div class="layui-input-block">
                                 <button class="layui-btn" type="button"
-                                    onclick="xadmin.open('选择图片','{:url(\'media/image/select\',[\'path\'=>\'images\/\',\'class\'=>\'image\'])}')"><i
+                                    onclick="xadmin.open('选择图片','{:url(\'media_select_image\',[\'path\'=>\'images\/\',\'class\'=>\'image\'])}')"><i
                                         class="layui-icon"></i>选择</button>
                                 <blockquote class="layui-elem-quote layui-quote-nm"
                                     style="margin-top: 10px;min-height: 100px">
@@ -266,7 +266,7 @@
             form.on('submit(add)',
                 function (data) {
                     $.ajax({
-                        url: "{:url('content/product/add')}",
+                        url: "{:url('content_add_product')}",
                         type: 'POST',
                         data: data.field,
                         'success': function (result) {

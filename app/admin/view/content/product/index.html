@@ -35,7 +35,7 @@
                 </div>
                 <div class="layui-card-header">
                     <!--<button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>-->
-                    <button class="layui-btn" onclick="xadmin.full('添加产品','{:url(\'content/product/add\')}')"><i
+                    <button class="layui-btn" onclick="xadmin.full('添加产品','{:url(\'content_add_product\')}')"><i
                             class="layui-icon"></i>添加</button>
                 </div>
                 <div class="layui-card-body ">
@@ -84,15 +84,15 @@
                                     <i class="layui-icon">&#xe601;</i>
                                 </a>-->
                                     <button class="layui-btn layui-btn layui-btn-xs"
-                                        onclick="xadmin.full('编辑','{:url(\'content/product/edit\',[\'id\'=>$vo.id])}')">
+                                        onclick="xadmin.full('编辑','{:url(\'content_edit_product\',[\'id\'=>$vo.id])}')">
                                         <i class="layui-icon">&#xe642;</i>编辑
                                     </button>
                                     {if($vo.status == 2 )}
                                     <button class="layui-btn layui-btn-normal layui-btn-mini"
-                                        onclick="changeStatus('{:url(\'content/product/change_status\',[\'id\'=>$vo.id,\'status\'=>1])}')">启用</button>
+                                        onclick="changeStatus('{:url(\'content_change_product\',[\'id\'=>$vo.id,\'status\'=>1])}')">启用</button>
                                     {else /}
                                     <button class="layui-btn layui-btn-danger layui-btn-mini"
-                                        onclick="changeStatus('{:url(\'content/product/change_status\',[\'id\'=>$vo.id,\'status\'=>2])}')">禁用</button>
+                                        onclick="changeStatus('{:url(\'content_change_product\',[\'id\'=>$vo.id,\'status\'=>2])}')">禁用</button>
                                     {/if}
                                 </td>
                             </tr>
