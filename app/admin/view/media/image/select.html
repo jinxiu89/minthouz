@@ -33,9 +33,9 @@
 <div class="x-nav">
     <span class="layui-breadcrumb">
         <a href="">首页</a>
-        <a href="{:url('media/image/select',['path'=>'images/'])}">图片管理</a>
+        <a href="{:url('media_image_index',['path'=>'images/'])}">图片管理</a>
         {volist name="nav" id="vo" offset="1"}
-        <a href="{:url('media/image/select',['path'=>$vo.path])}">{$vo.name}</a>
+        <a href="{:url('media_select_image',['path'=>$vo.path])}">{$vo.name}</a>
         {/volist}
         <!--            <a><cite>图片列表</cite></a>-->
     </span>
@@ -48,10 +48,9 @@
         <div class="layui-col-md12">
             <div class="layui-card">
                 <div class="layui-card-header">
-                    <button class="layui-btn" onclick="xadmin.open('上传','{:url(\'media/image/upload\')}',600,600)">
+                    <button class="layui-btn" onclick="xadmin.open('上传','{:url(\'media_upload_image\')}',600,600)">
                         <i class="layui-icon"></i>上传图片</button>
-                    <button class="layui-btn"
-                        onclick="xadmin.open('创建目录','{:url(\'media/image/create_folder\')}',600,300)">
+                    <button class="layui-btn" onclick="xadmin.open('创建目录','{:url(\'media_create_folder\')}',600,300)">
                         <i class="iconfont">&#xe83c;</i> 创建目录</button>
                 </div>
                 <div class="layui-card-body layui-clear">
@@ -61,13 +60,13 @@
                     <div class="item-list"
                         style="position: relative;display: inline-block;padding: 10px;text-align: center;float: left">
                         <div style="height: 126px;display: inline-block;padding: 10px;text-align: center;float: left">
-                            <a href="{:url('media/image/select',['path'=>$item.key,'class'=>$class])}"
+                            <a href="{:url('media_image_index',['path'=>$item.key,'class'=>$class])}"
                                 style="display: inline-block">
                                 <i class="iconfont"
                                     style="font-size: 100px;color: #ffdc69;line-height: 100px">&#xe83c;</i>
                             </a>
                             <p><a
-                                    href="{:url('media/image/select',['path'=>$item.key,'class'=>$class])}">{$item['name']}</a>
+                                    href="{:url('media_select_image',['path'=>$item.key,'class'=>$class])}">{$item['name']}</a>
                             </p>
                         </div>
                     </div>

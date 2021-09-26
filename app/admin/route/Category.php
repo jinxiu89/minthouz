@@ -14,10 +14,10 @@ use think\facade\Route;
 
 Route::group('category', function () {
     // 路径逻辑：为了能够清晰看到路径的逻辑，将路由的路径做层级优化，但这样有个问题，就是没办法用路由映射
-    Route::rule('/product/index$', 'category.ProductCategory/index');
-    Route::rule('/product/add$', 'category.ProductCategory/add');
-    Route::rule('/product/edit$', 'category.ProductCategory/edit');
-    Route::rule('/product/list$', 'category.ProductCategory/lists');
-    Route::rule('/product/change_status$', 'category.ProductCategory/changeStatus', 'GET');
-    Route::rule('/order$', 'category.ProductCategory/sortorder', 'POST');
+    Route::rule('/product/index$', 'category.ProductCategory/index')->name('category_product');
+    Route::rule('/product/add$', 'category.ProductCategory/add')->name('category_add_product');
+    Route::rule('/product/edit$', 'category.ProductCategory/edit')->name('category_edit_product');
+    Route::rule('/product/list$', 'category.ProductCategory/lists')->name('category_product_lists');
+    Route::rule('/product/change_status$', 'category.ProductCategory/changeStatus', 'GET')->name('category_change_product');
+    Route::rule('/order$', 'category.ProductCategory/sortorder', 'POST')->name('category_order_product');
 });

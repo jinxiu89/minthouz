@@ -61,7 +61,7 @@
             form.on('submit(add)',
                 function (data) {
                     $.ajax({
-                        url: "{:url('system/language/add')}",
+                        url: "{:url('add_language')}",
                         type: 'POST',
                         data: data.field,
                         'success': function (result) {

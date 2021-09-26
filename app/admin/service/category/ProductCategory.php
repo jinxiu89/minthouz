@@ -40,7 +40,7 @@ class ProductCategory extends BaseService
     {
         try {
             //todo:: 缓存
-            $data = $this->model->field('id,name,is_parent,parent_id,level,path')->where(['language_id' => $language, 'status' => $status])->select()->toArray();
+            $data = $this->model->field('id,name,is_parent,parent_id,level,path')->where(['language_id' => $language])->select()->toArray();
             return Category::toLevel($data, '&nbsp;');
         } catch (\Exception $exception) {
             if (!Env::get('app_debug')) abort(500, $exception->getMessage());

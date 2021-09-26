@@ -13,15 +13,15 @@
 use think\facade\Route;
 
 Route::group('system', function () {
-    Route::rule('/index$', 'system.Index/index');
-    Route::rule('/language/index$', 'system.Language/index', 'GET');
-    Route::rule('/language/add$', 'system.Language/addLanguage', 'GET|POST');
-    Route::rule('/language/edit$', 'system.Language/editLanguage', 'GET|POST');
-    Route::rule('/language/change_status$', 'system.Language/changeStatus', 'GET');
-    Route::rule('/setting$', 'system.Setting/setting', 'GET|POST');
+    Route::rule('/index$', 'system.Index/index')->name('system_index');
+    Route::rule('/language/index$', 'system.Language/index', 'GET')->name('system_language_index');
+    Route::rule('/language/add$', 'system.Language/addLanguage', 'GET|POST')->name('add_language');
+    Route::rule('/language/edit$', 'system.Language/editLanguage', 'GET|POST')->name('edit_language');
+    Route::rule('/language/change_status$', 'system.Language/changeStatus', 'GET')->name('change_language_status');
+    Route::rule('/setting$', 'system.Setting/setting', 'GET|POST')->name('system_setting');
     Route::rule('/about/index$', 'system.About/index', 'GET')->name('system_about');
-    Route::rule('/about/add$', 'system.About/add', 'GET|POST');
-    Route::rule('/about/edit$', 'system.About/edit', 'GET|POST');
-    Route::rule('/about/change_status$', 'system.About/changeStatus', 'GET');
-    Route::rule('/changeLanguage$', 'Common/changeLanguage', 'GET');
+    Route::rule('/about/add$', 'system.About/add', 'GET|POST')->name('system_add_about');
+    Route::rule('/about/edit$', 'system.About/edit', 'GET|POST')->name('system_edit_about');
+    Route::rule('/about/change_status$', 'system.About/changeStatus', 'GET')->name('system_about_change');
+    Route::rule('/changeLanguage$', 'Common/changeLanguage', 'GET')->name('system_change_langeuage');
 });

@@ -90,7 +90,7 @@
             form.on('submit(add)',
                 function (data) {
                     $.ajax({
-                        url: "{:url('category/product/edit')}",
+                        url: "{:url('category_edit_product')}",
                         type: 'POST',
                         data: data.field,
                         'success': function (result) {

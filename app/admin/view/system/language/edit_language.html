@@ -63,7 +63,7 @@
             form.on('submit(edit)',
                 function (data) {
                     $.ajax({
-                        url: "{:url('system/language/edit')}",
+                        url: "{:url('edit_language')}",
                         type: 'POST',
                         data: data.field,
                         'success': function (result) {
