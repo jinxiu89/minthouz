@@ -107,17 +107,16 @@ class Image extends BaseAdmin
      */
     public function createFolder()
     {
+        $path = input('get.path', 'images', 'htmlspecialchars,trim');
         if ($this->request->isGet()) {
-            $path = input('get.path', 'images', 'htmlspecialchars,trim');
             View::assign('path', $path);
             return View::fetch();
         }
         if ($this->request->isPost()) {
             $post = input('post.', '', 'htmlspecialchars,trim');
-
             $folder = str_replace('/', '', $post['folder']);
             unset($post);
-            $key = Session::get('path') . $folder;
+            $key = Cache::get('path') . $folder;
             //todo::阿里云和亚马逊云合体在这里分分支
             $result = AliOss::mkdir((string)$this->bucket, (string)$key);
             if ($result == 200) {
