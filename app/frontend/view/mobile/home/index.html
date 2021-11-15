@@ -28,70 +28,24 @@
     <div class="swiper-button-next"></div><!--右箭头-->
 </div>
 <div class="hot">
+    <h3 class="hot-title"><span>House</span></h3>
     <div class="min-list">
+        {notempty name="hot"}
         {volist name="hot" id="vo"}
         <div class="min-item">
             <h3 class="des">{$vo.title}</h3>
             <a href="{$vo.path}"><img src="{$vo.mobile}" alt=""></a>
         </div>
         {/volist}
+        {/notempty}
     </div>
 </div>
-<div class="star">
-    <h3><span>STAR PRODUCTS</span></h3>
-    <div class="star-list">
-        <div class="left">
-            <div class="star-item">
-                <a href="{$starProduct[0]['path']}"><img src="{$starProduct[0]['mobile']}" alt=""></a>
-            </div>
-        </div>
-        <div class="right">
-            {volist name="starProduct" id="vo" offset='1' length="3"}
-            <div class="star-item">
-                <a href="{$vo.path}"><img src="{$vo.mobile}" alt=""></a>
-            </div>
-            {/volist}
-        </div>
-    </div>
-</div>
-<div class="video">
-    <h3><span>VIDEOS</span></h3>
-    <div class="video-container swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <a class="play" href="javascript:void(0)" data-url="//china.wavlink.com/videos/690AD5.mp4" data-title="VITESSE - AC1900 High-speed Gaming WiFi Adapter with USB3.0 Dock">
-                    <div class="img-box">
-                        <img src="//china.wavlink.com/images/vitesse/VITESSE_AC1900.jpg" alt="...">
-                        <div class="icon-box">
-                            <span class="iconfont"></span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="swiper-slide">
-                <a class="play" href="javascript:void(0)" data-url="https://www.youtube.com/embed/ffpfdN4MxXk" data-title="Wavlink HALO Base AC1200 Dual-band Whole Home WiFi Mesh System with Touchlink">
-                    <div class="img-box">
-                        <img src="https://s3.amazonaws.com/files.wavlink.com/video/2020/01/wavlink_HALO_Base_AC1200.jpg" alt="...">
-                        <div class="icon-box">
-                            <span class="iconfont"></span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="swiper-slide">
-                <a class="play" href="javascript:void(0)" data-url="https://www.youtube.com/embed/sZl057HvSt0" data-title="Why Should Choose AERIAL X WiFi Range Extender?">
-                    <div class="img-box">
-                        <img src="https://s3.amazonaws.com/files.wavlink.com/video/2020/01/AERIAL_X.jpg" alt="...">
-                        <div class="icon-box">
-                            <span class="iconfont"></span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="swiper-pagination"></div><!--分页器-->
-        <!--<div class="swiper-button-prev"></div>&lt;!&ndash;左箭头&ndash;&gt;
-        <div class="swiper-button-next"></div>&lt;!&ndash;右箭头&ndash;&gt;-->
+<div class="newProduct common-width">
+    <h3><span>NEW PRODUCT</span></h3>
+    <div>
+        {notempty name="starProduct"}
+        <a href="{$starProduct[0]['path']}"><img src="{$starProduct[0]['desktop']}" alt=""></a>
+        {/notempty}
     </div>
 </div>
 {/block}

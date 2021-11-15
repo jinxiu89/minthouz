@@ -47,6 +47,7 @@
     <!--右箭头-->
 </div>
 <div class="hot common-width">
+    <h3 class="hot-title"><span>House</span></h3>
     <div class="min-list">
         {notempty name="hot"}
         {volist name="hot" id="vo"}
@@ -60,7 +61,15 @@
         {/notempty}
     </div>
 </div>
-<div class="star common-width">
+<div class="newProduct common-width">
+    <h3><span>NEW PRODUCT</span></h3>
+    <div>
+        {notempty name="starProduct"}
+        <a href="{$starProduct[0]['path']}"><img src="{$starProduct[0]['desktop']}" alt=""></a>
+        {/notempty}
+    </div>
+</div>
+<!--<div class="star common-width">
     <h3><span>STAR PRODUCTS</span></h3>
     <div class="star-list">
         <div class="left">
@@ -80,50 +89,7 @@
             {/notempty}
         </div>
     </div>
-</div>
-<div class="video common-width">
-    <h3><span>VIDEOS</span></h3>
-    <div class="video-list">
-        <div class="thumbnail">
-            <a class="play" href="javascript:void(0)" data-url="//china.wavlink.com/videos/690AD5.mp4"
-                data-title="VITESSE - AC1900 High-speed Gaming WiFi Adapter with USB3.0 Dock">
-                <div class="img-box">
-                    <img src="//china.wavlink.com/images/vitesse/VITESSE_AC1900.jpg" alt="...">
-                    <div class="icon-box">
-                        <span class="iconfont"></span>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="video-list">
-        <div class="thumbnail">
-            <a class="play" href="javascript:void(0)" data-url="https://www.youtube.com/embed/ffpfdN4MxXk"
-                data-title="Wavlink HALO Base AC1200 Dual-band Whole Home WiFi Mesh System with Touchlink">
-                <div class="img-box">
-                    <img src="https://s3.amazonaws.com/files.wavlink.com/video/2020/01/wavlink_HALO_Base_AC1200.jpg"
-                        alt="...">
-                    <div class="icon-box">
-                        <span class="iconfont"></span>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="video-list">
-        <div class="thumbnail">
-            <a class="play" href="javascript:void(0)" data-url="https://www.youtube.com/embed/sZl057HvSt0"
-                data-title="Why Should Choose AERIAL X WiFi Range Extender?">
-                <div class="img-box">
-                    <img src="https://s3.amazonaws.com/files.wavlink.com/video/2020/01/AERIAL_X.jpg" alt="...">
-                    <div class="icon-box">
-                        <span class="iconfont"></span>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
-</div>
+</div>-->
 {/block}
 
 <!--私有业务开始-->
