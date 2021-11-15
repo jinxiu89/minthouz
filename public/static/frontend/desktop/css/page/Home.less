@@ -123,7 +123,7 @@ section {
     }
 }
 
-.hot {
+/*.hot {
     margin-top: 20px;
     text-align: center;
     .min-list {
@@ -173,9 +173,91 @@ section {
             }
         }
     }
+}*/
+.hot {
+    margin-top: 20px;
+    text-align: center;
+    .hot-title {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        margin: 68px auto 40px;
+        font-weight: 600;
+        font-size: 16px;
+        span {
+            padding: 0 100px;
+            background: @bodyBgColor;
+        }
+        &:before, &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            z-index: -1;
+            width: 40%;
+            height: 2px;
+            background: @activeColor;
+        }
+        &:before {
+            left: 10%;
+        }
+        &:after {
+            right: 10%;
+        }
+    }
+    .min-list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .min-item {
+        width: 50%;
+        padding: 10px;
+        img {
+            .center-block();
+            .img-responsive();
+        }
+    }
 }
 
-.star {
+.newProduct {
+    text-align: center;
+    h3 {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        margin: 68px auto 40px;
+        font-weight: 600;
+        font-size: 16px;
+        span {
+            padding: 0 100px;
+            background: @bodyBgColor;
+        }
+        &:before, &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            z-index: -1;
+            width: 40%;
+            height: 2px;
+            background: @activeColor;
+        }
+        &:before {
+            left: 10%;
+        }
+        &:after {
+            right: 10%;
+        }
+    }
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+        h3 {
+            font-size: 14px;
+        }
+    }
+    @media screen and (min-width: 992px) and (max-width: 1199px) {
+
+    }
+}
+
+/*.star {
     text-align: center;
     h3 {
         position: relative;
@@ -328,4 +410,4 @@ section {
             font-size: 14px;
         }
     }
-}
+}*/
