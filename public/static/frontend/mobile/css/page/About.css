@@ -53,10 +53,10 @@ section .About-menu .menu-item a {
   color: #333;
 }
 section .About-menu .menu-item a:hover {
-  color: #00A82D;
+  color: #00a82d;
 }
 section .About-menu .active a {
-  color: #00A82D;
+  color: #00a82d;
 }
 section .About-bg {
   display: none;

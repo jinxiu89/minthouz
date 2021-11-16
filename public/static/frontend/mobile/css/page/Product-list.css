@@ -14,7 +14,7 @@
 .product-list .title h3 {
   display: inline-block;
   margin: 10px 0;
-  color: #00A82D;
+  color: #00a82d;
   font-size: 16px;
   line-height: 30px;
   font-weight: 400;
@@ -34,8 +34,8 @@
   text-align: center;
 }
 .product-list .title .iconarrow-up {
-  color: #00A82D;
-  border-color: #00A82D;
+  color: #00a82d;
+  border-color: #00a82d;
 }
 .product-list .list-box {
   margin: 0 10px;
@@ -66,7 +66,7 @@
   padding: 30px 15px 0;
 }
 .product-list .list-box .list-item a:hover p {
-  color: #00A82D;
+  color: #00a82d;
 }
 .product-list .list-box .list-item a img {
   display: block;
