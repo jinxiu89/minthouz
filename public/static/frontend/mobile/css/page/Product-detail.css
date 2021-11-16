@@ -36,7 +36,7 @@
   margin-right: auto;
 }
 .product-gallery .swiper-pagination-bullet-active {
-  background: #00A82D;
+  background: #00a82d;
 }
 /* 產品導航 */
 .product-nav {
@@ -64,7 +64,7 @@
 }
 .product-nav .sub_nav span {
   display: inline-block;
-  color: #00A82D;
+  color: #00a82d;
 }
 .product-nav .sub_nav span:nth-of-type(1) {
   margin-right: 10px;
@@ -78,7 +78,7 @@
   line-height: 24px;
   margin: 18px 0;
   padding: 0 10px;
-  background: #00A82D;
+  background: #00a82d;
   color: #fff;
 }
 /* 產品描述 */
